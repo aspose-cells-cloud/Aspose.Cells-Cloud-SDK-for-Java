@@ -1,7 +1,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="TranslateTextFileRequest.java">
- *   Copyright (c) 2025 Aspose.Cells Cloud
+ *   Copyright (c) 2026 Aspose.Cells Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -105,7 +105,7 @@ public class TranslateTextFileRequest  implements IRequestModel {
                 if (getTargetLanguage() == null) {
                     throw new ApiException("Missing the required parameter 'TargetLanguage' when calling TranslateTextFile");
                 }       
-        String localVarPath = "v4.0/cells/translate/text";
+        String localVarPath = "v4.0/cells/ai/translate/text";
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         List<Pair> localVarQueryParams = new ArrayList<Pair>();

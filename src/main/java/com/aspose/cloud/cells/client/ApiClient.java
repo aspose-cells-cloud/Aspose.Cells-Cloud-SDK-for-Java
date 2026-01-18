@@ -1,7 +1,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="ApiClient.java">
- *   Copyright (c) 2025 Aspose.Cells Cloud
+ *   Copyright (c) 2026 Aspose.Cells Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -188,7 +188,7 @@ public class ApiClient {
 		this.lenientDatetimeFormat = true;
 
 		// Set default User-Agent.
-		setUserAgent("CellsCloud-SDK/25.12/java");
+		setUserAgent("CellsCloud-SDK/26.1/java");
 
 		// Setup authentications (key: authentication name, value:
 		// authentication).

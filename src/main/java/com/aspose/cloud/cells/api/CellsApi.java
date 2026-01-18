@@ -1,7 +1,7 @@
 /*
  * --------------------------------------------------------------------------------
  * <copyright company="Aspose" file="CellsApi.java">
- *   Copyright (c) 2025 Aspose.Cells Cloud
+ *   Copyright (c) 2026 Aspose.Cells Cloud
  * </copyright>
  * <summary>
  *   Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -54,7 +54,7 @@ public class CellsApi {
         String accesstoken = apiClient.getAccessToken("client_credentials", clientId, clientSecret, "v3.0");
         apiClient.addDefaultHeader("Authorization", "Bearer " + accesstoken);
         apiClient.addDefaultHeader("x-aspose-client", "java sdk");
-        apiClient.addDefaultHeader("x-aspose-client-version", "25.12");
+        apiClient.addDefaultHeader("x-aspose-client-version", "26.1");
         this.apiClient = apiClient;
     }
 
@@ -70,9 +70,65 @@ public class CellsApi {
             apiClient.addDefaultHeader("Authorization", "Bearer " + accesstoken);
         }
         apiClient.addDefaultHeader("x-aspose-client", "java sdk");
-        apiClient.addDefaultHeader("x-aspose-client-version", "25.12");
+        apiClient.addDefaultHeader("x-aspose-client-version", "26.1");
         this.apiClient = apiClient;
     }
+
+         @SuppressWarnings("rawtypes")
+         private com.squareup.okhttp.Call decomposeUserTaskValidateBeforeCall(DecomposeUserTaskRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
+             return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
+         }
+             public void decomposeUserTask(DecomposeUserTaskRequest request, String LocalOutPath) throws ApiException ,  IOException {
+                 FileUtil.copyFile(decomposeUserTask(request), new File(LocalOutPath));
+             }
+         public  File  decomposeUserTask(DecomposeUserTaskRequest request) throws ApiException,  IOException {
+             try {
+                 ApiResponse< File > resp = decomposeUserTaskWithHttpInfo(request);
+                  return resp.getData(); 
+             }
+             catch (ApiException ex) {
+                 if (ex.getCode() == apiClient.getNotAuthCode()) {
+                     apiClient.requestToken();
+                     ApiResponse< File > resp = decomposeUserTaskWithHttpInfo(request);
+                      return resp.getData();       
+                 }
+                 throw ex;
+             }
+         }
+
+         private ApiResponse< File > decomposeUserTaskWithHttpInfo(DecomposeUserTaskRequest request) throws ApiException,  IOException {
+             com.squareup.okhttp.Call call =  decomposeUserTaskValidateBeforeCall(request, null, null);
+             Type localVarReturnType = new TypeToken< File >(){}.getType();
+             return apiClient.execute(call, localVarReturnType);
+         }
+
+         public com.squareup.okhttp.Call  decomposeUserTaskAsync( DecomposeUserTaskRequest request, final ApiCallback< HashMap<String,File> > callback) throws ApiException,  IOException {
+
+             ProgressResponseBody.ProgressListener progressListener = null;
+             ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+             if (callback != null) {
+                 progressListener = new ProgressResponseBody.ProgressListener() {
+                     @Override
+                     public void update(long bytesRead, long contentLength, boolean done) {
+                         callback.onDownloadProgress(bytesRead, contentLength, done);
+                     }
+                 };
+
+                 progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                     @Override
+                     public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                         callback.onUploadProgress(bytesWritten, contentLength, done);
+                     }
+                 };
+             }
+
+             com.squareup.okhttp.Call call =  decomposeUserTaskValidateBeforeCall(request, progressListener, progressRequestListener);
+             Type localVarReturnType = new TypeToken< HashMap<String,File> >(){}.getType();
+             apiClient.executeAsync(call, localVarReturnType, callback);
+             return call;
+         }
+
 
          @SuppressWarnings("rawtypes")
          private com.squareup.okhttp.Call translationSpreadsheetValidateBeforeCall(TranslationSpreadsheetRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
@@ -1064,6 +1120,118 @@ public class CellsApi {
              }
 
              com.squareup.okhttp.Call call =  convertWorksheetToPdfValidateBeforeCall(request, progressListener, progressRequestListener);
+             Type localVarReturnType = new TypeToken< HashMap<String,File> >(){}.getType();
+             apiClient.executeAsync(call, localVarReturnType, callback);
+             return call;
+         }
+
+
+         @SuppressWarnings("rawtypes")
+         private com.squareup.okhttp.Call convertWorksheetToHtmlValidateBeforeCall(ConvertWorksheetToHtmlRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
+             return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
+         }
+             public void convertWorksheetToHtml(ConvertWorksheetToHtmlRequest request, String LocalOutPath) throws ApiException ,  IOException {
+                 FileUtil.copyFile(convertWorksheetToHtml(request), new File(LocalOutPath));
+             }
+         public  File  convertWorksheetToHtml(ConvertWorksheetToHtmlRequest request) throws ApiException,  IOException {
+             try {
+                 ApiResponse< File > resp = convertWorksheetToHtmlWithHttpInfo(request);
+                  return resp.getData(); 
+             }
+             catch (ApiException ex) {
+                 if (ex.getCode() == apiClient.getNotAuthCode()) {
+                     apiClient.requestToken();
+                     ApiResponse< File > resp = convertWorksheetToHtmlWithHttpInfo(request);
+                      return resp.getData();       
+                 }
+                 throw ex;
+             }
+         }
+
+         private ApiResponse< File > convertWorksheetToHtmlWithHttpInfo(ConvertWorksheetToHtmlRequest request) throws ApiException,  IOException {
+             com.squareup.okhttp.Call call =  convertWorksheetToHtmlValidateBeforeCall(request, null, null);
+             Type localVarReturnType = new TypeToken< File >(){}.getType();
+             return apiClient.execute(call, localVarReturnType);
+         }
+
+         public com.squareup.okhttp.Call  convertWorksheetToHtmlAsync( ConvertWorksheetToHtmlRequest request, final ApiCallback< HashMap<String,File> > callback) throws ApiException,  IOException {
+
+             ProgressResponseBody.ProgressListener progressListener = null;
+             ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+             if (callback != null) {
+                 progressListener = new ProgressResponseBody.ProgressListener() {
+                     @Override
+                     public void update(long bytesRead, long contentLength, boolean done) {
+                         callback.onDownloadProgress(bytesRead, contentLength, done);
+                     }
+                 };
+
+                 progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                     @Override
+                     public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                         callback.onUploadProgress(bytesWritten, contentLength, done);
+                     }
+                 };
+             }
+
+             com.squareup.okhttp.Call call =  convertWorksheetToHtmlValidateBeforeCall(request, progressListener, progressRequestListener);
+             Type localVarReturnType = new TypeToken< HashMap<String,File> >(){}.getType();
+             apiClient.executeAsync(call, localVarReturnType, callback);
+             return call;
+         }
+
+
+         @SuppressWarnings("rawtypes")
+         private com.squareup.okhttp.Call convertWorksheetToHtmlTableValidateBeforeCall(ConvertWorksheetToHtmlTableRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
+             return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
+         }
+             public void convertWorksheetToHtmlTable(ConvertWorksheetToHtmlTableRequest request, String LocalOutPath) throws ApiException ,  IOException {
+                 FileUtil.copyFile(convertWorksheetToHtmlTable(request), new File(LocalOutPath));
+             }
+         public  File  convertWorksheetToHtmlTable(ConvertWorksheetToHtmlTableRequest request) throws ApiException,  IOException {
+             try {
+                 ApiResponse< File > resp = convertWorksheetToHtmlTableWithHttpInfo(request);
+                  return resp.getData(); 
+             }
+             catch (ApiException ex) {
+                 if (ex.getCode() == apiClient.getNotAuthCode()) {
+                     apiClient.requestToken();
+                     ApiResponse< File > resp = convertWorksheetToHtmlTableWithHttpInfo(request);
+                      return resp.getData();       
+                 }
+                 throw ex;
+             }
+         }
+
+         private ApiResponse< File > convertWorksheetToHtmlTableWithHttpInfo(ConvertWorksheetToHtmlTableRequest request) throws ApiException,  IOException {
+             com.squareup.okhttp.Call call =  convertWorksheetToHtmlTableValidateBeforeCall(request, null, null);
+             Type localVarReturnType = new TypeToken< File >(){}.getType();
+             return apiClient.execute(call, localVarReturnType);
+         }
+
+         public com.squareup.okhttp.Call  convertWorksheetToHtmlTableAsync( ConvertWorksheetToHtmlTableRequest request, final ApiCallback< HashMap<String,File> > callback) throws ApiException,  IOException {
+
+             ProgressResponseBody.ProgressListener progressListener = null;
+             ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+             if (callback != null) {
+                 progressListener = new ProgressResponseBody.ProgressListener() {
+                     @Override
+                     public void update(long bytesRead, long contentLength, boolean done) {
+                         callback.onDownloadProgress(bytesRead, contentLength, done);
+                     }
+                 };
+
+                 progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                     @Override
+                     public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                         callback.onUploadProgress(bytesWritten, contentLength, done);
+                     }
+                 };
+             }
+
+             com.squareup.okhttp.Call call =  convertWorksheetToHtmlTableValidateBeforeCall(request, progressListener, progressRequestListener);
              Type localVarReturnType = new TypeToken< HashMap<String,File> >(){}.getType();
              apiClient.executeAsync(call, localVarReturnType, callback);
              return call;
@@ -2181,6 +2349,174 @@ public class CellsApi {
              }
 
              com.squareup.okhttp.Call call =  importDataIntoSpreadsheetValidateBeforeCall(request, progressListener, progressRequestListener);
+             Type localVarReturnType = new TypeToken< HashMap<String,File> >(){}.getType();
+             apiClient.executeAsync(call, localVarReturnType, callback);
+             return call;
+         }
+
+
+         @SuppressWarnings("rawtypes")
+         private com.squareup.okhttp.Call importJSONDataIntoSpreadsheetValidateBeforeCall(ImportJSONDataIntoSpreadsheetRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
+             return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
+         }
+             public void importJSONDataIntoSpreadsheet(ImportJSONDataIntoSpreadsheetRequest request, String LocalOutPath) throws ApiException ,  IOException {
+                 FileUtil.copyFile(importJSONDataIntoSpreadsheet(request), new File(LocalOutPath));
+             }
+         public  File  importJSONDataIntoSpreadsheet(ImportJSONDataIntoSpreadsheetRequest request) throws ApiException,  IOException {
+             try {
+                 ApiResponse< File > resp = importJSONDataIntoSpreadsheetWithHttpInfo(request);
+                  return resp.getData(); 
+             }
+             catch (ApiException ex) {
+                 if (ex.getCode() == apiClient.getNotAuthCode()) {
+                     apiClient.requestToken();
+                     ApiResponse< File > resp = importJSONDataIntoSpreadsheetWithHttpInfo(request);
+                      return resp.getData();       
+                 }
+                 throw ex;
+             }
+         }
+
+         private ApiResponse< File > importJSONDataIntoSpreadsheetWithHttpInfo(ImportJSONDataIntoSpreadsheetRequest request) throws ApiException,  IOException {
+             com.squareup.okhttp.Call call =  importJSONDataIntoSpreadsheetValidateBeforeCall(request, null, null);
+             Type localVarReturnType = new TypeToken< File >(){}.getType();
+             return apiClient.execute(call, localVarReturnType);
+         }
+
+         public com.squareup.okhttp.Call  importJSONDataIntoSpreadsheetAsync( ImportJSONDataIntoSpreadsheetRequest request, final ApiCallback< HashMap<String,File> > callback) throws ApiException,  IOException {
+
+             ProgressResponseBody.ProgressListener progressListener = null;
+             ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+             if (callback != null) {
+                 progressListener = new ProgressResponseBody.ProgressListener() {
+                     @Override
+                     public void update(long bytesRead, long contentLength, boolean done) {
+                         callback.onDownloadProgress(bytesRead, contentLength, done);
+                     }
+                 };
+
+                 progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                     @Override
+                     public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                         callback.onUploadProgress(bytesWritten, contentLength, done);
+                     }
+                 };
+             }
+
+             com.squareup.okhttp.Call call =  importJSONDataIntoSpreadsheetValidateBeforeCall(request, progressListener, progressRequestListener);
+             Type localVarReturnType = new TypeToken< HashMap<String,File> >(){}.getType();
+             apiClient.executeAsync(call, localVarReturnType, callback);
+             return call;
+         }
+
+
+         @SuppressWarnings("rawtypes")
+         private com.squareup.okhttp.Call importXMLDataIntoSpreadsheetValidateBeforeCall(ImportXMLDataIntoSpreadsheetRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
+             return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
+         }
+             public void importXMLDataIntoSpreadsheet(ImportXMLDataIntoSpreadsheetRequest request, String LocalOutPath) throws ApiException ,  IOException {
+                 FileUtil.copyFile(importXMLDataIntoSpreadsheet(request), new File(LocalOutPath));
+             }
+         public  File  importXMLDataIntoSpreadsheet(ImportXMLDataIntoSpreadsheetRequest request) throws ApiException,  IOException {
+             try {
+                 ApiResponse< File > resp = importXMLDataIntoSpreadsheetWithHttpInfo(request);
+                  return resp.getData(); 
+             }
+             catch (ApiException ex) {
+                 if (ex.getCode() == apiClient.getNotAuthCode()) {
+                     apiClient.requestToken();
+                     ApiResponse< File > resp = importXMLDataIntoSpreadsheetWithHttpInfo(request);
+                      return resp.getData();       
+                 }
+                 throw ex;
+             }
+         }
+
+         private ApiResponse< File > importXMLDataIntoSpreadsheetWithHttpInfo(ImportXMLDataIntoSpreadsheetRequest request) throws ApiException,  IOException {
+             com.squareup.okhttp.Call call =  importXMLDataIntoSpreadsheetValidateBeforeCall(request, null, null);
+             Type localVarReturnType = new TypeToken< File >(){}.getType();
+             return apiClient.execute(call, localVarReturnType);
+         }
+
+         public com.squareup.okhttp.Call  importXMLDataIntoSpreadsheetAsync( ImportXMLDataIntoSpreadsheetRequest request, final ApiCallback< HashMap<String,File> > callback) throws ApiException,  IOException {
+
+             ProgressResponseBody.ProgressListener progressListener = null;
+             ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+             if (callback != null) {
+                 progressListener = new ProgressResponseBody.ProgressListener() {
+                     @Override
+                     public void update(long bytesRead, long contentLength, boolean done) {
+                         callback.onDownloadProgress(bytesRead, contentLength, done);
+                     }
+                 };
+
+                 progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                     @Override
+                     public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                         callback.onUploadProgress(bytesWritten, contentLength, done);
+                     }
+                 };
+             }
+
+             com.squareup.okhttp.Call call =  importXMLDataIntoSpreadsheetValidateBeforeCall(request, progressListener, progressRequestListener);
+             Type localVarReturnType = new TypeToken< HashMap<String,File> >(){}.getType();
+             apiClient.executeAsync(call, localVarReturnType, callback);
+             return call;
+         }
+
+
+         @SuppressWarnings("rawtypes")
+         private com.squareup.okhttp.Call importCSVDataIntoSpreadsheetValidateBeforeCall(ImportCSVDataIntoSpreadsheetRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
+             return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
+         }
+             public void importCSVDataIntoSpreadsheet(ImportCSVDataIntoSpreadsheetRequest request, String LocalOutPath) throws ApiException ,  IOException {
+                 FileUtil.copyFile(importCSVDataIntoSpreadsheet(request), new File(LocalOutPath));
+             }
+         public  File  importCSVDataIntoSpreadsheet(ImportCSVDataIntoSpreadsheetRequest request) throws ApiException,  IOException {
+             try {
+                 ApiResponse< File > resp = importCSVDataIntoSpreadsheetWithHttpInfo(request);
+                  return resp.getData(); 
+             }
+             catch (ApiException ex) {
+                 if (ex.getCode() == apiClient.getNotAuthCode()) {
+                     apiClient.requestToken();
+                     ApiResponse< File > resp = importCSVDataIntoSpreadsheetWithHttpInfo(request);
+                      return resp.getData();       
+                 }
+                 throw ex;
+             }
+         }
+
+         private ApiResponse< File > importCSVDataIntoSpreadsheetWithHttpInfo(ImportCSVDataIntoSpreadsheetRequest request) throws ApiException,  IOException {
+             com.squareup.okhttp.Call call =  importCSVDataIntoSpreadsheetValidateBeforeCall(request, null, null);
+             Type localVarReturnType = new TypeToken< File >(){}.getType();
+             return apiClient.execute(call, localVarReturnType);
+         }
+
+         public com.squareup.okhttp.Call  importCSVDataIntoSpreadsheetAsync( ImportCSVDataIntoSpreadsheetRequest request, final ApiCallback< HashMap<String,File> > callback) throws ApiException,  IOException {
+
+             ProgressResponseBody.ProgressListener progressListener = null;
+             ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+             if (callback != null) {
+                 progressListener = new ProgressResponseBody.ProgressListener() {
+                     @Override
+                     public void update(long bytesRead, long contentLength, boolean done) {
+                         callback.onDownloadProgress(bytesRead, contentLength, done);
+                     }
+                 };
+
+                 progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                     @Override
+                     public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                         callback.onUploadProgress(bytesWritten, contentLength, done);
+                     }
+                 };
+             }
+
+             com.squareup.okhttp.Call call =  importCSVDataIntoSpreadsheetValidateBeforeCall(request, progressListener, progressRequestListener);
              Type localVarReturnType = new TypeToken< HashMap<String,File> >(){}.getType();
              apiClient.executeAsync(call, localVarReturnType, callback);
              return call;
@@ -4321,6 +4657,62 @@ public class CellsApi {
              }
 
              com.squareup.okhttp.Call call =  swapRangeValidateBeforeCall(request, progressListener, progressRequestListener);
+             Type localVarReturnType = new TypeToken< HashMap<String,File> >(){}.getType();
+             apiClient.executeAsync(call, localVarReturnType, callback);
+             return call;
+         }
+
+
+         @SuppressWarnings("rawtypes")
+         private com.squareup.okhttp.Call flipDataValidateBeforeCall(FlipDataRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
+             return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
+         }
+             public void flipData(FlipDataRequest request, String LocalOutPath) throws ApiException ,  IOException {
+                 FileUtil.copyFile(flipData(request), new File(LocalOutPath));
+             }
+         public  File  flipData(FlipDataRequest request) throws ApiException,  IOException {
+             try {
+                 ApiResponse< File > resp = flipDataWithHttpInfo(request);
+                  return resp.getData(); 
+             }
+             catch (ApiException ex) {
+                 if (ex.getCode() == apiClient.getNotAuthCode()) {
+                     apiClient.requestToken();
+                     ApiResponse< File > resp = flipDataWithHttpInfo(request);
+                      return resp.getData();       
+                 }
+                 throw ex;
+             }
+         }
+
+         private ApiResponse< File > flipDataWithHttpInfo(FlipDataRequest request) throws ApiException,  IOException {
+             com.squareup.okhttp.Call call =  flipDataValidateBeforeCall(request, null, null);
+             Type localVarReturnType = new TypeToken< File >(){}.getType();
+             return apiClient.execute(call, localVarReturnType);
+         }
+
+         public com.squareup.okhttp.Call  flipDataAsync( FlipDataRequest request, final ApiCallback< HashMap<String,File> > callback) throws ApiException,  IOException {
+
+             ProgressResponseBody.ProgressListener progressListener = null;
+             ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+             if (callback != null) {
+                 progressListener = new ProgressResponseBody.ProgressListener() {
+                     @Override
+                     public void update(long bytesRead, long contentLength, boolean done) {
+                         callback.onDownloadProgress(bytesRead, contentLength, done);
+                     }
+                 };
+
+                 progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                     @Override
+                     public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                         callback.onUploadProgress(bytesWritten, contentLength, done);
+                     }
+                 };
+             }
+
+             com.squareup.okhttp.Call call =  flipDataValidateBeforeCall(request, progressListener, progressRequestListener);
              Type localVarReturnType = new TypeToken< HashMap<String,File> >(){}.getType();
              apiClient.executeAsync(call, localVarReturnType, callback);
              return call;
