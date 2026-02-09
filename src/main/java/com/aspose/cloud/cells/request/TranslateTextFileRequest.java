@@ -105,7 +105,7 @@ public class TranslateTextFileRequest  implements IRequestModel {
                 if (getTargetLanguage() == null) {
                     throw new ApiException("Missing the required parameter 'TargetLanguage' when calling TranslateTextFile");
                 }       
-        String localVarPath = "v4.0/cells/ai/translate/text";
+        String localVarPath = "v4.0/cells/ai/translate/text-file";
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         List<Pair> localVarQueryParams = new ArrayList<Pair>();

@@ -1,6 +1,6 @@
 /*
  * --------------------------------------------------------------------------------
- * <copyright company="Aspose" file="DecomposeUserTaskRequest.java">
+ * <copyright company="Aspose" file="GetMergedCellsInRemotedWorksheetRequest.java">
  *   Copyright (c) 2026 Aspose.Cells Cloud
  * </copyright>
  * <summary>
@@ -32,7 +32,7 @@ import java.io.*;
 import java.lang.reflect.Type;
 import java.util.*;
 
-public class DecomposeUserTaskRequest  implements IRequestModel {
+public class GetMergedCellsInRemotedWorksheetRequest  implements IRequestModel {
     private HashMap<String,String> extendQueryParameterMap;
     public HashMap<String,String> getExtendQueryParameterMap() {
         return this.extendQueryParameterMap;
@@ -41,17 +41,59 @@ public class DecomposeUserTaskRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
+    private String name;
+    private String worksheet;
+    private String folder;
+    private String storageName;
     private String region;
     private String password;
-    private String taskDescription;    
-        public DecomposeUserTaskRequest()
+    
+        public GetMergedCellsInRemotedWorksheetRequest()
         {        
         }
-        public DecomposeUserTaskRequest( String taskDescription ,  String region ,  String password ) {
-            this.taskDescription = taskDescription; 
+        public GetMergedCellsInRemotedWorksheetRequest( String name ,  String worksheet ,  String folder ,  String storageName ,  String region ,  String password ) {
+            this.name = name; 
+            this.worksheet = worksheet; 
+            this.folder = folder; 
+            this.storageName = storageName; 
             this.region = region; 
             this.password = password; 
         }   
+
+        public String getName() {
+            return this.name;
+        }
+
+        public void setName(String name) {
+            this.name = name;
+        }
+
+
+        public String getWorksheet() {
+            return this.worksheet;
+        }
+
+        public void setWorksheet(String worksheet) {
+            this.worksheet = worksheet;
+        }
+
+        public String getFolder() {
+            return this.folder;
+        }
+
+        public void setFolder(String folder) {
+            this.folder = folder;
+        }
+
+
+        public String getStorageName() {
+            return this.storageName;
+        }
+
+        public void setStorageName(String storageName) {
+            this.storageName = storageName;
+        }
+
 
         public String getRegion() {
             return this.region;
@@ -70,24 +112,28 @@ public class DecomposeUserTaskRequest  implements IRequestModel {
             this.password = password;
         }
 
-        public String getTaskDescription() {
-            return this.taskDescription;
-        }
-
-        public void setTaskDescription(String taskDescription) {
-            this.taskDescription = taskDescription;
-        }
     
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
          
-                if (getTaskDescription() == null) {
-                    throw new ApiException("Missing the required parameter 'TaskDescription' when calling DecomposeUserTask");
+                if (getName() == null) {
+                    throw new ApiException("Missing the required parameter 'Name' when calling GetMergedCellsInRemotedWorksheet");
+                } 
+
+                if (getWorksheet() == null) {
+                    throw new ApiException("Missing the required parameter 'Worksheet' when calling GetMergedCellsInRemotedWorksheet");
                 }       
-        String localVarPath = "v4.0/cells/ai/task/decompose";
+        String localVarPath = "v4.0/cells/{name}/worksheets/{worksheet}/mergedcells".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString())) 
+    .replaceAll("\\{" + "worksheet" + "\\}", apiClient.escapeString(worksheet.toString()))   ;
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
+            if (getFolder() != null){
+                localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", getFolder()));
+            } 
+            if (getStorageName() != null){
+                localVarQueryParams.addAll(apiClient.parameterToPairs("", "storageName", getStorageName()));
+            } 
             if (getRegion() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "region", getRegion()));
             } 
@@ -100,7 +146,6 @@ public class DecomposeUserTaskRequest  implements IRequestModel {
             }
         }
         Object localVarPostBody = null;
-        localVarPostBody = getTaskDescription();
                 final String[] localVarAccepts = {
                     "application/json"
                 };
@@ -124,7 +169,7 @@ public class DecomposeUserTaskRequest  implements IRequestModel {
                 }
 
                 String[] localVarAuthNames = new String[] {  };
-                return apiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+                return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
 }

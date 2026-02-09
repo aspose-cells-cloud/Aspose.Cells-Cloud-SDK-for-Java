@@ -1,6 +1,6 @@
 /*
  * --------------------------------------------------------------------------------
- * <copyright company="Aspose" file="DecomposeUserTaskRequest.java">
+ * <copyright company="Aspose" file="ConvertWorksheetToJsonRequest.java">
  *   Copyright (c) 2026 Aspose.Cells Cloud
  * </copyright>
  * <summary>
@@ -32,7 +32,7 @@ import java.io.*;
 import java.lang.reflect.Type;
 import java.util.*;
 
-public class DecomposeUserTaskRequest  implements IRequestModel {
+public class ConvertWorksheetToJsonRequest  implements IRequestModel {
     private HashMap<String,String> extendQueryParameterMap;
     public HashMap<String,String> getExtendQueryParameterMap() {
         return this.extendQueryParameterMap;
@@ -41,17 +41,64 @@ public class DecomposeUserTaskRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
+    private String worksheet;
+    private String outPath;
+    private String outStorageName;
+    private String fontsLocation;
     private String region;
     private String password;
-    private String taskDescription;    
-        public DecomposeUserTaskRequest()
+    
+     
+     
+     private String spreadsheet;            
+        public ConvertWorksheetToJsonRequest()
         {        
         }
-        public DecomposeUserTaskRequest( String taskDescription ,  String region ,  String password ) {
-            this.taskDescription = taskDescription; 
+        public ConvertWorksheetToJsonRequest( String  spreadsheet    ,  String worksheet ,  String outPath ,  String outStorageName ,  String fontsLocation ,  String region ,  String password ) {
+              this.spreadsheet  = spreadsheet;  
+            this.worksheet = worksheet; 
+            this.outPath = outPath; 
+            this.outStorageName = outStorageName; 
+            this.fontsLocation = fontsLocation; 
             this.region = region; 
             this.password = password; 
         }   
+
+        public String getWorksheet() {
+            return this.worksheet;
+        }
+
+        public void setWorksheet(String worksheet) {
+            this.worksheet = worksheet;
+        }
+
+
+        public String getOutPath() {
+            return this.outPath;
+        }
+
+        public void setOutPath(String outPath) {
+            this.outPath = outPath;
+        }
+
+
+        public String getOutStorageName() {
+            return this.outStorageName;
+        }
+
+        public void setOutStorageName(String outStorageName) {
+            this.outStorageName = outStorageName;
+        }
+
+
+        public String getFontsLocation() {
+            return this.fontsLocation;
+        }
+
+        public void setFontsLocation(String fontsLocation) {
+            this.fontsLocation = fontsLocation;
+        }
+
 
         public String getRegion() {
             return this.region;
@@ -70,24 +117,43 @@ public class DecomposeUserTaskRequest  implements IRequestModel {
             this.password = password;
         }
 
-        public String getTaskDescription() {
-            return this.taskDescription;
-        }
-
-        public void setTaskDescription(String taskDescription) {
-            this.taskDescription = taskDescription;
-        }
     
+     
+            public String getSpreadsheet() {
+                    return this.spreadsheet;
+            }
+            public void setSpreadsheet(String spreadsheet) {
+                this.spreadsheet = spreadsheet;
+            }
+         
+        
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
+          
          
-                if (getTaskDescription() == null) {
-                    throw new ApiException("Missing the required parameter 'TaskDescription' when calling DecomposeUserTask");
+                if ( getSpreadsheet() == null ) {
+                    throw new ApiException("Missing the required parameter 'Spreadsheet' when calling ConvertWorksheetToJson");
+                } 
+
+                if (getWorksheet() == null) {
+                    throw new ApiException("Missing the required parameter 'Worksheet' when calling ConvertWorksheetToJson");
                 }       
-        String localVarPath = "v4.0/cells/ai/task/decompose";
+        String localVarPath = "v4.0/cells/convert/worksheet/json";
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
+            if (getWorksheet() != null){
+                localVarQueryParams.addAll(apiClient.parameterToPairs("", "worksheet", getWorksheet()));
+            } 
+            if (getOutPath() != null){
+                localVarQueryParams.addAll(apiClient.parameterToPairs("", "outPath", getOutPath()));
+            } 
+            if (getOutStorageName() != null){
+                localVarQueryParams.addAll(apiClient.parameterToPairs("", "outStorageName", getOutStorageName()));
+            } 
+            if (getFontsLocation() != null){
+                localVarQueryParams.addAll(apiClient.parameterToPairs("", "fontsLocation", getFontsLocation()));
+            } 
             if (getRegion() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "region", getRegion()));
             } 
@@ -99,15 +165,20 @@ public class DecomposeUserTaskRequest  implements IRequestModel {
                     localVarQueryParams.addAll(apiClient.parameterToPairs("", key, this.extendQueryParameterMap.get(key)));           
             }
         }
+                   
+            File SpreadsheetToUpload = new File(getSpreadsheet());
+            if (SpreadsheetToUpload.exists()) {
+                    localVarFormParams.put(SpreadsheetToUpload.getName(), SpreadsheetToUpload);
+            }     
+                  
         Object localVarPostBody = null;
-        localVarPostBody = getTaskDescription();
                 final String[] localVarAccepts = {
                     "application/json"
                 };
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };        
+                final String[] localVarContentTypes = { "multipart/form-data"  };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 

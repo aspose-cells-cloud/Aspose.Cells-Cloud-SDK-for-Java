@@ -1,6 +1,6 @@
 /*
  * --------------------------------------------------------------------------------
- * <copyright company="Aspose" file="DecomposeUserTaskRequest.java">
+ * <copyright company="Aspose" file="GetWorksheetsWithLocalSpreadsheetRequest.java">
  *   Copyright (c) 2026 Aspose.Cells Cloud
  * </copyright>
  * <summary>
@@ -32,7 +32,7 @@ import java.io.*;
 import java.lang.reflect.Type;
 import java.util.*;
 
-public class DecomposeUserTaskRequest  implements IRequestModel {
+public class GetWorksheetsWithLocalSpreadsheetRequest  implements IRequestModel {
     private HashMap<String,String> extendQueryParameterMap;
     public HashMap<String,String> getExtendQueryParameterMap() {
         return this.extendQueryParameterMap;
@@ -43,12 +43,15 @@ public class DecomposeUserTaskRequest  implements IRequestModel {
     }
     private String region;
     private String password;
-    private String taskDescription;    
-        public DecomposeUserTaskRequest()
+    
+     
+     
+     private String spreadsheet;            
+        public GetWorksheetsWithLocalSpreadsheetRequest()
         {        
         }
-        public DecomposeUserTaskRequest( String taskDescription ,  String region ,  String password ) {
-            this.taskDescription = taskDescription; 
+        public GetWorksheetsWithLocalSpreadsheetRequest( String  spreadsheet    ,  String region ,  String password ) {
+              this.spreadsheet  = spreadsheet;  
             this.region = region; 
             this.password = password; 
         }   
@@ -70,21 +73,24 @@ public class DecomposeUserTaskRequest  implements IRequestModel {
             this.password = password;
         }
 
-        public String getTaskDescription() {
-            return this.taskDescription;
-        }
-
-        public void setTaskDescription(String taskDescription) {
-            this.taskDescription = taskDescription;
-        }
     
+     
+            public String getSpreadsheet() {
+                    return this.spreadsheet;
+            }
+            public void setSpreadsheet(String spreadsheet) {
+                this.spreadsheet = spreadsheet;
+            }
+         
+        
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
+          
          
-                if (getTaskDescription() == null) {
-                    throw new ApiException("Missing the required parameter 'TaskDescription' when calling DecomposeUserTask");
+                if ( getSpreadsheet() == null ) {
+                    throw new ApiException("Missing the required parameter 'Spreadsheet' when calling GetWorksheetsWithLocalSpreadsheet");
                 }       
-        String localVarPath = "v4.0/cells/ai/task/decompose";
+        String localVarPath = "v4.0/cells/spreadsheet/worksheets";
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
@@ -99,15 +105,20 @@ public class DecomposeUserTaskRequest  implements IRequestModel {
                     localVarQueryParams.addAll(apiClient.parameterToPairs("", key, this.extendQueryParameterMap.get(key)));           
             }
         }
+                   
+            File SpreadsheetToUpload = new File(getSpreadsheet());
+            if (SpreadsheetToUpload.exists()) {
+                    localVarFormParams.put(SpreadsheetToUpload.getName(), SpreadsheetToUpload);
+            }     
+                  
         Object localVarPostBody = null;
-        localVarPostBody = getTaskDescription();
                 final String[] localVarAccepts = {
                     "application/json"
                 };
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };        
+                final String[] localVarContentTypes = { "multipart/form-data"  };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 
