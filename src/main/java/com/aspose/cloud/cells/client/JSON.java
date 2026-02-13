@@ -10,10 +10,10 @@
  *  to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
  *  copies of the Software, and to permit persons to whom the Software is
  *  furnished to do so, subject to the following conditions:
- * 
+ *
  *  The above copyright notice and this permission notice shall be included in all
  *  copies or substantial portions of the Software.
- * 
+ *
  *  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
  *  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
  *  FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
@@ -39,7 +39,7 @@ import com.google.gson.JsonSerializer;
 import com.google.gson.TypeAdapter;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
-
+import java.time.format.DateTimeParseException;
 import java.io.IOException;
 import java.io.StringReader;
 import java.lang.reflect.Type;
@@ -183,7 +183,6 @@ class DateAdapter implements JsonSerializer<Date>, JsonDeserializer<Date> {
  * Gson TypeAdapter for jsr310 OffsetDateTime type
  */
 class OffsetDateTimeTypeAdapter extends TypeAdapter<OffsetDateTime> {
-
     private final DateTimeFormatter formatter = DateTimeFormatter.ISO_OFFSET_DATE_TIME;
 
     @Override
@@ -203,11 +202,22 @@ class OffsetDateTimeTypeAdapter extends TypeAdapter<OffsetDateTime> {
                 return null;
             default:
                 String date = in.nextString();
+
+                if ("0001-01-01T00:00:00".equals(date) ||
+                    "0001-01-01T00:00:00Z".equals(date) ||
+                    date.startsWith("0001-01-01T00:00:00")) {
+                    return OffsetDateTime.MIN;
+                }
                 if (date.endsWith("+0000")) {
-                    date = date.substring(0, date.length()-5) + "Z";
+                    date = date.substring(0, date.length() - 5) + "Z";
                 }
 
-                return OffsetDateTime.parse(date, formatter);
+                try {
+                    return OffsetDateTime.parse(date, formatter);
+                } catch (DateTimeParseException e) {
+                    System.err.println("Warning: Failed to parse OffsetDateTime: " + date + " - " + e.getMessage());
+                    throw new IOException("Invalid OffsetDateTime: " + date, e);
+                }
         }
     }
 }

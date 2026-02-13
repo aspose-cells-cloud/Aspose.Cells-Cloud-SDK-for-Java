@@ -9,6 +9,6 @@
     <dependency>
         <groupId>com.aspose</groupId>
         <artifactId>aspose-cells-cloud</artifactId>
-        <version>25.7</version>
+        <version>26.2</version>
     </dependency>
 </dependencies>
