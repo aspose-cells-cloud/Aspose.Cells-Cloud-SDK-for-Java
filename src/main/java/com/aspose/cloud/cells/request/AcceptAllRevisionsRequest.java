@@ -1,6 +1,6 @@
 /*
  * --------------------------------------------------------------------------------
- * <copyright company="Aspose" file="TranslationSpreadsheetRequest.java">
+ * <copyright company="Aspose" file="AcceptAllRevisionsRequest.java">
  *   Copyright (c) 2026 Aspose.Cells Cloud
  * </copyright>
  * <summary>
@@ -32,7 +32,7 @@ import java.io.*;
 import java.lang.reflect.Type;
 import java.util.*;
 
-public class TranslationSpreadsheetRequest  implements IRequestModel {
+public class AcceptAllRevisionsRequest  implements IRequestModel {
     private HashMap<String,String> extendQueryParameterMap;
     public HashMap<String,String> getExtendQueryParameterMap() {
         return this.extendQueryParameterMap;
@@ -41,29 +41,51 @@ public class TranslationSpreadsheetRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-    private String targetLanguage;
+    private String outPath;
+    private String outStorageName;
+    private String fontsLocation;
     private String region;
     private String password;
     
      
      
      private String spreadsheet;            
-        public TranslationSpreadsheetRequest()
+        public AcceptAllRevisionsRequest()
         {        
         }
-        public TranslationSpreadsheetRequest( String  spreadsheet    ,  String targetLanguage ,  String region ,  String password ) {
+        public AcceptAllRevisionsRequest( String  spreadsheet    ,  String outPath ,  String outStorageName ,  String fontsLocation ,  String region ,  String password ) {
               this.spreadsheet  = spreadsheet;  
-            this.targetLanguage = targetLanguage; 
+            this.outPath = outPath; 
+            this.outStorageName = outStorageName; 
+            this.fontsLocation = fontsLocation; 
             this.region = region; 
             this.password = password; 
         }   
 
-        public String getTargetLanguage() {
-            return this.targetLanguage;
+        public String getOutPath() {
+            return this.outPath;
         }
 
-        public void setTargetLanguage(String targetLanguage) {
-            this.targetLanguage = targetLanguage;
+        public void setOutPath(String outPath) {
+            this.outPath = outPath;
+        }
+
+
+        public String getOutStorageName() {
+            return this.outStorageName;
+        }
+
+        public void setOutStorageName(String outStorageName) {
+            this.outStorageName = outStorageName;
+        }
+
+
+        public String getFontsLocation() {
+            return this.fontsLocation;
+        }
+
+        public void setFontsLocation(String fontsLocation) {
+            this.fontsLocation = fontsLocation;
         }
 
 
@@ -99,18 +121,20 @@ public class TranslationSpreadsheetRequest  implements IRequestModel {
           
          
                 if ( getSpreadsheet() == null ) {
-                    throw new ApiException("Missing the required parameter 'Spreadsheet' when calling TranslationSpreadsheet");
-                } 
-
-                if (getTargetLanguage() == null) {
-                    throw new ApiException("Missing the required parameter 'TargetLanguage' when calling TranslationSpreadsheet");
+                    throw new ApiException("Missing the required parameter 'Spreadsheet' when calling AcceptAllRevisions");
                 }       
-        String localVarPath = "v4.0/cells/ai/translate/spreadsheet";
+        String localVarPath = "v4.0/cells/spreadsheet/accept-all-revisions";
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
-            if (getTargetLanguage() != null){
-                localVarQueryParams.addAll(apiClient.parameterToPairs("", "targetLanguage", getTargetLanguage()));
+            if (getOutPath() != null){
+                localVarQueryParams.addAll(apiClient.parameterToPairs("", "outPath", getOutPath()));
+            } 
+            if (getOutStorageName() != null){
+                localVarQueryParams.addAll(apiClient.parameterToPairs("", "outStorageName", getOutStorageName()));
+            } 
+            if (getFontsLocation() != null){
+                localVarQueryParams.addAll(apiClient.parameterToPairs("", "fontsLocation", getFontsLocation()));
             } 
             if (getRegion() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "region", getRegion()));

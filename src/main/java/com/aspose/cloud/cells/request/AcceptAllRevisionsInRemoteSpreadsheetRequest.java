@@ -1,6 +1,6 @@
 /*
  * --------------------------------------------------------------------------------
- * <copyright company="Aspose" file="SplitTableRequest.java">
+ * <copyright company="Aspose" file="AcceptAllRevisionsInRemoteSpreadsheetRequest.java">
  *   Copyright (c) 2026 Aspose.Cells Cloud
  * </copyright>
  * <summary>
@@ -32,7 +32,7 @@ import java.io.*;
 import java.lang.reflect.Type;
 import java.util.*;
 
-public class SplitTableRequest  implements IRequestModel {
+public class AcceptAllRevisionsInRemoteSpreadsheetRequest  implements IRequestModel {
     private HashMap<String,String> extendQueryParameterMap;
     public HashMap<String,String> getExtendQueryParameterMap() {
         return this.extendQueryParameterMap;
@@ -41,34 +41,22 @@ public class SplitTableRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-    private String worksheet;
-    private String tableName;
-    private String splitColumnName;
-    private Boolean saveSplitColumn;
-    private Integer splitRowNumber;
-    private Boolean toNewWorkbook;
-    private Boolean toMultipleFiles;
+    private String name;
+    private String folder;
+    private String storageName;
     private String outPath;
     private String outStorageName;
     private String fontsLocation;
     private String region;
     private String password;
     
-     
-     
-     private String spreadsheet;            
-        public SplitTableRequest()
+        public AcceptAllRevisionsInRemoteSpreadsheetRequest()
         {        
         }
-        public SplitTableRequest( String  spreadsheet    ,  String worksheet ,  String tableName ,  String splitColumnName ,  Boolean saveSplitColumn ,  Integer splitRowNumber ,  Boolean toNewWorkbook ,  Boolean toMultipleFiles ,  String outPath ,  String outStorageName ,  String fontsLocation ,  String region ,  String password ) {
-              this.spreadsheet  = spreadsheet;  
-            this.worksheet = worksheet; 
-            this.tableName = tableName; 
-            this.splitColumnName = splitColumnName; 
-            this.saveSplitColumn = saveSplitColumn; 
-            this.splitRowNumber = splitRowNumber; 
-            this.toNewWorkbook = toNewWorkbook; 
-            this.toMultipleFiles = toMultipleFiles; 
+        public AcceptAllRevisionsInRemoteSpreadsheetRequest( String name ,  String folder ,  String storageName ,  String outPath ,  String outStorageName ,  String fontsLocation ,  String region ,  String password ) {
+            this.name = name; 
+            this.folder = folder; 
+            this.storageName = storageName; 
             this.outPath = outPath; 
             this.outStorageName = outStorageName; 
             this.fontsLocation = fontsLocation; 
@@ -76,66 +64,29 @@ public class SplitTableRequest  implements IRequestModel {
             this.password = password; 
         }   
 
-        public String getWorksheet() {
-            return this.worksheet;
+        public String getName() {
+            return this.name;
         }
 
-        public void setWorksheet(String worksheet) {
-            this.worksheet = worksheet;
+        public void setName(String name) {
+            this.name = name;
         }
 
-
-        public String getTableName() {
-            return this.tableName;
+        public String getFolder() {
+            return this.folder;
         }
 
-        public void setTableName(String tableName) {
-            this.tableName = tableName;
-        }
-
-
-        public String getSplitColumnName() {
-            return this.splitColumnName;
-        }
-
-        public void setSplitColumnName(String splitColumnName) {
-            this.splitColumnName = splitColumnName;
+        public void setFolder(String folder) {
+            this.folder = folder;
         }
 
 
-        public Boolean getSaveSplitColumn() {
-            return this.saveSplitColumn;
+        public String getStorageName() {
+            return this.storageName;
         }
 
-        public void setSaveSplitColumn(Boolean saveSplitColumn) {
-            this.saveSplitColumn = saveSplitColumn;
-        }
-
-
-        public Integer getSplitRowNumber() {
-            return this.splitRowNumber;
-        }
-
-        public void setSplitRowNumber(Integer splitRowNumber) {
-            this.splitRowNumber = splitRowNumber;
-        }
-
-
-        public Boolean getToNewWorkbook() {
-            return this.toNewWorkbook;
-        }
-
-        public void setToNewWorkbook(Boolean toNewWorkbook) {
-            this.toNewWorkbook = toNewWorkbook;
-        }
-
-
-        public Boolean getToMultipleFiles() {
-            return this.toMultipleFiles;
-        }
-
-        public void setToMultipleFiles(Boolean toMultipleFiles) {
-            this.toMultipleFiles = toMultipleFiles;
+        public void setStorageName(String storageName) {
+            this.storageName = storageName;
         }
 
 
@@ -184,74 +135,21 @@ public class SplitTableRequest  implements IRequestModel {
         }
 
     
-     
-            public String getSpreadsheet() {
-                    return this.spreadsheet;
-            }
-            public void setSpreadsheet(String spreadsheet) {
-                this.spreadsheet = spreadsheet;
-            }
-         
-        
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-          
          
-                if ( getSpreadsheet() == null ) {
-                    throw new ApiException("Missing the required parameter 'Spreadsheet' when calling SplitTable");
-                } 
-
-                if (getWorksheet() == null) {
-                    throw new ApiException("Missing the required parameter 'Worksheet' when calling SplitTable");
-                } 
-
-                if (getTableName() == null) {
-                    throw new ApiException("Missing the required parameter 'TableName' when calling SplitTable");
-                } 
-
-                if (getSplitColumnName() == null) {
-                    throw new ApiException("Missing the required parameter 'SplitColumnName' when calling SplitTable");
-                } 
-
-                if (getSaveSplitColumn() == null) {
-                    throw new ApiException("Missing the required parameter 'SaveSplitColumn' when calling SplitTable");
-                } 
-
-                if (getSplitRowNumber() == null) {
-                    throw new ApiException("Missing the required parameter 'SplitRowNumber' when calling SplitTable");
-                } 
-
-                if (getToNewWorkbook() == null) {
-                    throw new ApiException("Missing the required parameter 'ToNewWorkbook' when calling SplitTable");
-                } 
-
-                if (getToMultipleFiles() == null) {
-                    throw new ApiException("Missing the required parameter 'ToMultipleFiles' when calling SplitTable");
+                if (getName() == null) {
+                    throw new ApiException("Missing the required parameter 'Name' when calling AcceptAllRevisionsInRemoteSpreadsheet");
                 }       
-        String localVarPath = "v4.0/cells/split/table";
+        String localVarPath = "v4.0/cells/{name}/accept-all-revisions".replaceAll("\\{" + "name" + "\\}", apiClient.escapeString(name.toString()))   ;
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
-            if (getWorksheet() != null){
-                localVarQueryParams.addAll(apiClient.parameterToPairs("", "worksheet", getWorksheet()));
+            if (getFolder() != null){
+                localVarQueryParams.addAll(apiClient.parameterToPairs("", "folder", getFolder()));
             } 
-            if (getTableName() != null){
-                localVarQueryParams.addAll(apiClient.parameterToPairs("", "tableName", getTableName()));
-            } 
-            if (getSplitColumnName() != null){
-                localVarQueryParams.addAll(apiClient.parameterToPairs("", "splitColumnName", getSplitColumnName()));
-            } 
-            if (getSaveSplitColumn() != null){
-                localVarQueryParams.addAll(apiClient.parameterToPairs("", "saveSplitColumn", getSaveSplitColumn()));
-            } 
-            if (getSplitRowNumber() != null){
-                localVarQueryParams.addAll(apiClient.parameterToPairs("", "splitRowNumber", getSplitRowNumber()));
-            } 
-            if (getToNewWorkbook() != null){
-                localVarQueryParams.addAll(apiClient.parameterToPairs("", "toNewWorkbook", getToNewWorkbook()));
-            } 
-            if (getToMultipleFiles() != null){
-                localVarQueryParams.addAll(apiClient.parameterToPairs("", "toMultipleFiles", getToMultipleFiles()));
+            if (getStorageName() != null){
+                localVarQueryParams.addAll(apiClient.parameterToPairs("", "storageName", getStorageName()));
             } 
             if (getOutPath() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "outPath", getOutPath()));
@@ -273,12 +171,6 @@ public class SplitTableRequest  implements IRequestModel {
                     localVarQueryParams.addAll(apiClient.parameterToPairs("", key, this.extendQueryParameterMap.get(key)));           
             }
         }
-                   
-            File SpreadsheetToUpload = new File(getSpreadsheet());
-            if (SpreadsheetToUpload.exists()) {
-                    localVarFormParams.put(SpreadsheetToUpload.getName(), SpreadsheetToUpload);
-            }     
-                  
         Object localVarPostBody = null;
                 final String[] localVarAccepts = {
                     "application/json"
@@ -286,7 +178,7 @@ public class SplitTableRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "multipart/form-data"  };        
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 
