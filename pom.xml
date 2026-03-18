@@ -5,7 +5,7 @@
   <artifactId>aspose-cells-cloud</artifactId>
   <packaging>jar</packaging>
   <name>aspose-cells-cloud</name>
-  <version>26.2</version>
+  <version>26.3.1</version>
   <url>https://github.com/aspose-cells-cloud/aspose-cells-cloud-java</url>
   <scm>
     <connection>scm:git:git@github.com:aspose-cells-cloud/aspose-cells-cloud-java</connection>
@@ -29,7 +29,7 @@
 			<name>Aspose Java API</name>
 			<url>https://repository.aspose.cloud/repo/</url>
 		</repository>
-  </repositories>
+  </repositories>	
   <developers>
     <developer>
       <name>Roy.Wang</name>
@@ -44,7 +44,7 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-surefire-plugin</artifactId>
-        <version>2.22.0</version>
+        <version>3.0.0-M9</version>
       </plugin>
       <plugin>
         <artifactId>maven-dependency-plugin</artifactId>
@@ -191,9 +191,9 @@
 
     <!-- test dependencies -->
     <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>${junit-version}</version>
+      <groupId>org.junit.jupiter</groupId>
+      <artifactId>junit-jupiter</artifactId>
+      <version>${junit-jupiter.version}</version>
       <scope>test</scope>
     </dependency>
   </dependencies>
@@ -206,7 +206,7 @@
     <gson-version>2.8.1</gson-version>
     <jodatime-version>2.9.9</jodatime-version>
     <maven-plugin-version>1.0.0</maven-plugin-version>
-    <junit-version>4.12</junit-version>
+    <junit-jupiter.version>5.10.2</junit-jupiter.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
   </properties>
   <description>This repository contains Aspose.Cells Cloud SDK for Java source code. This SDK allows you to work with Aspose.Cells Cloud REST APIs in your Java applications quickly and easily, with zero initial cost.</description>
