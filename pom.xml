@@ -5,7 +5,7 @@
   <artifactId>aspose-cells-cloud</artifactId>
   <packaging>jar</packaging>
   <name>aspose-cells-cloud</name>
-  <version>26.3.1</version>
+  <version>26.3.0</version>
   <url>https://github.com/aspose-cells-cloud/aspose-cells-cloud-java</url>
   <scm>
     <connection>scm:git:git@github.com:aspose-cells-cloud/aspose-cells-cloud-java</connection>
