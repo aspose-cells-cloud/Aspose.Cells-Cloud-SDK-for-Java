@@ -27,7 +27,7 @@
 
 package com.aspose.cloud.cells.api;
 
-import com.aspose.cloud.cells.*;
+import com.aspose.cloud.cells.api.*;
 import com.aspose.cloud.cells.model.*;
 import com.aspose.cloud.cells.request.*;
 import com.aspose.cloud.cells.client.*;
