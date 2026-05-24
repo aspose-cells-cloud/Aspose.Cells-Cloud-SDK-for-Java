@@ -15,13 +15,28 @@ jobs:
       ProductClientSecret: ${{ secrets.PRODUCTCLIENTSECRET }}
     steps:
     - uses: actions/checkout@v4
+    
     - name: Set up JDK
       uses: actions/setup-java@v4
       with:
         java-version: '8'
         distribution: 'temurin'
         cache: maven
-    
+
+    - name: Debug - Find Example folder
+      run: |
+        Write-Host "=== Current Directory ==="
+        Get-Location
+        
+        Write-Host "=== Root Level Directories ==="
+        Get-ChildItem -Directory | Select-Object Name
+        
+        Write-Host "=== Searching for Example Directories ==="
+        Get-ChildItem -Directory -Recurse -Depth 3 | Where-Object { $_.Name -like "*xample*" } | Select-Object FullName
+        
+        Write-Host "=== Searching for Example Java Files ==="
+        Get-ChildItem -Path . -Filter "*Example*.java" -Recurse -Depth 3 | Select-Object FullName
+
     - name: Build with Maven
       run: mvn -B package --file pom.xml
 
@@ -31,25 +46,54 @@ jobs:
         $env:CellsCloudClientSecret = "${{ secrets.PRODUCTCLIENTSECRET }}"
         $env:CellsCloudApiBaseUrl = "https://api.aspose.cloud"
         
-        Write-Host "=== Current directory ==="
+        Write-Host "=== Current Directory ==="
         Get-Location
-        Write-Host "=== Example folder exists? ==="
-        Test-Path "Example"
-        Write-Host "=== Files found in Example ==="
-        Get-ChildItem -Path "Example" -Filter "*.java" -Recurse | Select-Object FullName
         
-        $files = Get-ChildItem -Path "Example" -Filter "*.java" -Recurse
-        Write-Host "=== Found $($files.Count) Java files ==="
+        Write-Host "=== Listing All Directories (Depth 3) ==="
+        Get-ChildItem -Directory -Recurse -Depth 3 | Select-Object FullName
         
-        foreach ($file in $files) {
-          $className = $file.BaseName
-          Write-Host ">>> Running: $className"
-          try {
-            mvn exec:java -Dexec.mainClass="com.aspose.cloud.cells.api.$className" -Dexec.classpathScope=test
-          } catch {
-            Write-Host "ERROR running $className : $_"
+        Write-Host "=== Searching All Java Files (Depth 3) ==="
+        Get-ChildItem -Path . -Filter "*.java" -Recurse -Depth 3 | Select-Object FullName
+        
+        Write-Host "=== Trying Multiple Possible Example Paths ==="
+        $possiblePaths = @(
+          "Example",
+          "Examples",
+          "example",
+          "examples",
+          "src/test/java/com/aspose/cloud/cells/api",
+          "src/main/java/com/aspose/cloud/cells/api"
+        )
+        
+        $examplePath = $null
+        foreach ($path in $possiblePaths) {
+          if (Test-Path $path) {
+            Write-Host "Found directory: $path"
+            $javaFiles = Get-ChildItem -Path $path -Filter "*.java" -Recurse
+            if ($javaFiles.Count -gt 0) {
+              Write-Host "  Found $($javaFiles.Count) Java files in this directory"
+              $examplePath = $path
+              break
+            }
           }
-          Write-Host ">>> Finished: $className"
+        }
+        
+        if ($examplePath) {
+          Write-Host "=== Using Path: $examplePath ==="
+          $files = Get-ChildItem -Path $examplePath -Filter "*.java" -Recurse
+          
+          foreach ($file in $files) {
+            $className = $file.BaseName
+            Write-Host ">>> Running: $className"
+            try {
+              mvn exec:java -Dexec.mainClass="com.aspose.cloud.cells.api.$className" -Dexec.classpathScope=test
+              Write-Host ">>> Success: $className"
+            } catch {
+              Write-Host ">>> Failed: $className - $_"
+            }
+          }
+        } else {
+          Write-Host "=== Example directory not found. Please check repository structure ==="
         }
       continue-on-error: true
 
