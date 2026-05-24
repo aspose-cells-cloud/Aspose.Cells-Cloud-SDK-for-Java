@@ -25,6 +25,9 @@ public class ExampleSearchContentInRemoteRange {
         }
     }
 
+    @Test
+
+
     public void Run(){
         try{
             String remoteFolder = "TestData/In";

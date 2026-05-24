@@ -25,6 +25,9 @@ public class ExampleDeleteWorksheetOleObjects {
         }
     }
 
+    @Test
+
+
     public void Run(){
         try{
             String remoteFolder = "TestData/In";

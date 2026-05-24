@@ -25,6 +25,9 @@ public class ExamplePostCellCharacters {
         }
     }
 
+    @Test
+
+
     public void Run(){
         try{
             String remoteFolder = "TestData/In";

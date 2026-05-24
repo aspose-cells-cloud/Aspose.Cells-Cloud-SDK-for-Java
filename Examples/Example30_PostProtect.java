@@ -25,6 +25,9 @@ public class ExamplePostProtect {
         }
     }
 
+    @Test
+
+
     public void Run(){
         try{
             String assemblyTestXlsx = "assemblytest.xlsx";

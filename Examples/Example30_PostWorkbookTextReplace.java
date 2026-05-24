@@ -25,6 +25,9 @@ public class ExamplePostWorkbookTextReplace {
         }
     }
 
+    @Test
+
+
     public void Run(){
         try{
             String remoteFolder = "TestData/In";

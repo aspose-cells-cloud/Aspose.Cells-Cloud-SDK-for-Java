@@ -25,6 +25,9 @@ public class ExampleGetDocumentProperties {
         }
     }
 
+    @Test
+
+
     public void Run(){
         try{
             String remoteFolder = "TestData/In";

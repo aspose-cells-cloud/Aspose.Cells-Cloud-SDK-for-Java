@@ -25,6 +25,9 @@ public class ExamplePostMerge {
         }
     }
 
+    @Test
+
+
     public void Run(){
         try{
             String assemblyTestXlsx = "assemblytest.xlsx";

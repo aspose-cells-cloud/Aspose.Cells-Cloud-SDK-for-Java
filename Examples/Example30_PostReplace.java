@@ -25,6 +25,9 @@ public class ExamplePostReplace {
         }
     }
 
+    @Test
+
+
     public void Run(){
         try{
             String dataSourceXlsx = "datasource.xlsx";

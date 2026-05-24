@@ -25,6 +25,9 @@ public class ExamplePostLock {
         }
     }
 
+    @Test
+
+
     public void Run(){
         try{
             String needlockXlsx = "needlock.xlsx";

@@ -25,6 +25,9 @@ public class ExamplePostProtectWorkbook {
         }
     }
 
+    @Test
+
+
     public void Run(){
         try{
             String remoteFolder = "TestData/In";

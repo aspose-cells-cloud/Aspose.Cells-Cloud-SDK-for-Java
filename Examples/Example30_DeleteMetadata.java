@@ -25,6 +25,9 @@ public class ExampleDeleteMetadata {
         }
     }
 
+    @Test
+
+
     public void Run(){
         try{
             String book1Xlsx = "Book1.xlsx";

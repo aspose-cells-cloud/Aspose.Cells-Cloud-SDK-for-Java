@@ -25,6 +25,9 @@ public class ExamplePostAssemble {
         }
     }
 
+    @Test
+
+
     public void Run(){
         try{
             String assemblyTestXlsx = "assemblytest.xlsx";

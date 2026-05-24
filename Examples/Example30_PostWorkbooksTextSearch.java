@@ -25,6 +25,9 @@ public class ExamplePostWorkbooksTextSearch {
         }
     }
 
+    @Test
+
+
     public void Run(){
         try{
             String remoteFolder = "TestData/In";

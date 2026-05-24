@@ -25,6 +25,9 @@ public class ExamplePostWorkbookImportXML {
         }
     }
 
+    @Test
+
+
     public void Run(){
         try{
             String remoteFolder = "TestData/In";

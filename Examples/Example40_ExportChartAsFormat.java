@@ -25,6 +25,9 @@ public class ExampleExportChartAsFormat {
         }
     }
 
+    @Test
+
+
     public void Run(){
         try{
             String localName = "EmployeeSalesSummary.xlsx";

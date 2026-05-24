@@ -25,6 +25,9 @@ public class ExamplePostWorksheetMerge {
         }
     }
 
+    @Test
+
+
     public void Run(){
         try{
             String remoteFolder = "TestData/In";

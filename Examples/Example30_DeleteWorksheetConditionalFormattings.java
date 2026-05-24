@@ -25,6 +25,9 @@ public class ExampleDeleteWorksheetConditionalFormattings {
         }
     }
 
+    @Test
+
+
     public void Run(){
         try{
             String remoteFolder = "TestData/In";

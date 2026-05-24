@@ -25,6 +25,9 @@ public class ExampleConvertChartToImage {
         }
     }
 
+    @Test
+
+
     public void Run(){
         try{
             String localName = "EmployeeSalesSummary.xlsx";

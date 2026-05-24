@@ -25,6 +25,9 @@ public class ExampleGetChartArea {
         }
     }
 
+    @Test
+
+
     public void Run(){
         try{
             String remoteFolder = "TestData/In";

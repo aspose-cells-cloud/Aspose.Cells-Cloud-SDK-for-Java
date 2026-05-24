@@ -25,6 +25,9 @@ public class ExampleDeleteDocumentProperties {
         }
     }
 
+    @Test
+
+
     public void Run(){
         try{
             String remoteFolder = "TestData/In";

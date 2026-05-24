@@ -25,6 +25,9 @@ public class ExamplePutWorksheetChartTitle {
         }
     }
 
+    @Test
+
+
     public void Run(){
         try{
             String remoteFolder = "TestData/In";

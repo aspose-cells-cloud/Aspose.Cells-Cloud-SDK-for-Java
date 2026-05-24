@@ -25,6 +25,9 @@ public class ExamplePostWatermark {
         }
     }
 
+    @Test
+
+
     public void Run(){
         try{
             String dataSourceXlsx = "datasource.xlsx";
