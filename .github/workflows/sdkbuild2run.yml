@@ -31,12 +31,27 @@ jobs:
         $env:CellsCloudClientSecret = "${{ secrets.PRODUCTCLIENTSECRET }}"
         $env:CellsCloudApiBaseUrl = "https://api.aspose.cloud"
         
-        Get-ChildItem -Path "Example" -Filter "*.java" -Recurse | ForEach-Object {
-          $className = $_.BaseName
-          Write-Host "Running: $className"
-          mvn exec:java -Dexec.mainClass="com.aspose.cloud.cells.api.$className"
+        Write-Host "=== Current directory ==="
+        Get-Location
+        Write-Host "=== Example folder exists? ==="
+        Test-Path "Example"
+        Write-Host "=== Files found in Example ==="
+        Get-ChildItem -Path "Example" -Filter "*.java" -Recurse | Select-Object FullName
+        
+        $files = Get-ChildItem -Path "Example" -Filter "*.java" -Recurse
+        Write-Host "=== Found $($files.Count) Java files ==="
+        
+        foreach ($file in $files) {
+          $className = $file.BaseName
+          Write-Host ">>> Running: $className"
+          try {
+            mvn exec:java -Dexec.mainClass="com.aspose.cloud.cells.api.$className" -Dexec.classpathScope=test
+          } catch {
+            Write-Host "ERROR running $className : $_"
+          }
+          Write-Host ">>> Finished: $className"
         }
-      continue-on-error: true  
+      continue-on-error: true
 
     - name: Update dependency graph
       uses: advanced-security/maven-dependency-submission-action@571e99aab1055c2e71a1e2309b9691de18d6b7d6
