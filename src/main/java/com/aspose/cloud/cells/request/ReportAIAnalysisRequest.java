@@ -1,6 +1,6 @@
 /*
  * --------------------------------------------------------------------------------
- * <copyright company="Aspose" file="ConvertRangeToJsonRequest.java">
+ * <copyright company="Aspose" file="ReportAIAnalysisRequest.java">
  *   Copyright (c) 2026 Aspose.Cells Cloud
  * </copyright>
  * <summary>
@@ -32,7 +32,7 @@ import java.io.*;
 import java.lang.reflect.Type;
 import java.util.*;
 
-public class ConvertRangeToJsonRequest  implements IRequestModel {
+public class ReportAIAnalysisRequest  implements IRequestModel {
     private HashMap<String,String> extendQueryParameterMap;
     public HashMap<String,String> getExtendQueryParameterMap() {
         return this.extendQueryParameterMap;
@@ -41,97 +41,20 @@ public class ConvertRangeToJsonRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-    private String worksheet;
-    private String range;
-    private String outPath;
-    private String outStorageName;
-    private String fontsLocation;
-    private String autoRowsFit;
-    private String autoColumnsFit;
     private String region;
     private String password;
     
      
      
      private String spreadsheet;            
-        public ConvertRangeToJsonRequest()
+        public ReportAIAnalysisRequest()
         {        
         }
-        public ConvertRangeToJsonRequest( String  spreadsheet    ,  String worksheet ,  String range ,  String outPath ,  String outStorageName ,  String fontsLocation ,  String autoRowsFit ,  String autoColumnsFit ,  String region ,  String password ) {
+        public ReportAIAnalysisRequest( String  spreadsheet    ,  String region ,  String password ) {
               this.spreadsheet  = spreadsheet;  
-            this.worksheet = worksheet; 
-            this.range = range; 
-            this.outPath = outPath; 
-            this.outStorageName = outStorageName; 
-            this.fontsLocation = fontsLocation; 
-            this.autoRowsFit = autoRowsFit; 
-            this.autoColumnsFit = autoColumnsFit; 
             this.region = region; 
             this.password = password; 
         }   
-
-        public String getWorksheet() {
-            return this.worksheet;
-        }
-
-        public void setWorksheet(String worksheet) {
-            this.worksheet = worksheet;
-        }
-
-
-        public String getRange() {
-            return this.range;
-        }
-
-        public void setRange(String range) {
-            this.range = range;
-        }
-
-
-        public String getOutPath() {
-            return this.outPath;
-        }
-
-        public void setOutPath(String outPath) {
-            this.outPath = outPath;
-        }
-
-
-        public String getOutStorageName() {
-            return this.outStorageName;
-        }
-
-        public void setOutStorageName(String outStorageName) {
-            this.outStorageName = outStorageName;
-        }
-
-
-        public String getFontsLocation() {
-            return this.fontsLocation;
-        }
-
-        public void setFontsLocation(String fontsLocation) {
-            this.fontsLocation = fontsLocation;
-        }
-
-
-        public String getAutoRowsFit() {
-            return this.autoRowsFit;
-        }
-
-        public void setAutoRowsFit(String autoRowsFit) {
-            this.autoRowsFit = autoRowsFit;
-        }
-
-
-        public String getAutoColumnsFit() {
-            return this.autoColumnsFit;
-        }
-
-        public void setAutoColumnsFit(String autoColumnsFit) {
-            this.autoColumnsFit = autoColumnsFit;
-        }
-
 
         public String getRegion() {
             return this.region;
@@ -165,41 +88,12 @@ public class ConvertRangeToJsonRequest  implements IRequestModel {
           
          
                 if ( getSpreadsheet() == null ) {
-                    throw new ApiException("Missing the required parameter 'Spreadsheet' when calling ConvertRangeToJson");
-                } 
-
-                if (getWorksheet() == null) {
-                    throw new ApiException("Missing the required parameter 'Worksheet' when calling ConvertRangeToJson");
-                } 
-
-                if (getRange() == null) {
-                    throw new ApiException("Missing the required parameter 'Range' when calling ConvertRangeToJson");
+                    throw new ApiException("Missing the required parameter 'Spreadsheet' when calling ReportAIAnalysis");
                 }       
-        String localVarPath = "v4.0/cells/convert/range/json";
+        String localVarPath = "v4.0/cells/ai/report/analysis";
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
-            if (getWorksheet() != null){
-                localVarQueryParams.addAll(apiClient.parameterToPairs("", "worksheet", getWorksheet()));
-            } 
-            if (getRange() != null){
-                localVarQueryParams.addAll(apiClient.parameterToPairs("", "range", getRange()));
-            } 
-            if (getOutPath() != null){
-                localVarQueryParams.addAll(apiClient.parameterToPairs("", "outPath", getOutPath()));
-            } 
-            if (getOutStorageName() != null){
-                localVarQueryParams.addAll(apiClient.parameterToPairs("", "outStorageName", getOutStorageName()));
-            } 
-            if (getFontsLocation() != null){
-                localVarQueryParams.addAll(apiClient.parameterToPairs("", "fontsLocation", getFontsLocation()));
-            } 
-            if (getAutoRowsFit() != null){
-                localVarQueryParams.addAll(apiClient.parameterToPairs("", "AutoRowsFit", getAutoRowsFit()));
-            } 
-            if (getAutoColumnsFit() != null){
-                localVarQueryParams.addAll(apiClient.parameterToPairs("", "AutoColumnsFit", getAutoColumnsFit()));
-            } 
             if (getRegion() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "region", getRegion()));
             } 

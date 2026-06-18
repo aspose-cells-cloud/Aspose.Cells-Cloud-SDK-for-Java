@@ -27,7 +27,7 @@
 
 package com.aspose.cloud.cells.api;
 
-import com.aspose.cloud.cells.api.*;
+import com.aspose.cloud.cells.*;
 import com.aspose.cloud.cells.model.*;
 import com.aspose.cloud.cells.request.*;
 import com.aspose.cloud.cells.client.*;
@@ -54,7 +54,7 @@ public class CellsApi {
         String accesstoken = apiClient.getAccessToken("client_credentials", clientId, clientSecret, "v3.0");
         apiClient.addDefaultHeader("Authorization", "Bearer " + accesstoken);
         apiClient.addDefaultHeader("x-aspose-client", "java sdk");
-        apiClient.addDefaultHeader("x-aspose-client-version", "26.5");
+        apiClient.addDefaultHeader("x-aspose-client-version", "26.6.4");
         this.apiClient = apiClient;
     }
 
@@ -70,7 +70,7 @@ public class CellsApi {
             apiClient.addDefaultHeader("Authorization", "Bearer " + accesstoken);
         }
         apiClient.addDefaultHeader("x-aspose-client", "java sdk");
-        apiClient.addDefaultHeader("x-aspose-client-version", "26.5");
+        apiClient.addDefaultHeader("x-aspose-client-version", "26.6.4");
         this.apiClient = apiClient;
     }
 
@@ -233,6 +233,114 @@ public class CellsApi {
 
              com.squareup.okhttp.Call call =  translateTextFileValidateBeforeCall(request, progressListener, progressRequestListener);
              Type localVarReturnType = new TypeToken< Void >(){}.getType();
+             apiClient.executeAsync(call, localVarReturnType, callback);
+             return call;
+         }
+
+
+         @SuppressWarnings("rawtypes")
+         private com.squareup.okhttp.Call reportAIAnalysisValidateBeforeCall(ReportAIAnalysisRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
+             return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
+         }
+         public  void  reportAIAnalysis(ReportAIAnalysisRequest request) throws ApiException,  IOException {
+             try {
+                 ApiResponse< Void > resp = reportAIAnalysisWithHttpInfo(request);
+                  return ;  
+             }
+             catch (ApiException ex) {
+                 if (ex.getCode() == apiClient.getNotAuthCode()) {
+                     apiClient.requestToken();
+                     ApiResponse< Void > resp = reportAIAnalysisWithHttpInfo(request);
+                      return ;        
+                 }
+                 throw ex;
+             }
+         }
+
+         private ApiResponse< Void > reportAIAnalysisWithHttpInfo(ReportAIAnalysisRequest request) throws ApiException,  IOException {
+             com.squareup.okhttp.Call call =  reportAIAnalysisValidateBeforeCall(request, null, null);
+             return apiClient.execute(call);
+         }
+
+         public com.squareup.okhttp.Call  reportAIAnalysisAsync( ReportAIAnalysisRequest request, final ApiCallback< Void > callback) throws ApiException,  IOException {
+
+             ProgressResponseBody.ProgressListener progressListener = null;
+             ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+             if (callback != null) {
+                 progressListener = new ProgressResponseBody.ProgressListener() {
+                     @Override
+                     public void update(long bytesRead, long contentLength, boolean done) {
+                         callback.onDownloadProgress(bytesRead, contentLength, done);
+                     }
+                 };
+
+                 progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                     @Override
+                     public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                         callback.onUploadProgress(bytesWritten, contentLength, done);
+                     }
+                 };
+             }
+
+             com.squareup.okhttp.Call call =  reportAIAnalysisValidateBeforeCall(request, progressListener, progressRequestListener);
+             Type localVarReturnType = new TypeToken< Void >(){}.getType();
+             apiClient.executeAsync(call, localVarReturnType, callback);
+             return call;
+         }
+
+
+         @SuppressWarnings("rawtypes")
+         private com.squareup.okhttp.Call summarizeSpreadsheetValidateBeforeCall(SummarizeSpreadsheetRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
+             return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
+         }
+             public void summarizeSpreadsheet(SummarizeSpreadsheetRequest request, String LocalOutPath) throws ApiException ,  IOException {
+                 FileUtil.copyFile(summarizeSpreadsheet(request), new File(LocalOutPath));
+             }
+         public  File  summarizeSpreadsheet(SummarizeSpreadsheetRequest request) throws ApiException,  IOException {
+             try {
+                 ApiResponse< File > resp = summarizeSpreadsheetWithHttpInfo(request);
+                  return resp.getData(); 
+             }
+             catch (ApiException ex) {
+                 if (ex.getCode() == apiClient.getNotAuthCode()) {
+                     apiClient.requestToken();
+                     ApiResponse< File > resp = summarizeSpreadsheetWithHttpInfo(request);
+                      return resp.getData();       
+                 }
+                 throw ex;
+             }
+         }
+
+         private ApiResponse< File > summarizeSpreadsheetWithHttpInfo(SummarizeSpreadsheetRequest request) throws ApiException,  IOException {
+             com.squareup.okhttp.Call call =  summarizeSpreadsheetValidateBeforeCall(request, null, null);
+             Type localVarReturnType = new TypeToken< File >(){}.getType();
+             return apiClient.execute(call, localVarReturnType);
+         }
+
+         public com.squareup.okhttp.Call  summarizeSpreadsheetAsync( SummarizeSpreadsheetRequest request, final ApiCallback< HashMap<String,File> > callback) throws ApiException,  IOException {
+
+             ProgressResponseBody.ProgressListener progressListener = null;
+             ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+             if (callback != null) {
+                 progressListener = new ProgressResponseBody.ProgressListener() {
+                     @Override
+                     public void update(long bytesRead, long contentLength, boolean done) {
+                         callback.onDownloadProgress(bytesRead, contentLength, done);
+                     }
+                 };
+
+                 progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                     @Override
+                     public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                         callback.onUploadProgress(bytesWritten, contentLength, done);
+                     }
+                 };
+             }
+
+             com.squareup.okhttp.Call call =  summarizeSpreadsheetValidateBeforeCall(request, progressListener, progressRequestListener);
+             Type localVarReturnType = new TypeToken< HashMap<String,File> >(){}.getType();
              apiClient.executeAsync(call, localVarReturnType, callback);
              return call;
          }

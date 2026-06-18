@@ -48,6 +48,8 @@ public class ConvertRangeToImageRequest  implements IRequestModel {
     private String outPath;
     private String outStorageName;
     private String fontsLocation;
+    private String autoRowsFit;
+    private String autoColumnsFit;
     private String region;
     private String password;
     
@@ -57,7 +59,7 @@ public class ConvertRangeToImageRequest  implements IRequestModel {
         public ConvertRangeToImageRequest()
         {        
         }
-        public ConvertRangeToImageRequest( String  spreadsheet    ,  String worksheet ,  String range ,  String format ,  Boolean printHeadings ,  String outPath ,  String outStorageName ,  String fontsLocation ,  String region ,  String password ) {
+        public ConvertRangeToImageRequest( String  spreadsheet    ,  String worksheet ,  String range ,  String format ,  Boolean printHeadings ,  String outPath ,  String outStorageName ,  String fontsLocation ,  String autoRowsFit ,  String autoColumnsFit ,  String region ,  String password ) {
               this.spreadsheet  = spreadsheet;  
             this.worksheet = worksheet; 
             this.range = range; 
@@ -66,6 +68,8 @@ public class ConvertRangeToImageRequest  implements IRequestModel {
             this.outPath = outPath; 
             this.outStorageName = outStorageName; 
             this.fontsLocation = fontsLocation; 
+            this.autoRowsFit = autoRowsFit; 
+            this.autoColumnsFit = autoColumnsFit; 
             this.region = region; 
             this.password = password; 
         }   
@@ -130,6 +134,24 @@ public class ConvertRangeToImageRequest  implements IRequestModel {
 
         public void setFontsLocation(String fontsLocation) {
             this.fontsLocation = fontsLocation;
+        }
+
+
+        public String getAutoRowsFit() {
+            return this.autoRowsFit;
+        }
+
+        public void setAutoRowsFit(String autoRowsFit) {
+            this.autoRowsFit = autoRowsFit;
+        }
+
+
+        public String getAutoColumnsFit() {
+            return this.autoColumnsFit;
+        }
+
+        public void setAutoColumnsFit(String autoColumnsFit) {
+            this.autoColumnsFit = autoColumnsFit;
         }
 
 
@@ -203,6 +225,12 @@ public class ConvertRangeToImageRequest  implements IRequestModel {
             } 
             if (getFontsLocation() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "fontsLocation", getFontsLocation()));
+            } 
+            if (getAutoRowsFit() != null){
+                localVarQueryParams.addAll(apiClient.parameterToPairs("", "AutoRowsFit", getAutoRowsFit()));
+            } 
+            if (getAutoColumnsFit() != null){
+                localVarQueryParams.addAll(apiClient.parameterToPairs("", "AutoColumnsFit", getAutoColumnsFit()));
             } 
             if (getRegion() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "region", getRegion()));

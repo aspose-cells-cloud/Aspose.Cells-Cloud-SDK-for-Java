@@ -48,13 +48,15 @@ public class SaveSpreadsheetAsRequest  implements IRequestModel {
     private String outPath;
     private String outStorageName;
     private String fontsLocation;
+    private String autoRowsFit;
+    private String autoColumnsFit;
     private String region;
     private String password;
     private SaveOptionsData saveOptionsData;    
         public SaveSpreadsheetAsRequest()
         {        
         }
-        public SaveSpreadsheetAsRequest( String name ,  String format ,  SaveOptionsData saveOptionsData ,  String folder ,  String storageName ,  String outPath ,  String outStorageName ,  String fontsLocation ,  String region ,  String password ) {
+        public SaveSpreadsheetAsRequest( String name ,  String format ,  SaveOptionsData saveOptionsData ,  String folder ,  String storageName ,  String outPath ,  String outStorageName ,  String fontsLocation ,  String autoRowsFit ,  String autoColumnsFit ,  String region ,  String password ) {
             this.name = name; 
             this.format = format; 
             this.saveOptionsData = saveOptionsData; 
@@ -63,6 +65,8 @@ public class SaveSpreadsheetAsRequest  implements IRequestModel {
             this.outPath = outPath; 
             this.outStorageName = outStorageName; 
             this.fontsLocation = fontsLocation; 
+            this.autoRowsFit = autoRowsFit; 
+            this.autoColumnsFit = autoColumnsFit; 
             this.region = region; 
             this.password = password; 
         }   
@@ -129,6 +133,24 @@ public class SaveSpreadsheetAsRequest  implements IRequestModel {
         }
 
 
+        public String getAutoRowsFit() {
+            return this.autoRowsFit;
+        }
+
+        public void setAutoRowsFit(String autoRowsFit) {
+            this.autoRowsFit = autoRowsFit;
+        }
+
+
+        public String getAutoColumnsFit() {
+            return this.autoColumnsFit;
+        }
+
+        public void setAutoColumnsFit(String autoColumnsFit) {
+            this.autoColumnsFit = autoColumnsFit;
+        }
+
+
         public String getRegion() {
             return this.region;
         }
@@ -185,6 +207,12 @@ public class SaveSpreadsheetAsRequest  implements IRequestModel {
             } 
             if (getFontsLocation() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "fontsLocation", getFontsLocation()));
+            } 
+            if (getAutoRowsFit() != null){
+                localVarQueryParams.addAll(apiClient.parameterToPairs("", "AutoRowsFit", getAutoRowsFit()));
+            } 
+            if (getAutoColumnsFit() != null){
+                localVarQueryParams.addAll(apiClient.parameterToPairs("", "AutoColumnsFit", getAutoColumnsFit()));
             } 
             if (getRegion() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "region", getRegion()));
