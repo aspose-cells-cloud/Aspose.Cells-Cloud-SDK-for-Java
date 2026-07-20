@@ -48,15 +48,15 @@ public class SaveSpreadsheetAsRequest  implements IRequestModel {
     private String outPath;
     private String outStorageName;
     private String fontsLocation;
-    private String autoRowsFit;
-    private String autoColumnsFit;
+    private Boolean autoRowsFit;
+    private Boolean autoColumnsFit;
     private String region;
     private String password;
     private SaveOptionsData saveOptionsData;    
         public SaveSpreadsheetAsRequest()
         {        
         }
-        public SaveSpreadsheetAsRequest( String name ,  String format ,  SaveOptionsData saveOptionsData ,  String folder ,  String storageName ,  String outPath ,  String outStorageName ,  String fontsLocation ,  String autoRowsFit ,  String autoColumnsFit ,  String region ,  String password ) {
+        public SaveSpreadsheetAsRequest( String name ,  String format ,  SaveOptionsData saveOptionsData ,  String folder ,  String storageName ,  String outPath ,  String outStorageName ,  String fontsLocation ,  Boolean autoRowsFit ,  Boolean autoColumnsFit ,  String region ,  String password ) {
             this.name = name; 
             this.format = format; 
             this.saveOptionsData = saveOptionsData; 
@@ -133,20 +133,20 @@ public class SaveSpreadsheetAsRequest  implements IRequestModel {
         }
 
 
-        public String getAutoRowsFit() {
+        public Boolean getAutoRowsFit() {
             return this.autoRowsFit;
         }
 
-        public void setAutoRowsFit(String autoRowsFit) {
+        public void setAutoRowsFit(Boolean autoRowsFit) {
             this.autoRowsFit = autoRowsFit;
         }
 
 
-        public String getAutoColumnsFit() {
+        public Boolean getAutoColumnsFit() {
             return this.autoColumnsFit;
         }
 
-        public void setAutoColumnsFit(String autoColumnsFit) {
+        public void setAutoColumnsFit(Boolean autoColumnsFit) {
             this.autoColumnsFit = autoColumnsFit;
         }
 

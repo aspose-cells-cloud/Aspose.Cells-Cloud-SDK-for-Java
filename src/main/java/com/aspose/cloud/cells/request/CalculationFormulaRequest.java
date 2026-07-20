@@ -1,6 +1,6 @@
 /*
  * --------------------------------------------------------------------------------
- * <copyright company="Aspose" file="ConvertTableToCsvRequest.java">
+ * <copyright company="Aspose" file="CalculationFormulaRequest.java">
  *   Copyright (c) 2026 Aspose.Cells Cloud
  * </copyright>
  * <summary>
@@ -32,7 +32,7 @@ import java.io.*;
 import java.lang.reflect.Type;
 import java.util.*;
 
-public class ConvertTableToCsvRequest  implements IRequestModel {
+public class CalculationFormulaRequest  implements IRequestModel {
     private HashMap<String,String> extendQueryParameterMap;
     public HashMap<String,String> getExtendQueryParameterMap() {
         return this.extendQueryParameterMap;
@@ -42,30 +42,20 @@ public class ConvertTableToCsvRequest  implements IRequestModel {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
     private String worksheet;
-    private String tableName;
-    private String outPath;
-    private String outStorageName;
-    private String fontsLocation;
-    private Boolean autoRowsFit;
-    private Boolean autoColumnsFit;
+    private String formula;
     private String region;
     private String password;
     
      
      
      private String spreadsheet;            
-        public ConvertTableToCsvRequest()
+        public CalculationFormulaRequest()
         {        
         }
-        public ConvertTableToCsvRequest( String  spreadsheet    ,  String worksheet ,  String tableName ,  String outPath ,  String outStorageName ,  String fontsLocation ,  Boolean autoRowsFit ,  Boolean autoColumnsFit ,  String region ,  String password ) {
+        public CalculationFormulaRequest( String  spreadsheet    ,  String worksheet ,  String formula ,  String region ,  String password ) {
               this.spreadsheet  = spreadsheet;  
             this.worksheet = worksheet; 
-            this.tableName = tableName; 
-            this.outPath = outPath; 
-            this.outStorageName = outStorageName; 
-            this.fontsLocation = fontsLocation; 
-            this.autoRowsFit = autoRowsFit; 
-            this.autoColumnsFit = autoColumnsFit; 
+            this.formula = formula; 
             this.region = region; 
             this.password = password; 
         }   
@@ -79,57 +69,12 @@ public class ConvertTableToCsvRequest  implements IRequestModel {
         }
 
 
-        public String getTableName() {
-            return this.tableName;
+        public String getFormula() {
+            return this.formula;
         }
 
-        public void setTableName(String tableName) {
-            this.tableName = tableName;
-        }
-
-
-        public String getOutPath() {
-            return this.outPath;
-        }
-
-        public void setOutPath(String outPath) {
-            this.outPath = outPath;
-        }
-
-
-        public String getOutStorageName() {
-            return this.outStorageName;
-        }
-
-        public void setOutStorageName(String outStorageName) {
-            this.outStorageName = outStorageName;
-        }
-
-
-        public String getFontsLocation() {
-            return this.fontsLocation;
-        }
-
-        public void setFontsLocation(String fontsLocation) {
-            this.fontsLocation = fontsLocation;
-        }
-
-
-        public Boolean getAutoRowsFit() {
-            return this.autoRowsFit;
-        }
-
-        public void setAutoRowsFit(Boolean autoRowsFit) {
-            this.autoRowsFit = autoRowsFit;
-        }
-
-
-        public Boolean getAutoColumnsFit() {
-            return this.autoColumnsFit;
-        }
-
-        public void setAutoColumnsFit(Boolean autoColumnsFit) {
-            this.autoColumnsFit = autoColumnsFit;
+        public void setFormula(String formula) {
+            this.formula = formula;
         }
 
 
@@ -165,40 +110,25 @@ public class ConvertTableToCsvRequest  implements IRequestModel {
           
          
                 if ( getSpreadsheet() == null ) {
-                    throw new ApiException("Missing the required parameter 'Spreadsheet' when calling ConvertTableToCsv");
+                    throw new ApiException("Missing the required parameter 'Spreadsheet' when calling CalculationFormula");
                 } 
 
                 if (getWorksheet() == null) {
-                    throw new ApiException("Missing the required parameter 'Worksheet' when calling ConvertTableToCsv");
+                    throw new ApiException("Missing the required parameter 'Worksheet' when calling CalculationFormula");
                 } 
 
-                if (getTableName() == null) {
-                    throw new ApiException("Missing the required parameter 'TableName' when calling ConvertTableToCsv");
+                if (getFormula() == null) {
+                    throw new ApiException("Missing the required parameter 'Formula' when calling CalculationFormula");
                 }       
-        String localVarPath = "v4.0/cells/convert/table/csv";
+        String localVarPath = "v4.0/cells/calculate/formula";
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
             if (getWorksheet() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "worksheet", getWorksheet()));
             } 
-            if (getTableName() != null){
-                localVarQueryParams.addAll(apiClient.parameterToPairs("", "tableName", getTableName()));
-            } 
-            if (getOutPath() != null){
-                localVarQueryParams.addAll(apiClient.parameterToPairs("", "outPath", getOutPath()));
-            } 
-            if (getOutStorageName() != null){
-                localVarQueryParams.addAll(apiClient.parameterToPairs("", "outStorageName", getOutStorageName()));
-            } 
-            if (getFontsLocation() != null){
-                localVarQueryParams.addAll(apiClient.parameterToPairs("", "fontsLocation", getFontsLocation()));
-            } 
-            if (getAutoRowsFit() != null){
-                localVarQueryParams.addAll(apiClient.parameterToPairs("", "AutoRowsFit", getAutoRowsFit()));
-            } 
-            if (getAutoColumnsFit() != null){
-                localVarQueryParams.addAll(apiClient.parameterToPairs("", "AutoColumnsFit", getAutoColumnsFit()));
+            if (getFormula() != null){
+                localVarQueryParams.addAll(apiClient.parameterToPairs("", "formula", getFormula()));
             } 
             if (getRegion() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "region", getRegion()));

@@ -46,8 +46,8 @@ public class ConvertRangeToHtmlRequest  implements IRequestModel {
     private String outPath;
     private String outStorageName;
     private String fontsLocation;
-    private String autoRowsFit;
-    private String autoColumnsFit;
+    private Boolean autoRowsFit;
+    private Boolean autoColumnsFit;
     private String region;
     private String password;
     
@@ -57,7 +57,7 @@ public class ConvertRangeToHtmlRequest  implements IRequestModel {
         public ConvertRangeToHtmlRequest()
         {        
         }
-        public ConvertRangeToHtmlRequest( String  spreadsheet    ,  String worksheet ,  String range ,  String outPath ,  String outStorageName ,  String fontsLocation ,  String autoRowsFit ,  String autoColumnsFit ,  String region ,  String password ) {
+        public ConvertRangeToHtmlRequest( String  spreadsheet    ,  String worksheet ,  String range ,  String outPath ,  String outStorageName ,  String fontsLocation ,  Boolean autoRowsFit ,  Boolean autoColumnsFit ,  String region ,  String password ) {
               this.spreadsheet  = spreadsheet;  
             this.worksheet = worksheet; 
             this.range = range; 
@@ -115,20 +115,20 @@ public class ConvertRangeToHtmlRequest  implements IRequestModel {
         }
 
 
-        public String getAutoRowsFit() {
+        public Boolean getAutoRowsFit() {
             return this.autoRowsFit;
         }
 
-        public void setAutoRowsFit(String autoRowsFit) {
+        public void setAutoRowsFit(Boolean autoRowsFit) {
             this.autoRowsFit = autoRowsFit;
         }
 
 
-        public String getAutoColumnsFit() {
+        public Boolean getAutoColumnsFit() {
             return this.autoColumnsFit;
         }
 
-        public void setAutoColumnsFit(String autoColumnsFit) {
+        public void setAutoColumnsFit(Boolean autoColumnsFit) {
             this.autoColumnsFit = autoColumnsFit;
         }
 

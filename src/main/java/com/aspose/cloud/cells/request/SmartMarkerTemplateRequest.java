@@ -1,6 +1,6 @@
 /*
  * --------------------------------------------------------------------------------
- * <copyright company="Aspose" file="ConvertTableToCsvRequest.java">
+ * <copyright company="Aspose" file="SmartMarkerTemplateRequest.java">
  *   Copyright (c) 2026 Aspose.Cells Cloud
  * </copyright>
  * <summary>
@@ -32,7 +32,7 @@ import java.io.*;
 import java.lang.reflect.Type;
 import java.util.*;
 
-public class ConvertTableToCsvRequest  implements IRequestModel {
+public class SmartMarkerTemplateRequest  implements IRequestModel {
     private HashMap<String,String> extendQueryParameterMap;
     public HashMap<String,String> getExtendQueryParameterMap() {
         return this.extendQueryParameterMap;
@@ -41,97 +41,16 @@ public class ConvertTableToCsvRequest  implements IRequestModel {
     public void setExtendQueryParameterMap( HashMap<String,String>  extendQueryParameterMap) {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
-    private String worksheet;
-    private String tableName;
-    private String outPath;
-    private String outStorageName;
-    private String fontsLocation;
-    private Boolean autoRowsFit;
-    private Boolean autoColumnsFit;
     private String region;
     private String password;
     
-     
-     
-     private String spreadsheet;            
-        public ConvertTableToCsvRequest()
+        public SmartMarkerTemplateRequest()
         {        
         }
-        public ConvertTableToCsvRequest( String  spreadsheet    ,  String worksheet ,  String tableName ,  String outPath ,  String outStorageName ,  String fontsLocation ,  Boolean autoRowsFit ,  Boolean autoColumnsFit ,  String region ,  String password ) {
-              this.spreadsheet  = spreadsheet;  
-            this.worksheet = worksheet; 
-            this.tableName = tableName; 
-            this.outPath = outPath; 
-            this.outStorageName = outStorageName; 
-            this.fontsLocation = fontsLocation; 
-            this.autoRowsFit = autoRowsFit; 
-            this.autoColumnsFit = autoColumnsFit; 
+        public SmartMarkerTemplateRequest( String region ,  String password ) {
             this.region = region; 
             this.password = password; 
         }   
-
-        public String getWorksheet() {
-            return this.worksheet;
-        }
-
-        public void setWorksheet(String worksheet) {
-            this.worksheet = worksheet;
-        }
-
-
-        public String getTableName() {
-            return this.tableName;
-        }
-
-        public void setTableName(String tableName) {
-            this.tableName = tableName;
-        }
-
-
-        public String getOutPath() {
-            return this.outPath;
-        }
-
-        public void setOutPath(String outPath) {
-            this.outPath = outPath;
-        }
-
-
-        public String getOutStorageName() {
-            return this.outStorageName;
-        }
-
-        public void setOutStorageName(String outStorageName) {
-            this.outStorageName = outStorageName;
-        }
-
-
-        public String getFontsLocation() {
-            return this.fontsLocation;
-        }
-
-        public void setFontsLocation(String fontsLocation) {
-            this.fontsLocation = fontsLocation;
-        }
-
-
-        public Boolean getAutoRowsFit() {
-            return this.autoRowsFit;
-        }
-
-        public void setAutoRowsFit(Boolean autoRowsFit) {
-            this.autoRowsFit = autoRowsFit;
-        }
-
-
-        public Boolean getAutoColumnsFit() {
-            return this.autoColumnsFit;
-        }
-
-        public void setAutoColumnsFit(Boolean autoColumnsFit) {
-            this.autoColumnsFit = autoColumnsFit;
-        }
-
 
         public String getRegion() {
             return this.region;
@@ -151,55 +70,13 @@ public class ConvertTableToCsvRequest  implements IRequestModel {
         }
 
     
-     
-            public String getSpreadsheet() {
-                    return this.spreadsheet;
-            }
-            public void setSpreadsheet(String spreadsheet) {
-                this.spreadsheet = spreadsheet;
-            }
-         
-        
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
-          
          
-                if ( getSpreadsheet() == null ) {
-                    throw new ApiException("Missing the required parameter 'Spreadsheet' when calling ConvertTableToCsv");
-                } 
-
-                if (getWorksheet() == null) {
-                    throw new ApiException("Missing the required parameter 'Worksheet' when calling ConvertTableToCsv");
-                } 
-
-                if (getTableName() == null) {
-                    throw new ApiException("Missing the required parameter 'TableName' when calling ConvertTableToCsv");
-                }       
-        String localVarPath = "v4.0/cells/convert/table/csv";
+        String localVarPath = "v4.0/cells/report/smart/template";
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
-            if (getWorksheet() != null){
-                localVarQueryParams.addAll(apiClient.parameterToPairs("", "worksheet", getWorksheet()));
-            } 
-            if (getTableName() != null){
-                localVarQueryParams.addAll(apiClient.parameterToPairs("", "tableName", getTableName()));
-            } 
-            if (getOutPath() != null){
-                localVarQueryParams.addAll(apiClient.parameterToPairs("", "outPath", getOutPath()));
-            } 
-            if (getOutStorageName() != null){
-                localVarQueryParams.addAll(apiClient.parameterToPairs("", "outStorageName", getOutStorageName()));
-            } 
-            if (getFontsLocation() != null){
-                localVarQueryParams.addAll(apiClient.parameterToPairs("", "fontsLocation", getFontsLocation()));
-            } 
-            if (getAutoRowsFit() != null){
-                localVarQueryParams.addAll(apiClient.parameterToPairs("", "AutoRowsFit", getAutoRowsFit()));
-            } 
-            if (getAutoColumnsFit() != null){
-                localVarQueryParams.addAll(apiClient.parameterToPairs("", "AutoColumnsFit", getAutoColumnsFit()));
-            } 
             if (getRegion() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "region", getRegion()));
             } 
@@ -211,12 +88,6 @@ public class ConvertTableToCsvRequest  implements IRequestModel {
                     localVarQueryParams.addAll(apiClient.parameterToPairs("", key, this.extendQueryParameterMap.get(key)));           
             }
         }
-                   
-            File SpreadsheetToUpload = new File(getSpreadsheet());
-            if (SpreadsheetToUpload.exists()) {
-                    localVarFormParams.put(SpreadsheetToUpload.getName(), SpreadsheetToUpload);
-            }     
-                  
         Object localVarPostBody = null;
                 final String[] localVarAccepts = {
                     "application/json"
@@ -224,7 +95,7 @@ public class ConvertTableToCsvRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "multipart/form-data"  };        
+                final String[] localVarContentTypes = { "application/json" };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 
