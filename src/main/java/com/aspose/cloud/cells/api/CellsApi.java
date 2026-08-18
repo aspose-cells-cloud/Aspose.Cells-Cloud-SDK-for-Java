@@ -54,7 +54,7 @@ public class CellsApi {
         String accesstoken = apiClient.getAccessToken("client_credentials", clientId, clientSecret, "v3.0");
         apiClient.addDefaultHeader("Authorization", "Bearer " + accesstoken);
         apiClient.addDefaultHeader("x-aspose-client", "java sdk");
-        apiClient.addDefaultHeader("x-aspose-client-version", "26.7");
+        apiClient.addDefaultHeader("x-aspose-client-version", "26.8");
         this.apiClient = apiClient;
     }
 
@@ -70,7 +70,7 @@ public class CellsApi {
             apiClient.addDefaultHeader("Authorization", "Bearer " + accesstoken);
         }
         apiClient.addDefaultHeader("x-aspose-client", "java sdk");
-        apiClient.addDefaultHeader("x-aspose-client-version", "26.7");
+        apiClient.addDefaultHeader("x-aspose-client-version", "26.8");
         this.apiClient = apiClient;
     }
 
@@ -340,6 +340,62 @@ public class CellsApi {
              }
 
              com.squareup.okhttp.Call call =  summarizeSpreadsheetValidateBeforeCall(request, progressListener, progressRequestListener);
+             Type localVarReturnType = new TypeToken< HashMap<String,File> >(){}.getType();
+             apiClient.executeAsync(call, localVarReturnType, callback);
+             return call;
+         }
+
+
+         @SuppressWarnings("rawtypes")
+         private com.squareup.okhttp.Call categorizeSpreadsheetValidateBeforeCall(CategorizeSpreadsheetRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
+             return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
+         }
+             public void categorizeSpreadsheet(CategorizeSpreadsheetRequest request, String LocalOutPath) throws ApiException ,  IOException {
+                 FileUtil.copyFile(categorizeSpreadsheet(request), new File(LocalOutPath));
+             }
+         public  File  categorizeSpreadsheet(CategorizeSpreadsheetRequest request) throws ApiException,  IOException {
+             try {
+                 ApiResponse< File > resp = categorizeSpreadsheetWithHttpInfo(request);
+                  return resp.getData(); 
+             }
+             catch (ApiException ex) {
+                 if (ex.getCode() == apiClient.getNotAuthCode()) {
+                     apiClient.requestToken();
+                     ApiResponse< File > resp = categorizeSpreadsheetWithHttpInfo(request);
+                      return resp.getData();       
+                 }
+                 throw ex;
+             }
+         }
+
+         private ApiResponse< File > categorizeSpreadsheetWithHttpInfo(CategorizeSpreadsheetRequest request) throws ApiException,  IOException {
+             com.squareup.okhttp.Call call =  categorizeSpreadsheetValidateBeforeCall(request, null, null);
+             Type localVarReturnType = new TypeToken< File >(){}.getType();
+             return apiClient.execute(call, localVarReturnType);
+         }
+
+         public com.squareup.okhttp.Call  categorizeSpreadsheetAsync( CategorizeSpreadsheetRequest request, final ApiCallback< HashMap<String,File> > callback) throws ApiException,  IOException {
+
+             ProgressResponseBody.ProgressListener progressListener = null;
+             ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+             if (callback != null) {
+                 progressListener = new ProgressResponseBody.ProgressListener() {
+                     @Override
+                     public void update(long bytesRead, long contentLength, boolean done) {
+                         callback.onDownloadProgress(bytesRead, contentLength, done);
+                     }
+                 };
+
+                 progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                     @Override
+                     public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                         callback.onUploadProgress(bytesWritten, contentLength, done);
+                     }
+                 };
+             }
+
+             com.squareup.okhttp.Call call =  categorizeSpreadsheetValidateBeforeCall(request, progressListener, progressRequestListener);
              Type localVarReturnType = new TypeToken< HashMap<String,File> >(){}.getType();
              apiClient.executeAsync(call, localVarReturnType, callback);
              return call;
