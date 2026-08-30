@@ -1,11 +1,9 @@
 package com.aspose.cells.cloud.model;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /** PivotTableFieldRequest — Indicates pivot table field request */
-@JsonInclude(JsonInclude.Include.NON_NULL)
 public class PivotTableFieldRequest {
     /** Intdex array. */
     @JsonProperty("Data")

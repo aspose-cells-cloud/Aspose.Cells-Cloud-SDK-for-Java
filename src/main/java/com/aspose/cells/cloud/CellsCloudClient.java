@@ -126,8 +126,13 @@ public class CellsCloudClient {
                 builder.get();
                 break;
             case "DELETE":
-                builder.delete();
-                break;
+				Object deleteJsonBody = requestOption.getJsonBody();
+				if (deleteJsonBody != null) {
+					builder.delete(RequestBody.create(toJson(deleteJsonBody), JSON));
+				} else {
+					builder.delete();
+				}
+				break;
             case "POST":
                 builder.post(buildBody(requestOption));
                 break;

@@ -247,15 +247,34 @@ class PivotTablesControllerTest {
     }
 
     @Test
-    void deletePivotTableField() {
-        upload("TestCase.xlsx", "TestData/In/TestCase.xlsx", "");
-        DeletePivotTableFieldRequest request = new DeletePivotTableFieldRequest("TestCase.xlsx", "Sheet4", 0, "Row", new PivotTableFieldRequest().setData(Arrays.asList(0)))
-                .setFolder("TestData/In");
-
-        RichResponse response = assertDoesNotThrow(() -> client.call(request));
-
-        assertEquals(200, response.getStatusCode());
+void deletePivotTableField() {
+    upload("TestCase.xlsx", "TestData/In/TestCase.xlsx", "");
+    
+    PivotTableFieldRequest fieldRequest = new PivotTableFieldRequest();
+    fieldRequest.setData(new java.util.ArrayList<Integer>());
+    
+    // 打印序列化结果
+    try {
+        com.fasterxml.jackson.databind.ObjectMapper mapper = new com.fasterxml.jackson.databind.ObjectMapper();
+        String json = mapper.writeValueAsString(fieldRequest);
+        System.out.println("Serialized JSON: " + json);
+    } catch (Exception e) {
+        e.printStackTrace();
     }
+    
+    DeletePivotTableFieldRequest request = new DeletePivotTableFieldRequest(
+        "TestCase.xlsx", 
+        "Sheet4", 
+        0, 
+        "Row", 
+        fieldRequest
+    )
+    .setFolder("TestData/In")
+    .setStorageName("densmond");
+
+    RichResponse response = assertDoesNotThrow(() -> client.call(request));
+    assertEquals(200, response.getStatusCode());
+}
 
     @Test
     void deleteWorksheetPivotTableFilters() {
