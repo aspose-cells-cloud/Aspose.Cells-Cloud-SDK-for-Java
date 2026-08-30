@@ -27,7 +27,7 @@ public class DownloadFileRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v4.0/cells/storage/file/" + urlEncode(path);
+        return "/cells/storage/file/" + urlEncode(path);
     }
 
     @Override
@@ -52,4 +52,6 @@ public class DownloadFileRequest implements RequestOption {
     public Map<String, Object> getMultipartForm() {
         return null;
     }
+
+    @Override public boolean isBinaryResponse() { return true; }
 }

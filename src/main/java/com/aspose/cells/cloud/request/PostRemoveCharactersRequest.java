@@ -5,7 +5,6 @@ import com.aspose.cells.cloud.model.RemoveCharactersOptions;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import static com.aspose.cells.cloud.UrlUtils.urlEncode;
 
 /** A comprehensive set of tools for cleaning text content within selected cells. It allows users to remove specific characters, character sets, and substrings, ensuring that the text is standardized and free from unwanted symbols or sequences. */
 public class PostRemoveCharactersRequest implements RequestOption {
@@ -22,7 +21,7 @@ public class PostRemoveCharactersRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/removecharacters";
+        return "/cells/removecharacters";
     }
 
     @Override

@@ -23,10 +23,6 @@ public class SeriesItems extends LinkElement {
     @JsonProperty("SeriesList")
     private List<Series> seriesList;
 
-    /** Gets or sets link. */
-    @JsonProperty("link")
-    private Link link;
-
     public String getCategoryData() { return categoryData; }
     public SeriesItems setCategoryData(String categoryData) { this.categoryData = categoryData; return this; }
 
@@ -39,7 +35,8 @@ public class SeriesItems extends LinkElement {
     public List<Series> getSeriesList() { return seriesList; }
     public SeriesItems setSeriesList(List<Series> seriesList) { this.seriesList = seriesList; return this; }
 
-    public Link getLink() { return link; }
-    public SeriesItems setLink(Link link) { this.link = link; return this; }
+
+    /** Covariant override: keeps fluent chains returning SeriesItems. */
+    @Override public SeriesItems setLink(Link link) { return (SeriesItems) super.setLink(link); }
 
 }

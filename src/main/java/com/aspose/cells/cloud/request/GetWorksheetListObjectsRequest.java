@@ -30,7 +30,7 @@ public class GetWorksheetListObjectsRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/" + urlEncode(name) + "/worksheets/" + urlEncode(sheetName) + "/listobjects";
+        return "/cells/" + urlEncode(name) + "/worksheets/" + urlEncode(sheetName) + "/listobjects";
     }
 
     @Override

@@ -6,7 +6,6 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import static com.aspose.cells.cloud.UrlUtils.urlEncode;
 
 /** Indicates performing text segmentation on the specified area according to the segmentation method, and outputting to the designated interval. */
 public class SplitTextRequest implements RequestOption {
@@ -60,7 +59,7 @@ public class SplitTextRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v4.0/cells/content/split/text";
+        return "/cells/content/split/text";
     }
 
     @Override
@@ -98,4 +97,6 @@ public class SplitTextRequest implements RequestOption {
         form.put("Spreadsheet", spreadsheet);
         return form;
     }
+
+    @Override public boolean isBinaryResponse() { return true; }
 }

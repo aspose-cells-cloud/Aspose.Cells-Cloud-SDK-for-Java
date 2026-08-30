@@ -52,7 +52,7 @@ public class PutWorksheetCustomFilterRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/" + urlEncode(name) + "/worksheets/" + urlEncode(sheetName) + "/autoFilter/custom";
+        return "/cells/" + urlEncode(name) + "/worksheets/" + urlEncode(sheetName) + "/autoFilter/custom";
     }
 
     @Override

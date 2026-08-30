@@ -33,7 +33,7 @@ public class PostWorkbookTextReplaceRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/" + urlEncode(name) + "/replaceText";
+        return "/cells/" + urlEncode(name) + "/replaceText";
     }
 
     @Override

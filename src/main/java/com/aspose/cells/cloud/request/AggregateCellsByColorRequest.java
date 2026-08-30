@@ -6,7 +6,6 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import static com.aspose.cells.cloud.UrlUtils.urlEncode;
 
 /** The Aggregate by Color API provides a convenient way to perform calculations on cells that share the same fill or font color. This API supports a range of aggregate operations, including count, sum, maximum value, minimum value, and average value, enabling you to analyze and summarize data based on color distinctions. */
 public class AggregateCellsByColorRequest implements RequestOption {
@@ -49,7 +48,7 @@ public class AggregateCellsByColorRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v4.0/cells/calculate/aggergate/color";
+        return "/cells/calculate/aggergate/color";
     }
 
     @Override

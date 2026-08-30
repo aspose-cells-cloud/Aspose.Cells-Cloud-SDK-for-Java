@@ -41,7 +41,7 @@ public class PostWorkbookImportJsonRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/" + urlEncode(name) + "/importjson";
+        return "/cells/" + urlEncode(name) + "/importjson";
     }
 
     @Override
@@ -73,4 +73,6 @@ public class PostWorkbookImportJsonRequest implements RequestOption {
     public Map<String, Object> getMultipartForm() {
         return null;
     }
+
+    @Override public boolean isBinaryResponse() { return true; }
 }

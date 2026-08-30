@@ -10,21 +10,13 @@ public class WorkbookSettingsResponse extends CellsCloudResponse {
     @JsonProperty("settings")
     private WorkbookSettings settings;
 
-    /** Gets or sets Code. */
-    @JsonProperty("Code")
-    private Integer code;
-
-    /** Gets or sets Status. */
-    @JsonProperty("Status")
-    private String status;
-
     public WorkbookSettings getSettings() { return settings; }
     public WorkbookSettingsResponse setSettings(WorkbookSettings settings) { this.settings = settings; return this; }
 
-    public Integer getCode() { return code; }
-    public WorkbookSettingsResponse setCode(Integer code) { this.code = code; return this; }
 
-    public String getStatus() { return status; }
-    public WorkbookSettingsResponse setStatus(String status) { this.status = status; return this; }
+    /** Covariant override: keeps fluent chains returning WorkbookSettingsResponse. */
+    @Override public WorkbookSettingsResponse setCode(Integer code) { return (WorkbookSettingsResponse) super.setCode(code); }
+    /** Covariant override: keeps fluent chains returning WorkbookSettingsResponse. */
+    @Override public WorkbookSettingsResponse setStatus(String status) { return (WorkbookSettingsResponse) super.setStatus(status); }
 
 }

@@ -30,7 +30,7 @@ public class PostWorkbooksTextSearchRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/" + urlEncode(name) + "/findText";
+        return "/cells/" + urlEncode(name) + "/findText";
     }
 
     @Override

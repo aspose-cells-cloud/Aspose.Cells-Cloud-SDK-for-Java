@@ -31,7 +31,7 @@ public class PutDocumentPropertyRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/" + urlEncode(name) + "/documentproperties";
+        return "/cells/" + urlEncode(name) + "/documentproperties";
     }
 
     @Override

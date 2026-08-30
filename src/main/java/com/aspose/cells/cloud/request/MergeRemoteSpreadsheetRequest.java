@@ -44,7 +44,7 @@ public class MergeRemoteSpreadsheetRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v4.0/cells/" + urlEncode(name) + "/merge/spreadsheet";
+        return "/cells/" + urlEncode(name) + "/merge/spreadsheet";
     }
 
     @Override
@@ -77,4 +77,6 @@ public class MergeRemoteSpreadsheetRequest implements RequestOption {
     public Map<String, Object> getMultipartForm() {
         return null;
     }
+
+    @Override public boolean isBinaryResponse() { return true; }
 }

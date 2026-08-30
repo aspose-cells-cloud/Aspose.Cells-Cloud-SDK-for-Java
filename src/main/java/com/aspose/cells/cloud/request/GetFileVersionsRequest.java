@@ -25,7 +25,7 @@ public class GetFileVersionsRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v4.0/cells/storage/version/" + urlEncode(path);
+        return "/cells/storage/version/" + urlEncode(path);
     }
 
     @Override

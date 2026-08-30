@@ -10,21 +10,13 @@ public class TextItemsResponse extends CellsCloudResponse {
     @JsonProperty("TextItems")
     private TextItems textItems;
 
-    /** Gets or sets Code. */
-    @JsonProperty("Code")
-    private Integer code;
-
-    /** Gets or sets Status. */
-    @JsonProperty("Status")
-    private String status;
-
     public TextItems getTextItems() { return textItems; }
     public TextItemsResponse setTextItems(TextItems textItems) { this.textItems = textItems; return this; }
 
-    public Integer getCode() { return code; }
-    public TextItemsResponse setCode(Integer code) { this.code = code; return this; }
 
-    public String getStatus() { return status; }
-    public TextItemsResponse setStatus(String status) { this.status = status; return this; }
+    /** Covariant override: keeps fluent chains returning TextItemsResponse. */
+    @Override public TextItemsResponse setCode(Integer code) { return (TextItemsResponse) super.setCode(code); }
+    /** Covariant override: keeps fluent chains returning TextItemsResponse. */
+    @Override public TextItemsResponse setStatus(String status) { return (TextItemsResponse) super.setStatus(status); }
 
 }

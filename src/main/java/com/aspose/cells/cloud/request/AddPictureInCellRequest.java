@@ -36,7 +36,7 @@ public class AddPictureInCellRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/" + urlEncode(name) + "/worksheets/" + urlEncode(sheetName) + "/pictures/addPictureInCell";
+        return "/cells/" + urlEncode(name) + "/worksheets/" + urlEncode(sheetName) + "/pictures/addPictureInCell";
     }
 
     @Override

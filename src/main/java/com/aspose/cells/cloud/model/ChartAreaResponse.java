@@ -10,21 +10,13 @@ public class ChartAreaResponse extends CellsCloudResponse {
     @JsonProperty("ChartArea")
     private ChartArea chartArea;
 
-    /** Gets or sets Code. */
-    @JsonProperty("Code")
-    private Integer code;
-
-    /** Gets or sets Status. */
-    @JsonProperty("Status")
-    private String status;
-
     public ChartArea getChartArea() { return chartArea; }
     public ChartAreaResponse setChartArea(ChartArea chartArea) { this.chartArea = chartArea; return this; }
 
-    public Integer getCode() { return code; }
-    public ChartAreaResponse setCode(Integer code) { this.code = code; return this; }
 
-    public String getStatus() { return status; }
-    public ChartAreaResponse setStatus(String status) { this.status = status; return this; }
+    /** Covariant override: keeps fluent chains returning ChartAreaResponse. */
+    @Override public ChartAreaResponse setCode(Integer code) { return (ChartAreaResponse) super.setCode(code); }
+    /** Covariant override: keeps fluent chains returning ChartAreaResponse. */
+    @Override public ChartAreaResponse setStatus(String status) { return (ChartAreaResponse) super.setStatus(status); }
 
 }

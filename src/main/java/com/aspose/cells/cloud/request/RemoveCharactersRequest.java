@@ -6,7 +6,6 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import static com.aspose.cells.cloud.UrlUtils.urlEncode;
 
 /** Deletes user-defined characters, predefined symbol sets, or any substring from every cell in the chosen range while preserving formulas, formatting and data-validation. */
 public class RemoveCharactersRequest implements RequestOption {
@@ -57,7 +56,7 @@ public class RemoveCharactersRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v4.0/cells/content/remove/characters";
+        return "/cells/content/remove/characters";
     }
 
     @Override
@@ -94,4 +93,6 @@ public class RemoveCharactersRequest implements RequestOption {
         form.put("Spreadsheet", spreadsheet);
         return form;
     }
+
+    @Override public boolean isBinaryResponse() { return true; }
 }

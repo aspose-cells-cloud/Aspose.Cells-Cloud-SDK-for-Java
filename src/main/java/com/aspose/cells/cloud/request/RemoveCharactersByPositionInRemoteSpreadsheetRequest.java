@@ -47,7 +47,7 @@ public class RemoveCharactersByPositionInRemoteSpreadsheetRequest implements Req
 
     @Override
     public String getPath() {
-        return "/v4.0/cells/" + urlEncode(name) + "/worksheets/" + urlEncode(worksheet) + "/range/" + urlEncode(range) + "/content/remove/characters-by-position";
+        return "/cells/" + urlEncode(name) + "/worksheets/" + urlEncode(worksheet) + "/range/" + urlEncode(range) + "/content/remove/characters-by-position";
     }
 
     @Override

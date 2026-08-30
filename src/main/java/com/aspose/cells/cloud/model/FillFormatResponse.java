@@ -10,21 +10,13 @@ public class FillFormatResponse extends CellsCloudResponse {
     @JsonProperty("FillFormat")
     private FillFormat fillFormat;
 
-    /** Gets or sets Code. */
-    @JsonProperty("Code")
-    private Integer code;
-
-    /** Gets or sets Status. */
-    @JsonProperty("Status")
-    private String status;
-
     public FillFormat getFillFormat() { return fillFormat; }
     public FillFormatResponse setFillFormat(FillFormat fillFormat) { this.fillFormat = fillFormat; return this; }
 
-    public Integer getCode() { return code; }
-    public FillFormatResponse setCode(Integer code) { this.code = code; return this; }
 
-    public String getStatus() { return status; }
-    public FillFormatResponse setStatus(String status) { this.status = status; return this; }
+    /** Covariant override: keeps fluent chains returning FillFormatResponse. */
+    @Override public FillFormatResponse setCode(Integer code) { return (FillFormatResponse) super.setCode(code); }
+    /** Covariant override: keeps fluent chains returning FillFormatResponse. */
+    @Override public FillFormatResponse setStatus(String status) { return (FillFormatResponse) super.setStatus(status); }
 
 }

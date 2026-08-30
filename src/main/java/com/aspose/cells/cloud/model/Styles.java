@@ -11,14 +11,11 @@ public class Styles extends LinkElement {
     @JsonProperty("StyleList")
     private List<Style> styleList;
 
-    /** Gets or sets link. */
-    @JsonProperty("link")
-    private Link link;
-
     public List<Style> getStyleList() { return styleList; }
     public Styles setStyleList(List<Style> styleList) { this.styleList = styleList; return this; }
 
-    public Link getLink() { return link; }
-    public Styles setLink(Link link) { this.link = link; return this; }
+
+    /** Covariant override: keeps fluent chains returning Styles. */
+    @Override public Styles setLink(Link link) { return (Styles) super.setLink(link); }
 
 }

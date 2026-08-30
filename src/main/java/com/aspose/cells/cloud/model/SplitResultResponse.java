@@ -10,21 +10,13 @@ public class SplitResultResponse extends CellsCloudResponse {
     @JsonProperty("Result")
     private SplitResult result;
 
-    /** Gets or sets Code. */
-    @JsonProperty("Code")
-    private Integer code;
-
-    /** Gets or sets Status. */
-    @JsonProperty("Status")
-    private String status;
-
     public SplitResult getResult() { return result; }
     public SplitResultResponse setResult(SplitResult result) { this.result = result; return this; }
 
-    public Integer getCode() { return code; }
-    public SplitResultResponse setCode(Integer code) { this.code = code; return this; }
 
-    public String getStatus() { return status; }
-    public SplitResultResponse setStatus(String status) { this.status = status; return this; }
+    /** Covariant override: keeps fluent chains returning SplitResultResponse. */
+    @Override public SplitResultResponse setCode(Integer code) { return (SplitResultResponse) super.setCode(code); }
+    /** Covariant override: keeps fluent chains returning SplitResultResponse. */
+    @Override public SplitResultResponse setStatus(String status) { return (SplitResultResponse) super.setStatus(status); }
 
 }

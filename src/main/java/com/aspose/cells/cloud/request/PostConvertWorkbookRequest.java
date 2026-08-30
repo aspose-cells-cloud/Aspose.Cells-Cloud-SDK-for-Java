@@ -5,7 +5,6 @@ import com.aspose.cells.cloud.model.ConvertWorkbookOptions;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import static com.aspose.cells.cloud.UrlUtils.urlEncode;
 
 /** PostConvertWorkbook request. */
 public class PostConvertWorkbookRequest implements RequestOption {
@@ -26,7 +25,7 @@ public class PostConvertWorkbookRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/convertWorkbook";
+        return "/cells/convertWorkbook";
     }
 
     @Override

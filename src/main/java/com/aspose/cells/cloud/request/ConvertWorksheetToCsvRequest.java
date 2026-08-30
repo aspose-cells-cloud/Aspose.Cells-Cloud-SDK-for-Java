@@ -6,7 +6,6 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import static com.aspose.cells.cloud.UrlUtils.urlEncode;
 
 /** Converts a worksheet of spreadsheet on a local drive to the CSV file. */
 public class ConvertWorksheetToCsvRequest implements RequestOption {
@@ -54,7 +53,7 @@ public class ConvertWorksheetToCsvRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v4.0/cells/convert/worksheet/csv";
+        return "/cells/convert/worksheet/csv";
     }
 
     @Override
@@ -89,4 +88,6 @@ public class ConvertWorksheetToCsvRequest implements RequestOption {
         form.put("Spreadsheet", spreadsheet);
         return form;
     }
+
+    @Override public boolean isBinaryResponse() { return true; }
 }

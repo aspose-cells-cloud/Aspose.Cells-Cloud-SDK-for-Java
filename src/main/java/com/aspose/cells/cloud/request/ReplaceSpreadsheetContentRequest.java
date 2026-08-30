@@ -6,7 +6,6 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import static com.aspose.cells.cloud.UrlUtils.urlEncode;
 
 /** Replace text in the local spreadsheet. */
 public class ReplaceSpreadsheetContentRequest implements RequestOption {
@@ -51,7 +50,7 @@ public class ReplaceSpreadsheetContentRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v4.0/cells/replace/content";
+        return "/cells/replace/content";
     }
 
     @Override
@@ -84,4 +83,6 @@ public class ReplaceSpreadsheetContentRequest implements RequestOption {
         form.put("Spreadsheet", spreadsheet);
         return form;
     }
+
+    @Override public boolean isBinaryResponse() { return true; }
 }

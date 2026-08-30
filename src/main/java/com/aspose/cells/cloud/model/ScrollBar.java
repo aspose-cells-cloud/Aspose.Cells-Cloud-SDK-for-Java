@@ -34,150 +34,6 @@ public class ScrollBar extends Shape {
     @JsonProperty("Shadow")
     private Boolean shadow;
 
-    /** Gets or sets Name. */
-    @JsonProperty("Name")
-    private String name;
-
-    /** Gets or sets MsoDrawingType. */
-    @JsonProperty("MsoDrawingType")
-    private String msoDrawingType;
-
-    /** Gets or sets AutoShapeType. */
-    @JsonProperty("AutoShapeType")
-    private String autoShapeType;
-
-    /** Gets or sets Placement. */
-    @JsonProperty("Placement")
-    private String placement;
-
-    /** Gets or sets UpperLeftRow. */
-    @JsonProperty("UpperLeftRow")
-    private Integer upperLeftRow;
-
-    /** Gets or sets Top. */
-    @JsonProperty("Top")
-    private Integer top;
-
-    /** Gets or sets UpperLeftColumn. */
-    @JsonProperty("UpperLeftColumn")
-    private Integer upperLeftColumn;
-
-    /** Gets or sets Left. */
-    @JsonProperty("Left")
-    private Integer left;
-
-    /** Gets or sets LowerRightRow. */
-    @JsonProperty("LowerRightRow")
-    private Integer lowerRightRow;
-
-    /** Gets or sets Bottom. */
-    @JsonProperty("Bottom")
-    private Integer bottom;
-
-    /** Gets or sets LowerRightColumn. */
-    @JsonProperty("LowerRightColumn")
-    private Integer lowerRightColumn;
-
-    /** Gets or sets Right. */
-    @JsonProperty("Right")
-    private Integer right;
-
-    /** Gets or sets Width. */
-    @JsonProperty("Width")
-    private Integer width;
-
-    /** Gets or sets Height. */
-    @JsonProperty("Height")
-    private Integer height;
-
-    /** Gets or sets X. */
-    @JsonProperty("X")
-    private Integer x;
-
-    /** Gets or sets Y. */
-    @JsonProperty("Y")
-    private Integer y;
-
-    /** Gets or sets RotationAngle. */
-    @JsonProperty("RotationAngle")
-    private Double rotationAngle;
-
-    /** Gets or sets HtmlText. */
-    @JsonProperty("HtmlText")
-    private String htmlText;
-
-    /** Gets or sets Text. */
-    @JsonProperty("Text")
-    private String text;
-
-    /** Gets or sets AlternativeText. */
-    @JsonProperty("AlternativeText")
-    private String alternativeText;
-
-    /** Gets or sets TextHorizontalAlignment. */
-    @JsonProperty("TextHorizontalAlignment")
-    private String textHorizontalAlignment;
-
-    /** Gets or sets TextHorizontalOverflow. */
-    @JsonProperty("TextHorizontalOverflow")
-    private String textHorizontalOverflow;
-
-    /** Gets or sets TextOrientationType. */
-    @JsonProperty("TextOrientationType")
-    private String textOrientationType;
-
-    /** Gets or sets TextVerticalAlignment. */
-    @JsonProperty("TextVerticalAlignment")
-    private String textVerticalAlignment;
-
-    /** Gets or sets TextVerticalOverflow. */
-    @JsonProperty("TextVerticalOverflow")
-    private String textVerticalOverflow;
-
-    /** Gets or sets IsGroup. */
-    @JsonProperty("IsGroup")
-    private Boolean isGroup;
-
-    /** Gets or sets IsHidden. */
-    @JsonProperty("IsHidden")
-    private Boolean isHidden;
-
-    /** Gets or sets IsLockAspectRatio. */
-    @JsonProperty("IsLockAspectRatio")
-    private Boolean isLockAspectRatio;
-
-    /** Gets or sets IsLocked. */
-    @JsonProperty("IsLocked")
-    private Boolean isLocked;
-
-    /** Gets or sets IsPrintable. */
-    @JsonProperty("IsPrintable")
-    private Boolean isPrintable;
-
-    /** Gets or sets IsTextWrapped. */
-    @JsonProperty("IsTextWrapped")
-    private Boolean isTextWrapped;
-
-    /** Gets or sets IsWordArt. */
-    @JsonProperty("IsWordArt")
-    private Boolean isWordArt;
-
-    /** Gets or sets LinkedCell. */
-    @JsonProperty("LinkedCell")
-    private String linkedCell;
-
-    /** Gets or sets ZOrderPosition. */
-    @JsonProperty("ZOrderPosition")
-    private Integer zOrderPosition;
-
-    /** Gets or sets Font. */
-    @JsonProperty("Font")
-    private Font font;
-
-    /** Gets or sets Hyperlink. */
-    @JsonProperty("Hyperlink")
-    private String hyperlink;
-
     /** Gets or sets link. */
     @JsonProperty("link")
     private Link link;
@@ -203,115 +59,81 @@ public class ScrollBar extends Shape {
     public Boolean getShadow() { return shadow; }
     public ScrollBar setShadow(Boolean shadow) { this.shadow = shadow; return this; }
 
-    public String getName() { return name; }
-    public ScrollBar setName(String name) { this.name = name; return this; }
-
-    public String getMsoDrawingType() { return msoDrawingType; }
-    public ScrollBar setMsoDrawingType(String msoDrawingType) { this.msoDrawingType = msoDrawingType; return this; }
-
-    public String getAutoShapeType() { return autoShapeType; }
-    public ScrollBar setAutoShapeType(String autoShapeType) { this.autoShapeType = autoShapeType; return this; }
-
-    public String getPlacement() { return placement; }
-    public ScrollBar setPlacement(String placement) { this.placement = placement; return this; }
-
-    public Integer getUpperLeftRow() { return upperLeftRow; }
-    public ScrollBar setUpperLeftRow(Integer upperLeftRow) { this.upperLeftRow = upperLeftRow; return this; }
-
-    public Integer getTop() { return top; }
-    public ScrollBar setTop(Integer top) { this.top = top; return this; }
-
-    public Integer getUpperLeftColumn() { return upperLeftColumn; }
-    public ScrollBar setUpperLeftColumn(Integer upperLeftColumn) { this.upperLeftColumn = upperLeftColumn; return this; }
-
-    public Integer getLeft() { return left; }
-    public ScrollBar setLeft(Integer left) { this.left = left; return this; }
-
-    public Integer getLowerRightRow() { return lowerRightRow; }
-    public ScrollBar setLowerRightRow(Integer lowerRightRow) { this.lowerRightRow = lowerRightRow; return this; }
-
-    public Integer getBottom() { return bottom; }
-    public ScrollBar setBottom(Integer bottom) { this.bottom = bottom; return this; }
-
-    public Integer getLowerRightColumn() { return lowerRightColumn; }
-    public ScrollBar setLowerRightColumn(Integer lowerRightColumn) { this.lowerRightColumn = lowerRightColumn; return this; }
-
-    public Integer getRight() { return right; }
-    public ScrollBar setRight(Integer right) { this.right = right; return this; }
-
-    public Integer getWidth() { return width; }
-    public ScrollBar setWidth(Integer width) { this.width = width; return this; }
-
-    public Integer getHeight() { return height; }
-    public ScrollBar setHeight(Integer height) { this.height = height; return this; }
-
-    public Integer getX() { return x; }
-    public ScrollBar setX(Integer x) { this.x = x; return this; }
-
-    public Integer getY() { return y; }
-    public ScrollBar setY(Integer y) { this.y = y; return this; }
-
-    public Double getRotationAngle() { return rotationAngle; }
-    public ScrollBar setRotationAngle(Double rotationAngle) { this.rotationAngle = rotationAngle; return this; }
-
-    public String getHtmlText() { return htmlText; }
-    public ScrollBar setHtmlText(String htmlText) { this.htmlText = htmlText; return this; }
-
-    public String getText() { return text; }
-    public ScrollBar setText(String text) { this.text = text; return this; }
-
-    public String getAlternativeText() { return alternativeText; }
-    public ScrollBar setAlternativeText(String alternativeText) { this.alternativeText = alternativeText; return this; }
-
-    public String getTextHorizontalAlignment() { return textHorizontalAlignment; }
-    public ScrollBar setTextHorizontalAlignment(String textHorizontalAlignment) { this.textHorizontalAlignment = textHorizontalAlignment; return this; }
-
-    public String getTextHorizontalOverflow() { return textHorizontalOverflow; }
-    public ScrollBar setTextHorizontalOverflow(String textHorizontalOverflow) { this.textHorizontalOverflow = textHorizontalOverflow; return this; }
-
-    public String getTextOrientationType() { return textOrientationType; }
-    public ScrollBar setTextOrientationType(String textOrientationType) { this.textOrientationType = textOrientationType; return this; }
-
-    public String getTextVerticalAlignment() { return textVerticalAlignment; }
-    public ScrollBar setTextVerticalAlignment(String textVerticalAlignment) { this.textVerticalAlignment = textVerticalAlignment; return this; }
-
-    public String getTextVerticalOverflow() { return textVerticalOverflow; }
-    public ScrollBar setTextVerticalOverflow(String textVerticalOverflow) { this.textVerticalOverflow = textVerticalOverflow; return this; }
-
-    public Boolean getIsGroup() { return isGroup; }
-    public ScrollBar setIsGroup(Boolean isGroup) { this.isGroup = isGroup; return this; }
-
-    public Boolean getIsHidden() { return isHidden; }
-    public ScrollBar setIsHidden(Boolean isHidden) { this.isHidden = isHidden; return this; }
-
-    public Boolean getIsLockAspectRatio() { return isLockAspectRatio; }
-    public ScrollBar setIsLockAspectRatio(Boolean isLockAspectRatio) { this.isLockAspectRatio = isLockAspectRatio; return this; }
-
-    public Boolean getIsLocked() { return isLocked; }
-    public ScrollBar setIsLocked(Boolean isLocked) { this.isLocked = isLocked; return this; }
-
-    public Boolean getIsPrintable() { return isPrintable; }
-    public ScrollBar setIsPrintable(Boolean isPrintable) { this.isPrintable = isPrintable; return this; }
-
-    public Boolean getIsTextWrapped() { return isTextWrapped; }
-    public ScrollBar setIsTextWrapped(Boolean isTextWrapped) { this.isTextWrapped = isTextWrapped; return this; }
-
-    public Boolean getIsWordArt() { return isWordArt; }
-    public ScrollBar setIsWordArt(Boolean isWordArt) { this.isWordArt = isWordArt; return this; }
-
-    public String getLinkedCell() { return linkedCell; }
-    public ScrollBar setLinkedCell(String linkedCell) { this.linkedCell = linkedCell; return this; }
-
-    public Integer getZOrderPosition() { return zOrderPosition; }
-    public ScrollBar setZOrderPosition(Integer zOrderPosition) { this.zOrderPosition = zOrderPosition; return this; }
-
-    public Font getFont() { return font; }
-    public ScrollBar setFont(Font font) { this.font = font; return this; }
-
-    public String getHyperlink() { return hyperlink; }
-    public ScrollBar setHyperlink(String hyperlink) { this.hyperlink = hyperlink; return this; }
-
     public Link getLink() { return link; }
     public ScrollBar setLink(Link link) { this.link = link; return this; }
+
+
+    /** Covariant override: keeps fluent chains returning ScrollBar. */
+    @Override public ScrollBar setName(String name) { return (ScrollBar) super.setName(name); }
+    /** Covariant override: keeps fluent chains returning ScrollBar. */
+    @Override public ScrollBar setMsoDrawingType(String msoDrawingType) { return (ScrollBar) super.setMsoDrawingType(msoDrawingType); }
+    /** Covariant override: keeps fluent chains returning ScrollBar. */
+    @Override public ScrollBar setAutoShapeType(String autoShapeType) { return (ScrollBar) super.setAutoShapeType(autoShapeType); }
+    /** Covariant override: keeps fluent chains returning ScrollBar. */
+    @Override public ScrollBar setPlacement(String placement) { return (ScrollBar) super.setPlacement(placement); }
+    /** Covariant override: keeps fluent chains returning ScrollBar. */
+    @Override public ScrollBar setUpperLeftRow(Integer upperLeftRow) { return (ScrollBar) super.setUpperLeftRow(upperLeftRow); }
+    /** Covariant override: keeps fluent chains returning ScrollBar. */
+    @Override public ScrollBar setTop(Integer top) { return (ScrollBar) super.setTop(top); }
+    /** Covariant override: keeps fluent chains returning ScrollBar. */
+    @Override public ScrollBar setUpperLeftColumn(Integer upperLeftColumn) { return (ScrollBar) super.setUpperLeftColumn(upperLeftColumn); }
+    /** Covariant override: keeps fluent chains returning ScrollBar. */
+    @Override public ScrollBar setLeft(Integer left) { return (ScrollBar) super.setLeft(left); }
+    /** Covariant override: keeps fluent chains returning ScrollBar. */
+    @Override public ScrollBar setLowerRightRow(Integer lowerRightRow) { return (ScrollBar) super.setLowerRightRow(lowerRightRow); }
+    /** Covariant override: keeps fluent chains returning ScrollBar. */
+    @Override public ScrollBar setBottom(Integer bottom) { return (ScrollBar) super.setBottom(bottom); }
+    /** Covariant override: keeps fluent chains returning ScrollBar. */
+    @Override public ScrollBar setLowerRightColumn(Integer lowerRightColumn) { return (ScrollBar) super.setLowerRightColumn(lowerRightColumn); }
+    /** Covariant override: keeps fluent chains returning ScrollBar. */
+    @Override public ScrollBar setRight(Integer right) { return (ScrollBar) super.setRight(right); }
+    /** Covariant override: keeps fluent chains returning ScrollBar. */
+    @Override public ScrollBar setWidth(Integer width) { return (ScrollBar) super.setWidth(width); }
+    /** Covariant override: keeps fluent chains returning ScrollBar. */
+    @Override public ScrollBar setHeight(Integer height) { return (ScrollBar) super.setHeight(height); }
+    /** Covariant override: keeps fluent chains returning ScrollBar. */
+    @Override public ScrollBar setX(Integer x) { return (ScrollBar) super.setX(x); }
+    /** Covariant override: keeps fluent chains returning ScrollBar. */
+    @Override public ScrollBar setY(Integer y) { return (ScrollBar) super.setY(y); }
+    /** Covariant override: keeps fluent chains returning ScrollBar. */
+    @Override public ScrollBar setRotationAngle(Double rotationAngle) { return (ScrollBar) super.setRotationAngle(rotationAngle); }
+    /** Covariant override: keeps fluent chains returning ScrollBar. */
+    @Override public ScrollBar setHtmlText(String htmlText) { return (ScrollBar) super.setHtmlText(htmlText); }
+    /** Covariant override: keeps fluent chains returning ScrollBar. */
+    @Override public ScrollBar setText(String text) { return (ScrollBar) super.setText(text); }
+    /** Covariant override: keeps fluent chains returning ScrollBar. */
+    @Override public ScrollBar setAlternativeText(String alternativeText) { return (ScrollBar) super.setAlternativeText(alternativeText); }
+    /** Covariant override: keeps fluent chains returning ScrollBar. */
+    @Override public ScrollBar setTextHorizontalAlignment(String textHorizontalAlignment) { return (ScrollBar) super.setTextHorizontalAlignment(textHorizontalAlignment); }
+    /** Covariant override: keeps fluent chains returning ScrollBar. */
+    @Override public ScrollBar setTextHorizontalOverflow(String textHorizontalOverflow) { return (ScrollBar) super.setTextHorizontalOverflow(textHorizontalOverflow); }
+    /** Covariant override: keeps fluent chains returning ScrollBar. */
+    @Override public ScrollBar setTextOrientationType(String textOrientationType) { return (ScrollBar) super.setTextOrientationType(textOrientationType); }
+    /** Covariant override: keeps fluent chains returning ScrollBar. */
+    @Override public ScrollBar setTextVerticalAlignment(String textVerticalAlignment) { return (ScrollBar) super.setTextVerticalAlignment(textVerticalAlignment); }
+    /** Covariant override: keeps fluent chains returning ScrollBar. */
+    @Override public ScrollBar setTextVerticalOverflow(String textVerticalOverflow) { return (ScrollBar) super.setTextVerticalOverflow(textVerticalOverflow); }
+    /** Covariant override: keeps fluent chains returning ScrollBar. */
+    @Override public ScrollBar setIsGroup(Boolean isGroup) { return (ScrollBar) super.setIsGroup(isGroup); }
+    /** Covariant override: keeps fluent chains returning ScrollBar. */
+    @Override public ScrollBar setIsHidden(Boolean isHidden) { return (ScrollBar) super.setIsHidden(isHidden); }
+    /** Covariant override: keeps fluent chains returning ScrollBar. */
+    @Override public ScrollBar setIsLockAspectRatio(Boolean isLockAspectRatio) { return (ScrollBar) super.setIsLockAspectRatio(isLockAspectRatio); }
+    /** Covariant override: keeps fluent chains returning ScrollBar. */
+    @Override public ScrollBar setIsLocked(Boolean isLocked) { return (ScrollBar) super.setIsLocked(isLocked); }
+    /** Covariant override: keeps fluent chains returning ScrollBar. */
+    @Override public ScrollBar setIsPrintable(Boolean isPrintable) { return (ScrollBar) super.setIsPrintable(isPrintable); }
+    /** Covariant override: keeps fluent chains returning ScrollBar. */
+    @Override public ScrollBar setIsTextWrapped(Boolean isTextWrapped) { return (ScrollBar) super.setIsTextWrapped(isTextWrapped); }
+    /** Covariant override: keeps fluent chains returning ScrollBar. */
+    @Override public ScrollBar setIsWordArt(Boolean isWordArt) { return (ScrollBar) super.setIsWordArt(isWordArt); }
+    /** Covariant override: keeps fluent chains returning ScrollBar. */
+    @Override public ScrollBar setLinkedCell(String linkedCell) { return (ScrollBar) super.setLinkedCell(linkedCell); }
+    /** Covariant override: keeps fluent chains returning ScrollBar. */
+    @Override public ScrollBar setZOrderPosition(Integer zOrderPosition) { return (ScrollBar) super.setZOrderPosition(zOrderPosition); }
+    /** Covariant override: keeps fluent chains returning ScrollBar. */
+    @Override public ScrollBar setFont(Font font) { return (ScrollBar) super.setFont(font); }
+    /** Covariant override: keeps fluent chains returning ScrollBar. */
+    @Override public ScrollBar setHyperlink(String hyperlink) { return (ScrollBar) super.setHyperlink(hyperlink); }
 
 }

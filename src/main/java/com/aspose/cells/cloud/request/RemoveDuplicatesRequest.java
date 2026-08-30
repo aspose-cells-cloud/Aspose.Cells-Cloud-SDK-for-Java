@@ -6,7 +6,6 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import static com.aspose.cells.cloud.UrlUtils.urlEncode;
 
 /** Removes duplicate values in the worksheet/range/table. */
 public class RemoveDuplicatesRequest implements RequestOption {
@@ -51,7 +50,7 @@ public class RemoveDuplicatesRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v4.0/cells/remove/duplicates";
+        return "/cells/remove/duplicates";
     }
 
     @Override
@@ -85,4 +84,6 @@ public class RemoveDuplicatesRequest implements RequestOption {
         form.put("Spreadsheet", spreadsheet);
         return form;
     }
+
+    @Override public boolean isBinaryResponse() { return true; }
 }

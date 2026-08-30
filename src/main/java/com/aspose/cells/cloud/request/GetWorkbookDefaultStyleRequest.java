@@ -27,7 +27,7 @@ public class GetWorkbookDefaultStyleRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/" + urlEncode(name) + "/defaultstyle";
+        return "/cells/" + urlEncode(name) + "/defaultstyle";
     }
 
     @Override

@@ -6,263 +6,85 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 /** AutoShape — Represents an AutoShape. */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class AutoShape extends Shape {
-    /** Gets or sets Name. */
-    @JsonProperty("Name")
-    private String name;
-
-    /** Gets or sets MsoDrawingType. */
-    @JsonProperty("MsoDrawingType")
-    private String msoDrawingType;
-
-    /** Gets or sets AutoShapeType. */
-    @JsonProperty("AutoShapeType")
-    private String autoShapeType;
-
-    /** Gets or sets Placement. */
-    @JsonProperty("Placement")
-    private String placement;
-
-    /** Gets or sets UpperLeftRow. */
-    @JsonProperty("UpperLeftRow")
-    private Integer upperLeftRow;
-
-    /** Gets or sets Top. */
-    @JsonProperty("Top")
-    private Integer top;
-
-    /** Gets or sets UpperLeftColumn. */
-    @JsonProperty("UpperLeftColumn")
-    private Integer upperLeftColumn;
-
-    /** Gets or sets Left. */
-    @JsonProperty("Left")
-    private Integer left;
-
-    /** Gets or sets LowerRightRow. */
-    @JsonProperty("LowerRightRow")
-    private Integer lowerRightRow;
-
-    /** Gets or sets Bottom. */
-    @JsonProperty("Bottom")
-    private Integer bottom;
-
-    /** Gets or sets LowerRightColumn. */
-    @JsonProperty("LowerRightColumn")
-    private Integer lowerRightColumn;
-
-    /** Gets or sets Right. */
-    @JsonProperty("Right")
-    private Integer right;
-
-    /** Gets or sets Width. */
-    @JsonProperty("Width")
-    private Integer width;
-
-    /** Gets or sets Height. */
-    @JsonProperty("Height")
-    private Integer height;
-
-    /** Gets or sets X. */
-    @JsonProperty("X")
-    private Integer x;
-
-    /** Gets or sets Y. */
-    @JsonProperty("Y")
-    private Integer y;
-
-    /** Gets or sets RotationAngle. */
-    @JsonProperty("RotationAngle")
-    private Double rotationAngle;
-
-    /** Gets or sets HtmlText. */
-    @JsonProperty("HtmlText")
-    private String htmlText;
-
-    /** Gets or sets Text. */
-    @JsonProperty("Text")
-    private String text;
-
-    /** Gets or sets AlternativeText. */
-    @JsonProperty("AlternativeText")
-    private String alternativeText;
-
-    /** Gets or sets TextHorizontalAlignment. */
-    @JsonProperty("TextHorizontalAlignment")
-    private String textHorizontalAlignment;
-
-    /** Gets or sets TextHorizontalOverflow. */
-    @JsonProperty("TextHorizontalOverflow")
-    private String textHorizontalOverflow;
-
-    /** Gets or sets TextOrientationType. */
-    @JsonProperty("TextOrientationType")
-    private String textOrientationType;
-
-    /** Gets or sets TextVerticalAlignment. */
-    @JsonProperty("TextVerticalAlignment")
-    private String textVerticalAlignment;
-
-    /** Gets or sets TextVerticalOverflow. */
-    @JsonProperty("TextVerticalOverflow")
-    private String textVerticalOverflow;
-
-    /** Gets or sets IsGroup. */
-    @JsonProperty("IsGroup")
-    private Boolean isGroup;
-
-    /** Gets or sets IsHidden. */
-    @JsonProperty("IsHidden")
-    private Boolean isHidden;
-
-    /** Gets or sets IsLockAspectRatio. */
-    @JsonProperty("IsLockAspectRatio")
-    private Boolean isLockAspectRatio;
-
-    /** Gets or sets IsLocked. */
-    @JsonProperty("IsLocked")
-    private Boolean isLocked;
-
-    /** Gets or sets IsPrintable. */
-    @JsonProperty("IsPrintable")
-    private Boolean isPrintable;
-
-    /** Gets or sets IsTextWrapped. */
-    @JsonProperty("IsTextWrapped")
-    private Boolean isTextWrapped;
-
-    /** Gets or sets IsWordArt. */
-    @JsonProperty("IsWordArt")
-    private Boolean isWordArt;
-
-    /** Gets or sets LinkedCell. */
-    @JsonProperty("LinkedCell")
-    private String linkedCell;
-
-    /** Gets or sets ZOrderPosition. */
-    @JsonProperty("ZOrderPosition")
-    private Integer zOrderPosition;
-
-    /** Gets or sets Font. */
-    @JsonProperty("Font")
-    private Font font;
-
-    /** Gets or sets Hyperlink. */
-    @JsonProperty("Hyperlink")
-    private String hyperlink;
-
     /** Gets or sets link. */
     @JsonProperty("link")
     private Link link;
 
-    public String getName() { return name; }
-    public AutoShape setName(String name) { this.name = name; return this; }
-
-    public String getMsoDrawingType() { return msoDrawingType; }
-    public AutoShape setMsoDrawingType(String msoDrawingType) { this.msoDrawingType = msoDrawingType; return this; }
-
-    public String getAutoShapeType() { return autoShapeType; }
-    public AutoShape setAutoShapeType(String autoShapeType) { this.autoShapeType = autoShapeType; return this; }
-
-    public String getPlacement() { return placement; }
-    public AutoShape setPlacement(String placement) { this.placement = placement; return this; }
-
-    public Integer getUpperLeftRow() { return upperLeftRow; }
-    public AutoShape setUpperLeftRow(Integer upperLeftRow) { this.upperLeftRow = upperLeftRow; return this; }
-
-    public Integer getTop() { return top; }
-    public AutoShape setTop(Integer top) { this.top = top; return this; }
-
-    public Integer getUpperLeftColumn() { return upperLeftColumn; }
-    public AutoShape setUpperLeftColumn(Integer upperLeftColumn) { this.upperLeftColumn = upperLeftColumn; return this; }
-
-    public Integer getLeft() { return left; }
-    public AutoShape setLeft(Integer left) { this.left = left; return this; }
-
-    public Integer getLowerRightRow() { return lowerRightRow; }
-    public AutoShape setLowerRightRow(Integer lowerRightRow) { this.lowerRightRow = lowerRightRow; return this; }
-
-    public Integer getBottom() { return bottom; }
-    public AutoShape setBottom(Integer bottom) { this.bottom = bottom; return this; }
-
-    public Integer getLowerRightColumn() { return lowerRightColumn; }
-    public AutoShape setLowerRightColumn(Integer lowerRightColumn) { this.lowerRightColumn = lowerRightColumn; return this; }
-
-    public Integer getRight() { return right; }
-    public AutoShape setRight(Integer right) { this.right = right; return this; }
-
-    public Integer getWidth() { return width; }
-    public AutoShape setWidth(Integer width) { this.width = width; return this; }
-
-    public Integer getHeight() { return height; }
-    public AutoShape setHeight(Integer height) { this.height = height; return this; }
-
-    public Integer getX() { return x; }
-    public AutoShape setX(Integer x) { this.x = x; return this; }
-
-    public Integer getY() { return y; }
-    public AutoShape setY(Integer y) { this.y = y; return this; }
-
-    public Double getRotationAngle() { return rotationAngle; }
-    public AutoShape setRotationAngle(Double rotationAngle) { this.rotationAngle = rotationAngle; return this; }
-
-    public String getHtmlText() { return htmlText; }
-    public AutoShape setHtmlText(String htmlText) { this.htmlText = htmlText; return this; }
-
-    public String getText() { return text; }
-    public AutoShape setText(String text) { this.text = text; return this; }
-
-    public String getAlternativeText() { return alternativeText; }
-    public AutoShape setAlternativeText(String alternativeText) { this.alternativeText = alternativeText; return this; }
-
-    public String getTextHorizontalAlignment() { return textHorizontalAlignment; }
-    public AutoShape setTextHorizontalAlignment(String textHorizontalAlignment) { this.textHorizontalAlignment = textHorizontalAlignment; return this; }
-
-    public String getTextHorizontalOverflow() { return textHorizontalOverflow; }
-    public AutoShape setTextHorizontalOverflow(String textHorizontalOverflow) { this.textHorizontalOverflow = textHorizontalOverflow; return this; }
-
-    public String getTextOrientationType() { return textOrientationType; }
-    public AutoShape setTextOrientationType(String textOrientationType) { this.textOrientationType = textOrientationType; return this; }
-
-    public String getTextVerticalAlignment() { return textVerticalAlignment; }
-    public AutoShape setTextVerticalAlignment(String textVerticalAlignment) { this.textVerticalAlignment = textVerticalAlignment; return this; }
-
-    public String getTextVerticalOverflow() { return textVerticalOverflow; }
-    public AutoShape setTextVerticalOverflow(String textVerticalOverflow) { this.textVerticalOverflow = textVerticalOverflow; return this; }
-
-    public Boolean getIsGroup() { return isGroup; }
-    public AutoShape setIsGroup(Boolean isGroup) { this.isGroup = isGroup; return this; }
-
-    public Boolean getIsHidden() { return isHidden; }
-    public AutoShape setIsHidden(Boolean isHidden) { this.isHidden = isHidden; return this; }
-
-    public Boolean getIsLockAspectRatio() { return isLockAspectRatio; }
-    public AutoShape setIsLockAspectRatio(Boolean isLockAspectRatio) { this.isLockAspectRatio = isLockAspectRatio; return this; }
-
-    public Boolean getIsLocked() { return isLocked; }
-    public AutoShape setIsLocked(Boolean isLocked) { this.isLocked = isLocked; return this; }
-
-    public Boolean getIsPrintable() { return isPrintable; }
-    public AutoShape setIsPrintable(Boolean isPrintable) { this.isPrintable = isPrintable; return this; }
-
-    public Boolean getIsTextWrapped() { return isTextWrapped; }
-    public AutoShape setIsTextWrapped(Boolean isTextWrapped) { this.isTextWrapped = isTextWrapped; return this; }
-
-    public Boolean getIsWordArt() { return isWordArt; }
-    public AutoShape setIsWordArt(Boolean isWordArt) { this.isWordArt = isWordArt; return this; }
-
-    public String getLinkedCell() { return linkedCell; }
-    public AutoShape setLinkedCell(String linkedCell) { this.linkedCell = linkedCell; return this; }
-
-    public Integer getZOrderPosition() { return zOrderPosition; }
-    public AutoShape setZOrderPosition(Integer zOrderPosition) { this.zOrderPosition = zOrderPosition; return this; }
-
-    public Font getFont() { return font; }
-    public AutoShape setFont(Font font) { this.font = font; return this; }
-
-    public String getHyperlink() { return hyperlink; }
-    public AutoShape setHyperlink(String hyperlink) { this.hyperlink = hyperlink; return this; }
-
     public Link getLink() { return link; }
     public AutoShape setLink(Link link) { this.link = link; return this; }
+
+
+    /** Covariant override: keeps fluent chains returning AutoShape. */
+    @Override public AutoShape setName(String name) { return (AutoShape) super.setName(name); }
+    /** Covariant override: keeps fluent chains returning AutoShape. */
+    @Override public AutoShape setMsoDrawingType(String msoDrawingType) { return (AutoShape) super.setMsoDrawingType(msoDrawingType); }
+    /** Covariant override: keeps fluent chains returning AutoShape. */
+    @Override public AutoShape setAutoShapeType(String autoShapeType) { return (AutoShape) super.setAutoShapeType(autoShapeType); }
+    /** Covariant override: keeps fluent chains returning AutoShape. */
+    @Override public AutoShape setPlacement(String placement) { return (AutoShape) super.setPlacement(placement); }
+    /** Covariant override: keeps fluent chains returning AutoShape. */
+    @Override public AutoShape setUpperLeftRow(Integer upperLeftRow) { return (AutoShape) super.setUpperLeftRow(upperLeftRow); }
+    /** Covariant override: keeps fluent chains returning AutoShape. */
+    @Override public AutoShape setTop(Integer top) { return (AutoShape) super.setTop(top); }
+    /** Covariant override: keeps fluent chains returning AutoShape. */
+    @Override public AutoShape setUpperLeftColumn(Integer upperLeftColumn) { return (AutoShape) super.setUpperLeftColumn(upperLeftColumn); }
+    /** Covariant override: keeps fluent chains returning AutoShape. */
+    @Override public AutoShape setLeft(Integer left) { return (AutoShape) super.setLeft(left); }
+    /** Covariant override: keeps fluent chains returning AutoShape. */
+    @Override public AutoShape setLowerRightRow(Integer lowerRightRow) { return (AutoShape) super.setLowerRightRow(lowerRightRow); }
+    /** Covariant override: keeps fluent chains returning AutoShape. */
+    @Override public AutoShape setBottom(Integer bottom) { return (AutoShape) super.setBottom(bottom); }
+    /** Covariant override: keeps fluent chains returning AutoShape. */
+    @Override public AutoShape setLowerRightColumn(Integer lowerRightColumn) { return (AutoShape) super.setLowerRightColumn(lowerRightColumn); }
+    /** Covariant override: keeps fluent chains returning AutoShape. */
+    @Override public AutoShape setRight(Integer right) { return (AutoShape) super.setRight(right); }
+    /** Covariant override: keeps fluent chains returning AutoShape. */
+    @Override public AutoShape setWidth(Integer width) { return (AutoShape) super.setWidth(width); }
+    /** Covariant override: keeps fluent chains returning AutoShape. */
+    @Override public AutoShape setHeight(Integer height) { return (AutoShape) super.setHeight(height); }
+    /** Covariant override: keeps fluent chains returning AutoShape. */
+    @Override public AutoShape setX(Integer x) { return (AutoShape) super.setX(x); }
+    /** Covariant override: keeps fluent chains returning AutoShape. */
+    @Override public AutoShape setY(Integer y) { return (AutoShape) super.setY(y); }
+    /** Covariant override: keeps fluent chains returning AutoShape. */
+    @Override public AutoShape setRotationAngle(Double rotationAngle) { return (AutoShape) super.setRotationAngle(rotationAngle); }
+    /** Covariant override: keeps fluent chains returning AutoShape. */
+    @Override public AutoShape setHtmlText(String htmlText) { return (AutoShape) super.setHtmlText(htmlText); }
+    /** Covariant override: keeps fluent chains returning AutoShape. */
+    @Override public AutoShape setText(String text) { return (AutoShape) super.setText(text); }
+    /** Covariant override: keeps fluent chains returning AutoShape. */
+    @Override public AutoShape setAlternativeText(String alternativeText) { return (AutoShape) super.setAlternativeText(alternativeText); }
+    /** Covariant override: keeps fluent chains returning AutoShape. */
+    @Override public AutoShape setTextHorizontalAlignment(String textHorizontalAlignment) { return (AutoShape) super.setTextHorizontalAlignment(textHorizontalAlignment); }
+    /** Covariant override: keeps fluent chains returning AutoShape. */
+    @Override public AutoShape setTextHorizontalOverflow(String textHorizontalOverflow) { return (AutoShape) super.setTextHorizontalOverflow(textHorizontalOverflow); }
+    /** Covariant override: keeps fluent chains returning AutoShape. */
+    @Override public AutoShape setTextOrientationType(String textOrientationType) { return (AutoShape) super.setTextOrientationType(textOrientationType); }
+    /** Covariant override: keeps fluent chains returning AutoShape. */
+    @Override public AutoShape setTextVerticalAlignment(String textVerticalAlignment) { return (AutoShape) super.setTextVerticalAlignment(textVerticalAlignment); }
+    /** Covariant override: keeps fluent chains returning AutoShape. */
+    @Override public AutoShape setTextVerticalOverflow(String textVerticalOverflow) { return (AutoShape) super.setTextVerticalOverflow(textVerticalOverflow); }
+    /** Covariant override: keeps fluent chains returning AutoShape. */
+    @Override public AutoShape setIsGroup(Boolean isGroup) { return (AutoShape) super.setIsGroup(isGroup); }
+    /** Covariant override: keeps fluent chains returning AutoShape. */
+    @Override public AutoShape setIsHidden(Boolean isHidden) { return (AutoShape) super.setIsHidden(isHidden); }
+    /** Covariant override: keeps fluent chains returning AutoShape. */
+    @Override public AutoShape setIsLockAspectRatio(Boolean isLockAspectRatio) { return (AutoShape) super.setIsLockAspectRatio(isLockAspectRatio); }
+    /** Covariant override: keeps fluent chains returning AutoShape. */
+    @Override public AutoShape setIsLocked(Boolean isLocked) { return (AutoShape) super.setIsLocked(isLocked); }
+    /** Covariant override: keeps fluent chains returning AutoShape. */
+    @Override public AutoShape setIsPrintable(Boolean isPrintable) { return (AutoShape) super.setIsPrintable(isPrintable); }
+    /** Covariant override: keeps fluent chains returning AutoShape. */
+    @Override public AutoShape setIsTextWrapped(Boolean isTextWrapped) { return (AutoShape) super.setIsTextWrapped(isTextWrapped); }
+    /** Covariant override: keeps fluent chains returning AutoShape. */
+    @Override public AutoShape setIsWordArt(Boolean isWordArt) { return (AutoShape) super.setIsWordArt(isWordArt); }
+    /** Covariant override: keeps fluent chains returning AutoShape. */
+    @Override public AutoShape setLinkedCell(String linkedCell) { return (AutoShape) super.setLinkedCell(linkedCell); }
+    /** Covariant override: keeps fluent chains returning AutoShape. */
+    @Override public AutoShape setZOrderPosition(Integer zOrderPosition) { return (AutoShape) super.setZOrderPosition(zOrderPosition); }
+    /** Covariant override: keeps fluent chains returning AutoShape. */
+    @Override public AutoShape setFont(Font font) { return (AutoShape) super.setFont(font); }
+    /** Covariant override: keeps fluent chains returning AutoShape. */
+    @Override public AutoShape setHyperlink(String hyperlink) { return (AutoShape) super.setHyperlink(hyperlink); }
 
 }

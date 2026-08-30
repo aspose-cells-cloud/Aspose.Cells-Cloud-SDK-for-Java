@@ -6,263 +6,85 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 /** CellsDrawing — Represents the auto shape and drawing object. */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class CellsDrawing extends Shape {
-    /** Gets or sets Name. */
-    @JsonProperty("Name")
-    private String name;
-
-    /** Gets or sets MsoDrawingType. */
-    @JsonProperty("MsoDrawingType")
-    private String msoDrawingType;
-
-    /** Gets or sets AutoShapeType. */
-    @JsonProperty("AutoShapeType")
-    private String autoShapeType;
-
-    /** Gets or sets Placement. */
-    @JsonProperty("Placement")
-    private String placement;
-
-    /** Gets or sets UpperLeftRow. */
-    @JsonProperty("UpperLeftRow")
-    private Integer upperLeftRow;
-
-    /** Gets or sets Top. */
-    @JsonProperty("Top")
-    private Integer top;
-
-    /** Gets or sets UpperLeftColumn. */
-    @JsonProperty("UpperLeftColumn")
-    private Integer upperLeftColumn;
-
-    /** Gets or sets Left. */
-    @JsonProperty("Left")
-    private Integer left;
-
-    /** Gets or sets LowerRightRow. */
-    @JsonProperty("LowerRightRow")
-    private Integer lowerRightRow;
-
-    /** Gets or sets Bottom. */
-    @JsonProperty("Bottom")
-    private Integer bottom;
-
-    /** Gets or sets LowerRightColumn. */
-    @JsonProperty("LowerRightColumn")
-    private Integer lowerRightColumn;
-
-    /** Gets or sets Right. */
-    @JsonProperty("Right")
-    private Integer right;
-
-    /** Gets or sets Width. */
-    @JsonProperty("Width")
-    private Integer width;
-
-    /** Gets or sets Height. */
-    @JsonProperty("Height")
-    private Integer height;
-
-    /** Gets or sets X. */
-    @JsonProperty("X")
-    private Integer x;
-
-    /** Gets or sets Y. */
-    @JsonProperty("Y")
-    private Integer y;
-
-    /** Gets or sets RotationAngle. */
-    @JsonProperty("RotationAngle")
-    private Double rotationAngle;
-
-    /** Gets or sets HtmlText. */
-    @JsonProperty("HtmlText")
-    private String htmlText;
-
-    /** Gets or sets Text. */
-    @JsonProperty("Text")
-    private String text;
-
-    /** Gets or sets AlternativeText. */
-    @JsonProperty("AlternativeText")
-    private String alternativeText;
-
-    /** Gets or sets TextHorizontalAlignment. */
-    @JsonProperty("TextHorizontalAlignment")
-    private String textHorizontalAlignment;
-
-    /** Gets or sets TextHorizontalOverflow. */
-    @JsonProperty("TextHorizontalOverflow")
-    private String textHorizontalOverflow;
-
-    /** Gets or sets TextOrientationType. */
-    @JsonProperty("TextOrientationType")
-    private String textOrientationType;
-
-    /** Gets or sets TextVerticalAlignment. */
-    @JsonProperty("TextVerticalAlignment")
-    private String textVerticalAlignment;
-
-    /** Gets or sets TextVerticalOverflow. */
-    @JsonProperty("TextVerticalOverflow")
-    private String textVerticalOverflow;
-
-    /** Gets or sets IsGroup. */
-    @JsonProperty("IsGroup")
-    private Boolean isGroup;
-
-    /** Gets or sets IsHidden. */
-    @JsonProperty("IsHidden")
-    private Boolean isHidden;
-
-    /** Gets or sets IsLockAspectRatio. */
-    @JsonProperty("IsLockAspectRatio")
-    private Boolean isLockAspectRatio;
-
-    /** Gets or sets IsLocked. */
-    @JsonProperty("IsLocked")
-    private Boolean isLocked;
-
-    /** Gets or sets IsPrintable. */
-    @JsonProperty("IsPrintable")
-    private Boolean isPrintable;
-
-    /** Gets or sets IsTextWrapped. */
-    @JsonProperty("IsTextWrapped")
-    private Boolean isTextWrapped;
-
-    /** Gets or sets IsWordArt. */
-    @JsonProperty("IsWordArt")
-    private Boolean isWordArt;
-
-    /** Gets or sets LinkedCell. */
-    @JsonProperty("LinkedCell")
-    private String linkedCell;
-
-    /** Gets or sets ZOrderPosition. */
-    @JsonProperty("ZOrderPosition")
-    private Integer zOrderPosition;
-
-    /** Gets or sets Font. */
-    @JsonProperty("Font")
-    private Font font;
-
-    /** Gets or sets Hyperlink. */
-    @JsonProperty("Hyperlink")
-    private String hyperlink;
-
     /** Gets or sets link. */
     @JsonProperty("link")
     private Link link;
 
-    public String getName() { return name; }
-    public CellsDrawing setName(String name) { this.name = name; return this; }
-
-    public String getMsoDrawingType() { return msoDrawingType; }
-    public CellsDrawing setMsoDrawingType(String msoDrawingType) { this.msoDrawingType = msoDrawingType; return this; }
-
-    public String getAutoShapeType() { return autoShapeType; }
-    public CellsDrawing setAutoShapeType(String autoShapeType) { this.autoShapeType = autoShapeType; return this; }
-
-    public String getPlacement() { return placement; }
-    public CellsDrawing setPlacement(String placement) { this.placement = placement; return this; }
-
-    public Integer getUpperLeftRow() { return upperLeftRow; }
-    public CellsDrawing setUpperLeftRow(Integer upperLeftRow) { this.upperLeftRow = upperLeftRow; return this; }
-
-    public Integer getTop() { return top; }
-    public CellsDrawing setTop(Integer top) { this.top = top; return this; }
-
-    public Integer getUpperLeftColumn() { return upperLeftColumn; }
-    public CellsDrawing setUpperLeftColumn(Integer upperLeftColumn) { this.upperLeftColumn = upperLeftColumn; return this; }
-
-    public Integer getLeft() { return left; }
-    public CellsDrawing setLeft(Integer left) { this.left = left; return this; }
-
-    public Integer getLowerRightRow() { return lowerRightRow; }
-    public CellsDrawing setLowerRightRow(Integer lowerRightRow) { this.lowerRightRow = lowerRightRow; return this; }
-
-    public Integer getBottom() { return bottom; }
-    public CellsDrawing setBottom(Integer bottom) { this.bottom = bottom; return this; }
-
-    public Integer getLowerRightColumn() { return lowerRightColumn; }
-    public CellsDrawing setLowerRightColumn(Integer lowerRightColumn) { this.lowerRightColumn = lowerRightColumn; return this; }
-
-    public Integer getRight() { return right; }
-    public CellsDrawing setRight(Integer right) { this.right = right; return this; }
-
-    public Integer getWidth() { return width; }
-    public CellsDrawing setWidth(Integer width) { this.width = width; return this; }
-
-    public Integer getHeight() { return height; }
-    public CellsDrawing setHeight(Integer height) { this.height = height; return this; }
-
-    public Integer getX() { return x; }
-    public CellsDrawing setX(Integer x) { this.x = x; return this; }
-
-    public Integer getY() { return y; }
-    public CellsDrawing setY(Integer y) { this.y = y; return this; }
-
-    public Double getRotationAngle() { return rotationAngle; }
-    public CellsDrawing setRotationAngle(Double rotationAngle) { this.rotationAngle = rotationAngle; return this; }
-
-    public String getHtmlText() { return htmlText; }
-    public CellsDrawing setHtmlText(String htmlText) { this.htmlText = htmlText; return this; }
-
-    public String getText() { return text; }
-    public CellsDrawing setText(String text) { this.text = text; return this; }
-
-    public String getAlternativeText() { return alternativeText; }
-    public CellsDrawing setAlternativeText(String alternativeText) { this.alternativeText = alternativeText; return this; }
-
-    public String getTextHorizontalAlignment() { return textHorizontalAlignment; }
-    public CellsDrawing setTextHorizontalAlignment(String textHorizontalAlignment) { this.textHorizontalAlignment = textHorizontalAlignment; return this; }
-
-    public String getTextHorizontalOverflow() { return textHorizontalOverflow; }
-    public CellsDrawing setTextHorizontalOverflow(String textHorizontalOverflow) { this.textHorizontalOverflow = textHorizontalOverflow; return this; }
-
-    public String getTextOrientationType() { return textOrientationType; }
-    public CellsDrawing setTextOrientationType(String textOrientationType) { this.textOrientationType = textOrientationType; return this; }
-
-    public String getTextVerticalAlignment() { return textVerticalAlignment; }
-    public CellsDrawing setTextVerticalAlignment(String textVerticalAlignment) { this.textVerticalAlignment = textVerticalAlignment; return this; }
-
-    public String getTextVerticalOverflow() { return textVerticalOverflow; }
-    public CellsDrawing setTextVerticalOverflow(String textVerticalOverflow) { this.textVerticalOverflow = textVerticalOverflow; return this; }
-
-    public Boolean getIsGroup() { return isGroup; }
-    public CellsDrawing setIsGroup(Boolean isGroup) { this.isGroup = isGroup; return this; }
-
-    public Boolean getIsHidden() { return isHidden; }
-    public CellsDrawing setIsHidden(Boolean isHidden) { this.isHidden = isHidden; return this; }
-
-    public Boolean getIsLockAspectRatio() { return isLockAspectRatio; }
-    public CellsDrawing setIsLockAspectRatio(Boolean isLockAspectRatio) { this.isLockAspectRatio = isLockAspectRatio; return this; }
-
-    public Boolean getIsLocked() { return isLocked; }
-    public CellsDrawing setIsLocked(Boolean isLocked) { this.isLocked = isLocked; return this; }
-
-    public Boolean getIsPrintable() { return isPrintable; }
-    public CellsDrawing setIsPrintable(Boolean isPrintable) { this.isPrintable = isPrintable; return this; }
-
-    public Boolean getIsTextWrapped() { return isTextWrapped; }
-    public CellsDrawing setIsTextWrapped(Boolean isTextWrapped) { this.isTextWrapped = isTextWrapped; return this; }
-
-    public Boolean getIsWordArt() { return isWordArt; }
-    public CellsDrawing setIsWordArt(Boolean isWordArt) { this.isWordArt = isWordArt; return this; }
-
-    public String getLinkedCell() { return linkedCell; }
-    public CellsDrawing setLinkedCell(String linkedCell) { this.linkedCell = linkedCell; return this; }
-
-    public Integer getZOrderPosition() { return zOrderPosition; }
-    public CellsDrawing setZOrderPosition(Integer zOrderPosition) { this.zOrderPosition = zOrderPosition; return this; }
-
-    public Font getFont() { return font; }
-    public CellsDrawing setFont(Font font) { this.font = font; return this; }
-
-    public String getHyperlink() { return hyperlink; }
-    public CellsDrawing setHyperlink(String hyperlink) { this.hyperlink = hyperlink; return this; }
-
     public Link getLink() { return link; }
     public CellsDrawing setLink(Link link) { this.link = link; return this; }
+
+
+    /** Covariant override: keeps fluent chains returning CellsDrawing. */
+    @Override public CellsDrawing setName(String name) { return (CellsDrawing) super.setName(name); }
+    /** Covariant override: keeps fluent chains returning CellsDrawing. */
+    @Override public CellsDrawing setMsoDrawingType(String msoDrawingType) { return (CellsDrawing) super.setMsoDrawingType(msoDrawingType); }
+    /** Covariant override: keeps fluent chains returning CellsDrawing. */
+    @Override public CellsDrawing setAutoShapeType(String autoShapeType) { return (CellsDrawing) super.setAutoShapeType(autoShapeType); }
+    /** Covariant override: keeps fluent chains returning CellsDrawing. */
+    @Override public CellsDrawing setPlacement(String placement) { return (CellsDrawing) super.setPlacement(placement); }
+    /** Covariant override: keeps fluent chains returning CellsDrawing. */
+    @Override public CellsDrawing setUpperLeftRow(Integer upperLeftRow) { return (CellsDrawing) super.setUpperLeftRow(upperLeftRow); }
+    /** Covariant override: keeps fluent chains returning CellsDrawing. */
+    @Override public CellsDrawing setTop(Integer top) { return (CellsDrawing) super.setTop(top); }
+    /** Covariant override: keeps fluent chains returning CellsDrawing. */
+    @Override public CellsDrawing setUpperLeftColumn(Integer upperLeftColumn) { return (CellsDrawing) super.setUpperLeftColumn(upperLeftColumn); }
+    /** Covariant override: keeps fluent chains returning CellsDrawing. */
+    @Override public CellsDrawing setLeft(Integer left) { return (CellsDrawing) super.setLeft(left); }
+    /** Covariant override: keeps fluent chains returning CellsDrawing. */
+    @Override public CellsDrawing setLowerRightRow(Integer lowerRightRow) { return (CellsDrawing) super.setLowerRightRow(lowerRightRow); }
+    /** Covariant override: keeps fluent chains returning CellsDrawing. */
+    @Override public CellsDrawing setBottom(Integer bottom) { return (CellsDrawing) super.setBottom(bottom); }
+    /** Covariant override: keeps fluent chains returning CellsDrawing. */
+    @Override public CellsDrawing setLowerRightColumn(Integer lowerRightColumn) { return (CellsDrawing) super.setLowerRightColumn(lowerRightColumn); }
+    /** Covariant override: keeps fluent chains returning CellsDrawing. */
+    @Override public CellsDrawing setRight(Integer right) { return (CellsDrawing) super.setRight(right); }
+    /** Covariant override: keeps fluent chains returning CellsDrawing. */
+    @Override public CellsDrawing setWidth(Integer width) { return (CellsDrawing) super.setWidth(width); }
+    /** Covariant override: keeps fluent chains returning CellsDrawing. */
+    @Override public CellsDrawing setHeight(Integer height) { return (CellsDrawing) super.setHeight(height); }
+    /** Covariant override: keeps fluent chains returning CellsDrawing. */
+    @Override public CellsDrawing setX(Integer x) { return (CellsDrawing) super.setX(x); }
+    /** Covariant override: keeps fluent chains returning CellsDrawing. */
+    @Override public CellsDrawing setY(Integer y) { return (CellsDrawing) super.setY(y); }
+    /** Covariant override: keeps fluent chains returning CellsDrawing. */
+    @Override public CellsDrawing setRotationAngle(Double rotationAngle) { return (CellsDrawing) super.setRotationAngle(rotationAngle); }
+    /** Covariant override: keeps fluent chains returning CellsDrawing. */
+    @Override public CellsDrawing setHtmlText(String htmlText) { return (CellsDrawing) super.setHtmlText(htmlText); }
+    /** Covariant override: keeps fluent chains returning CellsDrawing. */
+    @Override public CellsDrawing setText(String text) { return (CellsDrawing) super.setText(text); }
+    /** Covariant override: keeps fluent chains returning CellsDrawing. */
+    @Override public CellsDrawing setAlternativeText(String alternativeText) { return (CellsDrawing) super.setAlternativeText(alternativeText); }
+    /** Covariant override: keeps fluent chains returning CellsDrawing. */
+    @Override public CellsDrawing setTextHorizontalAlignment(String textHorizontalAlignment) { return (CellsDrawing) super.setTextHorizontalAlignment(textHorizontalAlignment); }
+    /** Covariant override: keeps fluent chains returning CellsDrawing. */
+    @Override public CellsDrawing setTextHorizontalOverflow(String textHorizontalOverflow) { return (CellsDrawing) super.setTextHorizontalOverflow(textHorizontalOverflow); }
+    /** Covariant override: keeps fluent chains returning CellsDrawing. */
+    @Override public CellsDrawing setTextOrientationType(String textOrientationType) { return (CellsDrawing) super.setTextOrientationType(textOrientationType); }
+    /** Covariant override: keeps fluent chains returning CellsDrawing. */
+    @Override public CellsDrawing setTextVerticalAlignment(String textVerticalAlignment) { return (CellsDrawing) super.setTextVerticalAlignment(textVerticalAlignment); }
+    /** Covariant override: keeps fluent chains returning CellsDrawing. */
+    @Override public CellsDrawing setTextVerticalOverflow(String textVerticalOverflow) { return (CellsDrawing) super.setTextVerticalOverflow(textVerticalOverflow); }
+    /** Covariant override: keeps fluent chains returning CellsDrawing. */
+    @Override public CellsDrawing setIsGroup(Boolean isGroup) { return (CellsDrawing) super.setIsGroup(isGroup); }
+    /** Covariant override: keeps fluent chains returning CellsDrawing. */
+    @Override public CellsDrawing setIsHidden(Boolean isHidden) { return (CellsDrawing) super.setIsHidden(isHidden); }
+    /** Covariant override: keeps fluent chains returning CellsDrawing. */
+    @Override public CellsDrawing setIsLockAspectRatio(Boolean isLockAspectRatio) { return (CellsDrawing) super.setIsLockAspectRatio(isLockAspectRatio); }
+    /** Covariant override: keeps fluent chains returning CellsDrawing. */
+    @Override public CellsDrawing setIsLocked(Boolean isLocked) { return (CellsDrawing) super.setIsLocked(isLocked); }
+    /** Covariant override: keeps fluent chains returning CellsDrawing. */
+    @Override public CellsDrawing setIsPrintable(Boolean isPrintable) { return (CellsDrawing) super.setIsPrintable(isPrintable); }
+    /** Covariant override: keeps fluent chains returning CellsDrawing. */
+    @Override public CellsDrawing setIsTextWrapped(Boolean isTextWrapped) { return (CellsDrawing) super.setIsTextWrapped(isTextWrapped); }
+    /** Covariant override: keeps fluent chains returning CellsDrawing. */
+    @Override public CellsDrawing setIsWordArt(Boolean isWordArt) { return (CellsDrawing) super.setIsWordArt(isWordArt); }
+    /** Covariant override: keeps fluent chains returning CellsDrawing. */
+    @Override public CellsDrawing setLinkedCell(String linkedCell) { return (CellsDrawing) super.setLinkedCell(linkedCell); }
+    /** Covariant override: keeps fluent chains returning CellsDrawing. */
+    @Override public CellsDrawing setZOrderPosition(Integer zOrderPosition) { return (CellsDrawing) super.setZOrderPosition(zOrderPosition); }
+    /** Covariant override: keeps fluent chains returning CellsDrawing. */
+    @Override public CellsDrawing setFont(Font font) { return (CellsDrawing) super.setFont(font); }
+    /** Covariant override: keeps fluent chains returning CellsDrawing. */
+    @Override public CellsDrawing setHyperlink(String hyperlink) { return (CellsDrawing) super.setHyperlink(hyperlink); }
 
 }

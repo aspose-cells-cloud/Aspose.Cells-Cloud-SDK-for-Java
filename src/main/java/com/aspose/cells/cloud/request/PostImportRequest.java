@@ -6,7 +6,6 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import static com.aspose.cells.cloud.UrlUtils.urlEncode;
 
 /** Import data into an Excel file and generate output files in various formats. */
 public class PostImportRequest implements RequestOption {
@@ -45,7 +44,7 @@ public class PostImportRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/import";
+        return "/cells/import";
     }
 
     @Override

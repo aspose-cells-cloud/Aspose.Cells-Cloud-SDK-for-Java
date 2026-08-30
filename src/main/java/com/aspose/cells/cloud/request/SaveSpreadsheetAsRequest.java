@@ -47,7 +47,7 @@ public class SaveSpreadsheetAsRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v4.0/cells/" + urlEncode(name) + "/saveas";
+        return "/cells/" + urlEncode(name) + "/saveas";
     }
 
     @Override

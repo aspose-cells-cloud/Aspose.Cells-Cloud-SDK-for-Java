@@ -10,21 +10,13 @@ public class PivotFilterResponse extends CellsCloudResponse {
     @JsonProperty("PivotFilter")
     private PivotFilter pivotFilter;
 
-    /** Gets or sets Code. */
-    @JsonProperty("Code")
-    private Integer code;
-
-    /** Gets or sets Status. */
-    @JsonProperty("Status")
-    private String status;
-
     public PivotFilter getPivotFilter() { return pivotFilter; }
     public PivotFilterResponse setPivotFilter(PivotFilter pivotFilter) { this.pivotFilter = pivotFilter; return this; }
 
-    public Integer getCode() { return code; }
-    public PivotFilterResponse setCode(Integer code) { this.code = code; return this; }
 
-    public String getStatus() { return status; }
-    public PivotFilterResponse setStatus(String status) { this.status = status; return this; }
+    /** Covariant override: keeps fluent chains returning PivotFilterResponse. */
+    @Override public PivotFilterResponse setCode(Integer code) { return (PivotFilterResponse) super.setCode(code); }
+    /** Covariant override: keeps fluent chains returning PivotFilterResponse. */
+    @Override public PivotFilterResponse setStatus(String status) { return (PivotFilterResponse) super.setStatus(status); }
 
 }

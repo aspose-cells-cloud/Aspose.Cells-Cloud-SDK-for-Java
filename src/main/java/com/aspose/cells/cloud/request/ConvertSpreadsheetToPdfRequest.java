@@ -6,7 +6,6 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import static com.aspose.cells.cloud.UrlUtils.urlEncode;
 
 /** Converts a spreadsheet on a local drive to the pdf file. */
 public class ConvertSpreadsheetToPdfRequest implements RequestOption {
@@ -51,7 +50,7 @@ public class ConvertSpreadsheetToPdfRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v4.0/cells/convert/spreadsheet/pdf";
+        return "/cells/convert/spreadsheet/pdf";
     }
 
     @Override
@@ -85,4 +84,6 @@ public class ConvertSpreadsheetToPdfRequest implements RequestOption {
         form.put("Spreadsheet", spreadsheet);
         return form;
     }
+
+    @Override public boolean isBinaryResponse() { return true; }
 }

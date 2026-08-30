@@ -6,7 +6,6 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import static com.aspose.cells.cloud.UrlUtils.urlEncode;
 
 /** Converts a table of spreadsheet on a local drive to the image file. */
 public class ConvertTableToImageRequest implements RequestOption {
@@ -60,7 +59,7 @@ public class ConvertTableToImageRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v4.0/cells/convert/table/image";
+        return "/cells/convert/table/image";
     }
 
     @Override
@@ -97,4 +96,6 @@ public class ConvertTableToImageRequest implements RequestOption {
         form.put("Spreadsheet", spreadsheet);
         return form;
     }
+
+    @Override public boolean isBinaryResponse() { return true; }
 }

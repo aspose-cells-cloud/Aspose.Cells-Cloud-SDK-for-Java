@@ -34,7 +34,7 @@ public class GetWorksheetRowsRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/" + urlEncode(name) + "/worksheets/" + urlEncode(sheetName) + "/cells/rows/";
+        return "/cells/" + urlEncode(name) + "/worksheets/" + urlEncode(sheetName) + "/cells/rows/";
     }
 
     @Override

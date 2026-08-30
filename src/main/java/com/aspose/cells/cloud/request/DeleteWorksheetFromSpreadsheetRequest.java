@@ -6,7 +6,6 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import static com.aspose.cells.cloud.UrlUtils.urlEncode;
 
 /** The Web API endpoint allows users to delete a specified worksheet from a workbook. This function provides a straightforward way to manage workbook structure by removing unnecessary or redundant worksheets. */
 public class DeleteWorksheetFromSpreadsheetRequest implements RequestOption {
@@ -48,7 +47,7 @@ public class DeleteWorksheetFromSpreadsheetRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v4.0/cells/spreadsheet/delete/worksheet";
+        return "/cells/spreadsheet/delete/worksheet";
     }
 
     @Override
@@ -80,4 +79,6 @@ public class DeleteWorksheetFromSpreadsheetRequest implements RequestOption {
         form.put("Spreadsheet", spreadsheet);
         return form;
     }
+
+    @Override public boolean isBinaryResponse() { return true; }
 }

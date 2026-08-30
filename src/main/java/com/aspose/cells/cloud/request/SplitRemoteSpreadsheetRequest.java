@@ -43,7 +43,7 @@ public class SplitRemoteSpreadsheetRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v4.0/cells/" + urlEncode(name) + "/split/spreadsheet";
+        return "/cells/" + urlEncode(name) + "/split/spreadsheet";
     }
 
     @Override
@@ -76,4 +76,6 @@ public class SplitRemoteSpreadsheetRequest implements RequestOption {
     public Map<String, Object> getMultipartForm() {
         return null;
     }
+
+    @Override public boolean isBinaryResponse() { return true; }
 }

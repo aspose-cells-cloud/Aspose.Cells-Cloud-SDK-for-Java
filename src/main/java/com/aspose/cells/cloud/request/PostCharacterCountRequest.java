@@ -5,7 +5,6 @@ import com.aspose.cells.cloud.model.CharacterCountOptions;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import static com.aspose.cells.cloud.UrlUtils.urlEncode;
 
 /** PostCharacterCount request. */
 public class PostCharacterCountRequest implements RequestOption {
@@ -22,7 +21,7 @@ public class PostCharacterCountRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/charactercount";
+        return "/cells/charactercount";
     }
 
     @Override

@@ -53,7 +53,7 @@ public class GetWorkbookRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/" + urlEncode(name);
+        return "/cells/" + urlEncode(name);
     }
 
     @Override
@@ -91,4 +91,6 @@ public class GetWorkbookRequest implements RequestOption {
     public Map<String, Object> getMultipartForm() {
         return null;
     }
+
+    @Override public boolean isBinaryResponse() { return true; }
 }

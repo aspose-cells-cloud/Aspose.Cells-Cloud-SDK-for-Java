@@ -50,30 +50,6 @@ public class LineFormat extends FillFormat {
     @JsonProperty("Weight")
     private Double weight;
 
-    /** Gets or sets Type. */
-    @JsonProperty("Type")
-    private String type;
-
-    /** Gets or sets SolidFill. */
-    @JsonProperty("SolidFill")
-    private SolidFill solidFill;
-
-    /** Gets or sets PatternFill. */
-    @JsonProperty("PatternFill")
-    private PatternFill patternFill;
-
-    /** Gets or sets TextureFill. */
-    @JsonProperty("TextureFill")
-    private TextureFill textureFill;
-
-    /** Gets or sets GradientFill. */
-    @JsonProperty("GradientFill")
-    private GradientFill gradientFill;
-
-    /** Gets or sets ImageData. */
-    @JsonProperty("ImageData")
-    private String imageData;
-
     public String getBeginArrowheadLength() { return beginArrowheadLength; }
     public LineFormat setBeginArrowheadLength(String beginArrowheadLength) { this.beginArrowheadLength = beginArrowheadLength; return this; }
 
@@ -107,22 +83,18 @@ public class LineFormat extends FillFormat {
     public Double getWeight() { return weight; }
     public LineFormat setWeight(Double weight) { this.weight = weight; return this; }
 
-    public String getType() { return type; }
-    public LineFormat setType(String type) { this.type = type; return this; }
 
-    public SolidFill getSolidFill() { return solidFill; }
-    public LineFormat setSolidFill(SolidFill solidFill) { this.solidFill = solidFill; return this; }
-
-    public PatternFill getPatternFill() { return patternFill; }
-    public LineFormat setPatternFill(PatternFill patternFill) { this.patternFill = patternFill; return this; }
-
-    public TextureFill getTextureFill() { return textureFill; }
-    public LineFormat setTextureFill(TextureFill textureFill) { this.textureFill = textureFill; return this; }
-
-    public GradientFill getGradientFill() { return gradientFill; }
-    public LineFormat setGradientFill(GradientFill gradientFill) { this.gradientFill = gradientFill; return this; }
-
-    public String getImageData() { return imageData; }
-    public LineFormat setImageData(String imageData) { this.imageData = imageData; return this; }
+    /** Covariant override: keeps fluent chains returning LineFormat. */
+    @Override public LineFormat setType(String type) { return (LineFormat) super.setType(type); }
+    /** Covariant override: keeps fluent chains returning LineFormat. */
+    @Override public LineFormat setSolidFill(SolidFill solidFill) { return (LineFormat) super.setSolidFill(solidFill); }
+    /** Covariant override: keeps fluent chains returning LineFormat. */
+    @Override public LineFormat setPatternFill(PatternFill patternFill) { return (LineFormat) super.setPatternFill(patternFill); }
+    /** Covariant override: keeps fluent chains returning LineFormat. */
+    @Override public LineFormat setTextureFill(TextureFill textureFill) { return (LineFormat) super.setTextureFill(textureFill); }
+    /** Covariant override: keeps fluent chains returning LineFormat. */
+    @Override public LineFormat setGradientFill(GradientFill gradientFill) { return (LineFormat) super.setGradientFill(gradientFill); }
+    /** Covariant override: keeps fluent chains returning LineFormat. */
+    @Override public LineFormat setImageData(String imageData) { return (LineFormat) super.setImageData(imageData); }
 
 }

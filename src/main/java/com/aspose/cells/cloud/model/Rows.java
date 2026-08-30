@@ -19,10 +19,6 @@ public class Rows extends LinkElement {
     @JsonProperty("RowsList")
     private List<LinkElement> rowsList;
 
-    /** Gets or sets link. */
-    @JsonProperty("link")
-    private Link link;
-
     public Integer getMaxRow() { return maxRow; }
     public Rows setMaxRow(Integer maxRow) { this.maxRow = maxRow; return this; }
 
@@ -32,7 +28,8 @@ public class Rows extends LinkElement {
     public List<LinkElement> getRowsList() { return rowsList; }
     public Rows setRowsList(List<LinkElement> rowsList) { this.rowsList = rowsList; return this; }
 
-    public Link getLink() { return link; }
-    public Rows setLink(Link link) { this.link = link; return this; }
+
+    /** Covariant override: keeps fluent chains returning Rows. */
+    @Override public Rows setLink(Link link) { return (Rows) super.setLink(link); }
 
 }

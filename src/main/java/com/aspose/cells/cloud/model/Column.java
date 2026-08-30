@@ -26,10 +26,6 @@ public class Column extends LinkElement {
     @JsonProperty("Style")
     private LinkElement style;
 
-    /** Gets or sets link. */
-    @JsonProperty("link")
-    private Link link;
-
     public Integer getGroupLevel() { return groupLevel; }
     public Column setGroupLevel(Integer groupLevel) { this.groupLevel = groupLevel; return this; }
 
@@ -45,7 +41,8 @@ public class Column extends LinkElement {
     public LinkElement getStyle() { return style; }
     public Column setStyle(LinkElement style) { this.style = style; return this; }
 
-    public Link getLink() { return link; }
-    public Column setLink(Link link) { this.link = link; return this; }
+
+    /** Covariant override: keeps fluent chains returning Column. */
+    @Override public Column setLink(Link link) { return (Column) super.setLink(link); }
 
 }

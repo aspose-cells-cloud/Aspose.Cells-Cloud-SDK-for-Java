@@ -33,7 +33,7 @@ public class GetWorksheetCellStyleRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/" + urlEncode(name) + "/worksheets/" + urlEncode(sheetName) + "/cells/" + urlEncode(cellName) + "/style";
+        return "/cells/" + urlEncode(name) + "/worksheets/" + urlEncode(sheetName) + "/cells/" + urlEncode(cellName) + "/style";
     }
 
     @Override

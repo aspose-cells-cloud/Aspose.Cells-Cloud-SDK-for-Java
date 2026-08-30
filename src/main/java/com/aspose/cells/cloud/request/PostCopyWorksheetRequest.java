@@ -41,7 +41,7 @@ public class PostCopyWorksheetRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/" + urlEncode(name) + "/worksheets/" + urlEncode(sheetName) + "/copy";
+        return "/cells/" + urlEncode(name) + "/worksheets/" + urlEncode(sheetName) + "/copy";
     }
 
     @Override

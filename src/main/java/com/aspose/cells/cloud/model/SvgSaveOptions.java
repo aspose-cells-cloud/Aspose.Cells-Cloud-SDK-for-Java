@@ -58,58 +58,6 @@ public class SvgSaveOptions extends SaveOptions {
     @JsonProperty("VerticalResolution")
     private Integer verticalResolution;
 
-    /** Gets or sets SaveFormat. */
-    @JsonProperty("SaveFormat")
-    private String saveFormat;
-
-    /** Gets or sets CachedFileFolder. */
-    @JsonProperty("CachedFileFolder")
-    private String cachedFileFolder;
-
-    /** Gets or sets ClearData. */
-    @JsonProperty("ClearData")
-    private Boolean clearData;
-
-    /** Gets or sets CreateDirectory. */
-    @JsonProperty("CreateDirectory")
-    private Boolean createDirectory;
-
-    /** Gets or sets EnableHTTPCompression. */
-    @JsonProperty("EnableHTTPCompression")
-    private Boolean enableHTTPCompression;
-
-    /** Gets or sets RefreshChartCache. */
-    @JsonProperty("RefreshChartCache")
-    private Boolean refreshChartCache;
-
-    /** Gets or sets SortNames. */
-    @JsonProperty("SortNames")
-    private Boolean sortNames;
-
-    /** Gets or sets ValidateMergedAreas. */
-    @JsonProperty("ValidateMergedAreas")
-    private Boolean validateMergedAreas;
-
-    /** Gets or sets MergeAreas. */
-    @JsonProperty("MergeAreas")
-    private Boolean mergeAreas;
-
-    /** Gets or sets SortExternalNames. */
-    @JsonProperty("SortExternalNames")
-    private Boolean sortExternalNames;
-
-    /** Gets or sets CheckExcelRestriction. */
-    @JsonProperty("CheckExcelRestriction")
-    private Boolean checkExcelRestriction;
-
-    /** Gets or sets UpdateSmartArt. */
-    @JsonProperty("UpdateSmartArt")
-    private Boolean updateSmartArt;
-
-    /** Gets or sets EncryptDocumentProperties. */
-    @JsonProperty("EncryptDocumentProperties")
-    private Boolean encryptDocumentProperties;
-
     public Integer getSheetIndex() { return sheetIndex; }
     public SvgSaveOptions setSheetIndex(Integer sheetIndex) { this.sheetIndex = sheetIndex; return this; }
 
@@ -149,43 +97,32 @@ public class SvgSaveOptions extends SaveOptions {
     public Integer getVerticalResolution() { return verticalResolution; }
     public SvgSaveOptions setVerticalResolution(Integer verticalResolution) { this.verticalResolution = verticalResolution; return this; }
 
-    public String getSaveFormat() { return saveFormat; }
-    public SvgSaveOptions setSaveFormat(String saveFormat) { this.saveFormat = saveFormat; return this; }
 
-    public String getCachedFileFolder() { return cachedFileFolder; }
-    public SvgSaveOptions setCachedFileFolder(String cachedFileFolder) { this.cachedFileFolder = cachedFileFolder; return this; }
-
-    public Boolean getClearData() { return clearData; }
-    public SvgSaveOptions setClearData(Boolean clearData) { this.clearData = clearData; return this; }
-
-    public Boolean getCreateDirectory() { return createDirectory; }
-    public SvgSaveOptions setCreateDirectory(Boolean createDirectory) { this.createDirectory = createDirectory; return this; }
-
-    public Boolean getEnableHTTPCompression() { return enableHTTPCompression; }
-    public SvgSaveOptions setEnableHTTPCompression(Boolean enableHTTPCompression) { this.enableHTTPCompression = enableHTTPCompression; return this; }
-
-    public Boolean getRefreshChartCache() { return refreshChartCache; }
-    public SvgSaveOptions setRefreshChartCache(Boolean refreshChartCache) { this.refreshChartCache = refreshChartCache; return this; }
-
-    public Boolean getSortNames() { return sortNames; }
-    public SvgSaveOptions setSortNames(Boolean sortNames) { this.sortNames = sortNames; return this; }
-
-    public Boolean getValidateMergedAreas() { return validateMergedAreas; }
-    public SvgSaveOptions setValidateMergedAreas(Boolean validateMergedAreas) { this.validateMergedAreas = validateMergedAreas; return this; }
-
-    public Boolean getMergeAreas() { return mergeAreas; }
-    public SvgSaveOptions setMergeAreas(Boolean mergeAreas) { this.mergeAreas = mergeAreas; return this; }
-
-    public Boolean getSortExternalNames() { return sortExternalNames; }
-    public SvgSaveOptions setSortExternalNames(Boolean sortExternalNames) { this.sortExternalNames = sortExternalNames; return this; }
-
-    public Boolean getCheckExcelRestriction() { return checkExcelRestriction; }
-    public SvgSaveOptions setCheckExcelRestriction(Boolean checkExcelRestriction) { this.checkExcelRestriction = checkExcelRestriction; return this; }
-
-    public Boolean getUpdateSmartArt() { return updateSmartArt; }
-    public SvgSaveOptions setUpdateSmartArt(Boolean updateSmartArt) { this.updateSmartArt = updateSmartArt; return this; }
-
-    public Boolean getEncryptDocumentProperties() { return encryptDocumentProperties; }
-    public SvgSaveOptions setEncryptDocumentProperties(Boolean encryptDocumentProperties) { this.encryptDocumentProperties = encryptDocumentProperties; return this; }
+    /** Covariant override: keeps fluent chains returning SvgSaveOptions. */
+    @Override public SvgSaveOptions setSaveFormat(String saveFormat) { return (SvgSaveOptions) super.setSaveFormat(saveFormat); }
+    /** Covariant override: keeps fluent chains returning SvgSaveOptions. */
+    @Override public SvgSaveOptions setCachedFileFolder(String cachedFileFolder) { return (SvgSaveOptions) super.setCachedFileFolder(cachedFileFolder); }
+    /** Covariant override: keeps fluent chains returning SvgSaveOptions. */
+    @Override public SvgSaveOptions setClearData(Boolean clearData) { return (SvgSaveOptions) super.setClearData(clearData); }
+    /** Covariant override: keeps fluent chains returning SvgSaveOptions. */
+    @Override public SvgSaveOptions setCreateDirectory(Boolean createDirectory) { return (SvgSaveOptions) super.setCreateDirectory(createDirectory); }
+    /** Covariant override: keeps fluent chains returning SvgSaveOptions. */
+    @Override public SvgSaveOptions setEnableHTTPCompression(Boolean enableHTTPCompression) { return (SvgSaveOptions) super.setEnableHTTPCompression(enableHTTPCompression); }
+    /** Covariant override: keeps fluent chains returning SvgSaveOptions. */
+    @Override public SvgSaveOptions setRefreshChartCache(Boolean refreshChartCache) { return (SvgSaveOptions) super.setRefreshChartCache(refreshChartCache); }
+    /** Covariant override: keeps fluent chains returning SvgSaveOptions. */
+    @Override public SvgSaveOptions setSortNames(Boolean sortNames) { return (SvgSaveOptions) super.setSortNames(sortNames); }
+    /** Covariant override: keeps fluent chains returning SvgSaveOptions. */
+    @Override public SvgSaveOptions setValidateMergedAreas(Boolean validateMergedAreas) { return (SvgSaveOptions) super.setValidateMergedAreas(validateMergedAreas); }
+    /** Covariant override: keeps fluent chains returning SvgSaveOptions. */
+    @Override public SvgSaveOptions setMergeAreas(Boolean mergeAreas) { return (SvgSaveOptions) super.setMergeAreas(mergeAreas); }
+    /** Covariant override: keeps fluent chains returning SvgSaveOptions. */
+    @Override public SvgSaveOptions setSortExternalNames(Boolean sortExternalNames) { return (SvgSaveOptions) super.setSortExternalNames(sortExternalNames); }
+    /** Covariant override: keeps fluent chains returning SvgSaveOptions. */
+    @Override public SvgSaveOptions setCheckExcelRestriction(Boolean checkExcelRestriction) { return (SvgSaveOptions) super.setCheckExcelRestriction(checkExcelRestriction); }
+    /** Covariant override: keeps fluent chains returning SvgSaveOptions. */
+    @Override public SvgSaveOptions setUpdateSmartArt(Boolean updateSmartArt) { return (SvgSaveOptions) super.setUpdateSmartArt(updateSmartArt); }
+    /** Covariant override: keeps fluent chains returning SvgSaveOptions. */
+    @Override public SvgSaveOptions setEncryptDocumentProperties(Boolean encryptDocumentProperties) { return (SvgSaveOptions) super.setEncryptDocumentProperties(encryptDocumentProperties); }
 
 }

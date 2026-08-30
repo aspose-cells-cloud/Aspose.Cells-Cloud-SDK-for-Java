@@ -5,7 +5,6 @@ import com.aspose.cells.cloud.model.DataDeduplicationRequest;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import static com.aspose.cells.cloud.UrlUtils.urlEncode;
 
 /** Data deduplication of spreadsheet files is mainly used to eliminate duplicate data in tables and ranges. */
 public class PostDataDeduplicationRequest implements RequestOption {
@@ -22,7 +21,7 @@ public class PostDataDeduplicationRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/datadeduplication";
+        return "/cells/datadeduplication";
     }
 
     @Override

@@ -34,7 +34,7 @@ public class PostWorksheetCellsRangeOutlineBorderRequest implements RequestOptio
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/" + urlEncode(name) + "/worksheets/" + urlEncode(sheetName) + "/ranges/outlineBorder";
+        return "/cells/" + urlEncode(name) + "/worksheets/" + urlEncode(sheetName) + "/ranges/outlineBorder";
     }
 
     @Override

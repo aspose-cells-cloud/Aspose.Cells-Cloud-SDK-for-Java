@@ -4,7 +4,6 @@ import com.aspose.cells.cloud.RequestOption;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import static com.aspose.cells.cloud.UrlUtils.urlEncode;
 
 /** Check the Health Status of Aspose.Cells Cloud Service. */
 public class CheckCloudServiceHealthRequest implements RequestOption {
@@ -15,7 +14,7 @@ public class CheckCloudServiceHealthRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v4.0/cells/status/check";
+        return "/cells/status/check";
     }
 
     @Override

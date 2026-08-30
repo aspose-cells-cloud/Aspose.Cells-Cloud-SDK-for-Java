@@ -44,7 +44,7 @@ public class RemoveDuplicateSubstringsInRemoteSpreadsheetRequest implements Requ
 
     @Override
     public String getPath() {
-        return "/v4.0/cells/" + urlEncode(name) + "/worksheets/" + urlEncode(worksheet) + "/range/" + urlEncode(range) + "/content/remove/duplicate-substrings";
+        return "/cells/" + urlEncode(name) + "/worksheets/" + urlEncode(worksheet) + "/range/" + urlEncode(range) + "/content/remove/duplicate-substrings";
     }
 
     @Override

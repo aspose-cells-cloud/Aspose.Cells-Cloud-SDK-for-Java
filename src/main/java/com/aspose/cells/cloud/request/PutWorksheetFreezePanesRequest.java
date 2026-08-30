@@ -42,7 +42,7 @@ public class PutWorksheetFreezePanesRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/" + urlEncode(name) + "/worksheets/" + urlEncode(sheetName) + "/freezepanes";
+        return "/cells/" + urlEncode(name) + "/worksheets/" + urlEncode(sheetName) + "/freezepanes";
     }
 
     @Override

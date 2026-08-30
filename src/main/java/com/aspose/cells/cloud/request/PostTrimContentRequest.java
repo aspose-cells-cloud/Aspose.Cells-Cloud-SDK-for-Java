@@ -5,7 +5,6 @@ import com.aspose.cells.cloud.model.TrimContentOptions;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import static com.aspose.cells.cloud.UrlUtils.urlEncode;
 
 /** The PostTrimContent API is designed to process and trim content within a specified range in a spreadsheet. This API allows users to remove extra spaces, line breaks, or other unnecessary characters from the content of selected cells. It is particularly useful for cleaning up data entries and ensuring consistency in spreadsheet formatting */
 public class PostTrimContentRequest implements RequestOption {
@@ -22,7 +21,7 @@ public class PostTrimContentRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/trimcontent";
+        return "/cells/trimcontent";
     }
 
     @Override

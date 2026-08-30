@@ -34,7 +34,7 @@ public class PostWorksheetCellsRangeToImageRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/" + urlEncode(name) + "/worksheets/" + urlEncode(sheetName) + "/ranges/convertToImage";
+        return "/cells/" + urlEncode(name) + "/worksheets/" + urlEncode(sheetName) + "/ranges/convertToImage";
     }
 
     @Override
@@ -61,4 +61,6 @@ public class PostWorksheetCellsRangeToImageRequest implements RequestOption {
     public Map<String, Object> getMultipartForm() {
         return null;
     }
+
+    @Override public boolean isBinaryResponse() { return true; }
 }

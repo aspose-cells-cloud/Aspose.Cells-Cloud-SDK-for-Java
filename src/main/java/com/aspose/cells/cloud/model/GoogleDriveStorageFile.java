@@ -11,42 +11,19 @@ public class GoogleDriveStorageFile extends StorageFile {
     @JsonProperty("MimeType")
     private String mimeType;
 
-    /** Gets or sets Name. */
-    @JsonProperty("Name")
-    private String name;
-
-    /** Gets or sets IsFolder. */
-    @JsonProperty("IsFolder")
-    private Boolean isFolder;
-
-    /** Gets or sets ModifiedDate. */
-    @JsonProperty("ModifiedDate")
-    private OffsetDateTime modifiedDate;
-
-    /** Gets or sets Size. */
-    @JsonProperty("Size")
-    private Long size;
-
-    /** Gets or sets Path. */
-    @JsonProperty("Path")
-    private String path;
-
     public String getMimeType() { return mimeType; }
     public GoogleDriveStorageFile setMimeType(String mimeType) { this.mimeType = mimeType; return this; }
 
-    public String getName() { return name; }
-    public GoogleDriveStorageFile setName(String name) { this.name = name; return this; }
 
-    public Boolean getIsFolder() { return isFolder; }
-    public GoogleDriveStorageFile setIsFolder(Boolean isFolder) { this.isFolder = isFolder; return this; }
-
-    public OffsetDateTime getModifiedDate() { return modifiedDate; }
-    public GoogleDriveStorageFile setModifiedDate(OffsetDateTime modifiedDate) { this.modifiedDate = modifiedDate; return this; }
-
-    public Long getSize() { return size; }
-    public GoogleDriveStorageFile setSize(Long size) { this.size = size; return this; }
-
-    public String getPath() { return path; }
-    public GoogleDriveStorageFile setPath(String path) { this.path = path; return this; }
+    /** Covariant override: keeps fluent chains returning GoogleDriveStorageFile. */
+    @Override public GoogleDriveStorageFile setName(String name) { return (GoogleDriveStorageFile) super.setName(name); }
+    /** Covariant override: keeps fluent chains returning GoogleDriveStorageFile. */
+    @Override public GoogleDriveStorageFile setIsFolder(Boolean isFolder) { return (GoogleDriveStorageFile) super.setIsFolder(isFolder); }
+    /** Covariant override: keeps fluent chains returning GoogleDriveStorageFile. */
+    @Override public GoogleDriveStorageFile setModifiedDate(OffsetDateTime modifiedDate) { return (GoogleDriveStorageFile) super.setModifiedDate(modifiedDate); }
+    /** Covariant override: keeps fluent chains returning GoogleDriveStorageFile. */
+    @Override public GoogleDriveStorageFile setSize(Long size) { return (GoogleDriveStorageFile) super.setSize(size); }
+    /** Covariant override: keeps fluent chains returning GoogleDriveStorageFile. */
+    @Override public GoogleDriveStorageFile setPath(String path) { return (GoogleDriveStorageFile) super.setPath(path); }
 
 }

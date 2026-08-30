@@ -11,14 +11,11 @@ public class Trendlines extends LinkElement {
     @JsonProperty("TrendlineList")
     private List<Trendline> trendlineList;
 
-    /** Gets or sets link. */
-    @JsonProperty("link")
-    private Link link;
-
     public List<Trendline> getTrendlineList() { return trendlineList; }
     public Trendlines setTrendlineList(List<Trendline> trendlineList) { this.trendlineList = trendlineList; return this; }
 
-    public Link getLink() { return link; }
-    public Trendlines setLink(Link link) { this.link = link; return this; }
+
+    /** Covariant override: keeps fluent chains returning Trendlines. */
+    @Override public Trendlines setLink(Link link) { return (Trendlines) super.setLink(link); }
 
 }

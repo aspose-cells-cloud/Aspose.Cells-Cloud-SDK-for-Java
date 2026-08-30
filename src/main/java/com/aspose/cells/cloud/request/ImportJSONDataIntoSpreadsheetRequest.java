@@ -6,7 +6,6 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import static com.aspose.cells.cloud.UrlUtils.urlEncode;
 
 /** Import JSON data file into the local spreadsheet. */
 public class ImportJSONDataIntoSpreadsheetRequest implements RequestOption {
@@ -54,7 +53,7 @@ public class ImportJSONDataIntoSpreadsheetRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v4.0/cells/import/data/json";
+        return "/cells/import/data/json";
     }
 
     @Override
@@ -90,4 +89,6 @@ public class ImportJSONDataIntoSpreadsheetRequest implements RequestOption {
         form.put("Spreadsheet", spreadsheet);
         return form;
     }
+
+    @Override public boolean isBinaryResponse() { return true; }
 }

@@ -11,14 +11,11 @@ public class Shapes extends LinkElement {
     @JsonProperty("ShapeList")
     private List<LinkElement> shapeList;
 
-    /** Gets or sets link. */
-    @JsonProperty("link")
-    private Link link;
-
     public List<LinkElement> getShapeList() { return shapeList; }
     public Shapes setShapeList(List<LinkElement> shapeList) { this.shapeList = shapeList; return this; }
 
-    public Link getLink() { return link; }
-    public Shapes setLink(Link link) { this.link = link; return this; }
+
+    /** Covariant override: keeps fluent chains returning Shapes. */
+    @Override public Shapes setLink(Link link) { return (Shapes) super.setLink(link); }
 
 }

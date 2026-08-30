@@ -10,21 +10,13 @@ public class ListObjectsResponse extends CellsCloudResponse {
     @JsonProperty("ListObjects")
     private ListObjects listObjects;
 
-    /** Gets or sets Code. */
-    @JsonProperty("Code")
-    private Integer code;
-
-    /** Gets or sets Status. */
-    @JsonProperty("Status")
-    private String status;
-
     public ListObjects getListObjects() { return listObjects; }
     public ListObjectsResponse setListObjects(ListObjects listObjects) { this.listObjects = listObjects; return this; }
 
-    public Integer getCode() { return code; }
-    public ListObjectsResponse setCode(Integer code) { this.code = code; return this; }
 
-    public String getStatus() { return status; }
-    public ListObjectsResponse setStatus(String status) { this.status = status; return this; }
+    /** Covariant override: keeps fluent chains returning ListObjectsResponse. */
+    @Override public ListObjectsResponse setCode(Integer code) { return (ListObjectsResponse) super.setCode(code); }
+    /** Covariant override: keeps fluent chains returning ListObjectsResponse. */
+    @Override public ListObjectsResponse setStatus(String status) { return (ListObjectsResponse) super.setStatus(status); }
 
 }

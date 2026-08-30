@@ -27,7 +27,7 @@ public class GetPageCountRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/" + urlEncode(name) + "/pagecount";
+        return "/cells/" + urlEncode(name) + "/pagecount";
     }
 
     @Override

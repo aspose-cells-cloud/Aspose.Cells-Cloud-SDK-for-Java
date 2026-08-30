@@ -37,7 +37,7 @@ public class AcceptAllRevisionsInRemoteSpreadsheetRequest implements RequestOpti
 
     @Override
     public String getPath() {
-        return "/v4.0/cells/" + urlEncode(name) + "/accept-all-revisions";
+        return "/cells/" + urlEncode(name) + "/accept-all-revisions";
     }
 
     @Override
@@ -67,4 +67,6 @@ public class AcceptAllRevisionsInRemoteSpreadsheetRequest implements RequestOpti
     public Map<String, Object> getMultipartForm() {
         return null;
     }
+
+    @Override public boolean isBinaryResponse() { return true; }
 }

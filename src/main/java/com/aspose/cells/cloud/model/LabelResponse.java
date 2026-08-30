@@ -10,21 +10,13 @@ public class LabelResponse extends CellsCloudResponse {
     @JsonProperty("Shape")
     private Label shape;
 
-    /** Gets or sets Code. */
-    @JsonProperty("Code")
-    private Integer code;
-
-    /** Gets or sets Status. */
-    @JsonProperty("Status")
-    private String status;
-
     public Label getShape() { return shape; }
     public LabelResponse setShape(Label shape) { this.shape = shape; return this; }
 
-    public Integer getCode() { return code; }
-    public LabelResponse setCode(Integer code) { this.code = code; return this; }
 
-    public String getStatus() { return status; }
-    public LabelResponse setStatus(String status) { this.status = status; return this; }
+    /** Covariant override: keeps fluent chains returning LabelResponse. */
+    @Override public LabelResponse setCode(Integer code) { return (LabelResponse) super.setCode(code); }
+    /** Covariant override: keeps fluent chains returning LabelResponse. */
+    @Override public LabelResponse setStatus(String status) { return (LabelResponse) super.setStatus(status); }
 
 }

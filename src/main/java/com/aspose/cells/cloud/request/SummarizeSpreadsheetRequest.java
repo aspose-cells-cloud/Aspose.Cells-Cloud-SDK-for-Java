@@ -6,7 +6,6 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import static com.aspose.cells.cloud.UrlUtils.urlEncode;
 
 /** Summarizes spreadsheet content using AI and returns the summary as a downloadable text file. */
 public class SummarizeSpreadsheetRequest implements RequestOption {
@@ -41,7 +40,7 @@ public class SummarizeSpreadsheetRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v4.0/cells/ai/summarize/spreadsheet";
+        return "/cells/ai/summarize/spreadsheet";
     }
 
     @Override
@@ -70,4 +69,6 @@ public class SummarizeSpreadsheetRequest implements RequestOption {
         form.put("Spreadsheet", spreadsheet);
         return form;
     }
+
+    @Override public boolean isBinaryResponse() { return true; }
 }

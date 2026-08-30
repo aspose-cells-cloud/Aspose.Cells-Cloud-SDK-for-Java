@@ -31,7 +31,7 @@ public class PutWorkbookNameRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/" + urlEncode(name) + "/names";
+        return "/cells/" + urlEncode(name) + "/names";
     }
 
     @Override

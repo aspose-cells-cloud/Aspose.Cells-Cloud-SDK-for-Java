@@ -11,14 +11,11 @@ public class AutoShapes extends LinkElement {
     @JsonProperty("AutoShapeList")
     private List<LinkElement> autoShapeList;
 
-    /** Gets or sets link. */
-    @JsonProperty("link")
-    private Link link;
-
     public List<LinkElement> getAutoShapeList() { return autoShapeList; }
     public AutoShapes setAutoShapeList(List<LinkElement> autoShapeList) { this.autoShapeList = autoShapeList; return this; }
 
-    public Link getLink() { return link; }
-    public AutoShapes setLink(Link link) { this.link = link; return this; }
+
+    /** Covariant override: keeps fluent chains returning AutoShapes. */
+    @Override public AutoShapes setLink(Link link) { return (AutoShapes) super.setLink(link); }
 
 }

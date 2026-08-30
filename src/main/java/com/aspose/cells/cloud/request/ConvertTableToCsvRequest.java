@@ -6,7 +6,6 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import static com.aspose.cells.cloud.UrlUtils.urlEncode;
 
 /** Converts a table of spreadsheet on a local drive to the csv file. */
 public class ConvertTableToCsvRequest implements RequestOption {
@@ -57,7 +56,7 @@ public class ConvertTableToCsvRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v4.0/cells/convert/table/csv";
+        return "/cells/convert/table/csv";
     }
 
     @Override
@@ -93,4 +92,6 @@ public class ConvertTableToCsvRequest implements RequestOption {
         form.put("Spreadsheet", spreadsheet);
         return form;
     }
+
+    @Override public boolean isBinaryResponse() { return true; }
 }

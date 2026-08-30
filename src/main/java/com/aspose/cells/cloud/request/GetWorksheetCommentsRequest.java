@@ -30,7 +30,7 @@ public class GetWorksheetCommentsRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/" + urlEncode(name) + "/worksheets/" + urlEncode(sheetName) + "/comments";
+        return "/cells/" + urlEncode(name) + "/worksheets/" + urlEncode(sheetName) + "/comments";
     }
 
     @Override

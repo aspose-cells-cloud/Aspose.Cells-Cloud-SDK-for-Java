@@ -45,7 +45,7 @@ public class PostPivotTableUpdatePivotFieldRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/" + urlEncode(name) + "/worksheets/" + urlEncode(sheetName) + "/pivottables/" + urlEncode(String.valueOf(pivotTableIndex)) + "/PivotFields/" + urlEncode(String.valueOf(pivotFieldIndex));
+        return "/cells/" + urlEncode(name) + "/worksheets/" + urlEncode(sheetName) + "/pivottables/" + urlEncode(String.valueOf(pivotTableIndex)) + "/PivotFields/" + urlEncode(String.valueOf(pivotFieldIndex));
     }
 
     @Override

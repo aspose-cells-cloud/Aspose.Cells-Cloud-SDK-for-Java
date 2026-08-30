@@ -34,7 +34,7 @@ public class PostWorkbookNameRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/" + urlEncode(name) + "/names/" + urlEncode(nameName);
+        return "/cells/" + urlEncode(name) + "/names/" + urlEncode(nameName);
     }
 
     @Override

@@ -10,21 +10,13 @@ public class PlotAreaResponse extends CellsCloudResponse {
     @JsonProperty("PlotArea")
     private PlotArea plotArea;
 
-    /** Gets or sets Code. */
-    @JsonProperty("Code")
-    private Integer code;
-
-    /** Gets or sets Status. */
-    @JsonProperty("Status")
-    private String status;
-
     public PlotArea getPlotArea() { return plotArea; }
     public PlotAreaResponse setPlotArea(PlotArea plotArea) { this.plotArea = plotArea; return this; }
 
-    public Integer getCode() { return code; }
-    public PlotAreaResponse setCode(Integer code) { this.code = code; return this; }
 
-    public String getStatus() { return status; }
-    public PlotAreaResponse setStatus(String status) { this.status = status; return this; }
+    /** Covariant override: keeps fluent chains returning PlotAreaResponse. */
+    @Override public PlotAreaResponse setCode(Integer code) { return (PlotAreaResponse) super.setCode(code); }
+    /** Covariant override: keeps fluent chains returning PlotAreaResponse. */
+    @Override public PlotAreaResponse setStatus(String status) { return (PlotAreaResponse) super.setStatus(status); }
 
 }

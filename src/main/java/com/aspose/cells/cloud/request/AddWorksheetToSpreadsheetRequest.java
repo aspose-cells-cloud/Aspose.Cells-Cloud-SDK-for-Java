@@ -6,7 +6,6 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import static com.aspose.cells.cloud.UrlUtils.urlEncode;
 
 /** The Web API enables users to add a new worksheet to a workbook, specifying the worksheet's type, position, and name. This function provides flexibility in managing workbook structure by allowing detailed control over worksheet addition. */
 public class AddWorksheetToSpreadsheetRequest implements RequestOption {
@@ -51,7 +50,7 @@ public class AddWorksheetToSpreadsheetRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v4.0/cells/spreadsheet/add/worksheet";
+        return "/cells/spreadsheet/add/worksheet";
     }
 
     @Override
@@ -85,4 +84,6 @@ public class AddWorksheetToSpreadsheetRequest implements RequestOption {
         form.put("Spreadsheet", spreadsheet);
         return form;
     }
+
+    @Override public boolean isBinaryResponse() { return true; }
 }

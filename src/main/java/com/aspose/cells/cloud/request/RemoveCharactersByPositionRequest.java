@@ -6,7 +6,6 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import static com.aspose.cells.cloud.UrlUtils.urlEncode;
 
 /** Deletes characters from every cell in the target range by position (first/last N, before/after a substring, or between two delimiters) while preserving formulas, formatting and data-validation. */
 public class RemoveCharactersByPositionRequest implements RequestOption {
@@ -59,7 +58,7 @@ public class RemoveCharactersByPositionRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v4.0/cells/content/remove/characters-by-position";
+        return "/cells/content/remove/characters-by-position";
     }
 
     @Override
@@ -97,4 +96,6 @@ public class RemoveCharactersByPositionRequest implements RequestOption {
         form.put("Spreadsheet", spreadsheet);
         return form;
     }
+
+    @Override public boolean isBinaryResponse() { return true; }
 }

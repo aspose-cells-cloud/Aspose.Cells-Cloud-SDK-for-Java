@@ -31,7 +31,7 @@ public class PutDocumentProtectFromChangesRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/" + urlEncode(name) + "/writeProtection";
+        return "/cells/" + urlEncode(name) + "/writeProtection";
     }
 
     @Override

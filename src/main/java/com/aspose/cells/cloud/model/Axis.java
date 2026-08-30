@@ -142,10 +142,6 @@ public class Axis extends LinkElement {
     @JsonProperty("Title")
     private Title title;
 
-    /** Gets or sets link. */
-    @JsonProperty("link")
-    private Link link;
-
     public Area getArea() { return area; }
     public Axis setArea(Area area) { this.area = area; return this; }
 
@@ -248,7 +244,8 @@ public class Axis extends LinkElement {
     public Title getTitle() { return title; }
     public Axis setTitle(Title title) { this.title = title; return this; }
 
-    public Link getLink() { return link; }
-    public Axis setLink(Link link) { this.link = link; return this; }
+
+    /** Covariant override: keeps fluent chains returning Axis. */
+    @Override public Axis setLink(Link link) { return (Axis) super.setLink(link); }
 
 }

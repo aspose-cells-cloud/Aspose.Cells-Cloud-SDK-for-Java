@@ -33,7 +33,7 @@ public class PutChangeVisibilityWorksheetRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/" + urlEncode(name) + "/worksheets/" + urlEncode(sheetName) + "/visible";
+        return "/cells/" + urlEncode(name) + "/worksheets/" + urlEncode(sheetName) + "/visible";
     }
 
     @Override

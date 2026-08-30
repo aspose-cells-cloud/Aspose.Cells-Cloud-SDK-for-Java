@@ -33,7 +33,7 @@ public class PostDigitalSignatureRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/" + urlEncode(name) + "/digitalsignature";
+        return "/cells/" + urlEncode(name) + "/digitalsignature";
     }
 
     @Override

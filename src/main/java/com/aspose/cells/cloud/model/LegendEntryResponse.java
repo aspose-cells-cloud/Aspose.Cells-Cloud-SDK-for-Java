@@ -10,21 +10,13 @@ public class LegendEntryResponse extends CellsCloudResponse {
     @JsonProperty("LegendEntry")
     private LegendEntry legendEntry;
 
-    /** Gets or sets Code. */
-    @JsonProperty("Code")
-    private Integer code;
-
-    /** Gets or sets Status. */
-    @JsonProperty("Status")
-    private String status;
-
     public LegendEntry getLegendEntry() { return legendEntry; }
     public LegendEntryResponse setLegendEntry(LegendEntry legendEntry) { this.legendEntry = legendEntry; return this; }
 
-    public Integer getCode() { return code; }
-    public LegendEntryResponse setCode(Integer code) { this.code = code; return this; }
 
-    public String getStatus() { return status; }
-    public LegendEntryResponse setStatus(String status) { this.status = status; return this; }
+    /** Covariant override: keeps fluent chains returning LegendEntryResponse. */
+    @Override public LegendEntryResponse setCode(Integer code) { return (LegendEntryResponse) super.setCode(code); }
+    /** Covariant override: keeps fluent chains returning LegendEntryResponse. */
+    @Override public LegendEntryResponse setStatus(String status) { return (LegendEntryResponse) super.setStatus(status); }
 
 }

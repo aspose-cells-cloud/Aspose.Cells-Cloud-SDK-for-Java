@@ -6,7 +6,6 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import static com.aspose.cells.cloud.UrlUtils.urlEncode;
 
 /** Delete cells document properties in Excel file, and save them is various formats. */
 public class DeleteMetadataRequest implements RequestOption {
@@ -45,7 +44,7 @@ public class DeleteMetadataRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/metadata/delete";
+        return "/cells/metadata/delete";
     }
 
     @Override

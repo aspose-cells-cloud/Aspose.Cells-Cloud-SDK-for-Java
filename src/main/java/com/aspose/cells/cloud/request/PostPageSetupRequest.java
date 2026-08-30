@@ -34,7 +34,7 @@ public class PostPageSetupRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/" + urlEncode(name) + "/worksheets/" + urlEncode(sheetName) + "/pagesetup";
+        return "/cells/" + urlEncode(name) + "/worksheets/" + urlEncode(sheetName) + "/pagesetup";
     }
 
     @Override

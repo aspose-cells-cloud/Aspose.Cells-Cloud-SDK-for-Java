@@ -22,10 +22,6 @@ public class MergedCell extends LinkElement {
     @JsonProperty("StartRow")
     private Integer startRow;
 
-    /** Gets or sets link. */
-    @JsonProperty("link")
-    private Link link;
-
     public Integer getEndColumn() { return endColumn; }
     public MergedCell setEndColumn(Integer endColumn) { this.endColumn = endColumn; return this; }
 
@@ -38,7 +34,8 @@ public class MergedCell extends LinkElement {
     public Integer getStartRow() { return startRow; }
     public MergedCell setStartRow(Integer startRow) { this.startRow = startRow; return this; }
 
-    public Link getLink() { return link; }
-    public MergedCell setLink(Link link) { this.link = link; return this; }
+
+    /** Covariant override: keeps fluent chains returning MergedCell. */
+    @Override public MergedCell setLink(Link link) { return (MergedCell) super.setLink(link); }
 
 }

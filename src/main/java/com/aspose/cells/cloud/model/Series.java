@@ -190,10 +190,6 @@ public class Series extends LinkElement {
     @JsonProperty("YErrorBar")
     private ErrorBar yErrorBar;
 
-    /** Gets or sets link. */
-    @JsonProperty("link")
-    private Link link;
-
     public Area getArea() { return area; }
     public Series setArea(Area area) { this.area = area; return this; }
 
@@ -332,7 +328,8 @@ public class Series extends LinkElement {
     public ErrorBar getYErrorBar() { return yErrorBar; }
     public Series setYErrorBar(ErrorBar yErrorBar) { this.yErrorBar = yErrorBar; return this; }
 
-    public Link getLink() { return link; }
-    public Series setLink(Link link) { this.link = link; return this; }
+
+    /** Covariant override: keeps fluent chains returning Series. */
+    @Override public Series setLink(Link link) { return (Series) super.setLink(link); }
 
 }

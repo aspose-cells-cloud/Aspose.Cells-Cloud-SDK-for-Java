@@ -6,263 +6,85 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 /** GroupShape — Represents the group shape which contains the individual shapes. */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class GroupShape extends Shape {
-    /** Gets or sets Name. */
-    @JsonProperty("Name")
-    private String name;
-
-    /** Gets or sets MsoDrawingType. */
-    @JsonProperty("MsoDrawingType")
-    private String msoDrawingType;
-
-    /** Gets or sets AutoShapeType. */
-    @JsonProperty("AutoShapeType")
-    private String autoShapeType;
-
-    /** Gets or sets Placement. */
-    @JsonProperty("Placement")
-    private String placement;
-
-    /** Gets or sets UpperLeftRow. */
-    @JsonProperty("UpperLeftRow")
-    private Integer upperLeftRow;
-
-    /** Gets or sets Top. */
-    @JsonProperty("Top")
-    private Integer top;
-
-    /** Gets or sets UpperLeftColumn. */
-    @JsonProperty("UpperLeftColumn")
-    private Integer upperLeftColumn;
-
-    /** Gets or sets Left. */
-    @JsonProperty("Left")
-    private Integer left;
-
-    /** Gets or sets LowerRightRow. */
-    @JsonProperty("LowerRightRow")
-    private Integer lowerRightRow;
-
-    /** Gets or sets Bottom. */
-    @JsonProperty("Bottom")
-    private Integer bottom;
-
-    /** Gets or sets LowerRightColumn. */
-    @JsonProperty("LowerRightColumn")
-    private Integer lowerRightColumn;
-
-    /** Gets or sets Right. */
-    @JsonProperty("Right")
-    private Integer right;
-
-    /** Gets or sets Width. */
-    @JsonProperty("Width")
-    private Integer width;
-
-    /** Gets or sets Height. */
-    @JsonProperty("Height")
-    private Integer height;
-
-    /** Gets or sets X. */
-    @JsonProperty("X")
-    private Integer x;
-
-    /** Gets or sets Y. */
-    @JsonProperty("Y")
-    private Integer y;
-
-    /** Gets or sets RotationAngle. */
-    @JsonProperty("RotationAngle")
-    private Double rotationAngle;
-
-    /** Gets or sets HtmlText. */
-    @JsonProperty("HtmlText")
-    private String htmlText;
-
-    /** Gets or sets Text. */
-    @JsonProperty("Text")
-    private String text;
-
-    /** Gets or sets AlternativeText. */
-    @JsonProperty("AlternativeText")
-    private String alternativeText;
-
-    /** Gets or sets TextHorizontalAlignment. */
-    @JsonProperty("TextHorizontalAlignment")
-    private String textHorizontalAlignment;
-
-    /** Gets or sets TextHorizontalOverflow. */
-    @JsonProperty("TextHorizontalOverflow")
-    private String textHorizontalOverflow;
-
-    /** Gets or sets TextOrientationType. */
-    @JsonProperty("TextOrientationType")
-    private String textOrientationType;
-
-    /** Gets or sets TextVerticalAlignment. */
-    @JsonProperty("TextVerticalAlignment")
-    private String textVerticalAlignment;
-
-    /** Gets or sets TextVerticalOverflow. */
-    @JsonProperty("TextVerticalOverflow")
-    private String textVerticalOverflow;
-
-    /** Gets or sets IsGroup. */
-    @JsonProperty("IsGroup")
-    private Boolean isGroup;
-
-    /** Gets or sets IsHidden. */
-    @JsonProperty("IsHidden")
-    private Boolean isHidden;
-
-    /** Gets or sets IsLockAspectRatio. */
-    @JsonProperty("IsLockAspectRatio")
-    private Boolean isLockAspectRatio;
-
-    /** Gets or sets IsLocked. */
-    @JsonProperty("IsLocked")
-    private Boolean isLocked;
-
-    /** Gets or sets IsPrintable. */
-    @JsonProperty("IsPrintable")
-    private Boolean isPrintable;
-
-    /** Gets or sets IsTextWrapped. */
-    @JsonProperty("IsTextWrapped")
-    private Boolean isTextWrapped;
-
-    /** Gets or sets IsWordArt. */
-    @JsonProperty("IsWordArt")
-    private Boolean isWordArt;
-
-    /** Gets or sets LinkedCell. */
-    @JsonProperty("LinkedCell")
-    private String linkedCell;
-
-    /** Gets or sets ZOrderPosition. */
-    @JsonProperty("ZOrderPosition")
-    private Integer zOrderPosition;
-
-    /** Gets or sets Font. */
-    @JsonProperty("Font")
-    private Font font;
-
-    /** Gets or sets Hyperlink. */
-    @JsonProperty("Hyperlink")
-    private String hyperlink;
-
     /** Gets or sets link. */
     @JsonProperty("link")
     private Link link;
 
-    public String getName() { return name; }
-    public GroupShape setName(String name) { this.name = name; return this; }
-
-    public String getMsoDrawingType() { return msoDrawingType; }
-    public GroupShape setMsoDrawingType(String msoDrawingType) { this.msoDrawingType = msoDrawingType; return this; }
-
-    public String getAutoShapeType() { return autoShapeType; }
-    public GroupShape setAutoShapeType(String autoShapeType) { this.autoShapeType = autoShapeType; return this; }
-
-    public String getPlacement() { return placement; }
-    public GroupShape setPlacement(String placement) { this.placement = placement; return this; }
-
-    public Integer getUpperLeftRow() { return upperLeftRow; }
-    public GroupShape setUpperLeftRow(Integer upperLeftRow) { this.upperLeftRow = upperLeftRow; return this; }
-
-    public Integer getTop() { return top; }
-    public GroupShape setTop(Integer top) { this.top = top; return this; }
-
-    public Integer getUpperLeftColumn() { return upperLeftColumn; }
-    public GroupShape setUpperLeftColumn(Integer upperLeftColumn) { this.upperLeftColumn = upperLeftColumn; return this; }
-
-    public Integer getLeft() { return left; }
-    public GroupShape setLeft(Integer left) { this.left = left; return this; }
-
-    public Integer getLowerRightRow() { return lowerRightRow; }
-    public GroupShape setLowerRightRow(Integer lowerRightRow) { this.lowerRightRow = lowerRightRow; return this; }
-
-    public Integer getBottom() { return bottom; }
-    public GroupShape setBottom(Integer bottom) { this.bottom = bottom; return this; }
-
-    public Integer getLowerRightColumn() { return lowerRightColumn; }
-    public GroupShape setLowerRightColumn(Integer lowerRightColumn) { this.lowerRightColumn = lowerRightColumn; return this; }
-
-    public Integer getRight() { return right; }
-    public GroupShape setRight(Integer right) { this.right = right; return this; }
-
-    public Integer getWidth() { return width; }
-    public GroupShape setWidth(Integer width) { this.width = width; return this; }
-
-    public Integer getHeight() { return height; }
-    public GroupShape setHeight(Integer height) { this.height = height; return this; }
-
-    public Integer getX() { return x; }
-    public GroupShape setX(Integer x) { this.x = x; return this; }
-
-    public Integer getY() { return y; }
-    public GroupShape setY(Integer y) { this.y = y; return this; }
-
-    public Double getRotationAngle() { return rotationAngle; }
-    public GroupShape setRotationAngle(Double rotationAngle) { this.rotationAngle = rotationAngle; return this; }
-
-    public String getHtmlText() { return htmlText; }
-    public GroupShape setHtmlText(String htmlText) { this.htmlText = htmlText; return this; }
-
-    public String getText() { return text; }
-    public GroupShape setText(String text) { this.text = text; return this; }
-
-    public String getAlternativeText() { return alternativeText; }
-    public GroupShape setAlternativeText(String alternativeText) { this.alternativeText = alternativeText; return this; }
-
-    public String getTextHorizontalAlignment() { return textHorizontalAlignment; }
-    public GroupShape setTextHorizontalAlignment(String textHorizontalAlignment) { this.textHorizontalAlignment = textHorizontalAlignment; return this; }
-
-    public String getTextHorizontalOverflow() { return textHorizontalOverflow; }
-    public GroupShape setTextHorizontalOverflow(String textHorizontalOverflow) { this.textHorizontalOverflow = textHorizontalOverflow; return this; }
-
-    public String getTextOrientationType() { return textOrientationType; }
-    public GroupShape setTextOrientationType(String textOrientationType) { this.textOrientationType = textOrientationType; return this; }
-
-    public String getTextVerticalAlignment() { return textVerticalAlignment; }
-    public GroupShape setTextVerticalAlignment(String textVerticalAlignment) { this.textVerticalAlignment = textVerticalAlignment; return this; }
-
-    public String getTextVerticalOverflow() { return textVerticalOverflow; }
-    public GroupShape setTextVerticalOverflow(String textVerticalOverflow) { this.textVerticalOverflow = textVerticalOverflow; return this; }
-
-    public Boolean getIsGroup() { return isGroup; }
-    public GroupShape setIsGroup(Boolean isGroup) { this.isGroup = isGroup; return this; }
-
-    public Boolean getIsHidden() { return isHidden; }
-    public GroupShape setIsHidden(Boolean isHidden) { this.isHidden = isHidden; return this; }
-
-    public Boolean getIsLockAspectRatio() { return isLockAspectRatio; }
-    public GroupShape setIsLockAspectRatio(Boolean isLockAspectRatio) { this.isLockAspectRatio = isLockAspectRatio; return this; }
-
-    public Boolean getIsLocked() { return isLocked; }
-    public GroupShape setIsLocked(Boolean isLocked) { this.isLocked = isLocked; return this; }
-
-    public Boolean getIsPrintable() { return isPrintable; }
-    public GroupShape setIsPrintable(Boolean isPrintable) { this.isPrintable = isPrintable; return this; }
-
-    public Boolean getIsTextWrapped() { return isTextWrapped; }
-    public GroupShape setIsTextWrapped(Boolean isTextWrapped) { this.isTextWrapped = isTextWrapped; return this; }
-
-    public Boolean getIsWordArt() { return isWordArt; }
-    public GroupShape setIsWordArt(Boolean isWordArt) { this.isWordArt = isWordArt; return this; }
-
-    public String getLinkedCell() { return linkedCell; }
-    public GroupShape setLinkedCell(String linkedCell) { this.linkedCell = linkedCell; return this; }
-
-    public Integer getZOrderPosition() { return zOrderPosition; }
-    public GroupShape setZOrderPosition(Integer zOrderPosition) { this.zOrderPosition = zOrderPosition; return this; }
-
-    public Font getFont() { return font; }
-    public GroupShape setFont(Font font) { this.font = font; return this; }
-
-    public String getHyperlink() { return hyperlink; }
-    public GroupShape setHyperlink(String hyperlink) { this.hyperlink = hyperlink; return this; }
-
     public Link getLink() { return link; }
     public GroupShape setLink(Link link) { this.link = link; return this; }
+
+
+    /** Covariant override: keeps fluent chains returning GroupShape. */
+    @Override public GroupShape setName(String name) { return (GroupShape) super.setName(name); }
+    /** Covariant override: keeps fluent chains returning GroupShape. */
+    @Override public GroupShape setMsoDrawingType(String msoDrawingType) { return (GroupShape) super.setMsoDrawingType(msoDrawingType); }
+    /** Covariant override: keeps fluent chains returning GroupShape. */
+    @Override public GroupShape setAutoShapeType(String autoShapeType) { return (GroupShape) super.setAutoShapeType(autoShapeType); }
+    /** Covariant override: keeps fluent chains returning GroupShape. */
+    @Override public GroupShape setPlacement(String placement) { return (GroupShape) super.setPlacement(placement); }
+    /** Covariant override: keeps fluent chains returning GroupShape. */
+    @Override public GroupShape setUpperLeftRow(Integer upperLeftRow) { return (GroupShape) super.setUpperLeftRow(upperLeftRow); }
+    /** Covariant override: keeps fluent chains returning GroupShape. */
+    @Override public GroupShape setTop(Integer top) { return (GroupShape) super.setTop(top); }
+    /** Covariant override: keeps fluent chains returning GroupShape. */
+    @Override public GroupShape setUpperLeftColumn(Integer upperLeftColumn) { return (GroupShape) super.setUpperLeftColumn(upperLeftColumn); }
+    /** Covariant override: keeps fluent chains returning GroupShape. */
+    @Override public GroupShape setLeft(Integer left) { return (GroupShape) super.setLeft(left); }
+    /** Covariant override: keeps fluent chains returning GroupShape. */
+    @Override public GroupShape setLowerRightRow(Integer lowerRightRow) { return (GroupShape) super.setLowerRightRow(lowerRightRow); }
+    /** Covariant override: keeps fluent chains returning GroupShape. */
+    @Override public GroupShape setBottom(Integer bottom) { return (GroupShape) super.setBottom(bottom); }
+    /** Covariant override: keeps fluent chains returning GroupShape. */
+    @Override public GroupShape setLowerRightColumn(Integer lowerRightColumn) { return (GroupShape) super.setLowerRightColumn(lowerRightColumn); }
+    /** Covariant override: keeps fluent chains returning GroupShape. */
+    @Override public GroupShape setRight(Integer right) { return (GroupShape) super.setRight(right); }
+    /** Covariant override: keeps fluent chains returning GroupShape. */
+    @Override public GroupShape setWidth(Integer width) { return (GroupShape) super.setWidth(width); }
+    /** Covariant override: keeps fluent chains returning GroupShape. */
+    @Override public GroupShape setHeight(Integer height) { return (GroupShape) super.setHeight(height); }
+    /** Covariant override: keeps fluent chains returning GroupShape. */
+    @Override public GroupShape setX(Integer x) { return (GroupShape) super.setX(x); }
+    /** Covariant override: keeps fluent chains returning GroupShape. */
+    @Override public GroupShape setY(Integer y) { return (GroupShape) super.setY(y); }
+    /** Covariant override: keeps fluent chains returning GroupShape. */
+    @Override public GroupShape setRotationAngle(Double rotationAngle) { return (GroupShape) super.setRotationAngle(rotationAngle); }
+    /** Covariant override: keeps fluent chains returning GroupShape. */
+    @Override public GroupShape setHtmlText(String htmlText) { return (GroupShape) super.setHtmlText(htmlText); }
+    /** Covariant override: keeps fluent chains returning GroupShape. */
+    @Override public GroupShape setText(String text) { return (GroupShape) super.setText(text); }
+    /** Covariant override: keeps fluent chains returning GroupShape. */
+    @Override public GroupShape setAlternativeText(String alternativeText) { return (GroupShape) super.setAlternativeText(alternativeText); }
+    /** Covariant override: keeps fluent chains returning GroupShape. */
+    @Override public GroupShape setTextHorizontalAlignment(String textHorizontalAlignment) { return (GroupShape) super.setTextHorizontalAlignment(textHorizontalAlignment); }
+    /** Covariant override: keeps fluent chains returning GroupShape. */
+    @Override public GroupShape setTextHorizontalOverflow(String textHorizontalOverflow) { return (GroupShape) super.setTextHorizontalOverflow(textHorizontalOverflow); }
+    /** Covariant override: keeps fluent chains returning GroupShape. */
+    @Override public GroupShape setTextOrientationType(String textOrientationType) { return (GroupShape) super.setTextOrientationType(textOrientationType); }
+    /** Covariant override: keeps fluent chains returning GroupShape. */
+    @Override public GroupShape setTextVerticalAlignment(String textVerticalAlignment) { return (GroupShape) super.setTextVerticalAlignment(textVerticalAlignment); }
+    /** Covariant override: keeps fluent chains returning GroupShape. */
+    @Override public GroupShape setTextVerticalOverflow(String textVerticalOverflow) { return (GroupShape) super.setTextVerticalOverflow(textVerticalOverflow); }
+    /** Covariant override: keeps fluent chains returning GroupShape. */
+    @Override public GroupShape setIsGroup(Boolean isGroup) { return (GroupShape) super.setIsGroup(isGroup); }
+    /** Covariant override: keeps fluent chains returning GroupShape. */
+    @Override public GroupShape setIsHidden(Boolean isHidden) { return (GroupShape) super.setIsHidden(isHidden); }
+    /** Covariant override: keeps fluent chains returning GroupShape. */
+    @Override public GroupShape setIsLockAspectRatio(Boolean isLockAspectRatio) { return (GroupShape) super.setIsLockAspectRatio(isLockAspectRatio); }
+    /** Covariant override: keeps fluent chains returning GroupShape. */
+    @Override public GroupShape setIsLocked(Boolean isLocked) { return (GroupShape) super.setIsLocked(isLocked); }
+    /** Covariant override: keeps fluent chains returning GroupShape. */
+    @Override public GroupShape setIsPrintable(Boolean isPrintable) { return (GroupShape) super.setIsPrintable(isPrintable); }
+    /** Covariant override: keeps fluent chains returning GroupShape. */
+    @Override public GroupShape setIsTextWrapped(Boolean isTextWrapped) { return (GroupShape) super.setIsTextWrapped(isTextWrapped); }
+    /** Covariant override: keeps fluent chains returning GroupShape. */
+    @Override public GroupShape setIsWordArt(Boolean isWordArt) { return (GroupShape) super.setIsWordArt(isWordArt); }
+    /** Covariant override: keeps fluent chains returning GroupShape. */
+    @Override public GroupShape setLinkedCell(String linkedCell) { return (GroupShape) super.setLinkedCell(linkedCell); }
+    /** Covariant override: keeps fluent chains returning GroupShape. */
+    @Override public GroupShape setZOrderPosition(Integer zOrderPosition) { return (GroupShape) super.setZOrderPosition(zOrderPosition); }
+    /** Covariant override: keeps fluent chains returning GroupShape. */
+    @Override public GroupShape setFont(Font font) { return (GroupShape) super.setFont(font); }
+    /** Covariant override: keeps fluent chains returning GroupShape. */
+    @Override public GroupShape setHyperlink(String hyperlink) { return (GroupShape) super.setHyperlink(hyperlink); }
 
 }

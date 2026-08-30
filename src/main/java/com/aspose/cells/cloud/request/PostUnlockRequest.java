@@ -6,7 +6,6 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import static com.aspose.cells.cloud.UrlUtils.urlEncode;
 
 /** Unlock Excel files. */
 public class PostUnlockRequest implements RequestOption {
@@ -38,7 +37,7 @@ public class PostUnlockRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/unlock";
+        return "/cells/unlock";
     }
 
     @Override

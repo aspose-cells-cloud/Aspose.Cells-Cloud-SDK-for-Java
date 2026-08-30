@@ -6,7 +6,6 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import static com.aspose.cells.cloud.UrlUtils.urlEncode;
 
 /** Delete all blank rows that do not contain any data or other objects. */
 public class RemoveSpreadsheetBlankRowsRequest implements RequestOption {
@@ -45,7 +44,7 @@ public class RemoveSpreadsheetBlankRowsRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v4.0/cells/remove/blank-rows";
+        return "/cells/remove/blank-rows";
     }
 
     @Override
@@ -76,4 +75,6 @@ public class RemoveSpreadsheetBlankRowsRequest implements RequestOption {
         form.put("Spreadsheet", spreadsheet);
         return form;
     }
+
+    @Override public boolean isBinaryResponse() { return true; }
 }

@@ -10,21 +10,13 @@ public class LineResponse extends CellsCloudResponse {
     @JsonProperty("Line")
     private Line line;
 
-    /** Gets or sets Code. */
-    @JsonProperty("Code")
-    private Integer code;
-
-    /** Gets or sets Status. */
-    @JsonProperty("Status")
-    private String status;
-
     public Line getLine() { return line; }
     public LineResponse setLine(Line line) { this.line = line; return this; }
 
-    public Integer getCode() { return code; }
-    public LineResponse setCode(Integer code) { this.code = code; return this; }
 
-    public String getStatus() { return status; }
-    public LineResponse setStatus(String status) { this.status = status; return this; }
+    /** Covariant override: keeps fluent chains returning LineResponse. */
+    @Override public LineResponse setCode(Integer code) { return (LineResponse) super.setCode(code); }
+    /** Covariant override: keeps fluent chains returning LineResponse. */
+    @Override public LineResponse setStatus(String status) { return (LineResponse) super.setStatus(status); }
 
 }

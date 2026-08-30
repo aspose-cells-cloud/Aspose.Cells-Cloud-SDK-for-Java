@@ -10,21 +10,13 @@ public class RangeResponse extends CellsCloudResponse {
     @JsonProperty("Range")
     private Range range;
 
-    /** Gets or sets Code. */
-    @JsonProperty("Code")
-    private Integer code;
-
-    /** Gets or sets Status. */
-    @JsonProperty("Status")
-    private String status;
-
     public Range getRange() { return range; }
     public RangeResponse setRange(Range range) { this.range = range; return this; }
 
-    public Integer getCode() { return code; }
-    public RangeResponse setCode(Integer code) { this.code = code; return this; }
 
-    public String getStatus() { return status; }
-    public RangeResponse setStatus(String status) { this.status = status; return this; }
+    /** Covariant override: keeps fluent chains returning RangeResponse. */
+    @Override public RangeResponse setCode(Integer code) { return (RangeResponse) super.setCode(code); }
+    /** Covariant override: keeps fluent chains returning RangeResponse. */
+    @Override public RangeResponse setStatus(String status) { return (RangeResponse) super.setStatus(status); }
 
 }

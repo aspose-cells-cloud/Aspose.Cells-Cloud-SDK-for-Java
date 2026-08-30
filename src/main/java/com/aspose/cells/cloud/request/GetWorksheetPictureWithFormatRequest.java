@@ -36,7 +36,7 @@ public class GetWorksheetPictureWithFormatRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/" + urlEncode(name) + "/worksheets/" + urlEncode(sheetName) + "/pictures/" + urlEncode(String.valueOf(pictureNumber));
+        return "/cells/" + urlEncode(name) + "/worksheets/" + urlEncode(sheetName) + "/pictures/" + urlEncode(String.valueOf(pictureNumber));
     }
 
     @Override
@@ -62,4 +62,6 @@ public class GetWorksheetPictureWithFormatRequest implements RequestOption {
     public Map<String, Object> getMultipartForm() {
         return null;
     }
+
+    @Override public boolean isBinaryResponse() { return true; }
 }

@@ -6,7 +6,6 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import static com.aspose.cells.cloud.UrlUtils.urlEncode;
 
 /** Search text in the local spreadsheet. */
 public class SearchSpreadsheetContentRequest implements RequestOption {
@@ -50,7 +49,7 @@ public class SearchSpreadsheetContentRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v4.0/cells/search/content";
+        return "/cells/search/content";
     }
 
     @Override

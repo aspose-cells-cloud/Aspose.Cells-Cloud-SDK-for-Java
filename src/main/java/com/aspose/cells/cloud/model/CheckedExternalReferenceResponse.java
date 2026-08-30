@@ -19,14 +19,6 @@ public class CheckedExternalReferenceResponse extends CellsCloudResponse {
     @JsonProperty("Formulas")
     private List<String> formulas;
 
-    /** Gets or sets Code. */
-    @JsonProperty("Code")
-    private Integer code;
-
-    /** Gets or sets Status. */
-    @JsonProperty("Status")
-    private String status;
-
     public Boolean getReferenceOtherWorkbook() { return referenceOtherWorkbook; }
     public CheckedExternalReferenceResponse setReferenceOtherWorkbook(Boolean referenceOtherWorkbook) { this.referenceOtherWorkbook = referenceOtherWorkbook; return this; }
 
@@ -36,10 +28,10 @@ public class CheckedExternalReferenceResponse extends CellsCloudResponse {
     public List<String> getFormulas() { return formulas; }
     public CheckedExternalReferenceResponse setFormulas(List<String> formulas) { this.formulas = formulas; return this; }
 
-    public Integer getCode() { return code; }
-    public CheckedExternalReferenceResponse setCode(Integer code) { this.code = code; return this; }
 
-    public String getStatus() { return status; }
-    public CheckedExternalReferenceResponse setStatus(String status) { this.status = status; return this; }
+    /** Covariant override: keeps fluent chains returning CheckedExternalReferenceResponse. */
+    @Override public CheckedExternalReferenceResponse setCode(Integer code) { return (CheckedExternalReferenceResponse) super.setCode(code); }
+    /** Covariant override: keeps fluent chains returning CheckedExternalReferenceResponse. */
+    @Override public CheckedExternalReferenceResponse setStatus(String status) { return (CheckedExternalReferenceResponse) super.setStatus(status); }
 
 }

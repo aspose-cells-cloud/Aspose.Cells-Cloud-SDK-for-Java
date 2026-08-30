@@ -5,7 +5,6 @@ import com.aspose.cells.cloud.model.SplitTextOptions;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import static com.aspose.cells.cloud.UrlUtils.urlEncode;
 
 /** Efficiently divides Excel cell content into columns or rows based on specified delimiters or patterns. Supports Character-based splitting, Custom string splitting, Mask and wildcard splitting for pattern-based division, Line break division, Column or row splitting, Delimiter removal or retention. */
 public class PostSplitTextRequest implements RequestOption {
@@ -22,7 +21,7 @@ public class PostSplitTextRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/splittext";
+        return "/cells/splittext";
     }
 
     @Override

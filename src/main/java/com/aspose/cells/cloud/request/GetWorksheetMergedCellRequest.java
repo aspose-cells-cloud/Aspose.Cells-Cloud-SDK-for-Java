@@ -33,7 +33,7 @@ public class GetWorksheetMergedCellRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/" + urlEncode(name) + "/worksheets/" + urlEncode(sheetName) + "/mergedCells/" + urlEncode(String.valueOf(mergedCellIndex));
+        return "/cells/" + urlEncode(name) + "/worksheets/" + urlEncode(sheetName) + "/mergedCells/" + urlEncode(String.valueOf(mergedCellIndex));
     }
 
     @Override

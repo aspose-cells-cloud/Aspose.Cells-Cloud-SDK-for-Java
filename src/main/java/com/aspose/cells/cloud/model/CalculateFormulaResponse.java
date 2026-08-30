@@ -10,21 +10,13 @@ public class CalculateFormulaResponse extends CellsCloudResponse {
     @JsonProperty("Result")
     private String result;
 
-    /** Gets or sets Code. */
-    @JsonProperty("Code")
-    private Integer code;
-
-    /** Gets or sets Status. */
-    @JsonProperty("Status")
-    private String status;
-
     public String getResult() { return result; }
     public CalculateFormulaResponse setResult(String result) { this.result = result; return this; }
 
-    public Integer getCode() { return code; }
-    public CalculateFormulaResponse setCode(Integer code) { this.code = code; return this; }
 
-    public String getStatus() { return status; }
-    public CalculateFormulaResponse setStatus(String status) { this.status = status; return this; }
+    /** Covariant override: keeps fluent chains returning CalculateFormulaResponse. */
+    @Override public CalculateFormulaResponse setCode(Integer code) { return (CalculateFormulaResponse) super.setCode(code); }
+    /** Covariant override: keeps fluent chains returning CalculateFormulaResponse. */
+    @Override public CalculateFormulaResponse setStatus(String status) { return (CalculateFormulaResponse) super.setStatus(status); }
 
 }

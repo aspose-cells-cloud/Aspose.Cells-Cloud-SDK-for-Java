@@ -30,7 +30,7 @@ public class CopyFolderRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v4.0/cells/storage/folder/copy/" + urlEncode(srcPath);
+        return "/cells/storage/folder/copy/" + urlEncode(srcPath);
     }
 
     @Override

@@ -37,7 +37,7 @@ public class PostWorkbookDataDeduplicationRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/" + urlEncode(name) + "/datadeduplication";
+        return "/cells/" + urlEncode(name) + "/datadeduplication";
     }
 
     @Override

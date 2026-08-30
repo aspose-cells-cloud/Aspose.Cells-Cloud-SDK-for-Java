@@ -6,7 +6,6 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import static com.aspose.cells.cloud.UrlUtils.urlEncode;
 
 /** The Swap Ranges for Excel API provides a powerful tool to move any two columns, rows, ranges, or individual cells within an Excel file. This API allows users to re-arrange their tables quickly and efficiently, ensuring that the original data formatting is preserved and all existing formulas continue to function correctly. By leveraging this API, users can streamline their data manipulation tasks and maintain the integrity of their spreadsheets. */
 public class SwapRangeRequest implements RequestOption {
@@ -57,7 +56,7 @@ public class SwapRangeRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v4.0/cells/swap/range";
+        return "/cells/swap/range";
     }
 
     @Override
@@ -92,4 +91,6 @@ public class SwapRangeRequest implements RequestOption {
         form.put("Spreadsheet", spreadsheet);
         return form;
     }
+
+    @Override public boolean isBinaryResponse() { return true; }
 }

@@ -37,7 +37,7 @@ public class ReplaceContentInRemoteSpreadsheetRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v4.0/cells/" + urlEncode(name) + "/replace/content";
+        return "/cells/" + urlEncode(name) + "/replace/content";
     }
 
     @Override

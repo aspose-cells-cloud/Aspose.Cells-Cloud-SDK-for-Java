@@ -6,7 +6,6 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import static com.aspose.cells.cloud.UrlUtils.urlEncode;
 
 /** Split Excel spreadsheet files based on worksheets and create output files in various formats. */
 public class PostSplitRequest implements RequestOption {
@@ -50,7 +49,7 @@ public class PostSplitRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/split";
+        return "/cells/split";
     }
 
     @Override

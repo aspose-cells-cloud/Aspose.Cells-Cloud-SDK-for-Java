@@ -5,7 +5,6 @@ import com.aspose.cells.cloud.model.WordCaseOptions;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import static com.aspose.cells.cloud.UrlUtils.urlEncode;
 
 /** Managing inconsistent text case in spreadsheets (Excel, Google Sheets, CSV) can be frustrating, especially with large datasets. The PostUpdateWordCase WEB API solves this by automating text case conversions, ensuring clean and standardized data. */
 public class PostUpdateWordCaseRequest implements RequestOption {
@@ -22,7 +21,7 @@ public class PostUpdateWordCaseRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/updatewordcase";
+        return "/cells/updatewordcase";
     }
 
     @Override

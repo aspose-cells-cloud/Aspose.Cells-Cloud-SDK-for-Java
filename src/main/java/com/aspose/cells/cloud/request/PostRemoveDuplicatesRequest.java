@@ -5,7 +5,6 @@ import com.aspose.cells.cloud.model.RemoveDuplicatesOptions;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import static com.aspose.cells.cloud.UrlUtils.urlEncode;
 
 /** Efficiently remove duplicate substrings from Excel cells. Select a range, specify delimiters, and apply options to eliminate repeated text segments. */
 public class PostRemoveDuplicatesRequest implements RequestOption {
@@ -22,7 +21,7 @@ public class PostRemoveDuplicatesRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/removeduplicates";
+        return "/cells/removeduplicates";
     }
 
     @Override

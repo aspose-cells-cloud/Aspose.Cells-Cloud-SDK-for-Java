@@ -5,7 +5,6 @@ import com.aspose.cells.cloud.model.CheckExternalReferenceOptions;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import static com.aspose.cells.cloud.UrlUtils.urlEncode;
 
 /** Export Excel internal elements or the workbook itself to various format files. */
 public class CheckWrokbookExternalReferenceRequest implements RequestOption {
@@ -22,7 +21,7 @@ public class CheckWrokbookExternalReferenceRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/checkexternalreference";
+        return "/cells/checkexternalreference";
     }
 
     @Override

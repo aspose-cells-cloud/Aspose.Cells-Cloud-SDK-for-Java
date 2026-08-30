@@ -82,58 +82,6 @@ public class PdfSaveOptions extends SaveOptions {
     @JsonProperty("ImageType")
     private String imageType;
 
-    /** Gets or sets SaveFormat. */
-    @JsonProperty("SaveFormat")
-    private String saveFormat;
-
-    /** Gets or sets CachedFileFolder. */
-    @JsonProperty("CachedFileFolder")
-    private String cachedFileFolder;
-
-    /** Gets or sets ClearData. */
-    @JsonProperty("ClearData")
-    private Boolean clearData;
-
-    /** Gets or sets CreateDirectory. */
-    @JsonProperty("CreateDirectory")
-    private Boolean createDirectory;
-
-    /** Gets or sets EnableHTTPCompression. */
-    @JsonProperty("EnableHTTPCompression")
-    private Boolean enableHTTPCompression;
-
-    /** Gets or sets RefreshChartCache. */
-    @JsonProperty("RefreshChartCache")
-    private Boolean refreshChartCache;
-
-    /** Gets or sets SortNames. */
-    @JsonProperty("SortNames")
-    private Boolean sortNames;
-
-    /** Gets or sets ValidateMergedAreas. */
-    @JsonProperty("ValidateMergedAreas")
-    private Boolean validateMergedAreas;
-
-    /** Gets or sets MergeAreas. */
-    @JsonProperty("MergeAreas")
-    private Boolean mergeAreas;
-
-    /** Gets or sets SortExternalNames. */
-    @JsonProperty("SortExternalNames")
-    private Boolean sortExternalNames;
-
-    /** Gets or sets CheckExcelRestriction. */
-    @JsonProperty("CheckExcelRestriction")
-    private Boolean checkExcelRestriction;
-
-    /** Gets or sets UpdateSmartArt. */
-    @JsonProperty("UpdateSmartArt")
-    private Boolean updateSmartArt;
-
-    /** Gets or sets EncryptDocumentProperties. */
-    @JsonProperty("EncryptDocumentProperties")
-    private Boolean encryptDocumentProperties;
-
     public Boolean getDisplayDocTitle() { return displayDocTitle; }
     public PdfSaveOptions setDisplayDocTitle(Boolean displayDocTitle) { this.displayDocTitle = displayDocTitle; return this; }
 
@@ -191,43 +139,32 @@ public class PdfSaveOptions extends SaveOptions {
     public String getImageType() { return imageType; }
     public PdfSaveOptions setImageType(String imageType) { this.imageType = imageType; return this; }
 
-    public String getSaveFormat() { return saveFormat; }
-    public PdfSaveOptions setSaveFormat(String saveFormat) { this.saveFormat = saveFormat; return this; }
 
-    public String getCachedFileFolder() { return cachedFileFolder; }
-    public PdfSaveOptions setCachedFileFolder(String cachedFileFolder) { this.cachedFileFolder = cachedFileFolder; return this; }
-
-    public Boolean getClearData() { return clearData; }
-    public PdfSaveOptions setClearData(Boolean clearData) { this.clearData = clearData; return this; }
-
-    public Boolean getCreateDirectory() { return createDirectory; }
-    public PdfSaveOptions setCreateDirectory(Boolean createDirectory) { this.createDirectory = createDirectory; return this; }
-
-    public Boolean getEnableHTTPCompression() { return enableHTTPCompression; }
-    public PdfSaveOptions setEnableHTTPCompression(Boolean enableHTTPCompression) { this.enableHTTPCompression = enableHTTPCompression; return this; }
-
-    public Boolean getRefreshChartCache() { return refreshChartCache; }
-    public PdfSaveOptions setRefreshChartCache(Boolean refreshChartCache) { this.refreshChartCache = refreshChartCache; return this; }
-
-    public Boolean getSortNames() { return sortNames; }
-    public PdfSaveOptions setSortNames(Boolean sortNames) { this.sortNames = sortNames; return this; }
-
-    public Boolean getValidateMergedAreas() { return validateMergedAreas; }
-    public PdfSaveOptions setValidateMergedAreas(Boolean validateMergedAreas) { this.validateMergedAreas = validateMergedAreas; return this; }
-
-    public Boolean getMergeAreas() { return mergeAreas; }
-    public PdfSaveOptions setMergeAreas(Boolean mergeAreas) { this.mergeAreas = mergeAreas; return this; }
-
-    public Boolean getSortExternalNames() { return sortExternalNames; }
-    public PdfSaveOptions setSortExternalNames(Boolean sortExternalNames) { this.sortExternalNames = sortExternalNames; return this; }
-
-    public Boolean getCheckExcelRestriction() { return checkExcelRestriction; }
-    public PdfSaveOptions setCheckExcelRestriction(Boolean checkExcelRestriction) { this.checkExcelRestriction = checkExcelRestriction; return this; }
-
-    public Boolean getUpdateSmartArt() { return updateSmartArt; }
-    public PdfSaveOptions setUpdateSmartArt(Boolean updateSmartArt) { this.updateSmartArt = updateSmartArt; return this; }
-
-    public Boolean getEncryptDocumentProperties() { return encryptDocumentProperties; }
-    public PdfSaveOptions setEncryptDocumentProperties(Boolean encryptDocumentProperties) { this.encryptDocumentProperties = encryptDocumentProperties; return this; }
+    /** Covariant override: keeps fluent chains returning PdfSaveOptions. */
+    @Override public PdfSaveOptions setSaveFormat(String saveFormat) { return (PdfSaveOptions) super.setSaveFormat(saveFormat); }
+    /** Covariant override: keeps fluent chains returning PdfSaveOptions. */
+    @Override public PdfSaveOptions setCachedFileFolder(String cachedFileFolder) { return (PdfSaveOptions) super.setCachedFileFolder(cachedFileFolder); }
+    /** Covariant override: keeps fluent chains returning PdfSaveOptions. */
+    @Override public PdfSaveOptions setClearData(Boolean clearData) { return (PdfSaveOptions) super.setClearData(clearData); }
+    /** Covariant override: keeps fluent chains returning PdfSaveOptions. */
+    @Override public PdfSaveOptions setCreateDirectory(Boolean createDirectory) { return (PdfSaveOptions) super.setCreateDirectory(createDirectory); }
+    /** Covariant override: keeps fluent chains returning PdfSaveOptions. */
+    @Override public PdfSaveOptions setEnableHTTPCompression(Boolean enableHTTPCompression) { return (PdfSaveOptions) super.setEnableHTTPCompression(enableHTTPCompression); }
+    /** Covariant override: keeps fluent chains returning PdfSaveOptions. */
+    @Override public PdfSaveOptions setRefreshChartCache(Boolean refreshChartCache) { return (PdfSaveOptions) super.setRefreshChartCache(refreshChartCache); }
+    /** Covariant override: keeps fluent chains returning PdfSaveOptions. */
+    @Override public PdfSaveOptions setSortNames(Boolean sortNames) { return (PdfSaveOptions) super.setSortNames(sortNames); }
+    /** Covariant override: keeps fluent chains returning PdfSaveOptions. */
+    @Override public PdfSaveOptions setValidateMergedAreas(Boolean validateMergedAreas) { return (PdfSaveOptions) super.setValidateMergedAreas(validateMergedAreas); }
+    /** Covariant override: keeps fluent chains returning PdfSaveOptions. */
+    @Override public PdfSaveOptions setMergeAreas(Boolean mergeAreas) { return (PdfSaveOptions) super.setMergeAreas(mergeAreas); }
+    /** Covariant override: keeps fluent chains returning PdfSaveOptions. */
+    @Override public PdfSaveOptions setSortExternalNames(Boolean sortExternalNames) { return (PdfSaveOptions) super.setSortExternalNames(sortExternalNames); }
+    /** Covariant override: keeps fluent chains returning PdfSaveOptions. */
+    @Override public PdfSaveOptions setCheckExcelRestriction(Boolean checkExcelRestriction) { return (PdfSaveOptions) super.setCheckExcelRestriction(checkExcelRestriction); }
+    /** Covariant override: keeps fluent chains returning PdfSaveOptions. */
+    @Override public PdfSaveOptions setUpdateSmartArt(Boolean updateSmartArt) { return (PdfSaveOptions) super.setUpdateSmartArt(updateSmartArt); }
+    /** Covariant override: keeps fluent chains returning PdfSaveOptions. */
+    @Override public PdfSaveOptions setEncryptDocumentProperties(Boolean encryptDocumentProperties) { return (PdfSaveOptions) super.setEncryptDocumentProperties(encryptDocumentProperties); }
 
 }

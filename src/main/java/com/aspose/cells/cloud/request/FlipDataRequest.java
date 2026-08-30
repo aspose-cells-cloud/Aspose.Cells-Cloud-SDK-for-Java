@@ -6,7 +6,6 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import static com.aspose.cells.cloud.UrlUtils.urlEncode;
 
 /** Transposes a specified data range (rows become columns, columns become rows). */
 public class FlipDataRequest implements RequestOption {
@@ -53,7 +52,7 @@ public class FlipDataRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v4.0/cells/flip";
+        return "/cells/flip";
     }
 
     @Override
@@ -87,4 +86,6 @@ public class FlipDataRequest implements RequestOption {
         form.put("Spreadsheet", spreadsheet);
         return form;
     }
+
+    @Override public boolean isBinaryResponse() { return true; }
 }

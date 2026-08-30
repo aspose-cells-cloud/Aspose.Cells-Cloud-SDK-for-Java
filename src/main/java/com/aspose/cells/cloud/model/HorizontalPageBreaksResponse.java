@@ -10,21 +10,13 @@ public class HorizontalPageBreaksResponse extends CellsCloudResponse {
     @JsonProperty("HorizontalPageBreaks")
     private HorizontalPageBreaks horizontalPageBreaks;
 
-    /** Gets or sets Code. */
-    @JsonProperty("Code")
-    private Integer code;
-
-    /** Gets or sets Status. */
-    @JsonProperty("Status")
-    private String status;
-
     public HorizontalPageBreaks getHorizontalPageBreaks() { return horizontalPageBreaks; }
     public HorizontalPageBreaksResponse setHorizontalPageBreaks(HorizontalPageBreaks horizontalPageBreaks) { this.horizontalPageBreaks = horizontalPageBreaks; return this; }
 
-    public Integer getCode() { return code; }
-    public HorizontalPageBreaksResponse setCode(Integer code) { this.code = code; return this; }
 
-    public String getStatus() { return status; }
-    public HorizontalPageBreaksResponse setStatus(String status) { this.status = status; return this; }
+    /** Covariant override: keeps fluent chains returning HorizontalPageBreaksResponse. */
+    @Override public HorizontalPageBreaksResponse setCode(Integer code) { return (HorizontalPageBreaksResponse) super.setCode(code); }
+    /** Covariant override: keeps fluent chains returning HorizontalPageBreaksResponse. */
+    @Override public HorizontalPageBreaksResponse setStatus(String status) { return (HorizontalPageBreaksResponse) super.setStatus(status); }
 
 }

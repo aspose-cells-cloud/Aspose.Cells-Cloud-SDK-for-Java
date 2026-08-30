@@ -34,7 +34,7 @@ public class PostMoveWorksheetRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/" + urlEncode(name) + "/worksheets/" + urlEncode(sheetName) + "/position";
+        return "/cells/" + urlEncode(name) + "/worksheets/" + urlEncode(sheetName) + "/position";
     }
 
     @Override

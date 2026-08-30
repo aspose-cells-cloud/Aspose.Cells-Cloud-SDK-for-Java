@@ -10,21 +10,13 @@ public class PivotTableResponse extends CellsCloudResponse {
     @JsonProperty("PivotTable")
     private PivotTable pivotTable;
 
-    /** Gets or sets Code. */
-    @JsonProperty("Code")
-    private Integer code;
-
-    /** Gets or sets Status. */
-    @JsonProperty("Status")
-    private String status;
-
     public PivotTable getPivotTable() { return pivotTable; }
     public PivotTableResponse setPivotTable(PivotTable pivotTable) { this.pivotTable = pivotTable; return this; }
 
-    public Integer getCode() { return code; }
-    public PivotTableResponse setCode(Integer code) { this.code = code; return this; }
 
-    public String getStatus() { return status; }
-    public PivotTableResponse setStatus(String status) { this.status = status; return this; }
+    /** Covariant override: keeps fluent chains returning PivotTableResponse. */
+    @Override public PivotTableResponse setCode(Integer code) { return (PivotTableResponse) super.setCode(code); }
+    /** Covariant override: keeps fluent chains returning PivotTableResponse. */
+    @Override public PivotTableResponse setStatus(String status) { return (PivotTableResponse) super.setStatus(status); }
 
 }

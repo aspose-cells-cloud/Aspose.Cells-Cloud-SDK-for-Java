@@ -50,10 +50,6 @@ public class Comment extends LinkElement {
     @JsonProperty("TextVerticalAlignment")
     private String textVerticalAlignment;
 
-    /** Gets or sets link. */
-    @JsonProperty("link")
-    private Link link;
-
     public String getCellName() { return cellName; }
     public Comment setCellName(String cellName) { this.cellName = cellName; return this; }
 
@@ -87,7 +83,8 @@ public class Comment extends LinkElement {
     public String getTextVerticalAlignment() { return textVerticalAlignment; }
     public Comment setTextVerticalAlignment(String textVerticalAlignment) { this.textVerticalAlignment = textVerticalAlignment; return this; }
 
-    public Link getLink() { return link; }
-    public Comment setLink(Link link) { this.link = link; return this; }
+
+    /** Covariant override: keeps fluent chains returning Comment. */
+    @Override public Comment setLink(Link link) { return (Comment) super.setLink(link); }
 
 }

@@ -30,150 +30,6 @@ public class LineShape extends Shape {
     @JsonProperty("EndArrowheadWidth")
     private String endArrowheadWidth;
 
-    /** Gets or sets Name. */
-    @JsonProperty("Name")
-    private String name;
-
-    /** Gets or sets MsoDrawingType. */
-    @JsonProperty("MsoDrawingType")
-    private String msoDrawingType;
-
-    /** Gets or sets AutoShapeType. */
-    @JsonProperty("AutoShapeType")
-    private String autoShapeType;
-
-    /** Gets or sets Placement. */
-    @JsonProperty("Placement")
-    private String placement;
-
-    /** Gets or sets UpperLeftRow. */
-    @JsonProperty("UpperLeftRow")
-    private Integer upperLeftRow;
-
-    /** Gets or sets Top. */
-    @JsonProperty("Top")
-    private Integer top;
-
-    /** Gets or sets UpperLeftColumn. */
-    @JsonProperty("UpperLeftColumn")
-    private Integer upperLeftColumn;
-
-    /** Gets or sets Left. */
-    @JsonProperty("Left")
-    private Integer left;
-
-    /** Gets or sets LowerRightRow. */
-    @JsonProperty("LowerRightRow")
-    private Integer lowerRightRow;
-
-    /** Gets or sets Bottom. */
-    @JsonProperty("Bottom")
-    private Integer bottom;
-
-    /** Gets or sets LowerRightColumn. */
-    @JsonProperty("LowerRightColumn")
-    private Integer lowerRightColumn;
-
-    /** Gets or sets Right. */
-    @JsonProperty("Right")
-    private Integer right;
-
-    /** Gets or sets Width. */
-    @JsonProperty("Width")
-    private Integer width;
-
-    /** Gets or sets Height. */
-    @JsonProperty("Height")
-    private Integer height;
-
-    /** Gets or sets X. */
-    @JsonProperty("X")
-    private Integer x;
-
-    /** Gets or sets Y. */
-    @JsonProperty("Y")
-    private Integer y;
-
-    /** Gets or sets RotationAngle. */
-    @JsonProperty("RotationAngle")
-    private Double rotationAngle;
-
-    /** Gets or sets HtmlText. */
-    @JsonProperty("HtmlText")
-    private String htmlText;
-
-    /** Gets or sets Text. */
-    @JsonProperty("Text")
-    private String text;
-
-    /** Gets or sets AlternativeText. */
-    @JsonProperty("AlternativeText")
-    private String alternativeText;
-
-    /** Gets or sets TextHorizontalAlignment. */
-    @JsonProperty("TextHorizontalAlignment")
-    private String textHorizontalAlignment;
-
-    /** Gets or sets TextHorizontalOverflow. */
-    @JsonProperty("TextHorizontalOverflow")
-    private String textHorizontalOverflow;
-
-    /** Gets or sets TextOrientationType. */
-    @JsonProperty("TextOrientationType")
-    private String textOrientationType;
-
-    /** Gets or sets TextVerticalAlignment. */
-    @JsonProperty("TextVerticalAlignment")
-    private String textVerticalAlignment;
-
-    /** Gets or sets TextVerticalOverflow. */
-    @JsonProperty("TextVerticalOverflow")
-    private String textVerticalOverflow;
-
-    /** Gets or sets IsGroup. */
-    @JsonProperty("IsGroup")
-    private Boolean isGroup;
-
-    /** Gets or sets IsHidden. */
-    @JsonProperty("IsHidden")
-    private Boolean isHidden;
-
-    /** Gets or sets IsLockAspectRatio. */
-    @JsonProperty("IsLockAspectRatio")
-    private Boolean isLockAspectRatio;
-
-    /** Gets or sets IsLocked. */
-    @JsonProperty("IsLocked")
-    private Boolean isLocked;
-
-    /** Gets or sets IsPrintable. */
-    @JsonProperty("IsPrintable")
-    private Boolean isPrintable;
-
-    /** Gets or sets IsTextWrapped. */
-    @JsonProperty("IsTextWrapped")
-    private Boolean isTextWrapped;
-
-    /** Gets or sets IsWordArt. */
-    @JsonProperty("IsWordArt")
-    private Boolean isWordArt;
-
-    /** Gets or sets LinkedCell. */
-    @JsonProperty("LinkedCell")
-    private String linkedCell;
-
-    /** Gets or sets ZOrderPosition. */
-    @JsonProperty("ZOrderPosition")
-    private Integer zOrderPosition;
-
-    /** Gets or sets Font. */
-    @JsonProperty("Font")
-    private Font font;
-
-    /** Gets or sets Hyperlink. */
-    @JsonProperty("Hyperlink")
-    private String hyperlink;
-
     /** Gets or sets link. */
     @JsonProperty("link")
     private Link link;
@@ -196,115 +52,81 @@ public class LineShape extends Shape {
     public String getEndArrowheadWidth() { return endArrowheadWidth; }
     public LineShape setEndArrowheadWidth(String endArrowheadWidth) { this.endArrowheadWidth = endArrowheadWidth; return this; }
 
-    public String getName() { return name; }
-    public LineShape setName(String name) { this.name = name; return this; }
-
-    public String getMsoDrawingType() { return msoDrawingType; }
-    public LineShape setMsoDrawingType(String msoDrawingType) { this.msoDrawingType = msoDrawingType; return this; }
-
-    public String getAutoShapeType() { return autoShapeType; }
-    public LineShape setAutoShapeType(String autoShapeType) { this.autoShapeType = autoShapeType; return this; }
-
-    public String getPlacement() { return placement; }
-    public LineShape setPlacement(String placement) { this.placement = placement; return this; }
-
-    public Integer getUpperLeftRow() { return upperLeftRow; }
-    public LineShape setUpperLeftRow(Integer upperLeftRow) { this.upperLeftRow = upperLeftRow; return this; }
-
-    public Integer getTop() { return top; }
-    public LineShape setTop(Integer top) { this.top = top; return this; }
-
-    public Integer getUpperLeftColumn() { return upperLeftColumn; }
-    public LineShape setUpperLeftColumn(Integer upperLeftColumn) { this.upperLeftColumn = upperLeftColumn; return this; }
-
-    public Integer getLeft() { return left; }
-    public LineShape setLeft(Integer left) { this.left = left; return this; }
-
-    public Integer getLowerRightRow() { return lowerRightRow; }
-    public LineShape setLowerRightRow(Integer lowerRightRow) { this.lowerRightRow = lowerRightRow; return this; }
-
-    public Integer getBottom() { return bottom; }
-    public LineShape setBottom(Integer bottom) { this.bottom = bottom; return this; }
-
-    public Integer getLowerRightColumn() { return lowerRightColumn; }
-    public LineShape setLowerRightColumn(Integer lowerRightColumn) { this.lowerRightColumn = lowerRightColumn; return this; }
-
-    public Integer getRight() { return right; }
-    public LineShape setRight(Integer right) { this.right = right; return this; }
-
-    public Integer getWidth() { return width; }
-    public LineShape setWidth(Integer width) { this.width = width; return this; }
-
-    public Integer getHeight() { return height; }
-    public LineShape setHeight(Integer height) { this.height = height; return this; }
-
-    public Integer getX() { return x; }
-    public LineShape setX(Integer x) { this.x = x; return this; }
-
-    public Integer getY() { return y; }
-    public LineShape setY(Integer y) { this.y = y; return this; }
-
-    public Double getRotationAngle() { return rotationAngle; }
-    public LineShape setRotationAngle(Double rotationAngle) { this.rotationAngle = rotationAngle; return this; }
-
-    public String getHtmlText() { return htmlText; }
-    public LineShape setHtmlText(String htmlText) { this.htmlText = htmlText; return this; }
-
-    public String getText() { return text; }
-    public LineShape setText(String text) { this.text = text; return this; }
-
-    public String getAlternativeText() { return alternativeText; }
-    public LineShape setAlternativeText(String alternativeText) { this.alternativeText = alternativeText; return this; }
-
-    public String getTextHorizontalAlignment() { return textHorizontalAlignment; }
-    public LineShape setTextHorizontalAlignment(String textHorizontalAlignment) { this.textHorizontalAlignment = textHorizontalAlignment; return this; }
-
-    public String getTextHorizontalOverflow() { return textHorizontalOverflow; }
-    public LineShape setTextHorizontalOverflow(String textHorizontalOverflow) { this.textHorizontalOverflow = textHorizontalOverflow; return this; }
-
-    public String getTextOrientationType() { return textOrientationType; }
-    public LineShape setTextOrientationType(String textOrientationType) { this.textOrientationType = textOrientationType; return this; }
-
-    public String getTextVerticalAlignment() { return textVerticalAlignment; }
-    public LineShape setTextVerticalAlignment(String textVerticalAlignment) { this.textVerticalAlignment = textVerticalAlignment; return this; }
-
-    public String getTextVerticalOverflow() { return textVerticalOverflow; }
-    public LineShape setTextVerticalOverflow(String textVerticalOverflow) { this.textVerticalOverflow = textVerticalOverflow; return this; }
-
-    public Boolean getIsGroup() { return isGroup; }
-    public LineShape setIsGroup(Boolean isGroup) { this.isGroup = isGroup; return this; }
-
-    public Boolean getIsHidden() { return isHidden; }
-    public LineShape setIsHidden(Boolean isHidden) { this.isHidden = isHidden; return this; }
-
-    public Boolean getIsLockAspectRatio() { return isLockAspectRatio; }
-    public LineShape setIsLockAspectRatio(Boolean isLockAspectRatio) { this.isLockAspectRatio = isLockAspectRatio; return this; }
-
-    public Boolean getIsLocked() { return isLocked; }
-    public LineShape setIsLocked(Boolean isLocked) { this.isLocked = isLocked; return this; }
-
-    public Boolean getIsPrintable() { return isPrintable; }
-    public LineShape setIsPrintable(Boolean isPrintable) { this.isPrintable = isPrintable; return this; }
-
-    public Boolean getIsTextWrapped() { return isTextWrapped; }
-    public LineShape setIsTextWrapped(Boolean isTextWrapped) { this.isTextWrapped = isTextWrapped; return this; }
-
-    public Boolean getIsWordArt() { return isWordArt; }
-    public LineShape setIsWordArt(Boolean isWordArt) { this.isWordArt = isWordArt; return this; }
-
-    public String getLinkedCell() { return linkedCell; }
-    public LineShape setLinkedCell(String linkedCell) { this.linkedCell = linkedCell; return this; }
-
-    public Integer getZOrderPosition() { return zOrderPosition; }
-    public LineShape setZOrderPosition(Integer zOrderPosition) { this.zOrderPosition = zOrderPosition; return this; }
-
-    public Font getFont() { return font; }
-    public LineShape setFont(Font font) { this.font = font; return this; }
-
-    public String getHyperlink() { return hyperlink; }
-    public LineShape setHyperlink(String hyperlink) { this.hyperlink = hyperlink; return this; }
-
     public Link getLink() { return link; }
     public LineShape setLink(Link link) { this.link = link; return this; }
+
+
+    /** Covariant override: keeps fluent chains returning LineShape. */
+    @Override public LineShape setName(String name) { return (LineShape) super.setName(name); }
+    /** Covariant override: keeps fluent chains returning LineShape. */
+    @Override public LineShape setMsoDrawingType(String msoDrawingType) { return (LineShape) super.setMsoDrawingType(msoDrawingType); }
+    /** Covariant override: keeps fluent chains returning LineShape. */
+    @Override public LineShape setAutoShapeType(String autoShapeType) { return (LineShape) super.setAutoShapeType(autoShapeType); }
+    /** Covariant override: keeps fluent chains returning LineShape. */
+    @Override public LineShape setPlacement(String placement) { return (LineShape) super.setPlacement(placement); }
+    /** Covariant override: keeps fluent chains returning LineShape. */
+    @Override public LineShape setUpperLeftRow(Integer upperLeftRow) { return (LineShape) super.setUpperLeftRow(upperLeftRow); }
+    /** Covariant override: keeps fluent chains returning LineShape. */
+    @Override public LineShape setTop(Integer top) { return (LineShape) super.setTop(top); }
+    /** Covariant override: keeps fluent chains returning LineShape. */
+    @Override public LineShape setUpperLeftColumn(Integer upperLeftColumn) { return (LineShape) super.setUpperLeftColumn(upperLeftColumn); }
+    /** Covariant override: keeps fluent chains returning LineShape. */
+    @Override public LineShape setLeft(Integer left) { return (LineShape) super.setLeft(left); }
+    /** Covariant override: keeps fluent chains returning LineShape. */
+    @Override public LineShape setLowerRightRow(Integer lowerRightRow) { return (LineShape) super.setLowerRightRow(lowerRightRow); }
+    /** Covariant override: keeps fluent chains returning LineShape. */
+    @Override public LineShape setBottom(Integer bottom) { return (LineShape) super.setBottom(bottom); }
+    /** Covariant override: keeps fluent chains returning LineShape. */
+    @Override public LineShape setLowerRightColumn(Integer lowerRightColumn) { return (LineShape) super.setLowerRightColumn(lowerRightColumn); }
+    /** Covariant override: keeps fluent chains returning LineShape. */
+    @Override public LineShape setRight(Integer right) { return (LineShape) super.setRight(right); }
+    /** Covariant override: keeps fluent chains returning LineShape. */
+    @Override public LineShape setWidth(Integer width) { return (LineShape) super.setWidth(width); }
+    /** Covariant override: keeps fluent chains returning LineShape. */
+    @Override public LineShape setHeight(Integer height) { return (LineShape) super.setHeight(height); }
+    /** Covariant override: keeps fluent chains returning LineShape. */
+    @Override public LineShape setX(Integer x) { return (LineShape) super.setX(x); }
+    /** Covariant override: keeps fluent chains returning LineShape. */
+    @Override public LineShape setY(Integer y) { return (LineShape) super.setY(y); }
+    /** Covariant override: keeps fluent chains returning LineShape. */
+    @Override public LineShape setRotationAngle(Double rotationAngle) { return (LineShape) super.setRotationAngle(rotationAngle); }
+    /** Covariant override: keeps fluent chains returning LineShape. */
+    @Override public LineShape setHtmlText(String htmlText) { return (LineShape) super.setHtmlText(htmlText); }
+    /** Covariant override: keeps fluent chains returning LineShape. */
+    @Override public LineShape setText(String text) { return (LineShape) super.setText(text); }
+    /** Covariant override: keeps fluent chains returning LineShape. */
+    @Override public LineShape setAlternativeText(String alternativeText) { return (LineShape) super.setAlternativeText(alternativeText); }
+    /** Covariant override: keeps fluent chains returning LineShape. */
+    @Override public LineShape setTextHorizontalAlignment(String textHorizontalAlignment) { return (LineShape) super.setTextHorizontalAlignment(textHorizontalAlignment); }
+    /** Covariant override: keeps fluent chains returning LineShape. */
+    @Override public LineShape setTextHorizontalOverflow(String textHorizontalOverflow) { return (LineShape) super.setTextHorizontalOverflow(textHorizontalOverflow); }
+    /** Covariant override: keeps fluent chains returning LineShape. */
+    @Override public LineShape setTextOrientationType(String textOrientationType) { return (LineShape) super.setTextOrientationType(textOrientationType); }
+    /** Covariant override: keeps fluent chains returning LineShape. */
+    @Override public LineShape setTextVerticalAlignment(String textVerticalAlignment) { return (LineShape) super.setTextVerticalAlignment(textVerticalAlignment); }
+    /** Covariant override: keeps fluent chains returning LineShape. */
+    @Override public LineShape setTextVerticalOverflow(String textVerticalOverflow) { return (LineShape) super.setTextVerticalOverflow(textVerticalOverflow); }
+    /** Covariant override: keeps fluent chains returning LineShape. */
+    @Override public LineShape setIsGroup(Boolean isGroup) { return (LineShape) super.setIsGroup(isGroup); }
+    /** Covariant override: keeps fluent chains returning LineShape. */
+    @Override public LineShape setIsHidden(Boolean isHidden) { return (LineShape) super.setIsHidden(isHidden); }
+    /** Covariant override: keeps fluent chains returning LineShape. */
+    @Override public LineShape setIsLockAspectRatio(Boolean isLockAspectRatio) { return (LineShape) super.setIsLockAspectRatio(isLockAspectRatio); }
+    /** Covariant override: keeps fluent chains returning LineShape. */
+    @Override public LineShape setIsLocked(Boolean isLocked) { return (LineShape) super.setIsLocked(isLocked); }
+    /** Covariant override: keeps fluent chains returning LineShape. */
+    @Override public LineShape setIsPrintable(Boolean isPrintable) { return (LineShape) super.setIsPrintable(isPrintable); }
+    /** Covariant override: keeps fluent chains returning LineShape. */
+    @Override public LineShape setIsTextWrapped(Boolean isTextWrapped) { return (LineShape) super.setIsTextWrapped(isTextWrapped); }
+    /** Covariant override: keeps fluent chains returning LineShape. */
+    @Override public LineShape setIsWordArt(Boolean isWordArt) { return (LineShape) super.setIsWordArt(isWordArt); }
+    /** Covariant override: keeps fluent chains returning LineShape. */
+    @Override public LineShape setLinkedCell(String linkedCell) { return (LineShape) super.setLinkedCell(linkedCell); }
+    /** Covariant override: keeps fluent chains returning LineShape. */
+    @Override public LineShape setZOrderPosition(Integer zOrderPosition) { return (LineShape) super.setZOrderPosition(zOrderPosition); }
+    /** Covariant override: keeps fluent chains returning LineShape. */
+    @Override public LineShape setFont(Font font) { return (LineShape) super.setFont(font); }
+    /** Covariant override: keeps fluent chains returning LineShape. */
+    @Override public LineShape setHyperlink(String hyperlink) { return (LineShape) super.setHyperlink(hyperlink); }
 
 }

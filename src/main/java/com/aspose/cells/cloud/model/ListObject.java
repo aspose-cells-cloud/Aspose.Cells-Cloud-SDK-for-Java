@@ -91,10 +91,6 @@ public class ListObject extends LinkElement {
     @JsonProperty("AlternativeDescription")
     private String alternativeDescription;
 
-    /** Gets or sets link. */
-    @JsonProperty("link")
-    private Link link;
-
     public AutoFilter getAutoFilter() { return autoFilter; }
     public ListObject setAutoFilter(AutoFilter autoFilter) { this.autoFilter = autoFilter; return this; }
 
@@ -158,7 +154,8 @@ public class ListObject extends LinkElement {
     public String getAlternativeDescription() { return alternativeDescription; }
     public ListObject setAlternativeDescription(String alternativeDescription) { this.alternativeDescription = alternativeDescription; return this; }
 
-    public Link getLink() { return link; }
-    public ListObject setLink(Link link) { this.link = link; return this; }
+
+    /** Covariant override: keeps fluent chains returning ListObject. */
+    @Override public ListObject setLink(Link link) { return (ListObject) super.setLink(link); }
 
 }

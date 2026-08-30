@@ -33,7 +33,7 @@ public class DeleteHorizontalPageBreakRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/" + urlEncode(name) + "/worksheets/" + urlEncode(sheetName) + "/horizontalpagebreaks/" + urlEncode(String.valueOf(index));
+        return "/cells/" + urlEncode(name) + "/worksheets/" + urlEncode(sheetName) + "/horizontalpagebreaks/" + urlEncode(String.valueOf(index));
     }
 
     @Override

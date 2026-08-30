@@ -6,7 +6,6 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import static com.aspose.cells.cloud.UrlUtils.urlEncode;
 
 /** Specify appending text to multiple cells at once, allowing you to add prefixes, suffixes, labels, or any specific characters. You can choose the exact position of the text—in the beginning, at the end, or before or after certain characters in the cell. */
 public class AddTextRequest implements RequestOption {
@@ -59,7 +58,7 @@ public class AddTextRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v4.0/cells/content/add/text";
+        return "/cells/content/add/text";
     }
 
     @Override
@@ -96,4 +95,6 @@ public class AddTextRequest implements RequestOption {
         form.put("Spreadsheet", spreadsheet);
         return form;
     }
+
+    @Override public boolean isBinaryResponse() { return true; }
 }

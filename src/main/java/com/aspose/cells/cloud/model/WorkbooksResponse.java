@@ -11,21 +11,13 @@ public class WorkbooksResponse extends CellsCloudResponse {
     @JsonProperty("Workbooks")
     private List<LinkElement> workbooks;
 
-    /** Gets or sets Code. */
-    @JsonProperty("Code")
-    private Integer code;
-
-    /** Gets or sets Status. */
-    @JsonProperty("Status")
-    private String status;
-
     public List<LinkElement> getWorkbooks() { return workbooks; }
     public WorkbooksResponse setWorkbooks(List<LinkElement> workbooks) { this.workbooks = workbooks; return this; }
 
-    public Integer getCode() { return code; }
-    public WorkbooksResponse setCode(Integer code) { this.code = code; return this; }
 
-    public String getStatus() { return status; }
-    public WorkbooksResponse setStatus(String status) { this.status = status; return this; }
+    /** Covariant override: keeps fluent chains returning WorkbooksResponse. */
+    @Override public WorkbooksResponse setCode(Integer code) { return (WorkbooksResponse) super.setCode(code); }
+    /** Covariant override: keeps fluent chains returning WorkbooksResponse. */
+    @Override public WorkbooksResponse setStatus(String status) { return (WorkbooksResponse) super.setStatus(status); }
 
 }

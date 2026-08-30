@@ -5,7 +5,6 @@ import com.aspose.cells.cloud.model.BatchSplitRequest;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import static com.aspose.cells.cloud.UrlUtils.urlEncode;
 
 /** Batch splitting files that meet specific matching conditions. */
 public class PostBatchSplitRequest implements RequestOption {
@@ -22,7 +21,7 @@ public class PostBatchSplitRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/batch/split";
+        return "/cells/batch/split";
     }
 
     @Override
@@ -46,4 +45,6 @@ public class PostBatchSplitRequest implements RequestOption {
     public Map<String, Object> getMultipartForm() {
         return null;
     }
+
+    @Override public boolean isBinaryResponse() { return true; }
 }

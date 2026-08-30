@@ -11,42 +11,19 @@ public class ImportBatchDataOption extends ImportOption {
     @JsonProperty("BatchData")
     private List<CellValue> batchData;
 
-    /** Gets or sets DestinationWorksheet. */
-    @JsonProperty("DestinationWorksheet")
-    private String destinationWorksheet;
-
-    /** Gets or sets IsInsert. */
-    @JsonProperty("IsInsert")
-    private Boolean isInsert;
-
-    /** Gets or sets ImportDataType. */
-    @JsonProperty("ImportDataType")
-    private String importDataType;
-
-    /** Gets or sets DataSource. */
-    @JsonProperty("DataSource")
-    private DataSource dataSource;
-
-    /** Gets or sets Source. */
-    @JsonProperty("Source")
-    private FileSource source;
-
     public List<CellValue> getBatchData() { return batchData; }
     public ImportBatchDataOption setBatchData(List<CellValue> batchData) { this.batchData = batchData; return this; }
 
-    public String getDestinationWorksheet() { return destinationWorksheet; }
-    public ImportBatchDataOption setDestinationWorksheet(String destinationWorksheet) { this.destinationWorksheet = destinationWorksheet; return this; }
 
-    public Boolean getIsInsert() { return isInsert; }
-    public ImportBatchDataOption setIsInsert(Boolean isInsert) { this.isInsert = isInsert; return this; }
-
-    public String getImportDataType() { return importDataType; }
-    public ImportBatchDataOption setImportDataType(String importDataType) { this.importDataType = importDataType; return this; }
-
-    public DataSource getDataSource() { return dataSource; }
-    public ImportBatchDataOption setDataSource(DataSource dataSource) { this.dataSource = dataSource; return this; }
-
-    public FileSource getSource() { return source; }
-    public ImportBatchDataOption setSource(FileSource source) { this.source = source; return this; }
+    /** Covariant override: keeps fluent chains returning ImportBatchDataOption. */
+    @Override public ImportBatchDataOption setDestinationWorksheet(String destinationWorksheet) { return (ImportBatchDataOption) super.setDestinationWorksheet(destinationWorksheet); }
+    /** Covariant override: keeps fluent chains returning ImportBatchDataOption. */
+    @Override public ImportBatchDataOption setIsInsert(Boolean isInsert) { return (ImportBatchDataOption) super.setIsInsert(isInsert); }
+    /** Covariant override: keeps fluent chains returning ImportBatchDataOption. */
+    @Override public ImportBatchDataOption setImportDataType(String importDataType) { return (ImportBatchDataOption) super.setImportDataType(importDataType); }
+    /** Covariant override: keeps fluent chains returning ImportBatchDataOption. */
+    @Override public ImportBatchDataOption setDataSource(DataSource dataSource) { return (ImportBatchDataOption) super.setDataSource(dataSource); }
+    /** Covariant override: keeps fluent chains returning ImportBatchDataOption. */
+    @Override public ImportBatchDataOption setSource(FileSource source) { return (ImportBatchDataOption) super.setSource(source); }
 
 }

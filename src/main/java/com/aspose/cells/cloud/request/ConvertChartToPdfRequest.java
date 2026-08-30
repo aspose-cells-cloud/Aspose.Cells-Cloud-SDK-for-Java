@@ -6,7 +6,6 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import static com.aspose.cells.cloud.UrlUtils.urlEncode;
 
 /** Converts a chart of spreadsheet on a local drive to pdf. */
 public class ConvertChartToPdfRequest implements RequestOption {
@@ -53,7 +52,7 @@ public class ConvertChartToPdfRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v4.0/cells/convert/chart/pdf";
+        return "/cells/convert/chart/pdf";
     }
 
     @Override
@@ -87,4 +86,6 @@ public class ConvertChartToPdfRequest implements RequestOption {
         form.put("Spreadsheet", spreadsheet);
         return form;
     }
+
+    @Override public boolean isBinaryResponse() { return true; }
 }

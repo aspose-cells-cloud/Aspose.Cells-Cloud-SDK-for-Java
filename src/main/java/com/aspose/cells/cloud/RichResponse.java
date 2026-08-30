@@ -1,7 +1,6 @@
 package com.aspose.cells.cloud;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-
+import java.io.ByteArrayInputStream;
 import java.nio.charset.StandardCharsets;
 import java.util.Collections;
 import java.util.List;
@@ -15,8 +14,6 @@ import java.util.Map;
  */
 public class RichResponse {
 
-    private static final ObjectMapper MAPPER = new ObjectMapper();
-
     private final int statusCode;
     private final Map<String, List<String>> headers;
     private final byte[] body;
@@ -28,7 +25,9 @@ public class RichResponse {
      */
     public RichResponse(int statusCode, Map<String, List<String>> headers, byte[] body) {
         this.statusCode = statusCode;
-        this.headers = headers == null ? Collections.<String, List<String>>emptyMap() : headers;
+        this.headers = headers == null
+                ? Collections.<String, List<String>>emptyMap()
+                : Collections.unmodifiableMap(headers);
         this.body = body == null ? new byte[0] : body;
     }
 
@@ -63,6 +62,18 @@ public class RichResponse {
     }
 
     /**
+     * Returns the raw response body as a stream, for callers that want to consume large payloads
+     * (file downloads/conversions) without materialising the {@link #getBody()} byte array into
+     * another copy. The response bytes are already buffered by the client, so this is an in-memory
+     * stream, not a socket stream.
+     *
+     * @return a fresh, independent stream over the response body bytes
+     */
+    public ByteArrayInputStream getBodyStream() {
+        return new ByteArrayInputStream(body);
+    }
+
+    /**
      * Parses the JSON response body into an instance of the given type.
      *
      * @param target the target model class
@@ -72,7 +83,7 @@ public class RichResponse {
      */
     public <T> T getJson(Class<T> target) {
         try {
-            return MAPPER.readValue(body, target);
+            return JsonUtil.MAPPER.readValue(body, target);
         } catch (Exception e) {
             throw new ApiException("Failed to parse response body as " + target.getSimpleName(), e);
         }

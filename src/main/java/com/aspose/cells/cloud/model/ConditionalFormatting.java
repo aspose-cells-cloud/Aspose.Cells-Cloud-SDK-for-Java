@@ -15,17 +15,14 @@ public class ConditionalFormatting extends LinkElement {
     @JsonProperty("FormatConditions")
     private List<FormatCondition> formatConditions;
 
-    /** Gets or sets link. */
-    @JsonProperty("link")
-    private Link link;
-
     public String getSqref() { return sqref; }
     public ConditionalFormatting setSqref(String sqref) { this.sqref = sqref; return this; }
 
     public List<FormatCondition> getFormatConditions() { return formatConditions; }
     public ConditionalFormatting setFormatConditions(List<FormatCondition> formatConditions) { this.formatConditions = formatConditions; return this; }
 
-    public Link getLink() { return link; }
-    public ConditionalFormatting setLink(Link link) { this.link = link; return this; }
+
+    /** Covariant override: keeps fluent chains returning ConditionalFormatting. */
+    @Override public ConditionalFormatting setLink(Link link) { return (ConditionalFormatting) super.setLink(link); }
 
 }

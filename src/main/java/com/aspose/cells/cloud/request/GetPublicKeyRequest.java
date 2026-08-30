@@ -4,7 +4,6 @@ import com.aspose.cells.cloud.RequestOption;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import static com.aspose.cells.cloud.UrlUtils.urlEncode;
 
 /** Get an asymmetric public key. */
 public class GetPublicKeyRequest implements RequestOption {
@@ -15,7 +14,7 @@ public class GetPublicKeyRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v4.0/cells/publickey";
+        return "/cells/publickey";
     }
 
     @Override

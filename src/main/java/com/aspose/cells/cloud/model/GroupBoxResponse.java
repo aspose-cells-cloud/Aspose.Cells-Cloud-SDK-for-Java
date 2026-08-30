@@ -10,21 +10,13 @@ public class GroupBoxResponse extends CellsCloudResponse {
     @JsonProperty("Shape")
     private GroupBox shape;
 
-    /** Gets or sets Code. */
-    @JsonProperty("Code")
-    private Integer code;
-
-    /** Gets or sets Status. */
-    @JsonProperty("Status")
-    private String status;
-
     public GroupBox getShape() { return shape; }
     public GroupBoxResponse setShape(GroupBox shape) { this.shape = shape; return this; }
 
-    public Integer getCode() { return code; }
-    public GroupBoxResponse setCode(Integer code) { this.code = code; return this; }
 
-    public String getStatus() { return status; }
-    public GroupBoxResponse setStatus(String status) { this.status = status; return this; }
+    /** Covariant override: keeps fluent chains returning GroupBoxResponse. */
+    @Override public GroupBoxResponse setCode(Integer code) { return (GroupBoxResponse) super.setCode(code); }
+    /** Covariant override: keeps fluent chains returning GroupBoxResponse. */
+    @Override public GroupBoxResponse setStatus(String status) { return (GroupBoxResponse) super.setStatus(status); }
 
 }

@@ -10,21 +10,13 @@ public class FormResponse extends CellsCloudResponse {
     @JsonProperty("Form")
     private Form form;
 
-    /** Gets or sets Code. */
-    @JsonProperty("Code")
-    private Integer code;
-
-    /** Gets or sets Status. */
-    @JsonProperty("Status")
-    private String status;
-
     public Form getForm() { return form; }
     public FormResponse setForm(Form form) { this.form = form; return this; }
 
-    public Integer getCode() { return code; }
-    public FormResponse setCode(Integer code) { this.code = code; return this; }
 
-    public String getStatus() { return status; }
-    public FormResponse setStatus(String status) { this.status = status; return this; }
+    /** Covariant override: keeps fluent chains returning FormResponse. */
+    @Override public FormResponse setCode(Integer code) { return (FormResponse) super.setCode(code); }
+    /** Covariant override: keeps fluent chains returning FormResponse. */
+    @Override public FormResponse setStatus(String status) { return (FormResponse) super.setStatus(status); }
 
 }

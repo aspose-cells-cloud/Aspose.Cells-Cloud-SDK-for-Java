@@ -70,10 +70,6 @@ public class Cell extends LinkElement {
     @JsonProperty("Worksheet")
     private String worksheet;
 
-    /** Gets or sets link. */
-    @JsonProperty("link")
-    private Link link;
-
     public String getName() { return name; }
     public Cell setName(String name) { this.name = name; return this; }
 
@@ -122,7 +118,8 @@ public class Cell extends LinkElement {
     public String getWorksheet() { return worksheet; }
     public Cell setWorksheet(String worksheet) { this.worksheet = worksheet; return this; }
 
-    public Link getLink() { return link; }
-    public Cell setLink(Link link) { this.link = link; return this; }
+
+    /** Covariant override: keeps fluent chains returning Cell. */
+    @Override public Cell setLink(Link link) { return (Cell) super.setLink(link); }
 
 }

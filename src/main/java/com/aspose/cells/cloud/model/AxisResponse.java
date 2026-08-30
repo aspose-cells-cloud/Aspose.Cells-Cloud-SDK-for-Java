@@ -10,21 +10,13 @@ public class AxisResponse extends CellsCloudResponse {
     @JsonProperty("Axis")
     private Axis axis;
 
-    /** Gets or sets Code. */
-    @JsonProperty("Code")
-    private Integer code;
-
-    /** Gets or sets Status. */
-    @JsonProperty("Status")
-    private String status;
-
     public Axis getAxis() { return axis; }
     public AxisResponse setAxis(Axis axis) { this.axis = axis; return this; }
 
-    public Integer getCode() { return code; }
-    public AxisResponse setCode(Integer code) { this.code = code; return this; }
 
-    public String getStatus() { return status; }
-    public AxisResponse setStatus(String status) { this.status = status; return this; }
+    /** Covariant override: keeps fluent chains returning AxisResponse. */
+    @Override public AxisResponse setCode(Integer code) { return (AxisResponse) super.setCode(code); }
+    /** Covariant override: keeps fluent chains returning AxisResponse. */
+    @Override public AxisResponse setStatus(String status) { return (AxisResponse) super.setStatus(status); }
 
 }

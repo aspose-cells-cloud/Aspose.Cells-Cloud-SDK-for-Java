@@ -4,7 +4,6 @@ import com.aspose.cells.cloud.RequestOption;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import static com.aspose.cells.cloud.UrlUtils.urlEncode;
 
 /** The Web API allows users to create a new spreadsheet with a specified name. Optionally, a template can be provided to initialize the spreadsheet with predefined content or formatting. */
 public class CreateSpreadsheetRequest implements RequestOption {
@@ -28,7 +27,7 @@ public class CreateSpreadsheetRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v4.0/cells/spreadsheet/create";
+        return "/cells/spreadsheet/create";
     }
 
     @Override
@@ -57,4 +56,6 @@ public class CreateSpreadsheetRequest implements RequestOption {
     public Map<String, Object> getMultipartForm() {
         return null;
     }
+
+    @Override public boolean isBinaryResponse() { return true; }
 }

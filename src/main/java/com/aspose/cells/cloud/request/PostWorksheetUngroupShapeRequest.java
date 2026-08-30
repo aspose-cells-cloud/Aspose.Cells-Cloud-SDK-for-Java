@@ -33,7 +33,7 @@ public class PostWorksheetUngroupShapeRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/" + urlEncode(name) + "/worksheets/" + urlEncode(sheetName) + "/shapes/" + urlEncode(String.valueOf(shapeindex)) + "/ungroup";
+        return "/cells/" + urlEncode(name) + "/worksheets/" + urlEncode(sheetName) + "/shapes/" + urlEncode(String.valueOf(shapeindex)) + "/ungroup";
     }
 
     @Override

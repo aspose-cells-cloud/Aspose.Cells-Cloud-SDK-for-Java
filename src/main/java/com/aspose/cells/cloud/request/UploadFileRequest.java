@@ -42,7 +42,7 @@ public class UploadFileRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v4.0/cells/storage/file/" + urlEncode(path);
+        return "/cells/storage/file/" + urlEncode(path);
     }
 
     @Override

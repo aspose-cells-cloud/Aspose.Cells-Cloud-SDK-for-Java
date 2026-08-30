@@ -11,21 +11,13 @@ public class SaveFilesToCloudResult extends TaskRunResult {
     @JsonProperty("SavedFiles")
     private List<Link> savedFiles;
 
-    /** Gets or sets Description. */
-    @JsonProperty("Description")
-    private String description;
-
-    /** Gets or sets OutFileList. */
-    @JsonProperty("OutFileList")
-    private List<DataSource> outFileList;
-
     public List<Link> getSavedFiles() { return savedFiles; }
     public SaveFilesToCloudResult setSavedFiles(List<Link> savedFiles) { this.savedFiles = savedFiles; return this; }
 
-    public String getDescription() { return description; }
-    public SaveFilesToCloudResult setDescription(String description) { this.description = description; return this; }
 
-    public List<DataSource> getOutFileList() { return outFileList; }
-    public SaveFilesToCloudResult setOutFileList(List<DataSource> outFileList) { this.outFileList = outFileList; return this; }
+    /** Covariant override: keeps fluent chains returning SaveFilesToCloudResult. */
+    @Override public SaveFilesToCloudResult setDescription(String description) { return (SaveFilesToCloudResult) super.setDescription(description); }
+    /** Covariant override: keeps fluent chains returning SaveFilesToCloudResult. */
+    @Override public SaveFilesToCloudResult setOutFileList(List<DataSource> outFileList) { return (SaveFilesToCloudResult) super.setOutFileList(outFileList); }
 
 }

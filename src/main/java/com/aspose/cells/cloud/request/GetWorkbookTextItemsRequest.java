@@ -27,7 +27,7 @@ public class GetWorkbookTextItemsRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/" + urlEncode(name) + "/textItems";
+        return "/cells/" + urlEncode(name) + "/textItems";
     }
 
     @Override

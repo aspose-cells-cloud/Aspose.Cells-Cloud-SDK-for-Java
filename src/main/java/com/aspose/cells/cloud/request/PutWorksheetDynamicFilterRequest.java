@@ -43,7 +43,7 @@ public class PutWorksheetDynamicFilterRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/" + urlEncode(name) + "/worksheets/" + urlEncode(sheetName) + "/autoFilter/dynamicFilter";
+        return "/cells/" + urlEncode(name) + "/worksheets/" + urlEncode(sheetName) + "/autoFilter/dynamicFilter";
     }
 
     @Override

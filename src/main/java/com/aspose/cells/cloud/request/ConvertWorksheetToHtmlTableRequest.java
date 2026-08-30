@@ -6,7 +6,6 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import static com.aspose.cells.cloud.UrlUtils.urlEncode;
 
 /** Converts a worksheet of spreadsheet on a local drive to the HTML table file. */
 public class ConvertWorksheetToHtmlTableRequest implements RequestOption {
@@ -44,7 +43,7 @@ public class ConvertWorksheetToHtmlTableRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v4.0/cells/convert/worksheet/html-table";
+        return "/cells/convert/worksheet/html-table";
     }
 
     @Override
@@ -74,4 +73,6 @@ public class ConvertWorksheetToHtmlTableRequest implements RequestOption {
         form.put("Spreadsheet", spreadsheet);
         return form;
     }
+
+    @Override public boolean isBinaryResponse() { return true; }
 }

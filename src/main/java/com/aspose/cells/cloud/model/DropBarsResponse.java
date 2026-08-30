@@ -10,21 +10,13 @@ public class DropBarsResponse extends CellsCloudResponse {
     @JsonProperty("DropBars")
     private DropBars dropBars;
 
-    /** Gets or sets Code. */
-    @JsonProperty("Code")
-    private Integer code;
-
-    /** Gets or sets Status. */
-    @JsonProperty("Status")
-    private String status;
-
     public DropBars getDropBars() { return dropBars; }
     public DropBarsResponse setDropBars(DropBars dropBars) { this.dropBars = dropBars; return this; }
 
-    public Integer getCode() { return code; }
-    public DropBarsResponse setCode(Integer code) { this.code = code; return this; }
 
-    public String getStatus() { return status; }
-    public DropBarsResponse setStatus(String status) { this.status = status; return this; }
+    /** Covariant override: keeps fluent chains returning DropBarsResponse. */
+    @Override public DropBarsResponse setCode(Integer code) { return (DropBarsResponse) super.setCode(code); }
+    /** Covariant override: keeps fluent chains returning DropBarsResponse. */
+    @Override public DropBarsResponse setStatus(String status) { return (DropBarsResponse) super.setStatus(status); }
 
 }

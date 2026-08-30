@@ -33,7 +33,7 @@ public class GetWorksheetConditionalFormattingRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/" + urlEncode(name) + "/worksheets/" + urlEncode(sheetName) + "/conditionalFormattings/" + urlEncode(String.valueOf(index));
+        return "/cells/" + urlEncode(name) + "/worksheets/" + urlEncode(sheetName) + "/conditionalFormattings/" + urlEncode(String.valueOf(index));
     }
 
     @Override

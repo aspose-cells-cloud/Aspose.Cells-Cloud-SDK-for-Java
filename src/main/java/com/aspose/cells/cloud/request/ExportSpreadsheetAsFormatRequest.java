@@ -44,7 +44,7 @@ public class ExportSpreadsheetAsFormatRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v4.0/cells/" + urlEncode(name);
+        return "/cells/" + urlEncode(name);
     }
 
     @Override
@@ -77,4 +77,6 @@ public class ExportSpreadsheetAsFormatRequest implements RequestOption {
     public Map<String, Object> getMultipartForm() {
         return null;
     }
+
+    @Override public boolean isBinaryResponse() { return true; }
 }

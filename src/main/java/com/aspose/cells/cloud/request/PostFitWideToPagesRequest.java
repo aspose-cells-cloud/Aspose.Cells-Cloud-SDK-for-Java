@@ -30,7 +30,7 @@ public class PostFitWideToPagesRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/" + urlEncode(name) + "/worksheets/" + urlEncode(sheetName) + "/pagesetup/fitwidetopages";
+        return "/cells/" + urlEncode(name) + "/worksheets/" + urlEncode(sheetName) + "/pagesetup/fitwidetopages";
     }
 
     @Override

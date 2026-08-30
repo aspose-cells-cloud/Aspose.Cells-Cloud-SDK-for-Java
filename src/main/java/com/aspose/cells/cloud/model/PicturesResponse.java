@@ -10,21 +10,13 @@ public class PicturesResponse extends CellsCloudResponse {
     @JsonProperty("Pictures")
     private Pictures pictures;
 
-    /** Gets or sets Code. */
-    @JsonProperty("Code")
-    private Integer code;
-
-    /** Gets or sets Status. */
-    @JsonProperty("Status")
-    private String status;
-
     public Pictures getPictures() { return pictures; }
     public PicturesResponse setPictures(Pictures pictures) { this.pictures = pictures; return this; }
 
-    public Integer getCode() { return code; }
-    public PicturesResponse setCode(Integer code) { this.code = code; return this; }
 
-    public String getStatus() { return status; }
-    public PicturesResponse setStatus(String status) { this.status = status; return this; }
+    /** Covariant override: keeps fluent chains returning PicturesResponse. */
+    @Override public PicturesResponse setCode(Integer code) { return (PicturesResponse) super.setCode(code); }
+    /** Covariant override: keeps fluent chains returning PicturesResponse. */
+    @Override public PicturesResponse setStatus(String status) { return (PicturesResponse) super.setStatus(status); }
 
 }

@@ -40,7 +40,7 @@ public class PostWorksheetListColumnRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/" + urlEncode(name) + "/worksheets/" + urlEncode(sheetName) + "/listobjects/" + urlEncode(String.valueOf(listObjectIndex)) + "/listcolumns/" + urlEncode(String.valueOf(columnIndex));
+        return "/cells/" + urlEncode(name) + "/worksheets/" + urlEncode(sheetName) + "/listobjects/" + urlEncode(String.valueOf(listObjectIndex)) + "/listcolumns/" + urlEncode(String.valueOf(columnIndex));
     }
 
     @Override

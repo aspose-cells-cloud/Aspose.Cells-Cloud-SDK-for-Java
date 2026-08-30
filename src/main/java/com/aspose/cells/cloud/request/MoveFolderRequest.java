@@ -30,7 +30,7 @@ public class MoveFolderRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v4.0/cells/storage/folder/move/" + urlEncode(srcPath);
+        return "/cells/storage/folder/move/" + urlEncode(srcPath);
     }
 
     @Override

@@ -38,7 +38,7 @@ public class PutWorkbookBackgroundRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/" + urlEncode(name) + "/background";
+        return "/cells/" + urlEncode(name) + "/background";
     }
 
     @Override

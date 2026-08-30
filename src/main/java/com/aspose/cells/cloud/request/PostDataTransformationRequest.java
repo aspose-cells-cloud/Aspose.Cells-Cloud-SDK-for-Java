@@ -5,7 +5,6 @@ import com.aspose.cells.cloud.model.DataTransformationRequest;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import static com.aspose.cells.cloud.UrlUtils.urlEncode;
 
 /** Transform spreadsheet data is mainly used to pivot columns, unpivot columns. */
 public class PostDataTransformationRequest implements RequestOption {
@@ -22,7 +21,7 @@ public class PostDataTransformationRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/datatransformation";
+        return "/cells/datatransformation";
     }
 
     @Override

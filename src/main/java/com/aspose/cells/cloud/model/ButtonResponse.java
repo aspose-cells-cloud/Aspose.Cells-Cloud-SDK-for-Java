@@ -10,21 +10,13 @@ public class ButtonResponse extends CellsCloudResponse {
     @JsonProperty("Shape")
     private Button shape;
 
-    /** Gets or sets Code. */
-    @JsonProperty("Code")
-    private Integer code;
-
-    /** Gets or sets Status. */
-    @JsonProperty("Status")
-    private String status;
-
     public Button getShape() { return shape; }
     public ButtonResponse setShape(Button shape) { this.shape = shape; return this; }
 
-    public Integer getCode() { return code; }
-    public ButtonResponse setCode(Integer code) { this.code = code; return this; }
 
-    public String getStatus() { return status; }
-    public ButtonResponse setStatus(String status) { this.status = status; return this; }
+    /** Covariant override: keeps fluent chains returning ButtonResponse. */
+    @Override public ButtonResponse setCode(Integer code) { return (ButtonResponse) super.setCode(code); }
+    /** Covariant override: keeps fluent chains returning ButtonResponse. */
+    @Override public ButtonResponse setStatus(String status) { return (ButtonResponse) super.setStatus(status); }
 
 }

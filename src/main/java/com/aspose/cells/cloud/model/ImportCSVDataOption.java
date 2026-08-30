@@ -31,26 +31,6 @@ public class ImportCSVDataOption extends ImportOption {
     @JsonProperty("CustomParsers")
     private List<CustomParserConfig> customParsers;
 
-    /** Gets or sets DestinationWorksheet. */
-    @JsonProperty("DestinationWorksheet")
-    private String destinationWorksheet;
-
-    /** Gets or sets IsInsert. */
-    @JsonProperty("IsInsert")
-    private Boolean isInsert;
-
-    /** Gets or sets ImportDataType. */
-    @JsonProperty("ImportDataType")
-    private String importDataType;
-
-    /** Gets or sets DataSource. */
-    @JsonProperty("DataSource")
-    private DataSource dataSource;
-
-    /** Gets or sets Source. */
-    @JsonProperty("Source")
-    private FileSource source;
-
     public String getSeparatorString() { return separatorString; }
     public ImportCSVDataOption setSeparatorString(String separatorString) { this.separatorString = separatorString; return this; }
 
@@ -69,19 +49,16 @@ public class ImportCSVDataOption extends ImportOption {
     public List<CustomParserConfig> getCustomParsers() { return customParsers; }
     public ImportCSVDataOption setCustomParsers(List<CustomParserConfig> customParsers) { this.customParsers = customParsers; return this; }
 
-    public String getDestinationWorksheet() { return destinationWorksheet; }
-    public ImportCSVDataOption setDestinationWorksheet(String destinationWorksheet) { this.destinationWorksheet = destinationWorksheet; return this; }
 
-    public Boolean getIsInsert() { return isInsert; }
-    public ImportCSVDataOption setIsInsert(Boolean isInsert) { this.isInsert = isInsert; return this; }
-
-    public String getImportDataType() { return importDataType; }
-    public ImportCSVDataOption setImportDataType(String importDataType) { this.importDataType = importDataType; return this; }
-
-    public DataSource getDataSource() { return dataSource; }
-    public ImportCSVDataOption setDataSource(DataSource dataSource) { this.dataSource = dataSource; return this; }
-
-    public FileSource getSource() { return source; }
-    public ImportCSVDataOption setSource(FileSource source) { this.source = source; return this; }
+    /** Covariant override: keeps fluent chains returning ImportCSVDataOption. */
+    @Override public ImportCSVDataOption setDestinationWorksheet(String destinationWorksheet) { return (ImportCSVDataOption) super.setDestinationWorksheet(destinationWorksheet); }
+    /** Covariant override: keeps fluent chains returning ImportCSVDataOption. */
+    @Override public ImportCSVDataOption setIsInsert(Boolean isInsert) { return (ImportCSVDataOption) super.setIsInsert(isInsert); }
+    /** Covariant override: keeps fluent chains returning ImportCSVDataOption. */
+    @Override public ImportCSVDataOption setImportDataType(String importDataType) { return (ImportCSVDataOption) super.setImportDataType(importDataType); }
+    /** Covariant override: keeps fluent chains returning ImportCSVDataOption. */
+    @Override public ImportCSVDataOption setDataSource(DataSource dataSource) { return (ImportCSVDataOption) super.setDataSource(dataSource); }
+    /** Covariant override: keeps fluent chains returning ImportCSVDataOption. */
+    @Override public ImportCSVDataOption setSource(FileSource source) { return (ImportCSVDataOption) super.setSource(source); }
 
 }

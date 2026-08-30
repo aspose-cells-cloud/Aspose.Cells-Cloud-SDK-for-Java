@@ -10,14 +10,11 @@ public class ListObjectOperateParameter extends OperateParameter {
     @JsonProperty("ListObject")
     private ListObject listObject;
 
-    /** Gets or sets OperateType. */
-    @JsonProperty("OperateType")
-    private String operateType;
-
     public ListObject getListObject() { return listObject; }
     public ListObjectOperateParameter setListObject(ListObject listObject) { this.listObject = listObject; return this; }
 
-    public String getOperateType() { return operateType; }
-    public ListObjectOperateParameter setOperateType(String operateType) { this.operateType = operateType; return this; }
+
+    /** Covariant override: keeps fluent chains returning ListObjectOperateParameter. */
+    @Override public ListObjectOperateParameter setOperateType(String operateType) { return (ListObjectOperateParameter) super.setOperateType(operateType); }
 
 }

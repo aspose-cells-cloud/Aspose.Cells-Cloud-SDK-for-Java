@@ -27,7 +27,7 @@ public class GetWorksheetsRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/" + urlEncode(name) + "/worksheets";
+        return "/cells/" + urlEncode(name) + "/worksheets";
     }
 
     @Override

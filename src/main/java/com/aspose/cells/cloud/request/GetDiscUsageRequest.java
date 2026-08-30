@@ -4,7 +4,6 @@ import com.aspose.cells.cloud.RequestOption;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import static com.aspose.cells.cloud.UrlUtils.urlEncode;
 
 /** GetDiscUsage request. */
 public class GetDiscUsageRequest implements RequestOption {
@@ -18,7 +17,7 @@ public class GetDiscUsageRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v4.0/cells/storage/disc";
+        return "/cells/storage/disc";
     }
 
     @Override

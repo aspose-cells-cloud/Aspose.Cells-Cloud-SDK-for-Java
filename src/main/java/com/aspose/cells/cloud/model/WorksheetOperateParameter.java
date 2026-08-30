@@ -22,10 +22,6 @@ public class WorksheetOperateParameter extends OperateParameter {
     @JsonProperty("MovingRequest")
     private WorksheetMovingRequest movingRequest;
 
-    /** Gets or sets OperateType. */
-    @JsonProperty("OperateType")
-    private String operateType;
-
     public String getName() { return name; }
     public WorksheetOperateParameter setName(String name) { this.name = name; return this; }
 
@@ -38,7 +34,8 @@ public class WorksheetOperateParameter extends OperateParameter {
     public WorksheetMovingRequest getMovingRequest() { return movingRequest; }
     public WorksheetOperateParameter setMovingRequest(WorksheetMovingRequest movingRequest) { this.movingRequest = movingRequest; return this; }
 
-    public String getOperateType() { return operateType; }
-    public WorksheetOperateParameter setOperateType(String operateType) { this.operateType = operateType; return this; }
+
+    /** Covariant override: keeps fluent chains returning WorksheetOperateParameter. */
+    @Override public WorksheetOperateParameter setOperateType(String operateType) { return (WorksheetOperateParameter) super.setOperateType(operateType); }
 
 }

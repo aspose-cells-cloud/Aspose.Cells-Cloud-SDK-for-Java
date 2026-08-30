@@ -150,10 +150,6 @@ public class Shape extends LinkElement {
     @JsonProperty("Hyperlink")
     private String hyperlink;
 
-    /** Gets or sets link. */
-    @JsonProperty("link")
-    private Link link;
-
     public String getName() { return name; }
     public Shape setName(String name) { this.name = name; return this; }
 
@@ -262,7 +258,8 @@ public class Shape extends LinkElement {
     public String getHyperlink() { return hyperlink; }
     public Shape setHyperlink(String hyperlink) { this.hyperlink = hyperlink; return this; }
 
-    public Link getLink() { return link; }
-    public Shape setLink(Link link) { this.link = link; return this; }
+
+    /** Covariant override: keeps fluent chains returning Shape. */
+    @Override public Shape setLink(Link link) { return (Shape) super.setLink(link); }
 
 }

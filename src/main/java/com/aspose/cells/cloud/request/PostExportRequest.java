@@ -6,7 +6,6 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import static com.aspose.cells.cloud.UrlUtils.urlEncode;
 
 /** Export Excel internal elements or the workbook itself to various format files. */
 public class PostExportRequest implements RequestOption {
@@ -49,7 +48,7 @@ public class PostExportRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/export";
+        return "/cells/export";
     }
 
     @Override

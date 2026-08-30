@@ -31,7 +31,7 @@ public class PostWorkbookSettingsRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/" + urlEncode(name) + "/settings";
+        return "/cells/" + urlEncode(name) + "/settings";
     }
 
     @Override

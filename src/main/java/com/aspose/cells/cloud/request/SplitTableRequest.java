@@ -6,7 +6,6 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import static com.aspose.cells.cloud.UrlUtils.urlEncode;
 
 /** Split an Excel worksheet tale into multiple sheets by column value. */
 public class SplitTableRequest implements RequestOption {
@@ -68,7 +67,7 @@ public class SplitTableRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v4.0/cells/split/table";
+        return "/cells/split/table";
     }
 
     @Override
@@ -107,4 +106,6 @@ public class SplitTableRequest implements RequestOption {
         form.put("Spreadsheet", spreadsheet);
         return form;
     }
+
+    @Override public boolean isBinaryResponse() { return true; }
 }

@@ -6,7 +6,6 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import static com.aspose.cells.cloud.UrlUtils.urlEncode;
 
 /** Reverse rows or columns in Excel files and create output files in various formats. */
 public class PostReverseRequest implements RequestOption {
@@ -48,7 +47,7 @@ public class PostReverseRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/reverse";
+        return "/cells/reverse";
     }
 
     @Override

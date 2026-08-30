@@ -6,7 +6,6 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import static com.aspose.cells.cloud.UrlUtils.urlEncode;
 
 /** Converts a spreadsheet on a local drive to the specified format. */
 public class ConvertSpreadsheetRequest implements RequestOption {
@@ -54,7 +53,7 @@ public class ConvertSpreadsheetRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v4.0/cells/convert/spreadsheet";
+        return "/cells/convert/spreadsheet";
     }
 
     @Override
@@ -89,4 +88,6 @@ public class ConvertSpreadsheetRequest implements RequestOption {
         form.put("Spreadsheet", spreadsheet);
         return form;
     }
+
+    @Override public boolean isBinaryResponse() { return true; }
 }

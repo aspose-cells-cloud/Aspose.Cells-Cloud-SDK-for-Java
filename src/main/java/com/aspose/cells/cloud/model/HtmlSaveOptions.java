@@ -162,58 +162,6 @@ public class HtmlSaveOptions extends SaveOptions {
     @JsonProperty("CellNameAttribute")
     private String cellNameAttribute;
 
-    /** Gets or sets SaveFormat. */
-    @JsonProperty("SaveFormat")
-    private String saveFormat;
-
-    /** Gets or sets CachedFileFolder. */
-    @JsonProperty("CachedFileFolder")
-    private String cachedFileFolder;
-
-    /** Gets or sets ClearData. */
-    @JsonProperty("ClearData")
-    private Boolean clearData;
-
-    /** Gets or sets CreateDirectory. */
-    @JsonProperty("CreateDirectory")
-    private Boolean createDirectory;
-
-    /** Gets or sets EnableHTTPCompression. */
-    @JsonProperty("EnableHTTPCompression")
-    private Boolean enableHTTPCompression;
-
-    /** Gets or sets RefreshChartCache. */
-    @JsonProperty("RefreshChartCache")
-    private Boolean refreshChartCache;
-
-    /** Gets or sets SortNames. */
-    @JsonProperty("SortNames")
-    private Boolean sortNames;
-
-    /** Gets or sets ValidateMergedAreas. */
-    @JsonProperty("ValidateMergedAreas")
-    private Boolean validateMergedAreas;
-
-    /** Gets or sets MergeAreas. */
-    @JsonProperty("MergeAreas")
-    private Boolean mergeAreas;
-
-    /** Gets or sets SortExternalNames. */
-    @JsonProperty("SortExternalNames")
-    private Boolean sortExternalNames;
-
-    /** Gets or sets CheckExcelRestriction. */
-    @JsonProperty("CheckExcelRestriction")
-    private Boolean checkExcelRestriction;
-
-    /** Gets or sets UpdateSmartArt. */
-    @JsonProperty("UpdateSmartArt")
-    private Boolean updateSmartArt;
-
-    /** Gets or sets EncryptDocumentProperties. */
-    @JsonProperty("EncryptDocumentProperties")
-    private Boolean encryptDocumentProperties;
-
     public Boolean getExportPageHeaders() { return exportPageHeaders; }
     public HtmlSaveOptions setExportPageHeaders(Boolean exportPageHeaders) { this.exportPageHeaders = exportPageHeaders; return this; }
 
@@ -331,43 +279,32 @@ public class HtmlSaveOptions extends SaveOptions {
     public String getCellNameAttribute() { return cellNameAttribute; }
     public HtmlSaveOptions setCellNameAttribute(String cellNameAttribute) { this.cellNameAttribute = cellNameAttribute; return this; }
 
-    public String getSaveFormat() { return saveFormat; }
-    public HtmlSaveOptions setSaveFormat(String saveFormat) { this.saveFormat = saveFormat; return this; }
 
-    public String getCachedFileFolder() { return cachedFileFolder; }
-    public HtmlSaveOptions setCachedFileFolder(String cachedFileFolder) { this.cachedFileFolder = cachedFileFolder; return this; }
-
-    public Boolean getClearData() { return clearData; }
-    public HtmlSaveOptions setClearData(Boolean clearData) { this.clearData = clearData; return this; }
-
-    public Boolean getCreateDirectory() { return createDirectory; }
-    public HtmlSaveOptions setCreateDirectory(Boolean createDirectory) { this.createDirectory = createDirectory; return this; }
-
-    public Boolean getEnableHTTPCompression() { return enableHTTPCompression; }
-    public HtmlSaveOptions setEnableHTTPCompression(Boolean enableHTTPCompression) { this.enableHTTPCompression = enableHTTPCompression; return this; }
-
-    public Boolean getRefreshChartCache() { return refreshChartCache; }
-    public HtmlSaveOptions setRefreshChartCache(Boolean refreshChartCache) { this.refreshChartCache = refreshChartCache; return this; }
-
-    public Boolean getSortNames() { return sortNames; }
-    public HtmlSaveOptions setSortNames(Boolean sortNames) { this.sortNames = sortNames; return this; }
-
-    public Boolean getValidateMergedAreas() { return validateMergedAreas; }
-    public HtmlSaveOptions setValidateMergedAreas(Boolean validateMergedAreas) { this.validateMergedAreas = validateMergedAreas; return this; }
-
-    public Boolean getMergeAreas() { return mergeAreas; }
-    public HtmlSaveOptions setMergeAreas(Boolean mergeAreas) { this.mergeAreas = mergeAreas; return this; }
-
-    public Boolean getSortExternalNames() { return sortExternalNames; }
-    public HtmlSaveOptions setSortExternalNames(Boolean sortExternalNames) { this.sortExternalNames = sortExternalNames; return this; }
-
-    public Boolean getCheckExcelRestriction() { return checkExcelRestriction; }
-    public HtmlSaveOptions setCheckExcelRestriction(Boolean checkExcelRestriction) { this.checkExcelRestriction = checkExcelRestriction; return this; }
-
-    public Boolean getUpdateSmartArt() { return updateSmartArt; }
-    public HtmlSaveOptions setUpdateSmartArt(Boolean updateSmartArt) { this.updateSmartArt = updateSmartArt; return this; }
-
-    public Boolean getEncryptDocumentProperties() { return encryptDocumentProperties; }
-    public HtmlSaveOptions setEncryptDocumentProperties(Boolean encryptDocumentProperties) { this.encryptDocumentProperties = encryptDocumentProperties; return this; }
+    /** Covariant override: keeps fluent chains returning HtmlSaveOptions. */
+    @Override public HtmlSaveOptions setSaveFormat(String saveFormat) { return (HtmlSaveOptions) super.setSaveFormat(saveFormat); }
+    /** Covariant override: keeps fluent chains returning HtmlSaveOptions. */
+    @Override public HtmlSaveOptions setCachedFileFolder(String cachedFileFolder) { return (HtmlSaveOptions) super.setCachedFileFolder(cachedFileFolder); }
+    /** Covariant override: keeps fluent chains returning HtmlSaveOptions. */
+    @Override public HtmlSaveOptions setClearData(Boolean clearData) { return (HtmlSaveOptions) super.setClearData(clearData); }
+    /** Covariant override: keeps fluent chains returning HtmlSaveOptions. */
+    @Override public HtmlSaveOptions setCreateDirectory(Boolean createDirectory) { return (HtmlSaveOptions) super.setCreateDirectory(createDirectory); }
+    /** Covariant override: keeps fluent chains returning HtmlSaveOptions. */
+    @Override public HtmlSaveOptions setEnableHTTPCompression(Boolean enableHTTPCompression) { return (HtmlSaveOptions) super.setEnableHTTPCompression(enableHTTPCompression); }
+    /** Covariant override: keeps fluent chains returning HtmlSaveOptions. */
+    @Override public HtmlSaveOptions setRefreshChartCache(Boolean refreshChartCache) { return (HtmlSaveOptions) super.setRefreshChartCache(refreshChartCache); }
+    /** Covariant override: keeps fluent chains returning HtmlSaveOptions. */
+    @Override public HtmlSaveOptions setSortNames(Boolean sortNames) { return (HtmlSaveOptions) super.setSortNames(sortNames); }
+    /** Covariant override: keeps fluent chains returning HtmlSaveOptions. */
+    @Override public HtmlSaveOptions setValidateMergedAreas(Boolean validateMergedAreas) { return (HtmlSaveOptions) super.setValidateMergedAreas(validateMergedAreas); }
+    /** Covariant override: keeps fluent chains returning HtmlSaveOptions. */
+    @Override public HtmlSaveOptions setMergeAreas(Boolean mergeAreas) { return (HtmlSaveOptions) super.setMergeAreas(mergeAreas); }
+    /** Covariant override: keeps fluent chains returning HtmlSaveOptions. */
+    @Override public HtmlSaveOptions setSortExternalNames(Boolean sortExternalNames) { return (HtmlSaveOptions) super.setSortExternalNames(sortExternalNames); }
+    /** Covariant override: keeps fluent chains returning HtmlSaveOptions. */
+    @Override public HtmlSaveOptions setCheckExcelRestriction(Boolean checkExcelRestriction) { return (HtmlSaveOptions) super.setCheckExcelRestriction(checkExcelRestriction); }
+    /** Covariant override: keeps fluent chains returning HtmlSaveOptions. */
+    @Override public HtmlSaveOptions setUpdateSmartArt(Boolean updateSmartArt) { return (HtmlSaveOptions) super.setUpdateSmartArt(updateSmartArt); }
+    /** Covariant override: keeps fluent chains returning HtmlSaveOptions. */
+    @Override public HtmlSaveOptions setEncryptDocumentProperties(Boolean encryptDocumentProperties) { return (HtmlSaveOptions) super.setEncryptDocumentProperties(encryptDocumentProperties); }
 
 }

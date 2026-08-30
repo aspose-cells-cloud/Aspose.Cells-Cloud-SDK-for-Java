@@ -33,7 +33,7 @@ public class GetWorksheetValidationRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/" + urlEncode(name) + "/worksheets/" + urlEncode(sheetName) + "/validations/" + urlEncode(String.valueOf(validationIndex));
+        return "/cells/" + urlEncode(name) + "/worksheets/" + urlEncode(sheetName) + "/validations/" + urlEncode(String.valueOf(validationIndex));
     }
 
     @Override

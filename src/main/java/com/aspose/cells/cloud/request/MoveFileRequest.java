@@ -32,7 +32,7 @@ public class MoveFileRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v4.0/cells/storage/file/move/" + urlEncode(srcPath);
+        return "/cells/storage/file/move/" + urlEncode(srcPath);
     }
 
     @Override

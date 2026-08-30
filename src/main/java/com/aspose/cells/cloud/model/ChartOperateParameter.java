@@ -50,10 +50,6 @@ public class ChartOperateParameter extends OperateParameter {
     @JsonProperty("Title")
     private String title;
 
-    /** Gets or sets OperateType. */
-    @JsonProperty("OperateType")
-    private String operateType;
-
     public Integer getChartIndex() { return chartIndex; }
     public ChartOperateParameter setChartIndex(Integer chartIndex) { this.chartIndex = chartIndex; return this; }
 
@@ -87,7 +83,8 @@ public class ChartOperateParameter extends OperateParameter {
     public String getTitle() { return title; }
     public ChartOperateParameter setTitle(String title) { this.title = title; return this; }
 
-    public String getOperateType() { return operateType; }
-    public ChartOperateParameter setOperateType(String operateType) { this.operateType = operateType; return this; }
+
+    /** Covariant override: keeps fluent chains returning ChartOperateParameter. */
+    @Override public ChartOperateParameter setOperateType(String operateType) { return (ChartOperateParameter) super.setOperateType(operateType); }
 
 }

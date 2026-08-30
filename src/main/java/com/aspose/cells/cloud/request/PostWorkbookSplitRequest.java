@@ -43,7 +43,7 @@ public class PostWorkbookSplitRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/" + urlEncode(name) + "/split";
+        return "/cells/" + urlEncode(name) + "/split";
     }
 
     @Override

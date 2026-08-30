@@ -10,21 +10,13 @@ public class CommentShapeResponse extends CellsCloudResponse {
     @JsonProperty("Comment")
     private CommentShape comment;
 
-    /** Gets or sets Code. */
-    @JsonProperty("Code")
-    private Integer code;
-
-    /** Gets or sets Status. */
-    @JsonProperty("Status")
-    private String status;
-
     public CommentShape getComment() { return comment; }
     public CommentShapeResponse setComment(CommentShape comment) { this.comment = comment; return this; }
 
-    public Integer getCode() { return code; }
-    public CommentShapeResponse setCode(Integer code) { this.code = code; return this; }
 
-    public String getStatus() { return status; }
-    public CommentShapeResponse setStatus(String status) { this.status = status; return this; }
+    /** Covariant override: keeps fluent chains returning CommentShapeResponse. */
+    @Override public CommentShapeResponse setCode(Integer code) { return (CommentShapeResponse) super.setCode(code); }
+    /** Covariant override: keeps fluent chains returning CommentShapeResponse. */
+    @Override public CommentShapeResponse setStatus(String status) { return (CommentShapeResponse) super.setStatus(status); }
 
 }

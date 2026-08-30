@@ -6,7 +6,6 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import static com.aspose.cells.cloud.UrlUtils.urlEncode;
 
 /** Assemble data files with template files to generate files in various formats. */
 public class PostAssembleRequest implements RequestOption {
@@ -48,7 +47,7 @@ public class PostAssembleRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/assemble";
+        return "/cells/assemble";
     }
 
     @Override

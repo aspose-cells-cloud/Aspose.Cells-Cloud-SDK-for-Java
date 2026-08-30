@@ -35,7 +35,7 @@ public class SearchBrokenLinksInRemoteSpreadsheetRequest implements RequestOptio
 
     @Override
     public String getPath() {
-        return "/v4.0/cells/" + urlEncode(name) + "/search/broken-links";
+        return "/cells/" + urlEncode(name) + "/search/broken-links";
     }
 
     @Override

@@ -10,21 +10,13 @@ public class ShapesResponse extends CellsCloudResponse {
     @JsonProperty("Shapes")
     private Shapes shapes;
 
-    /** Gets or sets Code. */
-    @JsonProperty("Code")
-    private Integer code;
-
-    /** Gets or sets Status. */
-    @JsonProperty("Status")
-    private String status;
-
     public Shapes getShapes() { return shapes; }
     public ShapesResponse setShapes(Shapes shapes) { this.shapes = shapes; return this; }
 
-    public Integer getCode() { return code; }
-    public ShapesResponse setCode(Integer code) { this.code = code; return this; }
 
-    public String getStatus() { return status; }
-    public ShapesResponse setStatus(String status) { this.status = status; return this; }
+    /** Covariant override: keeps fluent chains returning ShapesResponse. */
+    @Override public ShapesResponse setCode(Integer code) { return (ShapesResponse) super.setCode(code); }
+    /** Covariant override: keeps fluent chains returning ShapesResponse. */
+    @Override public ShapesResponse setStatus(String status) { return (ShapesResponse) super.setStatus(status); }
 
 }

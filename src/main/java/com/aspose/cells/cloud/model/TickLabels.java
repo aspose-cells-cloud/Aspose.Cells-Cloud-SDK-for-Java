@@ -50,10 +50,6 @@ public class TickLabels extends LinkElement {
     @JsonProperty("DirectionType")
     private String directionType;
 
-    /** Gets or sets link. */
-    @JsonProperty("link")
-    private Link link;
-
     public Boolean getAutoScaleFont() { return autoScaleFont; }
     public TickLabels setAutoScaleFont(Boolean autoScaleFont) { this.autoScaleFont = autoScaleFont; return this; }
 
@@ -87,7 +83,8 @@ public class TickLabels extends LinkElement {
     public String getDirectionType() { return directionType; }
     public TickLabels setDirectionType(String directionType) { this.directionType = directionType; return this; }
 
-    public Link getLink() { return link; }
-    public TickLabels setLink(Link link) { this.link = link; return this; }
+
+    /** Covariant override: keeps fluent chains returning TickLabels. */
+    @Override public TickLabels setLink(Link link) { return (TickLabels) super.setLink(link); }
 
 }

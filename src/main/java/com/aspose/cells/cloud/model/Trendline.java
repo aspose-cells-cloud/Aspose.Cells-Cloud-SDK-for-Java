@@ -58,82 +58,6 @@ public class Trendline extends Line {
     @JsonProperty("Type")
     private String type;
 
-    /** Gets or sets BeginArrowLength. */
-    @JsonProperty("BeginArrowLength")
-    private String beginArrowLength;
-
-    /** Gets or sets BeginArrowWidth. */
-    @JsonProperty("BeginArrowWidth")
-    private String beginArrowWidth;
-
-    /** Gets or sets BeginType. */
-    @JsonProperty("BeginType")
-    private String beginType;
-
-    /** Gets or sets CapType. */
-    @JsonProperty("CapType")
-    private String capType;
-
-    /** Gets or sets Color. */
-    @JsonProperty("Color")
-    private Color color;
-
-    /** Gets or sets CompoundType. */
-    @JsonProperty("CompoundType")
-    private String compoundType;
-
-    /** Gets or sets DashType. */
-    @JsonProperty("DashType")
-    private String dashType;
-
-    /** Gets or sets EndArrowLength. */
-    @JsonProperty("EndArrowLength")
-    private String endArrowLength;
-
-    /** Gets or sets EndArrowWidth. */
-    @JsonProperty("EndArrowWidth")
-    private String endArrowWidth;
-
-    /** Gets or sets EndType. */
-    @JsonProperty("EndType")
-    private String endType;
-
-    /** Gets or sets GradientFill. */
-    @JsonProperty("GradientFill")
-    private GradientFill gradientFill;
-
-    /** Gets or sets IsAuto. */
-    @JsonProperty("IsAuto")
-    private Boolean isAuto;
-
-    /** Gets or sets IsAutomaticColor. */
-    @JsonProperty("IsAutomaticColor")
-    private Boolean isAutomaticColor;
-
-    /** Gets or sets IsVisible. */
-    @JsonProperty("IsVisible")
-    private Boolean isVisible;
-
-    /** Gets or sets JoinType. */
-    @JsonProperty("JoinType")
-    private String joinType;
-
-    /** Gets or sets Style. */
-    @JsonProperty("Style")
-    private String style;
-
-    /** Gets or sets Transparency. */
-    @JsonProperty("Transparency")
-    private Double transparency;
-
-    /** Gets or sets Weight. */
-    @JsonProperty("Weight")
-    private String weight;
-
-    /** Gets or sets WeightPt. */
-    @JsonProperty("WeightPt")
-    private Double weightPt;
-
     public Link getLink() { return link; }
     public Trendline setLink(Link link) { this.link = link; return this; }
 
@@ -173,61 +97,44 @@ public class Trendline extends Line {
     public String getType() { return type; }
     public Trendline setType(String type) { this.type = type; return this; }
 
-    public String getBeginArrowLength() { return beginArrowLength; }
-    public Trendline setBeginArrowLength(String beginArrowLength) { this.beginArrowLength = beginArrowLength; return this; }
 
-    public String getBeginArrowWidth() { return beginArrowWidth; }
-    public Trendline setBeginArrowWidth(String beginArrowWidth) { this.beginArrowWidth = beginArrowWidth; return this; }
-
-    public String getBeginType() { return beginType; }
-    public Trendline setBeginType(String beginType) { this.beginType = beginType; return this; }
-
-    public String getCapType() { return capType; }
-    public Trendline setCapType(String capType) { this.capType = capType; return this; }
-
-    public Color getColor() { return color; }
-    public Trendline setColor(Color color) { this.color = color; return this; }
-
-    public String getCompoundType() { return compoundType; }
-    public Trendline setCompoundType(String compoundType) { this.compoundType = compoundType; return this; }
-
-    public String getDashType() { return dashType; }
-    public Trendline setDashType(String dashType) { this.dashType = dashType; return this; }
-
-    public String getEndArrowLength() { return endArrowLength; }
-    public Trendline setEndArrowLength(String endArrowLength) { this.endArrowLength = endArrowLength; return this; }
-
-    public String getEndArrowWidth() { return endArrowWidth; }
-    public Trendline setEndArrowWidth(String endArrowWidth) { this.endArrowWidth = endArrowWidth; return this; }
-
-    public String getEndType() { return endType; }
-    public Trendline setEndType(String endType) { this.endType = endType; return this; }
-
-    public GradientFill getGradientFill() { return gradientFill; }
-    public Trendline setGradientFill(GradientFill gradientFill) { this.gradientFill = gradientFill; return this; }
-
-    public Boolean getIsAuto() { return isAuto; }
-    public Trendline setIsAuto(Boolean isAuto) { this.isAuto = isAuto; return this; }
-
-    public Boolean getIsAutomaticColor() { return isAutomaticColor; }
-    public Trendline setIsAutomaticColor(Boolean isAutomaticColor) { this.isAutomaticColor = isAutomaticColor; return this; }
-
-    public Boolean getIsVisible() { return isVisible; }
-    public Trendline setIsVisible(Boolean isVisible) { this.isVisible = isVisible; return this; }
-
-    public String getJoinType() { return joinType; }
-    public Trendline setJoinType(String joinType) { this.joinType = joinType; return this; }
-
-    public String getStyle() { return style; }
-    public Trendline setStyle(String style) { this.style = style; return this; }
-
-    public Double getTransparency() { return transparency; }
-    public Trendline setTransparency(Double transparency) { this.transparency = transparency; return this; }
-
-    public String getWeight() { return weight; }
-    public Trendline setWeight(String weight) { this.weight = weight; return this; }
-
-    public Double getWeightPt() { return weightPt; }
-    public Trendline setWeightPt(Double weightPt) { this.weightPt = weightPt; return this; }
+    /** Covariant override: keeps fluent chains returning Trendline. */
+    @Override public Trendline setBeginArrowLength(String beginArrowLength) { return (Trendline) super.setBeginArrowLength(beginArrowLength); }
+    /** Covariant override: keeps fluent chains returning Trendline. */
+    @Override public Trendline setBeginArrowWidth(String beginArrowWidth) { return (Trendline) super.setBeginArrowWidth(beginArrowWidth); }
+    /** Covariant override: keeps fluent chains returning Trendline. */
+    @Override public Trendline setBeginType(String beginType) { return (Trendline) super.setBeginType(beginType); }
+    /** Covariant override: keeps fluent chains returning Trendline. */
+    @Override public Trendline setCapType(String capType) { return (Trendline) super.setCapType(capType); }
+    /** Covariant override: keeps fluent chains returning Trendline. */
+    @Override public Trendline setColor(Color color) { return (Trendline) super.setColor(color); }
+    /** Covariant override: keeps fluent chains returning Trendline. */
+    @Override public Trendline setCompoundType(String compoundType) { return (Trendline) super.setCompoundType(compoundType); }
+    /** Covariant override: keeps fluent chains returning Trendline. */
+    @Override public Trendline setDashType(String dashType) { return (Trendline) super.setDashType(dashType); }
+    /** Covariant override: keeps fluent chains returning Trendline. */
+    @Override public Trendline setEndArrowLength(String endArrowLength) { return (Trendline) super.setEndArrowLength(endArrowLength); }
+    /** Covariant override: keeps fluent chains returning Trendline. */
+    @Override public Trendline setEndArrowWidth(String endArrowWidth) { return (Trendline) super.setEndArrowWidth(endArrowWidth); }
+    /** Covariant override: keeps fluent chains returning Trendline. */
+    @Override public Trendline setEndType(String endType) { return (Trendline) super.setEndType(endType); }
+    /** Covariant override: keeps fluent chains returning Trendline. */
+    @Override public Trendline setGradientFill(GradientFill gradientFill) { return (Trendline) super.setGradientFill(gradientFill); }
+    /** Covariant override: keeps fluent chains returning Trendline. */
+    @Override public Trendline setIsAuto(Boolean isAuto) { return (Trendline) super.setIsAuto(isAuto); }
+    /** Covariant override: keeps fluent chains returning Trendline. */
+    @Override public Trendline setIsAutomaticColor(Boolean isAutomaticColor) { return (Trendline) super.setIsAutomaticColor(isAutomaticColor); }
+    /** Covariant override: keeps fluent chains returning Trendline. */
+    @Override public Trendline setIsVisible(Boolean isVisible) { return (Trendline) super.setIsVisible(isVisible); }
+    /** Covariant override: keeps fluent chains returning Trendline. */
+    @Override public Trendline setJoinType(String joinType) { return (Trendline) super.setJoinType(joinType); }
+    /** Covariant override: keeps fluent chains returning Trendline. */
+    @Override public Trendline setStyle(String style) { return (Trendline) super.setStyle(style); }
+    /** Covariant override: keeps fluent chains returning Trendline. */
+    @Override public Trendline setTransparency(Double transparency) { return (Trendline) super.setTransparency(transparency); }
+    /** Covariant override: keeps fluent chains returning Trendline. */
+    @Override public Trendline setWeight(String weight) { return (Trendline) super.setWeight(weight); }
+    /** Covariant override: keeps fluent chains returning Trendline. */
+    @Override public Trendline setWeightPt(Double weightPt) { return (Trendline) super.setWeightPt(weightPt); }
 
 }

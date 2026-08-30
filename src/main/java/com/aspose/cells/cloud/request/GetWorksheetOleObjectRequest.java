@@ -35,7 +35,7 @@ public class GetWorksheetOleObjectRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/" + urlEncode(name) + "/worksheets/" + urlEncode(sheetName) + "/oleobjects/" + urlEncode(String.valueOf(objectNumber));
+        return "/cells/" + urlEncode(name) + "/worksheets/" + urlEncode(sheetName) + "/oleobjects/" + urlEncode(String.valueOf(objectNumber));
     }
 
     @Override
@@ -61,4 +61,6 @@ public class GetWorksheetOleObjectRequest implements RequestOption {
     public Map<String, Object> getMultipartForm() {
         return null;
     }
+
+    @Override public boolean isBinaryResponse() { return true; }
 }

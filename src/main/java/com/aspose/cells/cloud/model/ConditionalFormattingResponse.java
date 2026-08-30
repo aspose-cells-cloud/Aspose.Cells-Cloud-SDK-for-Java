@@ -10,21 +10,13 @@ public class ConditionalFormattingResponse extends CellsCloudResponse {
     @JsonProperty("ConditionalFormatting")
     private ConditionalFormatting conditionalFormatting;
 
-    /** Gets or sets Code. */
-    @JsonProperty("Code")
-    private Integer code;
-
-    /** Gets or sets Status. */
-    @JsonProperty("Status")
-    private String status;
-
     public ConditionalFormatting getConditionalFormatting() { return conditionalFormatting; }
     public ConditionalFormattingResponse setConditionalFormatting(ConditionalFormatting conditionalFormatting) { this.conditionalFormatting = conditionalFormatting; return this; }
 
-    public Integer getCode() { return code; }
-    public ConditionalFormattingResponse setCode(Integer code) { this.code = code; return this; }
 
-    public String getStatus() { return status; }
-    public ConditionalFormattingResponse setStatus(String status) { this.status = status; return this; }
+    /** Covariant override: keeps fluent chains returning ConditionalFormattingResponse. */
+    @Override public ConditionalFormattingResponse setCode(Integer code) { return (ConditionalFormattingResponse) super.setCode(code); }
+    /** Covariant override: keeps fluent chains returning ConditionalFormattingResponse. */
+    @Override public ConditionalFormattingResponse setStatus(String status) { return (ConditionalFormattingResponse) super.setStatus(status); }
 
 }

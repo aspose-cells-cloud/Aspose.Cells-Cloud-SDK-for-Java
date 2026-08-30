@@ -5,7 +5,6 @@ import com.aspose.cells.cloud.model.ConvertWorksheetOptions;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import static com.aspose.cells.cloud.UrlUtils.urlEncode;
 
 /** PostConvertWorksheetToImage request. */
 public class PostConvertWorksheetToImageRequest implements RequestOption {
@@ -26,7 +25,7 @@ public class PostConvertWorksheetToImageRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/convertWorksheetToImage";
+        return "/cells/convertWorksheetToImage";
     }
 
     @Override

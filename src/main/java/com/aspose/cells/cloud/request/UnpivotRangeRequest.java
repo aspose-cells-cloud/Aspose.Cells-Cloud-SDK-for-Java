@@ -6,7 +6,6 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import static com.aspose.cells.cloud.UrlUtils.urlEncode;
 
 /** Switch rows and columns in the spreadsheet. */
 public class UnpivotRangeRequest implements RequestOption {
@@ -53,7 +52,7 @@ public class UnpivotRangeRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v4.0/cells/unpivot/range";
+        return "/cells/unpivot/range";
     }
 
     @Override
@@ -87,4 +86,6 @@ public class UnpivotRangeRequest implements RequestOption {
         form.put("Spreadsheet", spreadsheet);
         return form;
     }
+
+    @Override public boolean isBinaryResponse() { return true; }
 }

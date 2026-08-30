@@ -30,7 +30,7 @@ public class GetNamedRangeValueRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/" + urlEncode(name) + "/worksheets/ranges/" + urlEncode(namerange) + "/value";
+        return "/cells/" + urlEncode(name) + "/worksheets/ranges/" + urlEncode(namerange) + "/value";
     }
 
     @Override

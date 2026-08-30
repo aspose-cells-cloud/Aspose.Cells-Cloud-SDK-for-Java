@@ -6,7 +6,6 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import static com.aspose.cells.cloud.UrlUtils.urlEncode;
 
 /** Convert Excel file to SQL Script files. */
 public class PostConvertWorkbookToSQLRequest implements RequestOption {
@@ -43,7 +42,7 @@ public class PostConvertWorkbookToSQLRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/convert/sql";
+        return "/cells/convert/sql";
     }
 
     @Override

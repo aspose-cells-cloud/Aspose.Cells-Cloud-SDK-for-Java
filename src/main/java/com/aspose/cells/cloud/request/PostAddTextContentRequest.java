@@ -5,7 +5,6 @@ import com.aspose.cells.cloud.model.AddTextOptions;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import static com.aspose.cells.cloud.UrlUtils.urlEncode;
 
 /** Adds text content to a specified location within a document. It requires an object that defines the text to be added and the insertion location. */
 public class PostAddTextContentRequest implements RequestOption {
@@ -22,7 +21,7 @@ public class PostAddTextContentRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/addtext";
+        return "/cells/addtext";
     }
 
     @Override

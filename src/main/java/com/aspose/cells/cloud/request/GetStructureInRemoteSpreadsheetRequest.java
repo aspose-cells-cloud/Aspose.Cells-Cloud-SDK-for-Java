@@ -31,7 +31,7 @@ public class GetStructureInRemoteSpreadsheetRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v4.0/cells/" + urlEncode(name) + "/structure";
+        return "/cells/" + urlEncode(name) + "/structure";
     }
 
     @Override

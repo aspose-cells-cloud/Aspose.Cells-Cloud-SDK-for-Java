@@ -32,7 +32,7 @@ public class SearchAllTextItemsInRemoteSpreadsheetRequest implements RequestOpti
 
     @Override
     public String getPath() {
-        return "/v4.0/cells/" + urlEncode(name) + "/search/content/all-textitems";
+        return "/cells/" + urlEncode(name) + "/search/content/all-textitems";
     }
 
     @Override

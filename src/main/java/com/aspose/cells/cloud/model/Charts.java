@@ -11,14 +11,11 @@ public class Charts extends LinkElement {
     @JsonProperty("ChartList")
     private List<LinkElement> chartList;
 
-    /** Gets or sets link. */
-    @JsonProperty("link")
-    private Link link;
-
     public List<LinkElement> getChartList() { return chartList; }
     public Charts setChartList(List<LinkElement> chartList) { this.chartList = chartList; return this; }
 
-    public Link getLink() { return link; }
-    public Charts setLink(Link link) { this.link = link; return this; }
+
+    /** Covariant override: keeps fluent chains returning Charts. */
+    @Override public Charts setLink(Link link) { return (Charts) super.setLink(link); }
 
 }

@@ -6,7 +6,6 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import static com.aspose.cells.cloud.UrlUtils.urlEncode;
 
 /** Get all text items in the remote spreadsheet. */
 public class SearchSpreadsheetAllTextItemsRequest implements RequestOption {
@@ -41,7 +40,7 @@ public class SearchSpreadsheetAllTextItemsRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v4.0/cells/search/content/all-textitems";
+        return "/cells/search/content/all-textitems";
     }
 
     @Override

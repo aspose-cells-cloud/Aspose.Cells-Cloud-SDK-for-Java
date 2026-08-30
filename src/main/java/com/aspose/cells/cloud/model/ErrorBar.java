@@ -34,82 +34,6 @@ public class ErrorBar extends Line {
     @JsonProperty("Type")
     private String type;
 
-    /** Gets or sets BeginArrowLength. */
-    @JsonProperty("BeginArrowLength")
-    private String beginArrowLength;
-
-    /** Gets or sets BeginArrowWidth. */
-    @JsonProperty("BeginArrowWidth")
-    private String beginArrowWidth;
-
-    /** Gets or sets BeginType. */
-    @JsonProperty("BeginType")
-    private String beginType;
-
-    /** Gets or sets CapType. */
-    @JsonProperty("CapType")
-    private String capType;
-
-    /** Gets or sets Color. */
-    @JsonProperty("Color")
-    private Color color;
-
-    /** Gets or sets CompoundType. */
-    @JsonProperty("CompoundType")
-    private String compoundType;
-
-    /** Gets or sets DashType. */
-    @JsonProperty("DashType")
-    private String dashType;
-
-    /** Gets or sets EndArrowLength. */
-    @JsonProperty("EndArrowLength")
-    private String endArrowLength;
-
-    /** Gets or sets EndArrowWidth. */
-    @JsonProperty("EndArrowWidth")
-    private String endArrowWidth;
-
-    /** Gets or sets EndType. */
-    @JsonProperty("EndType")
-    private String endType;
-
-    /** Gets or sets GradientFill. */
-    @JsonProperty("GradientFill")
-    private GradientFill gradientFill;
-
-    /** Gets or sets IsAuto. */
-    @JsonProperty("IsAuto")
-    private Boolean isAuto;
-
-    /** Gets or sets IsAutomaticColor. */
-    @JsonProperty("IsAutomaticColor")
-    private Boolean isAutomaticColor;
-
-    /** Gets or sets IsVisible. */
-    @JsonProperty("IsVisible")
-    private Boolean isVisible;
-
-    /** Gets or sets JoinType. */
-    @JsonProperty("JoinType")
-    private String joinType;
-
-    /** Gets or sets Style. */
-    @JsonProperty("Style")
-    private String style;
-
-    /** Gets or sets Transparency. */
-    @JsonProperty("Transparency")
-    private Double transparency;
-
-    /** Gets or sets Weight. */
-    @JsonProperty("Weight")
-    private String weight;
-
-    /** Gets or sets WeightPt. */
-    @JsonProperty("WeightPt")
-    private Double weightPt;
-
     public Link getLink() { return link; }
     public ErrorBar setLink(Link link) { this.link = link; return this; }
 
@@ -131,61 +55,44 @@ public class ErrorBar extends Line {
     public String getType() { return type; }
     public ErrorBar setType(String type) { this.type = type; return this; }
 
-    public String getBeginArrowLength() { return beginArrowLength; }
-    public ErrorBar setBeginArrowLength(String beginArrowLength) { this.beginArrowLength = beginArrowLength; return this; }
 
-    public String getBeginArrowWidth() { return beginArrowWidth; }
-    public ErrorBar setBeginArrowWidth(String beginArrowWidth) { this.beginArrowWidth = beginArrowWidth; return this; }
-
-    public String getBeginType() { return beginType; }
-    public ErrorBar setBeginType(String beginType) { this.beginType = beginType; return this; }
-
-    public String getCapType() { return capType; }
-    public ErrorBar setCapType(String capType) { this.capType = capType; return this; }
-
-    public Color getColor() { return color; }
-    public ErrorBar setColor(Color color) { this.color = color; return this; }
-
-    public String getCompoundType() { return compoundType; }
-    public ErrorBar setCompoundType(String compoundType) { this.compoundType = compoundType; return this; }
-
-    public String getDashType() { return dashType; }
-    public ErrorBar setDashType(String dashType) { this.dashType = dashType; return this; }
-
-    public String getEndArrowLength() { return endArrowLength; }
-    public ErrorBar setEndArrowLength(String endArrowLength) { this.endArrowLength = endArrowLength; return this; }
-
-    public String getEndArrowWidth() { return endArrowWidth; }
-    public ErrorBar setEndArrowWidth(String endArrowWidth) { this.endArrowWidth = endArrowWidth; return this; }
-
-    public String getEndType() { return endType; }
-    public ErrorBar setEndType(String endType) { this.endType = endType; return this; }
-
-    public GradientFill getGradientFill() { return gradientFill; }
-    public ErrorBar setGradientFill(GradientFill gradientFill) { this.gradientFill = gradientFill; return this; }
-
-    public Boolean getIsAuto() { return isAuto; }
-    public ErrorBar setIsAuto(Boolean isAuto) { this.isAuto = isAuto; return this; }
-
-    public Boolean getIsAutomaticColor() { return isAutomaticColor; }
-    public ErrorBar setIsAutomaticColor(Boolean isAutomaticColor) { this.isAutomaticColor = isAutomaticColor; return this; }
-
-    public Boolean getIsVisible() { return isVisible; }
-    public ErrorBar setIsVisible(Boolean isVisible) { this.isVisible = isVisible; return this; }
-
-    public String getJoinType() { return joinType; }
-    public ErrorBar setJoinType(String joinType) { this.joinType = joinType; return this; }
-
-    public String getStyle() { return style; }
-    public ErrorBar setStyle(String style) { this.style = style; return this; }
-
-    public Double getTransparency() { return transparency; }
-    public ErrorBar setTransparency(Double transparency) { this.transparency = transparency; return this; }
-
-    public String getWeight() { return weight; }
-    public ErrorBar setWeight(String weight) { this.weight = weight; return this; }
-
-    public Double getWeightPt() { return weightPt; }
-    public ErrorBar setWeightPt(Double weightPt) { this.weightPt = weightPt; return this; }
+    /** Covariant override: keeps fluent chains returning ErrorBar. */
+    @Override public ErrorBar setBeginArrowLength(String beginArrowLength) { return (ErrorBar) super.setBeginArrowLength(beginArrowLength); }
+    /** Covariant override: keeps fluent chains returning ErrorBar. */
+    @Override public ErrorBar setBeginArrowWidth(String beginArrowWidth) { return (ErrorBar) super.setBeginArrowWidth(beginArrowWidth); }
+    /** Covariant override: keeps fluent chains returning ErrorBar. */
+    @Override public ErrorBar setBeginType(String beginType) { return (ErrorBar) super.setBeginType(beginType); }
+    /** Covariant override: keeps fluent chains returning ErrorBar. */
+    @Override public ErrorBar setCapType(String capType) { return (ErrorBar) super.setCapType(capType); }
+    /** Covariant override: keeps fluent chains returning ErrorBar. */
+    @Override public ErrorBar setColor(Color color) { return (ErrorBar) super.setColor(color); }
+    /** Covariant override: keeps fluent chains returning ErrorBar. */
+    @Override public ErrorBar setCompoundType(String compoundType) { return (ErrorBar) super.setCompoundType(compoundType); }
+    /** Covariant override: keeps fluent chains returning ErrorBar. */
+    @Override public ErrorBar setDashType(String dashType) { return (ErrorBar) super.setDashType(dashType); }
+    /** Covariant override: keeps fluent chains returning ErrorBar. */
+    @Override public ErrorBar setEndArrowLength(String endArrowLength) { return (ErrorBar) super.setEndArrowLength(endArrowLength); }
+    /** Covariant override: keeps fluent chains returning ErrorBar. */
+    @Override public ErrorBar setEndArrowWidth(String endArrowWidth) { return (ErrorBar) super.setEndArrowWidth(endArrowWidth); }
+    /** Covariant override: keeps fluent chains returning ErrorBar. */
+    @Override public ErrorBar setEndType(String endType) { return (ErrorBar) super.setEndType(endType); }
+    /** Covariant override: keeps fluent chains returning ErrorBar. */
+    @Override public ErrorBar setGradientFill(GradientFill gradientFill) { return (ErrorBar) super.setGradientFill(gradientFill); }
+    /** Covariant override: keeps fluent chains returning ErrorBar. */
+    @Override public ErrorBar setIsAuto(Boolean isAuto) { return (ErrorBar) super.setIsAuto(isAuto); }
+    /** Covariant override: keeps fluent chains returning ErrorBar. */
+    @Override public ErrorBar setIsAutomaticColor(Boolean isAutomaticColor) { return (ErrorBar) super.setIsAutomaticColor(isAutomaticColor); }
+    /** Covariant override: keeps fluent chains returning ErrorBar. */
+    @Override public ErrorBar setIsVisible(Boolean isVisible) { return (ErrorBar) super.setIsVisible(isVisible); }
+    /** Covariant override: keeps fluent chains returning ErrorBar. */
+    @Override public ErrorBar setJoinType(String joinType) { return (ErrorBar) super.setJoinType(joinType); }
+    /** Covariant override: keeps fluent chains returning ErrorBar. */
+    @Override public ErrorBar setStyle(String style) { return (ErrorBar) super.setStyle(style); }
+    /** Covariant override: keeps fluent chains returning ErrorBar. */
+    @Override public ErrorBar setTransparency(Double transparency) { return (ErrorBar) super.setTransparency(transparency); }
+    /** Covariant override: keeps fluent chains returning ErrorBar. */
+    @Override public ErrorBar setWeight(String weight) { return (ErrorBar) super.setWeight(weight); }
+    /** Covariant override: keeps fluent chains returning ErrorBar. */
+    @Override public ErrorBar setWeightPt(Double weightPt) { return (ErrorBar) super.setWeightPt(weightPt); }
 
 }

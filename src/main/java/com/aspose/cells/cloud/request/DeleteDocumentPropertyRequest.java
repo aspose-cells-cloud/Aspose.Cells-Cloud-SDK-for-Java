@@ -32,7 +32,7 @@ public class DeleteDocumentPropertyRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/" + urlEncode(name) + "/documentproperties/" + urlEncode(propertyName);
+        return "/cells/" + urlEncode(name) + "/documentproperties/" + urlEncode(propertyName);
     }
 
     @Override

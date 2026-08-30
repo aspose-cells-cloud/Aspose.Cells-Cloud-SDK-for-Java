@@ -40,11 +40,11 @@ public final class FormFile {
         return new FormFile(file, null, file.getName(), null);
     }
 
-    /** Wraps in-memory bytes sent under the given file name. */
+    /** Wraps in-memory bytes sent under the given file name. The array is defensively copied. */
     public static FormFile of(byte[] data, String fileName) {
         if (data == null) throw new IllegalArgumentException("data is required");
         if (fileName == null || fileName.isEmpty()) throw new IllegalArgumentException("fileName is required");
-        return new FormFile(null, data, fileName, null);
+        return new FormFile(null, data.clone(), fileName, null);
     }
 
     /** Wraps in-memory bytes with an explicit content type. */
@@ -56,8 +56,8 @@ public final class FormFile {
     /** @return the wrapped file, or {@code null} when this part is byte-based. */
     public File getFile() { return file; }
 
-    /** @return the wrapped bytes, or {@code null} when this part is file-based. */
-    public byte[] getData() { return data; }
+    /** @return the wrapped bytes, or {@code null} when this part is file-based. Returns a copy. */
+    public byte[] getData() { return data == null ? null : data.clone(); }
 
     /**
      * @return the file name sent in the {@code Content-Disposition} header: the wrapped file's name,

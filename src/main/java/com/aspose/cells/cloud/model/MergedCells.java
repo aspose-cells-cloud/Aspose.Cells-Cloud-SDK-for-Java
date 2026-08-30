@@ -15,17 +15,14 @@ public class MergedCells extends LinkElement {
     @JsonProperty("MergedCellList")
     private List<LinkElement> mergedCellList;
 
-    /** Gets or sets link. */
-    @JsonProperty("link")
-    private Link link;
-
     public Integer getCount() { return count; }
     public MergedCells setCount(Integer count) { this.count = count; return this; }
 
     public List<LinkElement> getMergedCellList() { return mergedCellList; }
     public MergedCells setMergedCellList(List<LinkElement> mergedCellList) { this.mergedCellList = mergedCellList; return this; }
 
-    public Link getLink() { return link; }
-    public MergedCells setLink(Link link) { this.link = link; return this; }
+
+    /** Covariant override: keeps fluent chains returning MergedCells. */
+    @Override public MergedCells setLink(Link link) { return (MergedCells) super.setLink(link); }
 
 }

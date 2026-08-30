@@ -6,7 +6,6 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import static com.aspose.cells.cloud.UrlUtils.urlEncode;
 
 /** Compress files and generate target files in various formats, supported file formats are include Xls, Xlsx, Xlsm, Xlsb, Ods and more. */
 public class PostCompressRequest implements RequestOption {
@@ -43,7 +42,7 @@ public class PostCompressRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/compress";
+        return "/cells/compress";
     }
 
     @Override

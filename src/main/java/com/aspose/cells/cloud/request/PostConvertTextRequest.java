@@ -5,7 +5,6 @@ import com.aspose.cells.cloud.model.ConvertTextOptions;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import static com.aspose.cells.cloud.UrlUtils.urlEncode;
 
 /** Enhance Excel data through essential text conversions: convert text to numbers, replace characters and line breaks, and remove accents. */
 public class PostConvertTextRequest implements RequestOption {
@@ -22,7 +21,7 @@ public class PostConvertTextRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/converttext";
+        return "/cells/converttext";
     }
 
     @Override

@@ -37,7 +37,7 @@ public class PostWorkbookDataFillRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/" + urlEncode(name) + "/datafill";
+        return "/cells/" + urlEncode(name) + "/datafill";
     }
 
     @Override

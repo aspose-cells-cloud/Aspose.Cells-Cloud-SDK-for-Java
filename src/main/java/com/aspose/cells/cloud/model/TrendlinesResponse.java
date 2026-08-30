@@ -10,21 +10,13 @@ public class TrendlinesResponse extends CellsCloudResponse {
     @JsonProperty("Trendlines")
     private Trendlines trendlines;
 
-    /** Gets or sets Code. */
-    @JsonProperty("Code")
-    private Integer code;
-
-    /** Gets or sets Status. */
-    @JsonProperty("Status")
-    private String status;
-
     public Trendlines getTrendlines() { return trendlines; }
     public TrendlinesResponse setTrendlines(Trendlines trendlines) { this.trendlines = trendlines; return this; }
 
-    public Integer getCode() { return code; }
-    public TrendlinesResponse setCode(Integer code) { this.code = code; return this; }
 
-    public String getStatus() { return status; }
-    public TrendlinesResponse setStatus(String status) { this.status = status; return this; }
+    /** Covariant override: keeps fluent chains returning TrendlinesResponse. */
+    @Override public TrendlinesResponse setCode(Integer code) { return (TrendlinesResponse) super.setCode(code); }
+    /** Covariant override: keeps fluent chains returning TrendlinesResponse. */
+    @Override public TrendlinesResponse setStatus(String status) { return (TrendlinesResponse) super.setStatus(status); }
 
 }

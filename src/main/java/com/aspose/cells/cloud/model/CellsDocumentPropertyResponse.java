@@ -10,21 +10,13 @@ public class CellsDocumentPropertyResponse extends CellsCloudResponse {
     @JsonProperty("DocumentProperty")
     private CellsDocumentProperty documentProperty;
 
-    /** Gets or sets Code. */
-    @JsonProperty("Code")
-    private Integer code;
-
-    /** Gets or sets Status. */
-    @JsonProperty("Status")
-    private String status;
-
     public CellsDocumentProperty getDocumentProperty() { return documentProperty; }
     public CellsDocumentPropertyResponse setDocumentProperty(CellsDocumentProperty documentProperty) { this.documentProperty = documentProperty; return this; }
 
-    public Integer getCode() { return code; }
-    public CellsDocumentPropertyResponse setCode(Integer code) { this.code = code; return this; }
 
-    public String getStatus() { return status; }
-    public CellsDocumentPropertyResponse setStatus(String status) { this.status = status; return this; }
+    /** Covariant override: keeps fluent chains returning CellsDocumentPropertyResponse. */
+    @Override public CellsDocumentPropertyResponse setCode(Integer code) { return (CellsDocumentPropertyResponse) super.setCode(code); }
+    /** Covariant override: keeps fluent chains returning CellsDocumentPropertyResponse. */
+    @Override public CellsDocumentPropertyResponse setStatus(String status) { return (CellsDocumentPropertyResponse) super.setStatus(status); }
 
 }

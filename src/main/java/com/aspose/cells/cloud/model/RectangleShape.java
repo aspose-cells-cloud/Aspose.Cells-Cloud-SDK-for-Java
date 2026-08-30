@@ -6,263 +6,85 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 /** RectangleShape — Represents the rectangle shape. */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class RectangleShape extends Shape {
-    /** Gets or sets Name. */
-    @JsonProperty("Name")
-    private String name;
-
-    /** Gets or sets MsoDrawingType. */
-    @JsonProperty("MsoDrawingType")
-    private String msoDrawingType;
-
-    /** Gets or sets AutoShapeType. */
-    @JsonProperty("AutoShapeType")
-    private String autoShapeType;
-
-    /** Gets or sets Placement. */
-    @JsonProperty("Placement")
-    private String placement;
-
-    /** Gets or sets UpperLeftRow. */
-    @JsonProperty("UpperLeftRow")
-    private Integer upperLeftRow;
-
-    /** Gets or sets Top. */
-    @JsonProperty("Top")
-    private Integer top;
-
-    /** Gets or sets UpperLeftColumn. */
-    @JsonProperty("UpperLeftColumn")
-    private Integer upperLeftColumn;
-
-    /** Gets or sets Left. */
-    @JsonProperty("Left")
-    private Integer left;
-
-    /** Gets or sets LowerRightRow. */
-    @JsonProperty("LowerRightRow")
-    private Integer lowerRightRow;
-
-    /** Gets or sets Bottom. */
-    @JsonProperty("Bottom")
-    private Integer bottom;
-
-    /** Gets or sets LowerRightColumn. */
-    @JsonProperty("LowerRightColumn")
-    private Integer lowerRightColumn;
-
-    /** Gets or sets Right. */
-    @JsonProperty("Right")
-    private Integer right;
-
-    /** Gets or sets Width. */
-    @JsonProperty("Width")
-    private Integer width;
-
-    /** Gets or sets Height. */
-    @JsonProperty("Height")
-    private Integer height;
-
-    /** Gets or sets X. */
-    @JsonProperty("X")
-    private Integer x;
-
-    /** Gets or sets Y. */
-    @JsonProperty("Y")
-    private Integer y;
-
-    /** Gets or sets RotationAngle. */
-    @JsonProperty("RotationAngle")
-    private Double rotationAngle;
-
-    /** Gets or sets HtmlText. */
-    @JsonProperty("HtmlText")
-    private String htmlText;
-
-    /** Gets or sets Text. */
-    @JsonProperty("Text")
-    private String text;
-
-    /** Gets or sets AlternativeText. */
-    @JsonProperty("AlternativeText")
-    private String alternativeText;
-
-    /** Gets or sets TextHorizontalAlignment. */
-    @JsonProperty("TextHorizontalAlignment")
-    private String textHorizontalAlignment;
-
-    /** Gets or sets TextHorizontalOverflow. */
-    @JsonProperty("TextHorizontalOverflow")
-    private String textHorizontalOverflow;
-
-    /** Gets or sets TextOrientationType. */
-    @JsonProperty("TextOrientationType")
-    private String textOrientationType;
-
-    /** Gets or sets TextVerticalAlignment. */
-    @JsonProperty("TextVerticalAlignment")
-    private String textVerticalAlignment;
-
-    /** Gets or sets TextVerticalOverflow. */
-    @JsonProperty("TextVerticalOverflow")
-    private String textVerticalOverflow;
-
-    /** Gets or sets IsGroup. */
-    @JsonProperty("IsGroup")
-    private Boolean isGroup;
-
-    /** Gets or sets IsHidden. */
-    @JsonProperty("IsHidden")
-    private Boolean isHidden;
-
-    /** Gets or sets IsLockAspectRatio. */
-    @JsonProperty("IsLockAspectRatio")
-    private Boolean isLockAspectRatio;
-
-    /** Gets or sets IsLocked. */
-    @JsonProperty("IsLocked")
-    private Boolean isLocked;
-
-    /** Gets or sets IsPrintable. */
-    @JsonProperty("IsPrintable")
-    private Boolean isPrintable;
-
-    /** Gets or sets IsTextWrapped. */
-    @JsonProperty("IsTextWrapped")
-    private Boolean isTextWrapped;
-
-    /** Gets or sets IsWordArt. */
-    @JsonProperty("IsWordArt")
-    private Boolean isWordArt;
-
-    /** Gets or sets LinkedCell. */
-    @JsonProperty("LinkedCell")
-    private String linkedCell;
-
-    /** Gets or sets ZOrderPosition. */
-    @JsonProperty("ZOrderPosition")
-    private Integer zOrderPosition;
-
-    /** Gets or sets Font. */
-    @JsonProperty("Font")
-    private Font font;
-
-    /** Gets or sets Hyperlink. */
-    @JsonProperty("Hyperlink")
-    private String hyperlink;
-
     /** Gets or sets link. */
     @JsonProperty("link")
     private Link link;
 
-    public String getName() { return name; }
-    public RectangleShape setName(String name) { this.name = name; return this; }
-
-    public String getMsoDrawingType() { return msoDrawingType; }
-    public RectangleShape setMsoDrawingType(String msoDrawingType) { this.msoDrawingType = msoDrawingType; return this; }
-
-    public String getAutoShapeType() { return autoShapeType; }
-    public RectangleShape setAutoShapeType(String autoShapeType) { this.autoShapeType = autoShapeType; return this; }
-
-    public String getPlacement() { return placement; }
-    public RectangleShape setPlacement(String placement) { this.placement = placement; return this; }
-
-    public Integer getUpperLeftRow() { return upperLeftRow; }
-    public RectangleShape setUpperLeftRow(Integer upperLeftRow) { this.upperLeftRow = upperLeftRow; return this; }
-
-    public Integer getTop() { return top; }
-    public RectangleShape setTop(Integer top) { this.top = top; return this; }
-
-    public Integer getUpperLeftColumn() { return upperLeftColumn; }
-    public RectangleShape setUpperLeftColumn(Integer upperLeftColumn) { this.upperLeftColumn = upperLeftColumn; return this; }
-
-    public Integer getLeft() { return left; }
-    public RectangleShape setLeft(Integer left) { this.left = left; return this; }
-
-    public Integer getLowerRightRow() { return lowerRightRow; }
-    public RectangleShape setLowerRightRow(Integer lowerRightRow) { this.lowerRightRow = lowerRightRow; return this; }
-
-    public Integer getBottom() { return bottom; }
-    public RectangleShape setBottom(Integer bottom) { this.bottom = bottom; return this; }
-
-    public Integer getLowerRightColumn() { return lowerRightColumn; }
-    public RectangleShape setLowerRightColumn(Integer lowerRightColumn) { this.lowerRightColumn = lowerRightColumn; return this; }
-
-    public Integer getRight() { return right; }
-    public RectangleShape setRight(Integer right) { this.right = right; return this; }
-
-    public Integer getWidth() { return width; }
-    public RectangleShape setWidth(Integer width) { this.width = width; return this; }
-
-    public Integer getHeight() { return height; }
-    public RectangleShape setHeight(Integer height) { this.height = height; return this; }
-
-    public Integer getX() { return x; }
-    public RectangleShape setX(Integer x) { this.x = x; return this; }
-
-    public Integer getY() { return y; }
-    public RectangleShape setY(Integer y) { this.y = y; return this; }
-
-    public Double getRotationAngle() { return rotationAngle; }
-    public RectangleShape setRotationAngle(Double rotationAngle) { this.rotationAngle = rotationAngle; return this; }
-
-    public String getHtmlText() { return htmlText; }
-    public RectangleShape setHtmlText(String htmlText) { this.htmlText = htmlText; return this; }
-
-    public String getText() { return text; }
-    public RectangleShape setText(String text) { this.text = text; return this; }
-
-    public String getAlternativeText() { return alternativeText; }
-    public RectangleShape setAlternativeText(String alternativeText) { this.alternativeText = alternativeText; return this; }
-
-    public String getTextHorizontalAlignment() { return textHorizontalAlignment; }
-    public RectangleShape setTextHorizontalAlignment(String textHorizontalAlignment) { this.textHorizontalAlignment = textHorizontalAlignment; return this; }
-
-    public String getTextHorizontalOverflow() { return textHorizontalOverflow; }
-    public RectangleShape setTextHorizontalOverflow(String textHorizontalOverflow) { this.textHorizontalOverflow = textHorizontalOverflow; return this; }
-
-    public String getTextOrientationType() { return textOrientationType; }
-    public RectangleShape setTextOrientationType(String textOrientationType) { this.textOrientationType = textOrientationType; return this; }
-
-    public String getTextVerticalAlignment() { return textVerticalAlignment; }
-    public RectangleShape setTextVerticalAlignment(String textVerticalAlignment) { this.textVerticalAlignment = textVerticalAlignment; return this; }
-
-    public String getTextVerticalOverflow() { return textVerticalOverflow; }
-    public RectangleShape setTextVerticalOverflow(String textVerticalOverflow) { this.textVerticalOverflow = textVerticalOverflow; return this; }
-
-    public Boolean getIsGroup() { return isGroup; }
-    public RectangleShape setIsGroup(Boolean isGroup) { this.isGroup = isGroup; return this; }
-
-    public Boolean getIsHidden() { return isHidden; }
-    public RectangleShape setIsHidden(Boolean isHidden) { this.isHidden = isHidden; return this; }
-
-    public Boolean getIsLockAspectRatio() { return isLockAspectRatio; }
-    public RectangleShape setIsLockAspectRatio(Boolean isLockAspectRatio) { this.isLockAspectRatio = isLockAspectRatio; return this; }
-
-    public Boolean getIsLocked() { return isLocked; }
-    public RectangleShape setIsLocked(Boolean isLocked) { this.isLocked = isLocked; return this; }
-
-    public Boolean getIsPrintable() { return isPrintable; }
-    public RectangleShape setIsPrintable(Boolean isPrintable) { this.isPrintable = isPrintable; return this; }
-
-    public Boolean getIsTextWrapped() { return isTextWrapped; }
-    public RectangleShape setIsTextWrapped(Boolean isTextWrapped) { this.isTextWrapped = isTextWrapped; return this; }
-
-    public Boolean getIsWordArt() { return isWordArt; }
-    public RectangleShape setIsWordArt(Boolean isWordArt) { this.isWordArt = isWordArt; return this; }
-
-    public String getLinkedCell() { return linkedCell; }
-    public RectangleShape setLinkedCell(String linkedCell) { this.linkedCell = linkedCell; return this; }
-
-    public Integer getZOrderPosition() { return zOrderPosition; }
-    public RectangleShape setZOrderPosition(Integer zOrderPosition) { this.zOrderPosition = zOrderPosition; return this; }
-
-    public Font getFont() { return font; }
-    public RectangleShape setFont(Font font) { this.font = font; return this; }
-
-    public String getHyperlink() { return hyperlink; }
-    public RectangleShape setHyperlink(String hyperlink) { this.hyperlink = hyperlink; return this; }
-
     public Link getLink() { return link; }
     public RectangleShape setLink(Link link) { this.link = link; return this; }
+
+
+    /** Covariant override: keeps fluent chains returning RectangleShape. */
+    @Override public RectangleShape setName(String name) { return (RectangleShape) super.setName(name); }
+    /** Covariant override: keeps fluent chains returning RectangleShape. */
+    @Override public RectangleShape setMsoDrawingType(String msoDrawingType) { return (RectangleShape) super.setMsoDrawingType(msoDrawingType); }
+    /** Covariant override: keeps fluent chains returning RectangleShape. */
+    @Override public RectangleShape setAutoShapeType(String autoShapeType) { return (RectangleShape) super.setAutoShapeType(autoShapeType); }
+    /** Covariant override: keeps fluent chains returning RectangleShape. */
+    @Override public RectangleShape setPlacement(String placement) { return (RectangleShape) super.setPlacement(placement); }
+    /** Covariant override: keeps fluent chains returning RectangleShape. */
+    @Override public RectangleShape setUpperLeftRow(Integer upperLeftRow) { return (RectangleShape) super.setUpperLeftRow(upperLeftRow); }
+    /** Covariant override: keeps fluent chains returning RectangleShape. */
+    @Override public RectangleShape setTop(Integer top) { return (RectangleShape) super.setTop(top); }
+    /** Covariant override: keeps fluent chains returning RectangleShape. */
+    @Override public RectangleShape setUpperLeftColumn(Integer upperLeftColumn) { return (RectangleShape) super.setUpperLeftColumn(upperLeftColumn); }
+    /** Covariant override: keeps fluent chains returning RectangleShape. */
+    @Override public RectangleShape setLeft(Integer left) { return (RectangleShape) super.setLeft(left); }
+    /** Covariant override: keeps fluent chains returning RectangleShape. */
+    @Override public RectangleShape setLowerRightRow(Integer lowerRightRow) { return (RectangleShape) super.setLowerRightRow(lowerRightRow); }
+    /** Covariant override: keeps fluent chains returning RectangleShape. */
+    @Override public RectangleShape setBottom(Integer bottom) { return (RectangleShape) super.setBottom(bottom); }
+    /** Covariant override: keeps fluent chains returning RectangleShape. */
+    @Override public RectangleShape setLowerRightColumn(Integer lowerRightColumn) { return (RectangleShape) super.setLowerRightColumn(lowerRightColumn); }
+    /** Covariant override: keeps fluent chains returning RectangleShape. */
+    @Override public RectangleShape setRight(Integer right) { return (RectangleShape) super.setRight(right); }
+    /** Covariant override: keeps fluent chains returning RectangleShape. */
+    @Override public RectangleShape setWidth(Integer width) { return (RectangleShape) super.setWidth(width); }
+    /** Covariant override: keeps fluent chains returning RectangleShape. */
+    @Override public RectangleShape setHeight(Integer height) { return (RectangleShape) super.setHeight(height); }
+    /** Covariant override: keeps fluent chains returning RectangleShape. */
+    @Override public RectangleShape setX(Integer x) { return (RectangleShape) super.setX(x); }
+    /** Covariant override: keeps fluent chains returning RectangleShape. */
+    @Override public RectangleShape setY(Integer y) { return (RectangleShape) super.setY(y); }
+    /** Covariant override: keeps fluent chains returning RectangleShape. */
+    @Override public RectangleShape setRotationAngle(Double rotationAngle) { return (RectangleShape) super.setRotationAngle(rotationAngle); }
+    /** Covariant override: keeps fluent chains returning RectangleShape. */
+    @Override public RectangleShape setHtmlText(String htmlText) { return (RectangleShape) super.setHtmlText(htmlText); }
+    /** Covariant override: keeps fluent chains returning RectangleShape. */
+    @Override public RectangleShape setText(String text) { return (RectangleShape) super.setText(text); }
+    /** Covariant override: keeps fluent chains returning RectangleShape. */
+    @Override public RectangleShape setAlternativeText(String alternativeText) { return (RectangleShape) super.setAlternativeText(alternativeText); }
+    /** Covariant override: keeps fluent chains returning RectangleShape. */
+    @Override public RectangleShape setTextHorizontalAlignment(String textHorizontalAlignment) { return (RectangleShape) super.setTextHorizontalAlignment(textHorizontalAlignment); }
+    /** Covariant override: keeps fluent chains returning RectangleShape. */
+    @Override public RectangleShape setTextHorizontalOverflow(String textHorizontalOverflow) { return (RectangleShape) super.setTextHorizontalOverflow(textHorizontalOverflow); }
+    /** Covariant override: keeps fluent chains returning RectangleShape. */
+    @Override public RectangleShape setTextOrientationType(String textOrientationType) { return (RectangleShape) super.setTextOrientationType(textOrientationType); }
+    /** Covariant override: keeps fluent chains returning RectangleShape. */
+    @Override public RectangleShape setTextVerticalAlignment(String textVerticalAlignment) { return (RectangleShape) super.setTextVerticalAlignment(textVerticalAlignment); }
+    /** Covariant override: keeps fluent chains returning RectangleShape. */
+    @Override public RectangleShape setTextVerticalOverflow(String textVerticalOverflow) { return (RectangleShape) super.setTextVerticalOverflow(textVerticalOverflow); }
+    /** Covariant override: keeps fluent chains returning RectangleShape. */
+    @Override public RectangleShape setIsGroup(Boolean isGroup) { return (RectangleShape) super.setIsGroup(isGroup); }
+    /** Covariant override: keeps fluent chains returning RectangleShape. */
+    @Override public RectangleShape setIsHidden(Boolean isHidden) { return (RectangleShape) super.setIsHidden(isHidden); }
+    /** Covariant override: keeps fluent chains returning RectangleShape. */
+    @Override public RectangleShape setIsLockAspectRatio(Boolean isLockAspectRatio) { return (RectangleShape) super.setIsLockAspectRatio(isLockAspectRatio); }
+    /** Covariant override: keeps fluent chains returning RectangleShape. */
+    @Override public RectangleShape setIsLocked(Boolean isLocked) { return (RectangleShape) super.setIsLocked(isLocked); }
+    /** Covariant override: keeps fluent chains returning RectangleShape. */
+    @Override public RectangleShape setIsPrintable(Boolean isPrintable) { return (RectangleShape) super.setIsPrintable(isPrintable); }
+    /** Covariant override: keeps fluent chains returning RectangleShape. */
+    @Override public RectangleShape setIsTextWrapped(Boolean isTextWrapped) { return (RectangleShape) super.setIsTextWrapped(isTextWrapped); }
+    /** Covariant override: keeps fluent chains returning RectangleShape. */
+    @Override public RectangleShape setIsWordArt(Boolean isWordArt) { return (RectangleShape) super.setIsWordArt(isWordArt); }
+    /** Covariant override: keeps fluent chains returning RectangleShape. */
+    @Override public RectangleShape setLinkedCell(String linkedCell) { return (RectangleShape) super.setLinkedCell(linkedCell); }
+    /** Covariant override: keeps fluent chains returning RectangleShape. */
+    @Override public RectangleShape setZOrderPosition(Integer zOrderPosition) { return (RectangleShape) super.setZOrderPosition(zOrderPosition); }
+    /** Covariant override: keeps fluent chains returning RectangleShape. */
+    @Override public RectangleShape setFont(Font font) { return (RectangleShape) super.setFont(font); }
+    /** Covariant override: keeps fluent chains returning RectangleShape. */
+    @Override public RectangleShape setHyperlink(String hyperlink) { return (RectangleShape) super.setHyperlink(hyperlink); }
 
 }

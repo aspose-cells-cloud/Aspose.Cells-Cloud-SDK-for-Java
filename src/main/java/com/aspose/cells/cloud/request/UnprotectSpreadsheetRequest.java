@@ -6,7 +6,6 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import static com.aspose.cells.cloud.UrlUtils.urlEncode;
 
 /** Removes dual-layer password protection from Excel spreadsheets, supporting both open and modify passwords with encryption. */
 public class UnprotectSpreadsheetRequest implements RequestOption {
@@ -49,7 +48,7 @@ public class UnprotectSpreadsheetRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v4.0/cells/unprotection/spreadsheet";
+        return "/cells/unprotection/spreadsheet";
     }
 
     @Override
@@ -81,4 +80,6 @@ public class UnprotectSpreadsheetRequest implements RequestOption {
         form.put("Spreadsheet", spreadsheet);
         return form;
     }
+
+    @Override public boolean isBinaryResponse() { return true; }
 }

@@ -45,7 +45,7 @@ public class RemoveCharactersInRemoteSpreadsheetRequest implements RequestOption
 
     @Override
     public String getPath() {
-        return "/v4.0/cells/" + urlEncode(name) + "/worksheets/" + urlEncode(worksheet) + "/range/" + urlEncode(range) + "/content/remove/characters";
+        return "/cells/" + urlEncode(name) + "/worksheets/" + urlEncode(worksheet) + "/range/" + urlEncode(range) + "/content/remove/characters";
     }
 
     @Override

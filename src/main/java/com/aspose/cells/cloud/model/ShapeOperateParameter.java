@@ -10,14 +10,11 @@ public class ShapeOperateParameter extends OperateParameter {
     @JsonProperty("Shape")
     private Shape shape;
 
-    /** Gets or sets OperateType. */
-    @JsonProperty("OperateType")
-    private String operateType;
-
     public Shape getShape() { return shape; }
     public ShapeOperateParameter setShape(Shape shape) { this.shape = shape; return this; }
 
-    public String getOperateType() { return operateType; }
-    public ShapeOperateParameter setOperateType(String operateType) { this.operateType = operateType; return this; }
+
+    /** Covariant override: keeps fluent chains returning ShapeOperateParameter. */
+    @Override public ShapeOperateParameter setOperateType(String operateType) { return (ShapeOperateParameter) super.setOperateType(operateType); }
 
 }

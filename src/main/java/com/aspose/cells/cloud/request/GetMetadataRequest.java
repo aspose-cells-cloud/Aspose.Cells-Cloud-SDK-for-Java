@@ -6,7 +6,6 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import static com.aspose.cells.cloud.UrlUtils.urlEncode;
 
 /** Get cells document properties. */
 public class GetMetadataRequest implements RequestOption {
@@ -43,7 +42,7 @@ public class GetMetadataRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/metadata/get";
+        return "/cells/metadata/get";
     }
 
     @Override

@@ -11,14 +11,11 @@ public class Pictures extends LinkElement {
     @JsonProperty("PictureList")
     private List<LinkElement> pictureList;
 
-    /** Gets or sets link. */
-    @JsonProperty("link")
-    private Link link;
-
     public List<LinkElement> getPictureList() { return pictureList; }
     public Pictures setPictureList(List<LinkElement> pictureList) { this.pictureList = pictureList; return this; }
 
-    public Link getLink() { return link; }
-    public Pictures setLink(Link link) { this.link = link; return this; }
+
+    /** Covariant override: keeps fluent chains returning Pictures. */
+    @Override public Pictures setLink(Link link) { return (Pictures) super.setLink(link); }
 
 }

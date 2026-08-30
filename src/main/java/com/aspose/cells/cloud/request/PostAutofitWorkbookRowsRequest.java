@@ -37,7 +37,7 @@ public class PostAutofitWorkbookRowsRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/" + urlEncode(name) + "/autofitrows";
+        return "/cells/" + urlEncode(name) + "/autofitrows";
     }
 
     @Override

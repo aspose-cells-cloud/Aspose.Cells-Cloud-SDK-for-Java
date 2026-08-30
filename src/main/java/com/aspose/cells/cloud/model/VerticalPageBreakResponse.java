@@ -10,21 +10,13 @@ public class VerticalPageBreakResponse extends CellsCloudResponse {
     @JsonProperty("VerticalPageBreak")
     private VerticalPageBreak verticalPageBreak;
 
-    /** Gets or sets Code. */
-    @JsonProperty("Code")
-    private Integer code;
-
-    /** Gets or sets Status. */
-    @JsonProperty("Status")
-    private String status;
-
     public VerticalPageBreak getVerticalPageBreak() { return verticalPageBreak; }
     public VerticalPageBreakResponse setVerticalPageBreak(VerticalPageBreak verticalPageBreak) { this.verticalPageBreak = verticalPageBreak; return this; }
 
-    public Integer getCode() { return code; }
-    public VerticalPageBreakResponse setCode(Integer code) { this.code = code; return this; }
 
-    public String getStatus() { return status; }
-    public VerticalPageBreakResponse setStatus(String status) { this.status = status; return this; }
+    /** Covariant override: keeps fluent chains returning VerticalPageBreakResponse. */
+    @Override public VerticalPageBreakResponse setCode(Integer code) { return (VerticalPageBreakResponse) super.setCode(code); }
+    /** Covariant override: keeps fluent chains returning VerticalPageBreakResponse. */
+    @Override public VerticalPageBreakResponse setStatus(String status) { return (VerticalPageBreakResponse) super.setStatus(status); }
 
 }

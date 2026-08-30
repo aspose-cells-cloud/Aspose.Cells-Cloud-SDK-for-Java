@@ -6,7 +6,6 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import static com.aspose.cells.cloud.UrlUtils.urlEncode;
 
 /** The Web API endpoint allows users to repair a spreadsheet. */
 public class RepairSpreadsheetRequest implements RequestOption {
@@ -45,7 +44,7 @@ public class RepairSpreadsheetRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v4.0/cells/spreadsheet/repair";
+        return "/cells/spreadsheet/repair";
     }
 
     @Override
@@ -76,4 +75,6 @@ public class RepairSpreadsheetRequest implements RequestOption {
         form.put("Spreadsheet", spreadsheet);
         return form;
     }
+
+    @Override public boolean isBinaryResponse() { return true; }
 }

@@ -11,14 +11,11 @@ public class LegendEntries extends LinkElement {
     @JsonProperty("legendEntryList")
     private List<LinkElement> legendEntryList;
 
-    /** Gets or sets link. */
-    @JsonProperty("link")
-    private Link link;
-
     public List<LinkElement> getLegendEntryList() { return legendEntryList; }
     public LegendEntries setLegendEntryList(List<LinkElement> legendEntryList) { this.legendEntryList = legendEntryList; return this; }
 
-    public Link getLink() { return link; }
-    public LegendEntries setLink(Link link) { this.link = link; return this; }
+
+    /** Covariant override: keeps fluent chains returning LegendEntries. */
+    @Override public LegendEntries setLink(Link link) { return (LegendEntries) super.setLink(link); }
 
 }

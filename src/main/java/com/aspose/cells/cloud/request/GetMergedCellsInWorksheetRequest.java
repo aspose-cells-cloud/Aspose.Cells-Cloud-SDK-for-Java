@@ -6,7 +6,6 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import static com.aspose.cells.cloud.UrlUtils.urlEncode;
 
 /** Get all merged cell area form a local spreadsheet worksheet. */
 public class GetMergedCellsInWorksheetRequest implements RequestOption {
@@ -44,7 +43,7 @@ public class GetMergedCellsInWorksheetRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v4.0/cells/spreadsheet/mergedcells";
+        return "/cells/spreadsheet/mergedcells";
     }
 
     @Override

@@ -21,7 +21,7 @@ public class StorageExistsRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v4.0/cells/storage/" + urlEncode(storageName) + "/exist";
+        return "/cells/storage/" + urlEncode(storageName) + "/exist";
     }
 
     @Override

@@ -10,21 +10,13 @@ public class SingleValueResponse extends CellsCloudResponse {
     @JsonProperty("Value")
     private SingleValue value;
 
-    /** Gets or sets Code. */
-    @JsonProperty("Code")
-    private Integer code;
-
-    /** Gets or sets Status. */
-    @JsonProperty("Status")
-    private String status;
-
     public SingleValue getValue() { return value; }
     public SingleValueResponse setValue(SingleValue value) { this.value = value; return this; }
 
-    public Integer getCode() { return code; }
-    public SingleValueResponse setCode(Integer code) { this.code = code; return this; }
 
-    public String getStatus() { return status; }
-    public SingleValueResponse setStatus(String status) { this.status = status; return this; }
+    /** Covariant override: keeps fluent chains returning SingleValueResponse. */
+    @Override public SingleValueResponse setCode(Integer code) { return (SingleValueResponse) super.setCode(code); }
+    /** Covariant override: keeps fluent chains returning SingleValueResponse. */
+    @Override public SingleValueResponse setStatus(String status) { return (SingleValueResponse) super.setStatus(status); }
 
 }

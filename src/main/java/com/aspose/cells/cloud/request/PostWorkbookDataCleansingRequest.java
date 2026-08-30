@@ -37,7 +37,7 @@ public class PostWorkbookDataCleansingRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/" + urlEncode(name) + "/datacleansing";
+        return "/cells/" + urlEncode(name) + "/datacleansing";
     }
 
     @Override

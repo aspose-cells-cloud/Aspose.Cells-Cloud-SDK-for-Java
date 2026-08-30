@@ -10,21 +10,13 @@ public class LineShapeResponse extends CellsCloudResponse {
     @JsonProperty("Shape")
     private LineShape shape;
 
-    /** Gets or sets Code. */
-    @JsonProperty("Code")
-    private Integer code;
-
-    /** Gets or sets Status. */
-    @JsonProperty("Status")
-    private String status;
-
     public LineShape getShape() { return shape; }
     public LineShapeResponse setShape(LineShape shape) { this.shape = shape; return this; }
 
-    public Integer getCode() { return code; }
-    public LineShapeResponse setCode(Integer code) { this.code = code; return this; }
 
-    public String getStatus() { return status; }
-    public LineShapeResponse setStatus(String status) { this.status = status; return this; }
+    /** Covariant override: keeps fluent chains returning LineShapeResponse. */
+    @Override public LineShapeResponse setCode(Integer code) { return (LineShapeResponse) super.setCode(code); }
+    /** Covariant override: keeps fluent chains returning LineShapeResponse. */
+    @Override public LineShapeResponse setStatus(String status) { return (LineShapeResponse) super.setStatus(status); }
 
 }

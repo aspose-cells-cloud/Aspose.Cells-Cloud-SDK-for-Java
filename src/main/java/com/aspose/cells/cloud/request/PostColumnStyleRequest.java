@@ -37,7 +37,7 @@ public class PostColumnStyleRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/" + urlEncode(name) + "/worksheets/" + urlEncode(sheetName) + "/cells/columns/" + urlEncode(String.valueOf(columnIndex)) + "/style";
+        return "/cells/" + urlEncode(name) + "/worksheets/" + urlEncode(sheetName) + "/cells/columns/" + urlEncode(String.valueOf(columnIndex)) + "/style";
     }
 
     @Override

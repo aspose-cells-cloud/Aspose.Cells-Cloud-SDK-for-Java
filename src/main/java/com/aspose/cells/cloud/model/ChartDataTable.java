@@ -38,10 +38,6 @@ public class ChartDataTable extends LinkElement {
     @JsonProperty("ShowLegendKey")
     private Boolean showLegendKey;
 
-    /** Gets or sets link. */
-    @JsonProperty("link")
-    private Link link;
-
     public Boolean getAutoScaleFont() { return autoScaleFont; }
     public ChartDataTable setAutoScaleFont(Boolean autoScaleFont) { this.autoScaleFont = autoScaleFont; return this; }
 
@@ -66,7 +62,8 @@ public class ChartDataTable extends LinkElement {
     public Boolean getShowLegendKey() { return showLegendKey; }
     public ChartDataTable setShowLegendKey(Boolean showLegendKey) { this.showLegendKey = showLegendKey; return this; }
 
-    public Link getLink() { return link; }
-    public ChartDataTable setLink(Link link) { this.link = link; return this; }
+
+    /** Covariant override: keeps fluent chains returning ChartDataTable. */
+    @Override public ChartDataTable setLink(Link link) { return (ChartDataTable) super.setLink(link); }
 
 }

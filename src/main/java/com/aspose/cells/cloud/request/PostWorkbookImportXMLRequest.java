@@ -41,7 +41,7 @@ public class PostWorkbookImportXMLRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/" + urlEncode(name) + "/importxml";
+        return "/cells/" + urlEncode(name) + "/importxml";
     }
 
     @Override
@@ -73,4 +73,6 @@ public class PostWorkbookImportXMLRequest implements RequestOption {
     public Map<String, Object> getMultipartForm() {
         return null;
     }
+
+    @Override public boolean isBinaryResponse() { return true; }
 }

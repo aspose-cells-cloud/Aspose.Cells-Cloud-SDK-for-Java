@@ -36,7 +36,7 @@ public class PostHideWorksheetRowsRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/" + urlEncode(name) + "/worksheets/" + urlEncode(sheetName) + "/cells/rows/hide";
+        return "/cells/" + urlEncode(name) + "/worksheets/" + urlEncode(sheetName) + "/cells/rows/hide";
     }
 
     @Override

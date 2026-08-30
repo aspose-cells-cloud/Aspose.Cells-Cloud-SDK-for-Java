@@ -14,24 +14,16 @@ public class FindResponse extends CellsCloudResponse {
     @JsonProperty("TextItems")
     private TextItems textItems;
 
-    /** Gets or sets Code. */
-    @JsonProperty("Code")
-    private Integer code;
-
-    /** Gets or sets Status. */
-    @JsonProperty("Status")
-    private String status;
-
     public Integer getCount() { return count; }
     public FindResponse setCount(Integer count) { this.count = count; return this; }
 
     public TextItems getTextItems() { return textItems; }
     public FindResponse setTextItems(TextItems textItems) { this.textItems = textItems; return this; }
 
-    public Integer getCode() { return code; }
-    public FindResponse setCode(Integer code) { this.code = code; return this; }
 
-    public String getStatus() { return status; }
-    public FindResponse setStatus(String status) { this.status = status; return this; }
+    /** Covariant override: keeps fluent chains returning FindResponse. */
+    @Override public FindResponse setCode(Integer code) { return (FindResponse) super.setCode(code); }
+    /** Covariant override: keeps fluent chains returning FindResponse. */
+    @Override public FindResponse setStatus(String status) { return (FindResponse) super.setStatus(status); }
 
 }

@@ -10,21 +10,13 @@ public class TaskRunResultResponse extends CellsCloudResponse {
     @JsonProperty("TaskRunResult")
     private TaskRunResult taskRunResult;
 
-    /** Gets or sets Code. */
-    @JsonProperty("Code")
-    private Integer code;
-
-    /** Gets or sets Status. */
-    @JsonProperty("Status")
-    private String status;
-
     public TaskRunResult getTaskRunResult() { return taskRunResult; }
     public TaskRunResultResponse setTaskRunResult(TaskRunResult taskRunResult) { this.taskRunResult = taskRunResult; return this; }
 
-    public Integer getCode() { return code; }
-    public TaskRunResultResponse setCode(Integer code) { this.code = code; return this; }
 
-    public String getStatus() { return status; }
-    public TaskRunResultResponse setStatus(String status) { this.status = status; return this; }
+    /** Covariant override: keeps fluent chains returning TaskRunResultResponse. */
+    @Override public TaskRunResultResponse setCode(Integer code) { return (TaskRunResultResponse) super.setCode(code); }
+    /** Covariant override: keeps fluent chains returning TaskRunResultResponse. */
+    @Override public TaskRunResultResponse setStatus(String status) { return (TaskRunResultResponse) super.setStatus(status); }
 
 }

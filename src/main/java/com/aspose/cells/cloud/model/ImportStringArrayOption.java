@@ -23,26 +23,6 @@ public class ImportStringArrayOption extends ImportOption {
     @JsonProperty("Data")
     private List<String> data;
 
-    /** Gets or sets DestinationWorksheet. */
-    @JsonProperty("DestinationWorksheet")
-    private String destinationWorksheet;
-
-    /** Gets or sets IsInsert. */
-    @JsonProperty("IsInsert")
-    private Boolean isInsert;
-
-    /** Gets or sets ImportDataType. */
-    @JsonProperty("ImportDataType")
-    private String importDataType;
-
-    /** Gets or sets DataSource. */
-    @JsonProperty("DataSource")
-    private DataSource dataSource;
-
-    /** Gets or sets Source. */
-    @JsonProperty("Source")
-    private FileSource source;
-
     public Integer getFirstRow() { return firstRow; }
     public ImportStringArrayOption setFirstRow(Integer firstRow) { this.firstRow = firstRow; return this; }
 
@@ -55,19 +35,16 @@ public class ImportStringArrayOption extends ImportOption {
     public List<String> getData() { return data; }
     public ImportStringArrayOption setData(List<String> data) { this.data = data; return this; }
 
-    public String getDestinationWorksheet() { return destinationWorksheet; }
-    public ImportStringArrayOption setDestinationWorksheet(String destinationWorksheet) { this.destinationWorksheet = destinationWorksheet; return this; }
 
-    public Boolean getIsInsert() { return isInsert; }
-    public ImportStringArrayOption setIsInsert(Boolean isInsert) { this.isInsert = isInsert; return this; }
-
-    public String getImportDataType() { return importDataType; }
-    public ImportStringArrayOption setImportDataType(String importDataType) { this.importDataType = importDataType; return this; }
-
-    public DataSource getDataSource() { return dataSource; }
-    public ImportStringArrayOption setDataSource(DataSource dataSource) { this.dataSource = dataSource; return this; }
-
-    public FileSource getSource() { return source; }
-    public ImportStringArrayOption setSource(FileSource source) { this.source = source; return this; }
+    /** Covariant override: keeps fluent chains returning ImportStringArrayOption. */
+    @Override public ImportStringArrayOption setDestinationWorksheet(String destinationWorksheet) { return (ImportStringArrayOption) super.setDestinationWorksheet(destinationWorksheet); }
+    /** Covariant override: keeps fluent chains returning ImportStringArrayOption. */
+    @Override public ImportStringArrayOption setIsInsert(Boolean isInsert) { return (ImportStringArrayOption) super.setIsInsert(isInsert); }
+    /** Covariant override: keeps fluent chains returning ImportStringArrayOption. */
+    @Override public ImportStringArrayOption setImportDataType(String importDataType) { return (ImportStringArrayOption) super.setImportDataType(importDataType); }
+    /** Covariant override: keeps fluent chains returning ImportStringArrayOption. */
+    @Override public ImportStringArrayOption setDataSource(DataSource dataSource) { return (ImportStringArrayOption) super.setDataSource(dataSource); }
+    /** Covariant override: keeps fluent chains returning ImportStringArrayOption. */
+    @Override public ImportStringArrayOption setSource(FileSource source) { return (ImportStringArrayOption) super.setSource(source); }
 
 }

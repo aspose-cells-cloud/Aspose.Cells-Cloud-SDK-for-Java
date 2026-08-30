@@ -34,7 +34,7 @@ public class PostWorksheetGroupShapeRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/" + urlEncode(name) + "/worksheets/" + urlEncode(sheetName) + "/shapes/group";
+        return "/cells/" + urlEncode(name) + "/worksheets/" + urlEncode(sheetName) + "/shapes/group";
     }
 
     @Override

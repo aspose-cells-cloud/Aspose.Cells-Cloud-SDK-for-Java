@@ -10,21 +10,13 @@ public class DisplayUnitLabelResponse extends CellsCloudResponse {
     @JsonProperty("DisplayUnitLabel")
     private DisplayUnitLabel displayUnitLabel;
 
-    /** Gets or sets Code. */
-    @JsonProperty("Code")
-    private Integer code;
-
-    /** Gets or sets Status. */
-    @JsonProperty("Status")
-    private String status;
-
     public DisplayUnitLabel getDisplayUnitLabel() { return displayUnitLabel; }
     public DisplayUnitLabelResponse setDisplayUnitLabel(DisplayUnitLabel displayUnitLabel) { this.displayUnitLabel = displayUnitLabel; return this; }
 
-    public Integer getCode() { return code; }
-    public DisplayUnitLabelResponse setCode(Integer code) { this.code = code; return this; }
 
-    public String getStatus() { return status; }
-    public DisplayUnitLabelResponse setStatus(String status) { this.status = status; return this; }
+    /** Covariant override: keeps fluent chains returning DisplayUnitLabelResponse. */
+    @Override public DisplayUnitLabelResponse setCode(Integer code) { return (DisplayUnitLabelResponse) super.setCode(code); }
+    /** Covariant override: keeps fluent chains returning DisplayUnitLabelResponse. */
+    @Override public DisplayUnitLabelResponse setStatus(String status) { return (DisplayUnitLabelResponse) super.setStatus(status); }
 
 }

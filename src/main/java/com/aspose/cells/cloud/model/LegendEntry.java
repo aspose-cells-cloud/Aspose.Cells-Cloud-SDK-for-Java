@@ -22,10 +22,6 @@ public class LegendEntry extends LinkElement {
     @JsonProperty("IsDeleted")
     private Boolean isDeleted;
 
-    /** Gets or sets link. */
-    @JsonProperty("link")
-    private Link link;
-
     public Boolean getAutoScaleFont() { return autoScaleFont; }
     public LegendEntry setAutoScaleFont(Boolean autoScaleFont) { this.autoScaleFont = autoScaleFont; return this; }
 
@@ -38,7 +34,8 @@ public class LegendEntry extends LinkElement {
     public Boolean getIsDeleted() { return isDeleted; }
     public LegendEntry setIsDeleted(Boolean isDeleted) { this.isDeleted = isDeleted; return this; }
 
-    public Link getLink() { return link; }
-    public LegendEntry setLink(Link link) { this.link = link; return this; }
+
+    /** Covariant override: keeps fluent chains returning LegendEntry. */
+    @Override public LegendEntry setLink(Link link) { return (LegendEntry) super.setLink(link); }
 
 }

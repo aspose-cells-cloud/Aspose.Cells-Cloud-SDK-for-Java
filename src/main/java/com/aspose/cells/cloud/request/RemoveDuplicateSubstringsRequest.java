@@ -6,7 +6,6 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import static com.aspose.cells.cloud.UrlUtils.urlEncode;
 
 /** Finds and removes repeated substrings inside every cell of the chosen range, using user-defined or preset delimiters, while preserving formulas, formatting and data-validation. */
 public class RemoveDuplicateSubstringsRequest implements RequestOption {
@@ -56,7 +55,7 @@ public class RemoveDuplicateSubstringsRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v4.0/cells/content/remove/duplicate-substrings";
+        return "/cells/content/remove/duplicate-substrings";
     }
 
     @Override
@@ -92,4 +91,6 @@ public class RemoveDuplicateSubstringsRequest implements RequestOption {
         form.put("Spreadsheet", spreadsheet);
         return form;
     }
+
+    @Override public boolean isBinaryResponse() { return true; }
 }

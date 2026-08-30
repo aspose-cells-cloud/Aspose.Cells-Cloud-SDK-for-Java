@@ -6,7 +6,6 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import static com.aspose.cells.cloud.UrlUtils.urlEncode;
 
 /** Import CSV data file into the local spreadsheet. */
 public class ImportCSVDataIntoSpreadsheetRequest implements RequestOption {
@@ -58,7 +57,7 @@ public class ImportCSVDataIntoSpreadsheetRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v4.0/cells/import/data/csv";
+        return "/cells/import/data/csv";
     }
 
     @Override
@@ -96,4 +95,6 @@ public class ImportCSVDataIntoSpreadsheetRequest implements RequestOption {
         form.put("Spreadsheet", spreadsheet);
         return form;
     }
+
+    @Override public boolean isBinaryResponse() { return true; }
 }

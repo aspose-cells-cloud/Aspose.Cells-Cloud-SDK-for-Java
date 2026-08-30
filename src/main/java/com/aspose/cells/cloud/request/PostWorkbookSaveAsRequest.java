@@ -51,7 +51,7 @@ public class PostWorkbookSaveAsRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/" + urlEncode(name) + "/SaveAs";
+        return "/cells/" + urlEncode(name) + "/SaveAs";
     }
 
     @Override

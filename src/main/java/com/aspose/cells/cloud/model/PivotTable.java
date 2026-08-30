@@ -279,10 +279,6 @@ public class PivotTable extends LinkElement {
     @JsonProperty("Tag")
     private String tag;
 
-    /** Gets or sets link. */
-    @JsonProperty("link")
-    private Link link;
-
     public String getAltTextDescription() { return altTextDescription; }
     public PivotTable setAltTextDescription(String altTextDescription) { this.altTextDescription = altTextDescription; return this; }
 
@@ -487,7 +483,8 @@ public class PivotTable extends LinkElement {
     public String getTag() { return tag; }
     public PivotTable setTag(String tag) { this.tag = tag; return this; }
 
-    public Link getLink() { return link; }
-    public PivotTable setLink(Link link) { this.link = link; return this; }
+
+    /** Covariant override: keeps fluent chains returning PivotTable. */
+    @Override public PivotTable setLink(Link link) { return (PivotTable) super.setLink(link); }
 
 }

@@ -6,7 +6,6 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import static com.aspose.cells.cloud.UrlUtils.urlEncode;
 
 /** Search broken links in the local spreadsheet. */
 public class SearchSpreadsheetBrokenLinksRequest implements RequestOption {
@@ -45,7 +44,7 @@ public class SearchSpreadsheetBrokenLinksRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v4.0/cells/search/broken-links";
+        return "/cells/search/broken-links";
     }
 
     @Override

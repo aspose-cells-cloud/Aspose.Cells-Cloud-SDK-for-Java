@@ -7,7 +7,6 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import static com.aspose.cells.cloud.UrlUtils.urlEncode;
 
 /** Excel files encryption. */
 public class PostProtectRequest implements RequestOption {
@@ -43,7 +42,7 @@ public class PostProtectRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/protect";
+        return "/cells/protect";
     }
 
     @Override
@@ -71,4 +70,6 @@ public class PostProtectRequest implements RequestOption {
         form.put("File", file);
         return form;
     }
+
+    @Override public String getJsonBodyPartName() { return "protectWorkbookRequest"; }
 }

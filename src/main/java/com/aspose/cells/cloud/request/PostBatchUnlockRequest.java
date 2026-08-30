@@ -5,7 +5,6 @@ import com.aspose.cells.cloud.model.BatchLockRequest;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import static com.aspose.cells.cloud.UrlUtils.urlEncode;
 
 /** Batch unlocking files that meet specific matching conditions. */
 public class PostBatchUnlockRequest implements RequestOption {
@@ -22,7 +21,7 @@ public class PostBatchUnlockRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/batch/unlock";
+        return "/cells/batch/unlock";
     }
 
     @Override
@@ -46,4 +45,6 @@ public class PostBatchUnlockRequest implements RequestOption {
     public Map<String, Object> getMultipartForm() {
         return null;
     }
+
+    @Override public boolean isBinaryResponse() { return true; }
 }

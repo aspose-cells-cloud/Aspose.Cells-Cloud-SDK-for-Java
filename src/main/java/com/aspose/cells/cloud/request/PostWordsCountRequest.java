@@ -5,7 +5,6 @@ import com.aspose.cells.cloud.model.WordsCountOptions;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import static com.aspose.cells.cloud.UrlUtils.urlEncode;
 
 /** PostWordsCount request. */
 public class PostWordsCountRequest implements RequestOption {
@@ -22,7 +21,7 @@ public class PostWordsCountRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/wordscount";
+        return "/cells/wordscount";
     }
 
     @Override

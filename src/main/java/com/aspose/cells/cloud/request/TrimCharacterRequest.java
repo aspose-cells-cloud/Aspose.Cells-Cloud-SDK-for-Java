@@ -6,7 +6,6 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import static com.aspose.cells.cloud.UrlUtils.urlEncode;
 
 /** The TrimSpreadsheetContent API is designed to process and trim content within a remote spreadsheet. This API allows users to remove extra spaces, line breaks, or other unnecessary characters from the content of selected cells. It is particularly useful for cleaning up data entries and ensuring consistency in spreadsheet formatting */
 public class TrimCharacterRequest implements RequestOption {
@@ -63,7 +62,7 @@ public class TrimCharacterRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v4.0/cells/content/trim";
+        return "/cells/content/trim";
     }
 
     @Override
@@ -103,4 +102,6 @@ public class TrimCharacterRequest implements RequestOption {
         form.put("Spreadsheet", spreadsheet);
         return form;
     }
+
+    @Override public boolean isBinaryResponse() { return true; }
 }

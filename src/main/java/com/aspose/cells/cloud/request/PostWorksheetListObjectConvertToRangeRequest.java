@@ -33,7 +33,7 @@ public class PostWorksheetListObjectConvertToRangeRequest implements RequestOpti
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/" + urlEncode(name) + "/worksheets/" + urlEncode(sheetName) + "/listobjects/" + urlEncode(String.valueOf(listObjectIndex)) + "/ConvertToRange";
+        return "/cells/" + urlEncode(name) + "/worksheets/" + urlEncode(sheetName) + "/listobjects/" + urlEncode(String.valueOf(listObjectIndex)) + "/ConvertToRange";
     }
 
     @Override

@@ -10,21 +10,13 @@ public class TitleResponse extends CellsCloudResponse {
     @JsonProperty("Title")
     private Title title;
 
-    /** Gets or sets Code. */
-    @JsonProperty("Code")
-    private Integer code;
-
-    /** Gets or sets Status. */
-    @JsonProperty("Status")
-    private String status;
-
     public Title getTitle() { return title; }
     public TitleResponse setTitle(Title title) { this.title = title; return this; }
 
-    public Integer getCode() { return code; }
-    public TitleResponse setCode(Integer code) { this.code = code; return this; }
 
-    public String getStatus() { return status; }
-    public TitleResponse setStatus(String status) { this.status = status; return this; }
+    /** Covariant override: keeps fluent chains returning TitleResponse. */
+    @Override public TitleResponse setCode(Integer code) { return (TitleResponse) super.setCode(code); }
+    /** Covariant override: keeps fluent chains returning TitleResponse. */
+    @Override public TitleResponse setStatus(String status) { return (TitleResponse) super.setStatus(status); }
 
 }

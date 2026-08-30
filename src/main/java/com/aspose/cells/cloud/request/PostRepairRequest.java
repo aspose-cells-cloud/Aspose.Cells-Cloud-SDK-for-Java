@@ -6,7 +6,6 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import static com.aspose.cells.cloud.UrlUtils.urlEncode;
 
 /** Repair abnormal files and generate files in various formats. */
 public class PostRepairRequest implements RequestOption {
@@ -39,7 +38,7 @@ public class PostRepairRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/repair";
+        return "/cells/repair";
     }
 
     @Override

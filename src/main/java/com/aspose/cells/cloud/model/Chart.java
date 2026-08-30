@@ -178,10 +178,6 @@ public class Chart extends LinkElement {
     @JsonProperty("WallsAndGridlines2D")
     private Boolean wallsAndGridlines2D;
 
-    /** Gets or sets link. */
-    @JsonProperty("link")
-    private Link link;
-
     public Boolean getAutoScaling() { return autoScaling; }
     public Chart setAutoScaling(Boolean autoScaling) { this.autoScaling = autoScaling; return this; }
 
@@ -311,7 +307,8 @@ public class Chart extends LinkElement {
     public Boolean getWallsAndGridlines2D() { return wallsAndGridlines2D; }
     public Chart setWallsAndGridlines2D(Boolean wallsAndGridlines2D) { this.wallsAndGridlines2D = wallsAndGridlines2D; return this; }
 
-    public Link getLink() { return link; }
-    public Chart setLink(Link link) { this.link = link; return this; }
+
+    /** Covariant override: keeps fluent chains returning Chart. */
+    @Override public Chart setLink(Link link) { return (Chart) super.setLink(link); }
 
 }

@@ -6,7 +6,6 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import static com.aspose.cells.cloud.UrlUtils.urlEncode;
 
 /** Indicates extracting substrings, text characters, and numbers from a spreadsheet cell into another cell without having to use complex FIND, MIN, LEFT, or RIGHT formulas. */
 public class ExtractTextRequest implements RequestOption {
@@ -63,7 +62,7 @@ public class ExtractTextRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v4.0/cells/content/extract/text";
+        return "/cells/content/extract/text";
     }
 
     @Override
@@ -102,4 +101,6 @@ public class ExtractTextRequest implements RequestOption {
         form.put("Spreadsheet", spreadsheet);
         return form;
     }
+
+    @Override public boolean isBinaryResponse() { return true; }
 }

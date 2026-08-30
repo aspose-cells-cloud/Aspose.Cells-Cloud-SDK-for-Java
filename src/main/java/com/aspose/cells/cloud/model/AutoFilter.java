@@ -23,10 +23,6 @@ public class AutoFilter extends LinkElement {
     @JsonProperty("ShowFilterButton")
     private Boolean showFilterButton;
 
-    /** Gets or sets link. */
-    @JsonProperty("link")
-    private Link link;
-
     public List<FilterColumn> getFilterColumns() { return filterColumns; }
     public AutoFilter setFilterColumns(List<FilterColumn> filterColumns) { this.filterColumns = filterColumns; return this; }
 
@@ -39,7 +35,8 @@ public class AutoFilter extends LinkElement {
     public Boolean getShowFilterButton() { return showFilterButton; }
     public AutoFilter setShowFilterButton(Boolean showFilterButton) { this.showFilterButton = showFilterButton; return this; }
 
-    public Link getLink() { return link; }
-    public AutoFilter setLink(Link link) { this.link = link; return this; }
+
+    /** Covariant override: keeps fluent chains returning AutoFilter. */
+    @Override public AutoFilter setLink(Link link) { return (AutoFilter) super.setLink(link); }
 
 }

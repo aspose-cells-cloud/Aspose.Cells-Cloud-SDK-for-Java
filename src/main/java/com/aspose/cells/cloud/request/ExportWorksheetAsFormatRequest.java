@@ -47,7 +47,7 @@ public class ExportWorksheetAsFormatRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v4.0/cells/" + urlEncode(name) + "/worksheets/" + urlEncode(worksheet);
+        return "/cells/" + urlEncode(name) + "/worksheets/" + urlEncode(worksheet);
     }
 
     @Override
@@ -80,4 +80,6 @@ public class ExportWorksheetAsFormatRequest implements RequestOption {
     public Map<String, Object> getMultipartForm() {
         return null;
     }
+
+    @Override public boolean isBinaryResponse() { return true; }
 }

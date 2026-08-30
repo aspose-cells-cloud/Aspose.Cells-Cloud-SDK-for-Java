@@ -42,7 +42,7 @@ public class DeleteWorksheetConditionalFormattingAreaRequest implements RequestO
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/" + urlEncode(name) + "/worksheets/" + urlEncode(sheetName) + "/conditionalFormattings/area";
+        return "/cells/" + urlEncode(name) + "/worksheets/" + urlEncode(sheetName) + "/conditionalFormattings/area";
     }
 
     @Override

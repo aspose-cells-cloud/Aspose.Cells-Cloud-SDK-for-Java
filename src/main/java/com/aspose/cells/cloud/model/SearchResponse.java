@@ -11,21 +11,13 @@ public class SearchResponse extends CellsCloudResponse {
     @JsonProperty("TextItems")
     private List<TextItem> textItems;
 
-    /** Gets or sets Code. */
-    @JsonProperty("Code")
-    private Integer code;
-
-    /** Gets or sets Status. */
-    @JsonProperty("Status")
-    private String status;
-
     public List<TextItem> getTextItems() { return textItems; }
     public SearchResponse setTextItems(List<TextItem> textItems) { this.textItems = textItems; return this; }
 
-    public Integer getCode() { return code; }
-    public SearchResponse setCode(Integer code) { this.code = code; return this; }
 
-    public String getStatus() { return status; }
-    public SearchResponse setStatus(String status) { this.status = status; return this; }
+    /** Covariant override: keeps fluent chains returning SearchResponse. */
+    @Override public SearchResponse setCode(Integer code) { return (SearchResponse) super.setCode(code); }
+    /** Covariant override: keeps fluent chains returning SearchResponse. */
+    @Override public SearchResponse setStatus(String status) { return (SearchResponse) super.setStatus(status); }
 
 }

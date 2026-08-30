@@ -39,10 +39,6 @@ public class PivotTableOperateParameter extends OperateParameter {
     @JsonProperty("PivotFieldData")
     private List<Integer> pivotFieldData;
 
-    /** Gets or sets OperateType. */
-    @JsonProperty("OperateType")
-    private String operateType;
-
     public String getSourceData() { return sourceData; }
     public PivotTableOperateParameter setSourceData(String sourceData) { this.sourceData = sourceData; return this; }
 
@@ -67,7 +63,8 @@ public class PivotTableOperateParameter extends OperateParameter {
     public List<Integer> getPivotFieldData() { return pivotFieldData; }
     public PivotTableOperateParameter setPivotFieldData(List<Integer> pivotFieldData) { this.pivotFieldData = pivotFieldData; return this; }
 
-    public String getOperateType() { return operateType; }
-    public PivotTableOperateParameter setOperateType(String operateType) { this.operateType = operateType; return this; }
+
+    /** Covariant override: keeps fluent chains returning PivotTableOperateParameter. */
+    @Override public PivotTableOperateParameter setOperateType(String operateType) { return (PivotTableOperateParameter) super.setOperateType(operateType); }
 
 }

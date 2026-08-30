@@ -33,7 +33,7 @@ public class GetWorksheetCalculateFormulaRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/" + urlEncode(name) + "/worksheets/" + urlEncode(sheetName) + "/formulaResult";
+        return "/cells/" + urlEncode(name) + "/worksheets/" + urlEncode(sheetName) + "/formulaResult";
     }
 
     @Override

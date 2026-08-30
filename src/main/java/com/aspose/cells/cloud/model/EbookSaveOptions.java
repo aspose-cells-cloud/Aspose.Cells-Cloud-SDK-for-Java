@@ -6,162 +6,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 /** EbookSaveOptions model. */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class EbookSaveOptions extends HtmlSaveOptions {
-    /** Gets or sets ExportPageHeaders. */
-    @JsonProperty("ExportPageHeaders")
-    private Boolean exportPageHeaders;
-
-    /** Gets or sets ExportPageFooters. */
-    @JsonProperty("ExportPageFooters")
-    private Boolean exportPageFooters;
-
-    /** Gets or sets ExportRowColumnHeadings. */
-    @JsonProperty("ExportRowColumnHeadings")
-    private Boolean exportRowColumnHeadings;
-
-    /** Gets or sets ShowAllSheets. */
-    @JsonProperty("ShowAllSheets")
-    private Boolean showAllSheets;
-
-    /** Gets or sets ImageOptions. */
-    @JsonProperty("ImageOptions")
-    private ImageOrPrintOptions imageOptions;
-
-    /** Gets or sets SaveAsSingleFile. */
-    @JsonProperty("SaveAsSingleFile")
-    private Boolean saveAsSingleFile;
-
-    /** Gets or sets ExportHiddenWorksheet. */
-    @JsonProperty("ExportHiddenWorksheet")
-    private Boolean exportHiddenWorksheet;
-
-    /** Gets or sets ExportGridLines. */
-    @JsonProperty("ExportGridLines")
-    private Boolean exportGridLines;
-
-    /** Gets or sets PresentationPreference. */
-    @JsonProperty("PresentationPreference")
-    private Boolean presentationPreference;
-
-    /** Gets or sets CellCssPrefix. */
-    @JsonProperty("CellCssPrefix")
-    private String cellCssPrefix;
-
-    /** Gets or sets TableCssId. */
-    @JsonProperty("TableCssId")
-    private String tableCssId;
-
-    /** Gets or sets IsFullPathLink. */
-    @JsonProperty("IsFullPathLink")
-    private Boolean isFullPathLink;
-
-    /** Gets or sets ExportWorksheetCSSSeparately. */
-    @JsonProperty("ExportWorksheetCSSSeparately")
-    private Boolean exportWorksheetCSSSeparately;
-
-    /** Gets or sets ExportSimilarBorderStyle. */
-    @JsonProperty("ExportSimilarBorderStyle")
-    private Boolean exportSimilarBorderStyle;
-
-    /** Gets or sets MergeEmptyTdForcely. */
-    @JsonProperty("MergeEmptyTdForcely")
-    private Boolean mergeEmptyTdForcely;
-
-    /** Gets or sets ExportCellCoordinate. */
-    @JsonProperty("ExportCellCoordinate")
-    private Boolean exportCellCoordinate;
-
-    /** Gets or sets ExportExtraHeadings. */
-    @JsonProperty("ExportExtraHeadings")
-    private Boolean exportExtraHeadings;
-
-    /** Gets or sets ExportHeadings. */
-    @JsonProperty("ExportHeadings")
-    private Boolean exportHeadings;
-
-    /** Gets or sets ExportFormula. */
-    @JsonProperty("ExportFormula")
-    private Boolean exportFormula;
-
-    /** Gets or sets AddTooltipText. */
-    @JsonProperty("AddTooltipText")
-    private Boolean addTooltipText;
-
-    /** Gets or sets ExportBogusRowData. */
-    @JsonProperty("ExportBogusRowData")
-    private Boolean exportBogusRowData;
-
-    /** Gets or sets ExcludeUnusedStyles. */
-    @JsonProperty("ExcludeUnusedStyles")
-    private Boolean excludeUnusedStyles;
-
-    /** Gets or sets ExportDocumentProperties. */
-    @JsonProperty("ExportDocumentProperties")
-    private Boolean exportDocumentProperties;
-
-    /** Gets or sets ExportWorksheetProperties. */
-    @JsonProperty("ExportWorksheetProperties")
-    private Boolean exportWorksheetProperties;
-
-    /** Gets or sets ExportWorkbookProperties. */
-    @JsonProperty("ExportWorkbookProperties")
-    private Boolean exportWorkbookProperties;
-
-    /** Gets or sets ExportFrameScriptsAndProperties. */
-    @JsonProperty("ExportFrameScriptsAndProperties")
-    private Boolean exportFrameScriptsAndProperties;
-
-    /** Gets or sets AttachedFilesDirectory. */
-    @JsonProperty("AttachedFilesDirectory")
-    private String attachedFilesDirectory;
-
-    /** Gets or sets AttachedFilesUrlPrefix. */
-    @JsonProperty("AttachedFilesUrlPrefix")
-    private String attachedFilesUrlPrefix;
-
-    /** Gets or sets Encoding. */
-    @JsonProperty("Encoding")
-    private String encoding;
-
-    /** Gets or sets ExportActiveWorksheetOnly. */
-    @JsonProperty("ExportActiveWorksheetOnly")
-    private Boolean exportActiveWorksheetOnly;
-
-    /** Gets or sets ExportChartImageFormat. */
-    @JsonProperty("ExportChartImageFormat")
-    private String exportChartImageFormat;
-
-    /** Gets or sets ExportImagesAsBase64. */
-    @JsonProperty("ExportImagesAsBase64")
-    private Boolean exportImagesAsBase64;
-
-    /** Gets or sets HiddenColDisplayType. */
-    @JsonProperty("HiddenColDisplayType")
-    private String hiddenColDisplayType;
-
-    /** Gets or sets HiddenRowDisplayType. */
-    @JsonProperty("HiddenRowDisplayType")
-    private String hiddenRowDisplayType;
-
-    /** Gets or sets HtmlCrossStringType. */
-    @JsonProperty("HtmlCrossStringType")
-    private String htmlCrossStringType;
-
-    /** Gets or sets IsExpImageToTempDir. */
-    @JsonProperty("IsExpImageToTempDir")
-    private Boolean isExpImageToTempDir;
-
-    /** Gets or sets PageTitle. */
-    @JsonProperty("PageTitle")
-    private String pageTitle;
-
-    /** Gets or sets ParseHtmlTagInCell. */
-    @JsonProperty("ParseHtmlTagInCell")
-    private Boolean parseHtmlTagInCell;
-
-    /** Gets or sets CellNameAttribute. */
-    @JsonProperty("CellNameAttribute")
-    private String cellNameAttribute;
-
     /** Gets or sets SaveFormat. */
     @JsonProperty("SaveFormat")
     private String saveFormat;
@@ -214,123 +58,6 @@ public class EbookSaveOptions extends HtmlSaveOptions {
     @JsonProperty("EncryptDocumentProperties")
     private Boolean encryptDocumentProperties;
 
-    public Boolean getExportPageHeaders() { return exportPageHeaders; }
-    public EbookSaveOptions setExportPageHeaders(Boolean exportPageHeaders) { this.exportPageHeaders = exportPageHeaders; return this; }
-
-    public Boolean getExportPageFooters() { return exportPageFooters; }
-    public EbookSaveOptions setExportPageFooters(Boolean exportPageFooters) { this.exportPageFooters = exportPageFooters; return this; }
-
-    public Boolean getExportRowColumnHeadings() { return exportRowColumnHeadings; }
-    public EbookSaveOptions setExportRowColumnHeadings(Boolean exportRowColumnHeadings) { this.exportRowColumnHeadings = exportRowColumnHeadings; return this; }
-
-    public Boolean getShowAllSheets() { return showAllSheets; }
-    public EbookSaveOptions setShowAllSheets(Boolean showAllSheets) { this.showAllSheets = showAllSheets; return this; }
-
-    public ImageOrPrintOptions getImageOptions() { return imageOptions; }
-    public EbookSaveOptions setImageOptions(ImageOrPrintOptions imageOptions) { this.imageOptions = imageOptions; return this; }
-
-    public Boolean getSaveAsSingleFile() { return saveAsSingleFile; }
-    public EbookSaveOptions setSaveAsSingleFile(Boolean saveAsSingleFile) { this.saveAsSingleFile = saveAsSingleFile; return this; }
-
-    public Boolean getExportHiddenWorksheet() { return exportHiddenWorksheet; }
-    public EbookSaveOptions setExportHiddenWorksheet(Boolean exportHiddenWorksheet) { this.exportHiddenWorksheet = exportHiddenWorksheet; return this; }
-
-    public Boolean getExportGridLines() { return exportGridLines; }
-    public EbookSaveOptions setExportGridLines(Boolean exportGridLines) { this.exportGridLines = exportGridLines; return this; }
-
-    public Boolean getPresentationPreference() { return presentationPreference; }
-    public EbookSaveOptions setPresentationPreference(Boolean presentationPreference) { this.presentationPreference = presentationPreference; return this; }
-
-    public String getCellCssPrefix() { return cellCssPrefix; }
-    public EbookSaveOptions setCellCssPrefix(String cellCssPrefix) { this.cellCssPrefix = cellCssPrefix; return this; }
-
-    public String getTableCssId() { return tableCssId; }
-    public EbookSaveOptions setTableCssId(String tableCssId) { this.tableCssId = tableCssId; return this; }
-
-    public Boolean getIsFullPathLink() { return isFullPathLink; }
-    public EbookSaveOptions setIsFullPathLink(Boolean isFullPathLink) { this.isFullPathLink = isFullPathLink; return this; }
-
-    public Boolean getExportWorksheetCSSSeparately() { return exportWorksheetCSSSeparately; }
-    public EbookSaveOptions setExportWorksheetCSSSeparately(Boolean exportWorksheetCSSSeparately) { this.exportWorksheetCSSSeparately = exportWorksheetCSSSeparately; return this; }
-
-    public Boolean getExportSimilarBorderStyle() { return exportSimilarBorderStyle; }
-    public EbookSaveOptions setExportSimilarBorderStyle(Boolean exportSimilarBorderStyle) { this.exportSimilarBorderStyle = exportSimilarBorderStyle; return this; }
-
-    public Boolean getMergeEmptyTdForcely() { return mergeEmptyTdForcely; }
-    public EbookSaveOptions setMergeEmptyTdForcely(Boolean mergeEmptyTdForcely) { this.mergeEmptyTdForcely = mergeEmptyTdForcely; return this; }
-
-    public Boolean getExportCellCoordinate() { return exportCellCoordinate; }
-    public EbookSaveOptions setExportCellCoordinate(Boolean exportCellCoordinate) { this.exportCellCoordinate = exportCellCoordinate; return this; }
-
-    public Boolean getExportExtraHeadings() { return exportExtraHeadings; }
-    public EbookSaveOptions setExportExtraHeadings(Boolean exportExtraHeadings) { this.exportExtraHeadings = exportExtraHeadings; return this; }
-
-    public Boolean getExportHeadings() { return exportHeadings; }
-    public EbookSaveOptions setExportHeadings(Boolean exportHeadings) { this.exportHeadings = exportHeadings; return this; }
-
-    public Boolean getExportFormula() { return exportFormula; }
-    public EbookSaveOptions setExportFormula(Boolean exportFormula) { this.exportFormula = exportFormula; return this; }
-
-    public Boolean getAddTooltipText() { return addTooltipText; }
-    public EbookSaveOptions setAddTooltipText(Boolean addTooltipText) { this.addTooltipText = addTooltipText; return this; }
-
-    public Boolean getExportBogusRowData() { return exportBogusRowData; }
-    public EbookSaveOptions setExportBogusRowData(Boolean exportBogusRowData) { this.exportBogusRowData = exportBogusRowData; return this; }
-
-    public Boolean getExcludeUnusedStyles() { return excludeUnusedStyles; }
-    public EbookSaveOptions setExcludeUnusedStyles(Boolean excludeUnusedStyles) { this.excludeUnusedStyles = excludeUnusedStyles; return this; }
-
-    public Boolean getExportDocumentProperties() { return exportDocumentProperties; }
-    public EbookSaveOptions setExportDocumentProperties(Boolean exportDocumentProperties) { this.exportDocumentProperties = exportDocumentProperties; return this; }
-
-    public Boolean getExportWorksheetProperties() { return exportWorksheetProperties; }
-    public EbookSaveOptions setExportWorksheetProperties(Boolean exportWorksheetProperties) { this.exportWorksheetProperties = exportWorksheetProperties; return this; }
-
-    public Boolean getExportWorkbookProperties() { return exportWorkbookProperties; }
-    public EbookSaveOptions setExportWorkbookProperties(Boolean exportWorkbookProperties) { this.exportWorkbookProperties = exportWorkbookProperties; return this; }
-
-    public Boolean getExportFrameScriptsAndProperties() { return exportFrameScriptsAndProperties; }
-    public EbookSaveOptions setExportFrameScriptsAndProperties(Boolean exportFrameScriptsAndProperties) { this.exportFrameScriptsAndProperties = exportFrameScriptsAndProperties; return this; }
-
-    public String getAttachedFilesDirectory() { return attachedFilesDirectory; }
-    public EbookSaveOptions setAttachedFilesDirectory(String attachedFilesDirectory) { this.attachedFilesDirectory = attachedFilesDirectory; return this; }
-
-    public String getAttachedFilesUrlPrefix() { return attachedFilesUrlPrefix; }
-    public EbookSaveOptions setAttachedFilesUrlPrefix(String attachedFilesUrlPrefix) { this.attachedFilesUrlPrefix = attachedFilesUrlPrefix; return this; }
-
-    public String getEncoding() { return encoding; }
-    public EbookSaveOptions setEncoding(String encoding) { this.encoding = encoding; return this; }
-
-    public Boolean getExportActiveWorksheetOnly() { return exportActiveWorksheetOnly; }
-    public EbookSaveOptions setExportActiveWorksheetOnly(Boolean exportActiveWorksheetOnly) { this.exportActiveWorksheetOnly = exportActiveWorksheetOnly; return this; }
-
-    public String getExportChartImageFormat() { return exportChartImageFormat; }
-    public EbookSaveOptions setExportChartImageFormat(String exportChartImageFormat) { this.exportChartImageFormat = exportChartImageFormat; return this; }
-
-    public Boolean getExportImagesAsBase64() { return exportImagesAsBase64; }
-    public EbookSaveOptions setExportImagesAsBase64(Boolean exportImagesAsBase64) { this.exportImagesAsBase64 = exportImagesAsBase64; return this; }
-
-    public String getHiddenColDisplayType() { return hiddenColDisplayType; }
-    public EbookSaveOptions setHiddenColDisplayType(String hiddenColDisplayType) { this.hiddenColDisplayType = hiddenColDisplayType; return this; }
-
-    public String getHiddenRowDisplayType() { return hiddenRowDisplayType; }
-    public EbookSaveOptions setHiddenRowDisplayType(String hiddenRowDisplayType) { this.hiddenRowDisplayType = hiddenRowDisplayType; return this; }
-
-    public String getHtmlCrossStringType() { return htmlCrossStringType; }
-    public EbookSaveOptions setHtmlCrossStringType(String htmlCrossStringType) { this.htmlCrossStringType = htmlCrossStringType; return this; }
-
-    public Boolean getIsExpImageToTempDir() { return isExpImageToTempDir; }
-    public EbookSaveOptions setIsExpImageToTempDir(Boolean isExpImageToTempDir) { this.isExpImageToTempDir = isExpImageToTempDir; return this; }
-
-    public String getPageTitle() { return pageTitle; }
-    public EbookSaveOptions setPageTitle(String pageTitle) { this.pageTitle = pageTitle; return this; }
-
-    public Boolean getParseHtmlTagInCell() { return parseHtmlTagInCell; }
-    public EbookSaveOptions setParseHtmlTagInCell(Boolean parseHtmlTagInCell) { this.parseHtmlTagInCell = parseHtmlTagInCell; return this; }
-
-    public String getCellNameAttribute() { return cellNameAttribute; }
-    public EbookSaveOptions setCellNameAttribute(String cellNameAttribute) { this.cellNameAttribute = cellNameAttribute; return this; }
-
     public String getSaveFormat() { return saveFormat; }
     public EbookSaveOptions setSaveFormat(String saveFormat) { this.saveFormat = saveFormat; return this; }
 
@@ -369,5 +96,85 @@ public class EbookSaveOptions extends HtmlSaveOptions {
 
     public Boolean getEncryptDocumentProperties() { return encryptDocumentProperties; }
     public EbookSaveOptions setEncryptDocumentProperties(Boolean encryptDocumentProperties) { this.encryptDocumentProperties = encryptDocumentProperties; return this; }
+
+
+    /** Covariant override: keeps fluent chains returning EbookSaveOptions. */
+    @Override public EbookSaveOptions setExportPageHeaders(Boolean exportPageHeaders) { return (EbookSaveOptions) super.setExportPageHeaders(exportPageHeaders); }
+    /** Covariant override: keeps fluent chains returning EbookSaveOptions. */
+    @Override public EbookSaveOptions setExportPageFooters(Boolean exportPageFooters) { return (EbookSaveOptions) super.setExportPageFooters(exportPageFooters); }
+    /** Covariant override: keeps fluent chains returning EbookSaveOptions. */
+    @Override public EbookSaveOptions setExportRowColumnHeadings(Boolean exportRowColumnHeadings) { return (EbookSaveOptions) super.setExportRowColumnHeadings(exportRowColumnHeadings); }
+    /** Covariant override: keeps fluent chains returning EbookSaveOptions. */
+    @Override public EbookSaveOptions setShowAllSheets(Boolean showAllSheets) { return (EbookSaveOptions) super.setShowAllSheets(showAllSheets); }
+    /** Covariant override: keeps fluent chains returning EbookSaveOptions. */
+    @Override public EbookSaveOptions setImageOptions(ImageOrPrintOptions imageOptions) { return (EbookSaveOptions) super.setImageOptions(imageOptions); }
+    /** Covariant override: keeps fluent chains returning EbookSaveOptions. */
+    @Override public EbookSaveOptions setSaveAsSingleFile(Boolean saveAsSingleFile) { return (EbookSaveOptions) super.setSaveAsSingleFile(saveAsSingleFile); }
+    /** Covariant override: keeps fluent chains returning EbookSaveOptions. */
+    @Override public EbookSaveOptions setExportHiddenWorksheet(Boolean exportHiddenWorksheet) { return (EbookSaveOptions) super.setExportHiddenWorksheet(exportHiddenWorksheet); }
+    /** Covariant override: keeps fluent chains returning EbookSaveOptions. */
+    @Override public EbookSaveOptions setExportGridLines(Boolean exportGridLines) { return (EbookSaveOptions) super.setExportGridLines(exportGridLines); }
+    /** Covariant override: keeps fluent chains returning EbookSaveOptions. */
+    @Override public EbookSaveOptions setPresentationPreference(Boolean presentationPreference) { return (EbookSaveOptions) super.setPresentationPreference(presentationPreference); }
+    /** Covariant override: keeps fluent chains returning EbookSaveOptions. */
+    @Override public EbookSaveOptions setCellCssPrefix(String cellCssPrefix) { return (EbookSaveOptions) super.setCellCssPrefix(cellCssPrefix); }
+    /** Covariant override: keeps fluent chains returning EbookSaveOptions. */
+    @Override public EbookSaveOptions setTableCssId(String tableCssId) { return (EbookSaveOptions) super.setTableCssId(tableCssId); }
+    /** Covariant override: keeps fluent chains returning EbookSaveOptions. */
+    @Override public EbookSaveOptions setIsFullPathLink(Boolean isFullPathLink) { return (EbookSaveOptions) super.setIsFullPathLink(isFullPathLink); }
+    /** Covariant override: keeps fluent chains returning EbookSaveOptions. */
+    @Override public EbookSaveOptions setExportWorksheetCSSSeparately(Boolean exportWorksheetCSSSeparately) { return (EbookSaveOptions) super.setExportWorksheetCSSSeparately(exportWorksheetCSSSeparately); }
+    /** Covariant override: keeps fluent chains returning EbookSaveOptions. */
+    @Override public EbookSaveOptions setExportSimilarBorderStyle(Boolean exportSimilarBorderStyle) { return (EbookSaveOptions) super.setExportSimilarBorderStyle(exportSimilarBorderStyle); }
+    /** Covariant override: keeps fluent chains returning EbookSaveOptions. */
+    @Override public EbookSaveOptions setMergeEmptyTdForcely(Boolean mergeEmptyTdForcely) { return (EbookSaveOptions) super.setMergeEmptyTdForcely(mergeEmptyTdForcely); }
+    /** Covariant override: keeps fluent chains returning EbookSaveOptions. */
+    @Override public EbookSaveOptions setExportCellCoordinate(Boolean exportCellCoordinate) { return (EbookSaveOptions) super.setExportCellCoordinate(exportCellCoordinate); }
+    /** Covariant override: keeps fluent chains returning EbookSaveOptions. */
+    @Override public EbookSaveOptions setExportExtraHeadings(Boolean exportExtraHeadings) { return (EbookSaveOptions) super.setExportExtraHeadings(exportExtraHeadings); }
+    /** Covariant override: keeps fluent chains returning EbookSaveOptions. */
+    @Override public EbookSaveOptions setExportHeadings(Boolean exportHeadings) { return (EbookSaveOptions) super.setExportHeadings(exportHeadings); }
+    /** Covariant override: keeps fluent chains returning EbookSaveOptions. */
+    @Override public EbookSaveOptions setExportFormula(Boolean exportFormula) { return (EbookSaveOptions) super.setExportFormula(exportFormula); }
+    /** Covariant override: keeps fluent chains returning EbookSaveOptions. */
+    @Override public EbookSaveOptions setAddTooltipText(Boolean addTooltipText) { return (EbookSaveOptions) super.setAddTooltipText(addTooltipText); }
+    /** Covariant override: keeps fluent chains returning EbookSaveOptions. */
+    @Override public EbookSaveOptions setExportBogusRowData(Boolean exportBogusRowData) { return (EbookSaveOptions) super.setExportBogusRowData(exportBogusRowData); }
+    /** Covariant override: keeps fluent chains returning EbookSaveOptions. */
+    @Override public EbookSaveOptions setExcludeUnusedStyles(Boolean excludeUnusedStyles) { return (EbookSaveOptions) super.setExcludeUnusedStyles(excludeUnusedStyles); }
+    /** Covariant override: keeps fluent chains returning EbookSaveOptions. */
+    @Override public EbookSaveOptions setExportDocumentProperties(Boolean exportDocumentProperties) { return (EbookSaveOptions) super.setExportDocumentProperties(exportDocumentProperties); }
+    /** Covariant override: keeps fluent chains returning EbookSaveOptions. */
+    @Override public EbookSaveOptions setExportWorksheetProperties(Boolean exportWorksheetProperties) { return (EbookSaveOptions) super.setExportWorksheetProperties(exportWorksheetProperties); }
+    /** Covariant override: keeps fluent chains returning EbookSaveOptions. */
+    @Override public EbookSaveOptions setExportWorkbookProperties(Boolean exportWorkbookProperties) { return (EbookSaveOptions) super.setExportWorkbookProperties(exportWorkbookProperties); }
+    /** Covariant override: keeps fluent chains returning EbookSaveOptions. */
+    @Override public EbookSaveOptions setExportFrameScriptsAndProperties(Boolean exportFrameScriptsAndProperties) { return (EbookSaveOptions) super.setExportFrameScriptsAndProperties(exportFrameScriptsAndProperties); }
+    /** Covariant override: keeps fluent chains returning EbookSaveOptions. */
+    @Override public EbookSaveOptions setAttachedFilesDirectory(String attachedFilesDirectory) { return (EbookSaveOptions) super.setAttachedFilesDirectory(attachedFilesDirectory); }
+    /** Covariant override: keeps fluent chains returning EbookSaveOptions. */
+    @Override public EbookSaveOptions setAttachedFilesUrlPrefix(String attachedFilesUrlPrefix) { return (EbookSaveOptions) super.setAttachedFilesUrlPrefix(attachedFilesUrlPrefix); }
+    /** Covariant override: keeps fluent chains returning EbookSaveOptions. */
+    @Override public EbookSaveOptions setEncoding(String encoding) { return (EbookSaveOptions) super.setEncoding(encoding); }
+    /** Covariant override: keeps fluent chains returning EbookSaveOptions. */
+    @Override public EbookSaveOptions setExportActiveWorksheetOnly(Boolean exportActiveWorksheetOnly) { return (EbookSaveOptions) super.setExportActiveWorksheetOnly(exportActiveWorksheetOnly); }
+    /** Covariant override: keeps fluent chains returning EbookSaveOptions. */
+    @Override public EbookSaveOptions setExportChartImageFormat(String exportChartImageFormat) { return (EbookSaveOptions) super.setExportChartImageFormat(exportChartImageFormat); }
+    /** Covariant override: keeps fluent chains returning EbookSaveOptions. */
+    @Override public EbookSaveOptions setExportImagesAsBase64(Boolean exportImagesAsBase64) { return (EbookSaveOptions) super.setExportImagesAsBase64(exportImagesAsBase64); }
+    /** Covariant override: keeps fluent chains returning EbookSaveOptions. */
+    @Override public EbookSaveOptions setHiddenColDisplayType(String hiddenColDisplayType) { return (EbookSaveOptions) super.setHiddenColDisplayType(hiddenColDisplayType); }
+    /** Covariant override: keeps fluent chains returning EbookSaveOptions. */
+    @Override public EbookSaveOptions setHiddenRowDisplayType(String hiddenRowDisplayType) { return (EbookSaveOptions) super.setHiddenRowDisplayType(hiddenRowDisplayType); }
+    /** Covariant override: keeps fluent chains returning EbookSaveOptions. */
+    @Override public EbookSaveOptions setHtmlCrossStringType(String htmlCrossStringType) { return (EbookSaveOptions) super.setHtmlCrossStringType(htmlCrossStringType); }
+    /** Covariant override: keeps fluent chains returning EbookSaveOptions. */
+    @Override public EbookSaveOptions setIsExpImageToTempDir(Boolean isExpImageToTempDir) { return (EbookSaveOptions) super.setIsExpImageToTempDir(isExpImageToTempDir); }
+    /** Covariant override: keeps fluent chains returning EbookSaveOptions. */
+    @Override public EbookSaveOptions setPageTitle(String pageTitle) { return (EbookSaveOptions) super.setPageTitle(pageTitle); }
+    /** Covariant override: keeps fluent chains returning EbookSaveOptions. */
+    @Override public EbookSaveOptions setParseHtmlTagInCell(Boolean parseHtmlTagInCell) { return (EbookSaveOptions) super.setParseHtmlTagInCell(parseHtmlTagInCell); }
+    /** Covariant override: keeps fluent chains returning EbookSaveOptions. */
+    @Override public EbookSaveOptions setCellNameAttribute(String cellNameAttribute) { return (EbookSaveOptions) super.setCellNameAttribute(cellNameAttribute); }
 
 }

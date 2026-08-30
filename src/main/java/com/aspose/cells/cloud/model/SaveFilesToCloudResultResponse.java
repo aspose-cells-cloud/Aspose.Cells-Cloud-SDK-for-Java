@@ -10,21 +10,13 @@ public class SaveFilesToCloudResultResponse extends CellsCloudResponse {
     @JsonProperty("SaveFilesToCloudResult")
     private SaveFilesToCloudResult saveFilesToCloudResult;
 
-    /** Gets or sets Code. */
-    @JsonProperty("Code")
-    private Integer code;
-
-    /** Gets or sets Status. */
-    @JsonProperty("Status")
-    private String status;
-
     public SaveFilesToCloudResult getSaveFilesToCloudResult() { return saveFilesToCloudResult; }
     public SaveFilesToCloudResultResponse setSaveFilesToCloudResult(SaveFilesToCloudResult saveFilesToCloudResult) { this.saveFilesToCloudResult = saveFilesToCloudResult; return this; }
 
-    public Integer getCode() { return code; }
-    public SaveFilesToCloudResultResponse setCode(Integer code) { this.code = code; return this; }
 
-    public String getStatus() { return status; }
-    public SaveFilesToCloudResultResponse setStatus(String status) { this.status = status; return this; }
+    /** Covariant override: keeps fluent chains returning SaveFilesToCloudResultResponse. */
+    @Override public SaveFilesToCloudResultResponse setCode(Integer code) { return (SaveFilesToCloudResultResponse) super.setCode(code); }
+    /** Covariant override: keeps fluent chains returning SaveFilesToCloudResultResponse. */
+    @Override public SaveFilesToCloudResultResponse setStatus(String status) { return (SaveFilesToCloudResultResponse) super.setStatus(status); }
 
 }

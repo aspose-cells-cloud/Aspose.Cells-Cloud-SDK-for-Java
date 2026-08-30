@@ -4,7 +4,6 @@ import com.aspose.cells.cloud.RequestOption;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import static com.aspose.cells.cloud.UrlUtils.urlEncode;
 
 /** AI task decomposition: Convert user objectives to sequential action plans with formatted file export. */
 public class DecomposeUserTaskRequest implements RequestOption {
@@ -27,7 +26,7 @@ public class DecomposeUserTaskRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v4.0/cells/ai/task/decompose";
+        return "/cells/ai/task/decompose";
     }
 
     @Override
@@ -54,4 +53,6 @@ public class DecomposeUserTaskRequest implements RequestOption {
     public Map<String, Object> getMultipartForm() {
         return null;
     }
+
+    @Override public boolean isBinaryResponse() { return true; }
 }

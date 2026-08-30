@@ -42,10 +42,6 @@ public class ChartPoint extends LinkElement {
     @JsonProperty("IsInSecondaryPlot")
     private Boolean isInSecondaryPlot;
 
-    /** Gets or sets link. */
-    @JsonProperty("link")
-    private Link link;
-
     public Area getArea() { return area; }
     public ChartPoint setArea(Area area) { this.area = area; return this; }
 
@@ -73,7 +69,8 @@ public class ChartPoint extends LinkElement {
     public Boolean getIsInSecondaryPlot() { return isInSecondaryPlot; }
     public ChartPoint setIsInSecondaryPlot(Boolean isInSecondaryPlot) { this.isInSecondaryPlot = isInSecondaryPlot; return this; }
 
-    public Link getLink() { return link; }
-    public ChartPoint setLink(Link link) { this.link = link; return this; }
+
+    /** Covariant override: keeps fluent chains returning ChartPoint. */
+    @Override public ChartPoint setLink(Link link) { return (ChartPoint) super.setLink(link); }
 
 }

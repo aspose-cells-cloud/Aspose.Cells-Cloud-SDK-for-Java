@@ -34,10 +34,6 @@ public class Name extends LinkElement {
     @JsonProperty("Text")
     private String text;
 
-    /** Gets or sets link. */
-    @JsonProperty("link")
-    private Link link;
-
     public String getComment() { return comment; }
     public Name setComment(String comment) { this.comment = comment; return this; }
 
@@ -59,7 +55,8 @@ public class Name extends LinkElement {
     public String getText() { return text; }
     public Name setText(String text) { this.text = text; return this; }
 
-    public Link getLink() { return link; }
-    public Name setLink(Link link) { this.link = link; return this; }
+
+    /** Covariant override: keeps fluent chains returning Name. */
+    @Override public Name setLink(Link link) { return (Name) super.setLink(link); }
 
 }

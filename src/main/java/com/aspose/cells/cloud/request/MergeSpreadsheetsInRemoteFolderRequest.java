@@ -4,7 +4,6 @@ import com.aspose.cells.cloud.RequestOption;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import static com.aspose.cells.cloud.UrlUtils.urlEncode;
 
 /** Merge spreadsheet files in folder of cloud storage into a specified format file. */
 public class MergeSpreadsheetsInRemoteFolderRequest implements RequestOption {
@@ -41,7 +40,7 @@ public class MergeSpreadsheetsInRemoteFolderRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v4.0/cells/merge/remote-spreadsheets";
+        return "/cells/merge/remote-spreadsheets";
     }
 
     @Override
@@ -74,4 +73,6 @@ public class MergeSpreadsheetsInRemoteFolderRequest implements RequestOption {
     public Map<String, Object> getMultipartForm() {
         return null;
     }
+
+    @Override public boolean isBinaryResponse() { return true; }
 }

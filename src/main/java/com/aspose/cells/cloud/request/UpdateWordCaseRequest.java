@@ -6,7 +6,6 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import static com.aspose.cells.cloud.UrlUtils.urlEncode;
 
 /** Specify changing the text case in a spreadsheet to switch between uppercase, lowercase, capitalizing the first letter of each word, or capitalizing the first letter of a sentence, and adjust the text according to specific needs. */
 public class UpdateWordCaseRequest implements RequestOption {
@@ -52,7 +51,7 @@ public class UpdateWordCaseRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v4.0/cells/content/wordcase";
+        return "/cells/content/wordcase";
     }
 
     @Override
@@ -86,4 +85,6 @@ public class UpdateWordCaseRequest implements RequestOption {
         form.put("Spreadsheet", spreadsheet);
         return form;
     }
+
+    @Override public boolean isBinaryResponse() { return true; }
 }

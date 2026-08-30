@@ -10,14 +10,11 @@ public class PageSetupOperateParameter extends OperateParameter {
     @JsonProperty("PageSetup")
     private PageSetup pageSetup;
 
-    /** Gets or sets OperateType. */
-    @JsonProperty("OperateType")
-    private String operateType;
-
     public PageSetup getPageSetup() { return pageSetup; }
     public PageSetupOperateParameter setPageSetup(PageSetup pageSetup) { this.pageSetup = pageSetup; return this; }
 
-    public String getOperateType() { return operateType; }
-    public PageSetupOperateParameter setOperateType(String operateType) { this.operateType = operateType; return this; }
+
+    /** Covariant override: keeps fluent chains returning PageSetupOperateParameter. */
+    @Override public PageSetupOperateParameter setOperateType(String operateType) { return (PageSetupOperateParameter) super.setOperateType(operateType); }
 
 }

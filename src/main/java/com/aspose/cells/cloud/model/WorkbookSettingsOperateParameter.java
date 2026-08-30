@@ -10,14 +10,11 @@ public class WorkbookSettingsOperateParameter extends OperateParameter {
     @JsonProperty("WorkbookSettings")
     private WorkbookSettings workbookSettings;
 
-    /** Gets or sets OperateType. */
-    @JsonProperty("OperateType")
-    private String operateType;
-
     public WorkbookSettings getWorkbookSettings() { return workbookSettings; }
     public WorkbookSettingsOperateParameter setWorkbookSettings(WorkbookSettings workbookSettings) { this.workbookSettings = workbookSettings; return this; }
 
-    public String getOperateType() { return operateType; }
-    public WorkbookSettingsOperateParameter setOperateType(String operateType) { this.operateType = operateType; return this; }
+
+    /** Covariant override: keeps fluent chains returning WorkbookSettingsOperateParameter. */
+    @Override public WorkbookSettingsOperateParameter setOperateType(String operateType) { return (WorkbookSettingsOperateParameter) super.setOperateType(operateType); }
 
 }

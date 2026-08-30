@@ -30,46 +30,6 @@ public class TextOptions extends Font {
     @JsonProperty("UnderlineColor")
     private CellsColor underlineColor;
 
-    /** Gets or sets Color. */
-    @JsonProperty("Color")
-    private Color color;
-
-    /** Gets or sets DoubleSize. */
-    @JsonProperty("DoubleSize")
-    private Double doubleSize;
-
-    /** Gets or sets IsBold. */
-    @JsonProperty("IsBold")
-    private Boolean isBold;
-
-    /** Gets or sets IsItalic. */
-    @JsonProperty("IsItalic")
-    private Boolean isItalic;
-
-    /** Gets or sets IsStrikeout. */
-    @JsonProperty("IsStrikeout")
-    private Boolean isStrikeout;
-
-    /** Gets or sets IsSubscript. */
-    @JsonProperty("IsSubscript")
-    private Boolean isSubscript;
-
-    /** Gets or sets IsSuperscript. */
-    @JsonProperty("IsSuperscript")
-    private Boolean isSuperscript;
-
-    /** The class has a public property named "Name" with a getter and setter method. */
-    @JsonProperty("Name")
-    private String name;
-
-    /** Gets or sets Size. */
-    @JsonProperty("Size")
-    private Integer size;
-
-    /** Gets or sets Underline. */
-    @JsonProperty("Underline")
-    private String underline;
-
     public FillFormat getFill() { return fill; }
     public TextOptions setFill(FillFormat fill) { this.fill = fill; return this; }
 
@@ -88,34 +48,26 @@ public class TextOptions extends Font {
     public CellsColor getUnderlineColor() { return underlineColor; }
     public TextOptions setUnderlineColor(CellsColor underlineColor) { this.underlineColor = underlineColor; return this; }
 
-    public Color getColor() { return color; }
-    public TextOptions setColor(Color color) { this.color = color; return this; }
 
-    public Double getDoubleSize() { return doubleSize; }
-    public TextOptions setDoubleSize(Double doubleSize) { this.doubleSize = doubleSize; return this; }
-
-    public Boolean getIsBold() { return isBold; }
-    public TextOptions setIsBold(Boolean isBold) { this.isBold = isBold; return this; }
-
-    public Boolean getIsItalic() { return isItalic; }
-    public TextOptions setIsItalic(Boolean isItalic) { this.isItalic = isItalic; return this; }
-
-    public Boolean getIsStrikeout() { return isStrikeout; }
-    public TextOptions setIsStrikeout(Boolean isStrikeout) { this.isStrikeout = isStrikeout; return this; }
-
-    public Boolean getIsSubscript() { return isSubscript; }
-    public TextOptions setIsSubscript(Boolean isSubscript) { this.isSubscript = isSubscript; return this; }
-
-    public Boolean getIsSuperscript() { return isSuperscript; }
-    public TextOptions setIsSuperscript(Boolean isSuperscript) { this.isSuperscript = isSuperscript; return this; }
-
-    public String getName() { return name; }
-    public TextOptions setName(String name) { this.name = name; return this; }
-
-    public Integer getSize() { return size; }
-    public TextOptions setSize(Integer size) { this.size = size; return this; }
-
-    public String getUnderline() { return underline; }
-    public TextOptions setUnderline(String underline) { this.underline = underline; return this; }
+    /** Covariant override: keeps fluent chains returning TextOptions. */
+    @Override public TextOptions setColor(Color color) { return (TextOptions) super.setColor(color); }
+    /** Covariant override: keeps fluent chains returning TextOptions. */
+    @Override public TextOptions setDoubleSize(Double doubleSize) { return (TextOptions) super.setDoubleSize(doubleSize); }
+    /** Covariant override: keeps fluent chains returning TextOptions. */
+    @Override public TextOptions setIsBold(Boolean isBold) { return (TextOptions) super.setIsBold(isBold); }
+    /** Covariant override: keeps fluent chains returning TextOptions. */
+    @Override public TextOptions setIsItalic(Boolean isItalic) { return (TextOptions) super.setIsItalic(isItalic); }
+    /** Covariant override: keeps fluent chains returning TextOptions. */
+    @Override public TextOptions setIsStrikeout(Boolean isStrikeout) { return (TextOptions) super.setIsStrikeout(isStrikeout); }
+    /** Covariant override: keeps fluent chains returning TextOptions. */
+    @Override public TextOptions setIsSubscript(Boolean isSubscript) { return (TextOptions) super.setIsSubscript(isSubscript); }
+    /** Covariant override: keeps fluent chains returning TextOptions. */
+    @Override public TextOptions setIsSuperscript(Boolean isSuperscript) { return (TextOptions) super.setIsSuperscript(isSuperscript); }
+    /** Covariant override: keeps fluent chains returning TextOptions. */
+    @Override public TextOptions setName(String name) { return (TextOptions) super.setName(name); }
+    /** Covariant override: keeps fluent chains returning TextOptions. */
+    @Override public TextOptions setSize(Integer size) { return (TextOptions) super.setSize(size); }
+    /** Covariant override: keeps fluent chains returning TextOptions. */
+    @Override public TextOptions setUnderline(String underline) { return (TextOptions) super.setUnderline(underline); }
 
 }

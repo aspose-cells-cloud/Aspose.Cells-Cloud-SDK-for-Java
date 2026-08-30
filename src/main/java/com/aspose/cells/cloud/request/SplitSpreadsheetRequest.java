@@ -6,7 +6,6 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import static com.aspose.cells.cloud.UrlUtils.urlEncode;
 
 /** Split a local spreadsheet into the specified format, multi-file. */
 public class SplitSpreadsheetRequest implements RequestOption {
@@ -53,7 +52,7 @@ public class SplitSpreadsheetRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v4.0/cells/split/spreadsheet";
+        return "/cells/split/spreadsheet";
     }
 
     @Override
@@ -88,4 +87,6 @@ public class SplitSpreadsheetRequest implements RequestOption {
         form.put("Spreadsheet", spreadsheet);
         return form;
     }
+
+    @Override public boolean isBinaryResponse() { return true; }
 }

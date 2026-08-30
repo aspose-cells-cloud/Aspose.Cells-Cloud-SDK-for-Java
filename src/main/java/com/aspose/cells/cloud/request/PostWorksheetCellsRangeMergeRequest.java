@@ -34,7 +34,7 @@ public class PostWorksheetCellsRangeMergeRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/" + urlEncode(name) + "/worksheets/" + urlEncode(sheetName) + "/ranges/merge";
+        return "/cells/" + urlEncode(name) + "/worksheets/" + urlEncode(sheetName) + "/ranges/merge";
     }
 
     @Override

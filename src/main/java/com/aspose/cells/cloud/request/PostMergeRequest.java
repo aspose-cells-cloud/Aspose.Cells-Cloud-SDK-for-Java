@@ -6,7 +6,6 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import static com.aspose.cells.cloud.UrlUtils.urlEncode;
 
 /** Merge cells in the worksheet. */
 public class PostMergeRequest implements RequestOption {
@@ -47,7 +46,7 @@ public class PostMergeRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/merge";
+        return "/cells/merge";
     }
 
     @Override

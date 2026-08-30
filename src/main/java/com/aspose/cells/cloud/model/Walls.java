@@ -26,10 +26,6 @@ public class Walls extends Floor {
     @JsonProperty("Width")
     private Integer width;
 
-    /** Gets or sets Border. */
-    @JsonProperty("Border")
-    private Line border;
-
     /** Gets or sets BackgroundColor. */
     @JsonProperty("BackgroundColor")
     private Color backgroundColor;
@@ -69,9 +65,6 @@ public class Walls extends Floor {
     public Integer getWidth() { return width; }
     public Walls setWidth(Integer width) { this.width = width; return this; }
 
-    public Line getBorder() { return border; }
-    public Walls setBorder(Line border) { this.border = border; return this; }
-
     public Color getBackgroundColor() { return backgroundColor; }
     public Walls setBackgroundColor(Color backgroundColor) { this.backgroundColor = backgroundColor; return this; }
 
@@ -89,5 +82,9 @@ public class Walls extends Floor {
 
     public Double getTransparency() { return transparency; }
     public Walls setTransparency(Double transparency) { this.transparency = transparency; return this; }
+
+
+    /** Covariant override: keeps fluent chains returning Walls. */
+    @Override public Walls setBorder(Line border) { return (Walls) super.setBorder(border); }
 
 }

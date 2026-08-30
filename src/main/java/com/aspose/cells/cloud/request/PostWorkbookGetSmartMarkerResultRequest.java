@@ -33,7 +33,7 @@ public class PostWorkbookGetSmartMarkerResultRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/" + urlEncode(name) + "/smartmarker";
+        return "/cells/" + urlEncode(name) + "/smartmarker";
     }
 
     @Override
@@ -61,4 +61,6 @@ public class PostWorkbookGetSmartMarkerResultRequest implements RequestOption {
     public Map<String, Object> getMultipartForm() {
         return null;
     }
+
+    @Override public boolean isBinaryResponse() { return true; }
 }

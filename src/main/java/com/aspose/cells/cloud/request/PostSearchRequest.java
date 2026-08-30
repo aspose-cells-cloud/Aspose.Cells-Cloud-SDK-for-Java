@@ -6,7 +6,6 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import static com.aspose.cells.cloud.UrlUtils.urlEncode;
 
 /** Search for specified text within Excel files. */
 public class PostSearchRequest implements RequestOption {
@@ -46,7 +45,7 @@ public class PostSearchRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/search";
+        return "/cells/search";
     }
 
     @Override

@@ -30,7 +30,7 @@ public class PutActiveWorksheetRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/" + urlEncode(name) + "/worksheets/" + urlEncode(sheetName) + "/active";
+        return "/cells/" + urlEncode(name) + "/worksheets/" + urlEncode(sheetName) + "/active";
     }
 
     @Override

@@ -26,54 +26,6 @@ public class DisplayUnitLabel extends ChartFrame {
     @JsonProperty("TextVerticalAlignment")
     private String textVerticalAlignment;
 
-    /** Gets or sets Area. */
-    @JsonProperty("Area")
-    private Area area;
-
-    /** Gets or sets AutoScaleFont. */
-    @JsonProperty("AutoScaleFont")
-    private Boolean autoScaleFont;
-
-    /** Gets or sets BackgroundMode. */
-    @JsonProperty("BackgroundMode")
-    private String backgroundMode;
-
-    /** Gets or sets Border. */
-    @JsonProperty("Border")
-    private Line border;
-
-    /** Gets or sets Font. */
-    @JsonProperty("Font")
-    private Font font;
-
-    /** Gets or sets IsAutomaticSize. */
-    @JsonProperty("IsAutomaticSize")
-    private Boolean isAutomaticSize;
-
-    /** Gets or sets IsInnerMode. */
-    @JsonProperty("IsInnerMode")
-    private Boolean isInnerMode;
-
-    /** Gets or sets Shadow. */
-    @JsonProperty("Shadow")
-    private Boolean shadow;
-
-    /** Gets or sets Width. */
-    @JsonProperty("Width")
-    private Integer width;
-
-    /** Gets or sets Height. */
-    @JsonProperty("Height")
-    private Integer height;
-
-    /** Gets or sets X. */
-    @JsonProperty("X")
-    private Integer x;
-
-    /** Gets or sets Y. */
-    @JsonProperty("Y")
-    private Integer y;
-
     public String getLinkedSource() { return linkedSource; }
     public DisplayUnitLabel setLinkedSource(String linkedSource) { this.linkedSource = linkedSource; return this; }
 
@@ -89,40 +41,30 @@ public class DisplayUnitLabel extends ChartFrame {
     public String getTextVerticalAlignment() { return textVerticalAlignment; }
     public DisplayUnitLabel setTextVerticalAlignment(String textVerticalAlignment) { this.textVerticalAlignment = textVerticalAlignment; return this; }
 
-    public Area getArea() { return area; }
-    public DisplayUnitLabel setArea(Area area) { this.area = area; return this; }
 
-    public Boolean getAutoScaleFont() { return autoScaleFont; }
-    public DisplayUnitLabel setAutoScaleFont(Boolean autoScaleFont) { this.autoScaleFont = autoScaleFont; return this; }
-
-    public String getBackgroundMode() { return backgroundMode; }
-    public DisplayUnitLabel setBackgroundMode(String backgroundMode) { this.backgroundMode = backgroundMode; return this; }
-
-    public Line getBorder() { return border; }
-    public DisplayUnitLabel setBorder(Line border) { this.border = border; return this; }
-
-    public Font getFont() { return font; }
-    public DisplayUnitLabel setFont(Font font) { this.font = font; return this; }
-
-    public Boolean getIsAutomaticSize() { return isAutomaticSize; }
-    public DisplayUnitLabel setIsAutomaticSize(Boolean isAutomaticSize) { this.isAutomaticSize = isAutomaticSize; return this; }
-
-    public Boolean getIsInnerMode() { return isInnerMode; }
-    public DisplayUnitLabel setIsInnerMode(Boolean isInnerMode) { this.isInnerMode = isInnerMode; return this; }
-
-    public Boolean getShadow() { return shadow; }
-    public DisplayUnitLabel setShadow(Boolean shadow) { this.shadow = shadow; return this; }
-
-    public Integer getWidth() { return width; }
-    public DisplayUnitLabel setWidth(Integer width) { this.width = width; return this; }
-
-    public Integer getHeight() { return height; }
-    public DisplayUnitLabel setHeight(Integer height) { this.height = height; return this; }
-
-    public Integer getX() { return x; }
-    public DisplayUnitLabel setX(Integer x) { this.x = x; return this; }
-
-    public Integer getY() { return y; }
-    public DisplayUnitLabel setY(Integer y) { this.y = y; return this; }
+    /** Covariant override: keeps fluent chains returning DisplayUnitLabel. */
+    @Override public DisplayUnitLabel setArea(Area area) { return (DisplayUnitLabel) super.setArea(area); }
+    /** Covariant override: keeps fluent chains returning DisplayUnitLabel. */
+    @Override public DisplayUnitLabel setAutoScaleFont(Boolean autoScaleFont) { return (DisplayUnitLabel) super.setAutoScaleFont(autoScaleFont); }
+    /** Covariant override: keeps fluent chains returning DisplayUnitLabel. */
+    @Override public DisplayUnitLabel setBackgroundMode(String backgroundMode) { return (DisplayUnitLabel) super.setBackgroundMode(backgroundMode); }
+    /** Covariant override: keeps fluent chains returning DisplayUnitLabel. */
+    @Override public DisplayUnitLabel setBorder(Line border) { return (DisplayUnitLabel) super.setBorder(border); }
+    /** Covariant override: keeps fluent chains returning DisplayUnitLabel. */
+    @Override public DisplayUnitLabel setFont(Font font) { return (DisplayUnitLabel) super.setFont(font); }
+    /** Covariant override: keeps fluent chains returning DisplayUnitLabel. */
+    @Override public DisplayUnitLabel setIsAutomaticSize(Boolean isAutomaticSize) { return (DisplayUnitLabel) super.setIsAutomaticSize(isAutomaticSize); }
+    /** Covariant override: keeps fluent chains returning DisplayUnitLabel. */
+    @Override public DisplayUnitLabel setIsInnerMode(Boolean isInnerMode) { return (DisplayUnitLabel) super.setIsInnerMode(isInnerMode); }
+    /** Covariant override: keeps fluent chains returning DisplayUnitLabel. */
+    @Override public DisplayUnitLabel setShadow(Boolean shadow) { return (DisplayUnitLabel) super.setShadow(shadow); }
+    /** Covariant override: keeps fluent chains returning DisplayUnitLabel. */
+    @Override public DisplayUnitLabel setWidth(Integer width) { return (DisplayUnitLabel) super.setWidth(width); }
+    /** Covariant override: keeps fluent chains returning DisplayUnitLabel. */
+    @Override public DisplayUnitLabel setHeight(Integer height) { return (DisplayUnitLabel) super.setHeight(height); }
+    /** Covariant override: keeps fluent chains returning DisplayUnitLabel. */
+    @Override public DisplayUnitLabel setX(Integer x) { return (DisplayUnitLabel) super.setX(x); }
+    /** Covariant override: keeps fluent chains returning DisplayUnitLabel. */
+    @Override public DisplayUnitLabel setY(Integer y) { return (DisplayUnitLabel) super.setY(y); }
 
 }

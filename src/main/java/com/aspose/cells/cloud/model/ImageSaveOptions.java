@@ -54,58 +54,6 @@ public class ImageSaveOptions extends SaveOptions {
     @JsonProperty("VerticalResolution")
     private Integer verticalResolution;
 
-    /** Gets or sets SaveFormat. */
-    @JsonProperty("SaveFormat")
-    private String saveFormat;
-
-    /** Gets or sets CachedFileFolder. */
-    @JsonProperty("CachedFileFolder")
-    private String cachedFileFolder;
-
-    /** Gets or sets ClearData. */
-    @JsonProperty("ClearData")
-    private Boolean clearData;
-
-    /** Gets or sets CreateDirectory. */
-    @JsonProperty("CreateDirectory")
-    private Boolean createDirectory;
-
-    /** Gets or sets EnableHTTPCompression. */
-    @JsonProperty("EnableHTTPCompression")
-    private Boolean enableHTTPCompression;
-
-    /** Gets or sets RefreshChartCache. */
-    @JsonProperty("RefreshChartCache")
-    private Boolean refreshChartCache;
-
-    /** Gets or sets SortNames. */
-    @JsonProperty("SortNames")
-    private Boolean sortNames;
-
-    /** Gets or sets ValidateMergedAreas. */
-    @JsonProperty("ValidateMergedAreas")
-    private Boolean validateMergedAreas;
-
-    /** Gets or sets MergeAreas. */
-    @JsonProperty("MergeAreas")
-    private Boolean mergeAreas;
-
-    /** Gets or sets SortExternalNames. */
-    @JsonProperty("SortExternalNames")
-    private Boolean sortExternalNames;
-
-    /** Gets or sets CheckExcelRestriction. */
-    @JsonProperty("CheckExcelRestriction")
-    private Boolean checkExcelRestriction;
-
-    /** Gets or sets UpdateSmartArt. */
-    @JsonProperty("UpdateSmartArt")
-    private Boolean updateSmartArt;
-
-    /** Gets or sets EncryptDocumentProperties. */
-    @JsonProperty("EncryptDocumentProperties")
-    private Boolean encryptDocumentProperties;
-
     public String getChartImageType() { return chartImageType; }
     public ImageSaveOptions setChartImageType(String chartImageType) { this.chartImageType = chartImageType; return this; }
 
@@ -142,43 +90,32 @@ public class ImageSaveOptions extends SaveOptions {
     public Integer getVerticalResolution() { return verticalResolution; }
     public ImageSaveOptions setVerticalResolution(Integer verticalResolution) { this.verticalResolution = verticalResolution; return this; }
 
-    public String getSaveFormat() { return saveFormat; }
-    public ImageSaveOptions setSaveFormat(String saveFormat) { this.saveFormat = saveFormat; return this; }
 
-    public String getCachedFileFolder() { return cachedFileFolder; }
-    public ImageSaveOptions setCachedFileFolder(String cachedFileFolder) { this.cachedFileFolder = cachedFileFolder; return this; }
-
-    public Boolean getClearData() { return clearData; }
-    public ImageSaveOptions setClearData(Boolean clearData) { this.clearData = clearData; return this; }
-
-    public Boolean getCreateDirectory() { return createDirectory; }
-    public ImageSaveOptions setCreateDirectory(Boolean createDirectory) { this.createDirectory = createDirectory; return this; }
-
-    public Boolean getEnableHTTPCompression() { return enableHTTPCompression; }
-    public ImageSaveOptions setEnableHTTPCompression(Boolean enableHTTPCompression) { this.enableHTTPCompression = enableHTTPCompression; return this; }
-
-    public Boolean getRefreshChartCache() { return refreshChartCache; }
-    public ImageSaveOptions setRefreshChartCache(Boolean refreshChartCache) { this.refreshChartCache = refreshChartCache; return this; }
-
-    public Boolean getSortNames() { return sortNames; }
-    public ImageSaveOptions setSortNames(Boolean sortNames) { this.sortNames = sortNames; return this; }
-
-    public Boolean getValidateMergedAreas() { return validateMergedAreas; }
-    public ImageSaveOptions setValidateMergedAreas(Boolean validateMergedAreas) { this.validateMergedAreas = validateMergedAreas; return this; }
-
-    public Boolean getMergeAreas() { return mergeAreas; }
-    public ImageSaveOptions setMergeAreas(Boolean mergeAreas) { this.mergeAreas = mergeAreas; return this; }
-
-    public Boolean getSortExternalNames() { return sortExternalNames; }
-    public ImageSaveOptions setSortExternalNames(Boolean sortExternalNames) { this.sortExternalNames = sortExternalNames; return this; }
-
-    public Boolean getCheckExcelRestriction() { return checkExcelRestriction; }
-    public ImageSaveOptions setCheckExcelRestriction(Boolean checkExcelRestriction) { this.checkExcelRestriction = checkExcelRestriction; return this; }
-
-    public Boolean getUpdateSmartArt() { return updateSmartArt; }
-    public ImageSaveOptions setUpdateSmartArt(Boolean updateSmartArt) { this.updateSmartArt = updateSmartArt; return this; }
-
-    public Boolean getEncryptDocumentProperties() { return encryptDocumentProperties; }
-    public ImageSaveOptions setEncryptDocumentProperties(Boolean encryptDocumentProperties) { this.encryptDocumentProperties = encryptDocumentProperties; return this; }
+    /** Covariant override: keeps fluent chains returning ImageSaveOptions. */
+    @Override public ImageSaveOptions setSaveFormat(String saveFormat) { return (ImageSaveOptions) super.setSaveFormat(saveFormat); }
+    /** Covariant override: keeps fluent chains returning ImageSaveOptions. */
+    @Override public ImageSaveOptions setCachedFileFolder(String cachedFileFolder) { return (ImageSaveOptions) super.setCachedFileFolder(cachedFileFolder); }
+    /** Covariant override: keeps fluent chains returning ImageSaveOptions. */
+    @Override public ImageSaveOptions setClearData(Boolean clearData) { return (ImageSaveOptions) super.setClearData(clearData); }
+    /** Covariant override: keeps fluent chains returning ImageSaveOptions. */
+    @Override public ImageSaveOptions setCreateDirectory(Boolean createDirectory) { return (ImageSaveOptions) super.setCreateDirectory(createDirectory); }
+    /** Covariant override: keeps fluent chains returning ImageSaveOptions. */
+    @Override public ImageSaveOptions setEnableHTTPCompression(Boolean enableHTTPCompression) { return (ImageSaveOptions) super.setEnableHTTPCompression(enableHTTPCompression); }
+    /** Covariant override: keeps fluent chains returning ImageSaveOptions. */
+    @Override public ImageSaveOptions setRefreshChartCache(Boolean refreshChartCache) { return (ImageSaveOptions) super.setRefreshChartCache(refreshChartCache); }
+    /** Covariant override: keeps fluent chains returning ImageSaveOptions. */
+    @Override public ImageSaveOptions setSortNames(Boolean sortNames) { return (ImageSaveOptions) super.setSortNames(sortNames); }
+    /** Covariant override: keeps fluent chains returning ImageSaveOptions. */
+    @Override public ImageSaveOptions setValidateMergedAreas(Boolean validateMergedAreas) { return (ImageSaveOptions) super.setValidateMergedAreas(validateMergedAreas); }
+    /** Covariant override: keeps fluent chains returning ImageSaveOptions. */
+    @Override public ImageSaveOptions setMergeAreas(Boolean mergeAreas) { return (ImageSaveOptions) super.setMergeAreas(mergeAreas); }
+    /** Covariant override: keeps fluent chains returning ImageSaveOptions. */
+    @Override public ImageSaveOptions setSortExternalNames(Boolean sortExternalNames) { return (ImageSaveOptions) super.setSortExternalNames(sortExternalNames); }
+    /** Covariant override: keeps fluent chains returning ImageSaveOptions. */
+    @Override public ImageSaveOptions setCheckExcelRestriction(Boolean checkExcelRestriction) { return (ImageSaveOptions) super.setCheckExcelRestriction(checkExcelRestriction); }
+    /** Covariant override: keeps fluent chains returning ImageSaveOptions. */
+    @Override public ImageSaveOptions setUpdateSmartArt(Boolean updateSmartArt) { return (ImageSaveOptions) super.setUpdateSmartArt(updateSmartArt); }
+    /** Covariant override: keeps fluent chains returning ImageSaveOptions. */
+    @Override public ImageSaveOptions setEncryptDocumentProperties(Boolean encryptDocumentProperties) { return (ImageSaveOptions) super.setEncryptDocumentProperties(encryptDocumentProperties); }
 
 }

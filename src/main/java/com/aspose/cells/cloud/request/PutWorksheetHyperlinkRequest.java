@@ -45,7 +45,7 @@ public class PutWorksheetHyperlinkRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/" + urlEncode(name) + "/worksheets/" + urlEncode(sheetName) + "/hyperlinks";
+        return "/cells/" + urlEncode(name) + "/worksheets/" + urlEncode(sheetName) + "/hyperlinks";
     }
 
     @Override

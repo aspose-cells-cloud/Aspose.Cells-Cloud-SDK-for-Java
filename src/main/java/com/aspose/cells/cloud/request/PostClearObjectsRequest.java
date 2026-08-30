@@ -6,7 +6,6 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import static com.aspose.cells.cloud.UrlUtils.urlEncode;
 
 /** Clear internal elements in Excel files and generate output files in various formats. */
 public class PostClearObjectsRequest implements RequestOption {
@@ -50,7 +49,7 @@ public class PostClearObjectsRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/clearobjects";
+        return "/cells/clearobjects";
     }
 
     @Override

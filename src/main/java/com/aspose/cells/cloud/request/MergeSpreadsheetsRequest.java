@@ -6,7 +6,6 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import static com.aspose.cells.cloud.UrlUtils.urlEncode;
 
 /** Merge local spreadsheet files into a specified format file. */
 public class MergeSpreadsheetsRequest implements RequestOption {
@@ -51,7 +50,7 @@ public class MergeSpreadsheetsRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v4.0/cells/merge/spreadsheet";
+        return "/cells/merge/spreadsheet";
     }
 
     @Override
@@ -85,4 +84,6 @@ public class MergeSpreadsheetsRequest implements RequestOption {
         form.put("Spreadsheet", spreadsheet);
         return form;
     }
+
+    @Override public boolean isBinaryResponse() { return true; }
 }

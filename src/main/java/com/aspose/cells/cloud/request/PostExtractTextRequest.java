@@ -5,7 +5,6 @@ import com.aspose.cells.cloud.model.ExtractTextOptions;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import static com.aspose.cells.cloud.UrlUtils.urlEncode;
 
 /** Effortlessly extract text and numbers from Excel cells with precise options. This API allows extraction of first/last characters, text between delimiters, and numbers from strings, with output as static values or formulas. */
 public class PostExtractTextRequest implements RequestOption {
@@ -22,7 +21,7 @@ public class PostExtractTextRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/extracttext";
+        return "/cells/extracttext";
     }
 
     @Override

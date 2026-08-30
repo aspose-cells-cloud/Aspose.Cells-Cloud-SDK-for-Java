@@ -10,21 +10,13 @@ public class CellsDrawingResponse extends CellsCloudResponse {
     @JsonProperty("Shape")
     private CellsDrawing shape;
 
-    /** Gets or sets Code. */
-    @JsonProperty("Code")
-    private Integer code;
-
-    /** Gets or sets Status. */
-    @JsonProperty("Status")
-    private String status;
-
     public CellsDrawing getShape() { return shape; }
     public CellsDrawingResponse setShape(CellsDrawing shape) { this.shape = shape; return this; }
 
-    public Integer getCode() { return code; }
-    public CellsDrawingResponse setCode(Integer code) { this.code = code; return this; }
 
-    public String getStatus() { return status; }
-    public CellsDrawingResponse setStatus(String status) { this.status = status; return this; }
+    /** Covariant override: keeps fluent chains returning CellsDrawingResponse. */
+    @Override public CellsDrawingResponse setCode(Integer code) { return (CellsDrawingResponse) super.setCode(code); }
+    /** Covariant override: keeps fluent chains returning CellsDrawingResponse. */
+    @Override public CellsDrawingResponse setStatus(String status) { return (CellsDrawingResponse) super.setStatus(status); }
 
 }

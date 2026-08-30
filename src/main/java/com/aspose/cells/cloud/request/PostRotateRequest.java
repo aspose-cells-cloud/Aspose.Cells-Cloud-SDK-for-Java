@@ -6,7 +6,6 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import static com.aspose.cells.cloud.UrlUtils.urlEncode;
 
 /** Rotate rows, columns, or other objects in Excel files and save them in various formats. */
 public class PostRotateRequest implements RequestOption {
@@ -48,7 +47,7 @@ public class PostRotateRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/rotate";
+        return "/cells/rotate";
     }
 
     @Override

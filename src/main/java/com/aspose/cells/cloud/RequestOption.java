@@ -37,4 +37,22 @@ public interface RequestOption {
      *         a {@code byte[]}, or any other scalar (sent as a text field).
      */
     Map<String, Object> getMultipartForm();
+
+    /**
+     * @return the multipart form-field name carrying the JSON body (when both a multipart form and a
+     *         JSON body are present). Defaults to {@code "data"}; generated requests whose operation
+     *         declares a body parameter emit the spec's wire name instead.
+     */
+    default String getJsonBodyPartName() {
+        return "data";
+    }
+
+    /**
+     * @return {@code true} when the operation returns a binary stream (a file download/conversion)
+     *         rather than a JSON document. For such operations the client does not force an
+     *         {@code Accept: application/json} header. Defaults to {@code false}.
+     */
+    default boolean isBinaryResponse() {
+        return false;
+    }
 }

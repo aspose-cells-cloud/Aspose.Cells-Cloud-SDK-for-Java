@@ -6,7 +6,6 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import static com.aspose.cells.cloud.UrlUtils.urlEncode;
 
 /** Convert Excel file to Json files. */
 public class PostConvertWorkbookToJsonRequest implements RequestOption {
@@ -45,7 +44,7 @@ public class PostConvertWorkbookToJsonRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/convert/json";
+        return "/cells/convert/json";
     }
 
     @Override

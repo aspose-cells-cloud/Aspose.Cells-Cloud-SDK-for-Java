@@ -6,7 +6,6 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import static com.aspose.cells.cloud.UrlUtils.urlEncode;
 
 /** Fetches a complete list of worksheets from the currently active local spreadsheet. */
 public class GetWorksheetsWithLocalSpreadsheetRequest implements RequestOption {
@@ -41,7 +40,7 @@ public class GetWorksheetsWithLocalSpreadsheetRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v4.0/cells/spreadsheet/worksheets";
+        return "/cells/spreadsheet/worksheets";
     }
 
     @Override

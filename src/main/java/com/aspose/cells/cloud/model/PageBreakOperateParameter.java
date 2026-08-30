@@ -30,10 +30,6 @@ public class PageBreakOperateParameter extends OperateParameter {
     @JsonProperty("EndIndex")
     private Integer endIndex;
 
-    /** Gets or sets OperateType. */
-    @JsonProperty("OperateType")
-    private String operateType;
-
     public String getPageBreakType() { return pageBreakType; }
     public PageBreakOperateParameter setPageBreakType(String pageBreakType) { this.pageBreakType = pageBreakType; return this; }
 
@@ -52,7 +48,8 @@ public class PageBreakOperateParameter extends OperateParameter {
     public Integer getEndIndex() { return endIndex; }
     public PageBreakOperateParameter setEndIndex(Integer endIndex) { this.endIndex = endIndex; return this; }
 
-    public String getOperateType() { return operateType; }
-    public PageBreakOperateParameter setOperateType(String operateType) { this.operateType = operateType; return this; }
+
+    /** Covariant override: keeps fluent chains returning PageBreakOperateParameter. */
+    @Override public PageBreakOperateParameter setOperateType(String operateType) { return (PageBreakOperateParameter) super.setOperateType(operateType); }
 
 }

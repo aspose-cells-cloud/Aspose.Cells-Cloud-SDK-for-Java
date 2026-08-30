@@ -11,14 +11,11 @@ public class TextItems extends LinkElement {
     @JsonProperty("TextItemList")
     private List<TextItem> textItemList;
 
-    /** Gets or sets link. */
-    @JsonProperty("link")
-    private Link link;
-
     public List<TextItem> getTextItemList() { return textItemList; }
     public TextItems setTextItemList(List<TextItem> textItemList) { this.textItemList = textItemList; return this; }
 
-    public Link getLink() { return link; }
-    public TextItems setLink(Link link) { this.link = link; return this; }
+
+    /** Covariant override: keeps fluent chains returning TextItems. */
+    @Override public TextItems setLink(Link link) { return (TextItems) super.setLink(link); }
 
 }

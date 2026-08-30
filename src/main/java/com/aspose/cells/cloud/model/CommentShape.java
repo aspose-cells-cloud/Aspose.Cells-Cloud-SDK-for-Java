@@ -10,150 +10,6 @@ public class CommentShape extends Shape {
     @JsonProperty("Comment")
     private LinkElement comment;
 
-    /** Gets or sets Name. */
-    @JsonProperty("Name")
-    private String name;
-
-    /** Gets or sets MsoDrawingType. */
-    @JsonProperty("MsoDrawingType")
-    private String msoDrawingType;
-
-    /** Gets or sets AutoShapeType. */
-    @JsonProperty("AutoShapeType")
-    private String autoShapeType;
-
-    /** Gets or sets Placement. */
-    @JsonProperty("Placement")
-    private String placement;
-
-    /** Gets or sets UpperLeftRow. */
-    @JsonProperty("UpperLeftRow")
-    private Integer upperLeftRow;
-
-    /** Gets or sets Top. */
-    @JsonProperty("Top")
-    private Integer top;
-
-    /** Gets or sets UpperLeftColumn. */
-    @JsonProperty("UpperLeftColumn")
-    private Integer upperLeftColumn;
-
-    /** Gets or sets Left. */
-    @JsonProperty("Left")
-    private Integer left;
-
-    /** Gets or sets LowerRightRow. */
-    @JsonProperty("LowerRightRow")
-    private Integer lowerRightRow;
-
-    /** Gets or sets Bottom. */
-    @JsonProperty("Bottom")
-    private Integer bottom;
-
-    /** Gets or sets LowerRightColumn. */
-    @JsonProperty("LowerRightColumn")
-    private Integer lowerRightColumn;
-
-    /** Gets or sets Right. */
-    @JsonProperty("Right")
-    private Integer right;
-
-    /** Gets or sets Width. */
-    @JsonProperty("Width")
-    private Integer width;
-
-    /** Gets or sets Height. */
-    @JsonProperty("Height")
-    private Integer height;
-
-    /** Gets or sets X. */
-    @JsonProperty("X")
-    private Integer x;
-
-    /** Gets or sets Y. */
-    @JsonProperty("Y")
-    private Integer y;
-
-    /** Gets or sets RotationAngle. */
-    @JsonProperty("RotationAngle")
-    private Double rotationAngle;
-
-    /** Gets or sets HtmlText. */
-    @JsonProperty("HtmlText")
-    private String htmlText;
-
-    /** Gets or sets Text. */
-    @JsonProperty("Text")
-    private String text;
-
-    /** Gets or sets AlternativeText. */
-    @JsonProperty("AlternativeText")
-    private String alternativeText;
-
-    /** Gets or sets TextHorizontalAlignment. */
-    @JsonProperty("TextHorizontalAlignment")
-    private String textHorizontalAlignment;
-
-    /** Gets or sets TextHorizontalOverflow. */
-    @JsonProperty("TextHorizontalOverflow")
-    private String textHorizontalOverflow;
-
-    /** Gets or sets TextOrientationType. */
-    @JsonProperty("TextOrientationType")
-    private String textOrientationType;
-
-    /** Gets or sets TextVerticalAlignment. */
-    @JsonProperty("TextVerticalAlignment")
-    private String textVerticalAlignment;
-
-    /** Gets or sets TextVerticalOverflow. */
-    @JsonProperty("TextVerticalOverflow")
-    private String textVerticalOverflow;
-
-    /** Gets or sets IsGroup. */
-    @JsonProperty("IsGroup")
-    private Boolean isGroup;
-
-    /** Gets or sets IsHidden. */
-    @JsonProperty("IsHidden")
-    private Boolean isHidden;
-
-    /** Gets or sets IsLockAspectRatio. */
-    @JsonProperty("IsLockAspectRatio")
-    private Boolean isLockAspectRatio;
-
-    /** Gets or sets IsLocked. */
-    @JsonProperty("IsLocked")
-    private Boolean isLocked;
-
-    /** Gets or sets IsPrintable. */
-    @JsonProperty("IsPrintable")
-    private Boolean isPrintable;
-
-    /** Gets or sets IsTextWrapped. */
-    @JsonProperty("IsTextWrapped")
-    private Boolean isTextWrapped;
-
-    /** Gets or sets IsWordArt. */
-    @JsonProperty("IsWordArt")
-    private Boolean isWordArt;
-
-    /** Gets or sets LinkedCell. */
-    @JsonProperty("LinkedCell")
-    private String linkedCell;
-
-    /** Gets or sets ZOrderPosition. */
-    @JsonProperty("ZOrderPosition")
-    private Integer zOrderPosition;
-
-    /** Gets or sets Font. */
-    @JsonProperty("Font")
-    private Font font;
-
-    /** Gets or sets Hyperlink. */
-    @JsonProperty("Hyperlink")
-    private String hyperlink;
-
     /** Gets or sets link. */
     @JsonProperty("link")
     private Link link;
@@ -161,115 +17,81 @@ public class CommentShape extends Shape {
     public LinkElement getComment() { return comment; }
     public CommentShape setComment(LinkElement comment) { this.comment = comment; return this; }
 
-    public String getName() { return name; }
-    public CommentShape setName(String name) { this.name = name; return this; }
-
-    public String getMsoDrawingType() { return msoDrawingType; }
-    public CommentShape setMsoDrawingType(String msoDrawingType) { this.msoDrawingType = msoDrawingType; return this; }
-
-    public String getAutoShapeType() { return autoShapeType; }
-    public CommentShape setAutoShapeType(String autoShapeType) { this.autoShapeType = autoShapeType; return this; }
-
-    public String getPlacement() { return placement; }
-    public CommentShape setPlacement(String placement) { this.placement = placement; return this; }
-
-    public Integer getUpperLeftRow() { return upperLeftRow; }
-    public CommentShape setUpperLeftRow(Integer upperLeftRow) { this.upperLeftRow = upperLeftRow; return this; }
-
-    public Integer getTop() { return top; }
-    public CommentShape setTop(Integer top) { this.top = top; return this; }
-
-    public Integer getUpperLeftColumn() { return upperLeftColumn; }
-    public CommentShape setUpperLeftColumn(Integer upperLeftColumn) { this.upperLeftColumn = upperLeftColumn; return this; }
-
-    public Integer getLeft() { return left; }
-    public CommentShape setLeft(Integer left) { this.left = left; return this; }
-
-    public Integer getLowerRightRow() { return lowerRightRow; }
-    public CommentShape setLowerRightRow(Integer lowerRightRow) { this.lowerRightRow = lowerRightRow; return this; }
-
-    public Integer getBottom() { return bottom; }
-    public CommentShape setBottom(Integer bottom) { this.bottom = bottom; return this; }
-
-    public Integer getLowerRightColumn() { return lowerRightColumn; }
-    public CommentShape setLowerRightColumn(Integer lowerRightColumn) { this.lowerRightColumn = lowerRightColumn; return this; }
-
-    public Integer getRight() { return right; }
-    public CommentShape setRight(Integer right) { this.right = right; return this; }
-
-    public Integer getWidth() { return width; }
-    public CommentShape setWidth(Integer width) { this.width = width; return this; }
-
-    public Integer getHeight() { return height; }
-    public CommentShape setHeight(Integer height) { this.height = height; return this; }
-
-    public Integer getX() { return x; }
-    public CommentShape setX(Integer x) { this.x = x; return this; }
-
-    public Integer getY() { return y; }
-    public CommentShape setY(Integer y) { this.y = y; return this; }
-
-    public Double getRotationAngle() { return rotationAngle; }
-    public CommentShape setRotationAngle(Double rotationAngle) { this.rotationAngle = rotationAngle; return this; }
-
-    public String getHtmlText() { return htmlText; }
-    public CommentShape setHtmlText(String htmlText) { this.htmlText = htmlText; return this; }
-
-    public String getText() { return text; }
-    public CommentShape setText(String text) { this.text = text; return this; }
-
-    public String getAlternativeText() { return alternativeText; }
-    public CommentShape setAlternativeText(String alternativeText) { this.alternativeText = alternativeText; return this; }
-
-    public String getTextHorizontalAlignment() { return textHorizontalAlignment; }
-    public CommentShape setTextHorizontalAlignment(String textHorizontalAlignment) { this.textHorizontalAlignment = textHorizontalAlignment; return this; }
-
-    public String getTextHorizontalOverflow() { return textHorizontalOverflow; }
-    public CommentShape setTextHorizontalOverflow(String textHorizontalOverflow) { this.textHorizontalOverflow = textHorizontalOverflow; return this; }
-
-    public String getTextOrientationType() { return textOrientationType; }
-    public CommentShape setTextOrientationType(String textOrientationType) { this.textOrientationType = textOrientationType; return this; }
-
-    public String getTextVerticalAlignment() { return textVerticalAlignment; }
-    public CommentShape setTextVerticalAlignment(String textVerticalAlignment) { this.textVerticalAlignment = textVerticalAlignment; return this; }
-
-    public String getTextVerticalOverflow() { return textVerticalOverflow; }
-    public CommentShape setTextVerticalOverflow(String textVerticalOverflow) { this.textVerticalOverflow = textVerticalOverflow; return this; }
-
-    public Boolean getIsGroup() { return isGroup; }
-    public CommentShape setIsGroup(Boolean isGroup) { this.isGroup = isGroup; return this; }
-
-    public Boolean getIsHidden() { return isHidden; }
-    public CommentShape setIsHidden(Boolean isHidden) { this.isHidden = isHidden; return this; }
-
-    public Boolean getIsLockAspectRatio() { return isLockAspectRatio; }
-    public CommentShape setIsLockAspectRatio(Boolean isLockAspectRatio) { this.isLockAspectRatio = isLockAspectRatio; return this; }
-
-    public Boolean getIsLocked() { return isLocked; }
-    public CommentShape setIsLocked(Boolean isLocked) { this.isLocked = isLocked; return this; }
-
-    public Boolean getIsPrintable() { return isPrintable; }
-    public CommentShape setIsPrintable(Boolean isPrintable) { this.isPrintable = isPrintable; return this; }
-
-    public Boolean getIsTextWrapped() { return isTextWrapped; }
-    public CommentShape setIsTextWrapped(Boolean isTextWrapped) { this.isTextWrapped = isTextWrapped; return this; }
-
-    public Boolean getIsWordArt() { return isWordArt; }
-    public CommentShape setIsWordArt(Boolean isWordArt) { this.isWordArt = isWordArt; return this; }
-
-    public String getLinkedCell() { return linkedCell; }
-    public CommentShape setLinkedCell(String linkedCell) { this.linkedCell = linkedCell; return this; }
-
-    public Integer getZOrderPosition() { return zOrderPosition; }
-    public CommentShape setZOrderPosition(Integer zOrderPosition) { this.zOrderPosition = zOrderPosition; return this; }
-
-    public Font getFont() { return font; }
-    public CommentShape setFont(Font font) { this.font = font; return this; }
-
-    public String getHyperlink() { return hyperlink; }
-    public CommentShape setHyperlink(String hyperlink) { this.hyperlink = hyperlink; return this; }
-
     public Link getLink() { return link; }
     public CommentShape setLink(Link link) { this.link = link; return this; }
+
+
+    /** Covariant override: keeps fluent chains returning CommentShape. */
+    @Override public CommentShape setName(String name) { return (CommentShape) super.setName(name); }
+    /** Covariant override: keeps fluent chains returning CommentShape. */
+    @Override public CommentShape setMsoDrawingType(String msoDrawingType) { return (CommentShape) super.setMsoDrawingType(msoDrawingType); }
+    /** Covariant override: keeps fluent chains returning CommentShape. */
+    @Override public CommentShape setAutoShapeType(String autoShapeType) { return (CommentShape) super.setAutoShapeType(autoShapeType); }
+    /** Covariant override: keeps fluent chains returning CommentShape. */
+    @Override public CommentShape setPlacement(String placement) { return (CommentShape) super.setPlacement(placement); }
+    /** Covariant override: keeps fluent chains returning CommentShape. */
+    @Override public CommentShape setUpperLeftRow(Integer upperLeftRow) { return (CommentShape) super.setUpperLeftRow(upperLeftRow); }
+    /** Covariant override: keeps fluent chains returning CommentShape. */
+    @Override public CommentShape setTop(Integer top) { return (CommentShape) super.setTop(top); }
+    /** Covariant override: keeps fluent chains returning CommentShape. */
+    @Override public CommentShape setUpperLeftColumn(Integer upperLeftColumn) { return (CommentShape) super.setUpperLeftColumn(upperLeftColumn); }
+    /** Covariant override: keeps fluent chains returning CommentShape. */
+    @Override public CommentShape setLeft(Integer left) { return (CommentShape) super.setLeft(left); }
+    /** Covariant override: keeps fluent chains returning CommentShape. */
+    @Override public CommentShape setLowerRightRow(Integer lowerRightRow) { return (CommentShape) super.setLowerRightRow(lowerRightRow); }
+    /** Covariant override: keeps fluent chains returning CommentShape. */
+    @Override public CommentShape setBottom(Integer bottom) { return (CommentShape) super.setBottom(bottom); }
+    /** Covariant override: keeps fluent chains returning CommentShape. */
+    @Override public CommentShape setLowerRightColumn(Integer lowerRightColumn) { return (CommentShape) super.setLowerRightColumn(lowerRightColumn); }
+    /** Covariant override: keeps fluent chains returning CommentShape. */
+    @Override public CommentShape setRight(Integer right) { return (CommentShape) super.setRight(right); }
+    /** Covariant override: keeps fluent chains returning CommentShape. */
+    @Override public CommentShape setWidth(Integer width) { return (CommentShape) super.setWidth(width); }
+    /** Covariant override: keeps fluent chains returning CommentShape. */
+    @Override public CommentShape setHeight(Integer height) { return (CommentShape) super.setHeight(height); }
+    /** Covariant override: keeps fluent chains returning CommentShape. */
+    @Override public CommentShape setX(Integer x) { return (CommentShape) super.setX(x); }
+    /** Covariant override: keeps fluent chains returning CommentShape. */
+    @Override public CommentShape setY(Integer y) { return (CommentShape) super.setY(y); }
+    /** Covariant override: keeps fluent chains returning CommentShape. */
+    @Override public CommentShape setRotationAngle(Double rotationAngle) { return (CommentShape) super.setRotationAngle(rotationAngle); }
+    /** Covariant override: keeps fluent chains returning CommentShape. */
+    @Override public CommentShape setHtmlText(String htmlText) { return (CommentShape) super.setHtmlText(htmlText); }
+    /** Covariant override: keeps fluent chains returning CommentShape. */
+    @Override public CommentShape setText(String text) { return (CommentShape) super.setText(text); }
+    /** Covariant override: keeps fluent chains returning CommentShape. */
+    @Override public CommentShape setAlternativeText(String alternativeText) { return (CommentShape) super.setAlternativeText(alternativeText); }
+    /** Covariant override: keeps fluent chains returning CommentShape. */
+    @Override public CommentShape setTextHorizontalAlignment(String textHorizontalAlignment) { return (CommentShape) super.setTextHorizontalAlignment(textHorizontalAlignment); }
+    /** Covariant override: keeps fluent chains returning CommentShape. */
+    @Override public CommentShape setTextHorizontalOverflow(String textHorizontalOverflow) { return (CommentShape) super.setTextHorizontalOverflow(textHorizontalOverflow); }
+    /** Covariant override: keeps fluent chains returning CommentShape. */
+    @Override public CommentShape setTextOrientationType(String textOrientationType) { return (CommentShape) super.setTextOrientationType(textOrientationType); }
+    /** Covariant override: keeps fluent chains returning CommentShape. */
+    @Override public CommentShape setTextVerticalAlignment(String textVerticalAlignment) { return (CommentShape) super.setTextVerticalAlignment(textVerticalAlignment); }
+    /** Covariant override: keeps fluent chains returning CommentShape. */
+    @Override public CommentShape setTextVerticalOverflow(String textVerticalOverflow) { return (CommentShape) super.setTextVerticalOverflow(textVerticalOverflow); }
+    /** Covariant override: keeps fluent chains returning CommentShape. */
+    @Override public CommentShape setIsGroup(Boolean isGroup) { return (CommentShape) super.setIsGroup(isGroup); }
+    /** Covariant override: keeps fluent chains returning CommentShape. */
+    @Override public CommentShape setIsHidden(Boolean isHidden) { return (CommentShape) super.setIsHidden(isHidden); }
+    /** Covariant override: keeps fluent chains returning CommentShape. */
+    @Override public CommentShape setIsLockAspectRatio(Boolean isLockAspectRatio) { return (CommentShape) super.setIsLockAspectRatio(isLockAspectRatio); }
+    /** Covariant override: keeps fluent chains returning CommentShape. */
+    @Override public CommentShape setIsLocked(Boolean isLocked) { return (CommentShape) super.setIsLocked(isLocked); }
+    /** Covariant override: keeps fluent chains returning CommentShape. */
+    @Override public CommentShape setIsPrintable(Boolean isPrintable) { return (CommentShape) super.setIsPrintable(isPrintable); }
+    /** Covariant override: keeps fluent chains returning CommentShape. */
+    @Override public CommentShape setIsTextWrapped(Boolean isTextWrapped) { return (CommentShape) super.setIsTextWrapped(isTextWrapped); }
+    /** Covariant override: keeps fluent chains returning CommentShape. */
+    @Override public CommentShape setIsWordArt(Boolean isWordArt) { return (CommentShape) super.setIsWordArt(isWordArt); }
+    /** Covariant override: keeps fluent chains returning CommentShape. */
+    @Override public CommentShape setLinkedCell(String linkedCell) { return (CommentShape) super.setLinkedCell(linkedCell); }
+    /** Covariant override: keeps fluent chains returning CommentShape. */
+    @Override public CommentShape setZOrderPosition(Integer zOrderPosition) { return (CommentShape) super.setZOrderPosition(zOrderPosition); }
+    /** Covariant override: keeps fluent chains returning CommentShape. */
+    @Override public CommentShape setFont(Font font) { return (CommentShape) super.setFont(font); }
+    /** Covariant override: keeps fluent chains returning CommentShape. */
+    @Override public CommentShape setHyperlink(String hyperlink) { return (CommentShape) super.setHyperlink(hyperlink); }
 
 }

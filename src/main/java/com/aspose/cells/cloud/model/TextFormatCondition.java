@@ -10,28 +10,15 @@ public class TextFormatCondition extends FormulaFormatCondition {
     @JsonProperty("Text")
     private String text;
 
-    /** Gets or sets Formula1. */
-    @JsonProperty("Formula1")
-    private String formula1;
-
-    /** Gets or sets Formula2. */
-    @JsonProperty("Formula2")
-    private String formula2;
-
-    /** Gets or sets Operator. */
-    @JsonProperty("Operator")
-    private String operator;
-
     public String getText() { return text; }
     public TextFormatCondition setText(String text) { this.text = text; return this; }
 
-    public String getFormula1() { return formula1; }
-    public TextFormatCondition setFormula1(String formula1) { this.formula1 = formula1; return this; }
 
-    public String getFormula2() { return formula2; }
-    public TextFormatCondition setFormula2(String formula2) { this.formula2 = formula2; return this; }
-
-    public String getOperator() { return operator; }
-    public TextFormatCondition setOperator(String operator) { this.operator = operator; return this; }
+    /** Covariant override: keeps fluent chains returning TextFormatCondition. */
+    @Override public TextFormatCondition setFormula1(String formula1) { return (TextFormatCondition) super.setFormula1(formula1); }
+    /** Covariant override: keeps fluent chains returning TextFormatCondition. */
+    @Override public TextFormatCondition setFormula2(String formula2) { return (TextFormatCondition) super.setFormula2(formula2); }
+    /** Covariant override: keeps fluent chains returning TextFormatCondition. */
+    @Override public TextFormatCondition setOperator(String operator) { return (TextFormatCondition) super.setOperator(operator); }
 
 }

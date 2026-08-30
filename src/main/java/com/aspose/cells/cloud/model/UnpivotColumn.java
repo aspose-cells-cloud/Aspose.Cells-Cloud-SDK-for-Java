@@ -19,10 +19,6 @@ public class UnpivotColumn extends AppliedOperate {
     @JsonProperty("ValueMapName")
     private String valueMapName;
 
-    /** Gets or sets AppliedOperateType. */
-    @JsonProperty("AppliedOperateType")
-    private String appliedOperateType;
-
     public List<String> getUnpivotColumnNames() { return unpivotColumnNames; }
     public UnpivotColumn setUnpivotColumnNames(List<String> unpivotColumnNames) { this.unpivotColumnNames = unpivotColumnNames; return this; }
 
@@ -32,7 +28,8 @@ public class UnpivotColumn extends AppliedOperate {
     public String getValueMapName() { return valueMapName; }
     public UnpivotColumn setValueMapName(String valueMapName) { this.valueMapName = valueMapName; return this; }
 
-    public String getAppliedOperateType() { return appliedOperateType; }
-    public UnpivotColumn setAppliedOperateType(String appliedOperateType) { this.appliedOperateType = appliedOperateType; return this; }
+
+    /** Covariant override: keeps fluent chains returning UnpivotColumn. */
+    @Override public UnpivotColumn setAppliedOperateType(String appliedOperateType) { return (UnpivotColumn) super.setAppliedOperateType(appliedOperateType); }
 
 }

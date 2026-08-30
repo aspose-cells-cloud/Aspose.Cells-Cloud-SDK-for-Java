@@ -6,7 +6,6 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import static com.aspose.cells.cloud.UrlUtils.urlEncode;
 
 /** Indicates converting the numbers stored as text into the correct number format, replacing unwanted characters and line breaks with the desired characters, and converting accented characters to their equivalent characters without accents. */
 public class ConvertTextRequest implements RequestOption {
@@ -56,7 +55,7 @@ public class ConvertTextRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v4.0/cells/content/convert/text";
+        return "/cells/content/convert/text";
     }
 
     @Override
@@ -92,4 +91,6 @@ public class ConvertTextRequest implements RequestOption {
         form.put("Spreadsheet", spreadsheet);
         return form;
     }
+
+    @Override public boolean isBinaryResponse() { return true; }
 }

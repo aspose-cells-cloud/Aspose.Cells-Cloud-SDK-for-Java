@@ -1,10 +1,7 @@
 package com.aspose.cells.cloud;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.DeserializationFeature;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.fasterxml.jackson.datatype.jsr310.JavaTimeModule;
 import okhttp3.FormBody;
 import okhttp3.HttpUrl;
 import okhttp3.MediaType;
@@ -39,13 +36,10 @@ public class CellsCloudClient {
     private static final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
     private static final MediaType OCTET_STREAM = MediaType.parse("application/octet-stream");
 
-    private static final ObjectMapper MAPPER = new ObjectMapper()
-            .registerModule(new JavaTimeModule())
-            .setSerializationInclusion(JsonInclude.Include.NON_NULL)
-            .configure(DeserializationFeature.FAIL_ON_UNKNOWN_PROPERTIES, false);
+    private static final ObjectMapper MAPPER = JsonUtil.MAPPER;
 
     private final Configuration configuration;
-    private final OkHttpClient httpClient;
+    private volatile OkHttpClient httpClient;
 
     private volatile String accessToken;
     private volatile long tokenExpiryMillis;
@@ -58,17 +52,37 @@ public class CellsCloudClient {
      * @param baseUrl      the API base URL (e.g. {@code https://api.aspose.cloud})
      */
     public CellsCloudClient(String clientId, String clientSecret, String baseUrl) {
+        this(clientId, clientSecret, baseUrl, null);
+    }
+
+    /**
+     * Creates a client bound to the given credentials, base URL, and an externally-built HTTP client.
+     *
+     * <p>Passing your own {@link OkHttpClient} is the analog of the Go SDK's {@code WithHTTPClient}:
+     * it lets callers supply a custom {@code Transport} for mTLS, tracing, proxies, or test mocks.
+     * The OAuth2 token request and every API request run through this same client, so its timeouts,
+     * connection pool, and dispatcher apply to token refresh as well.</p>
+     *
+     * @param clientId     the OAuth2 client id
+     * @param clientSecret the OAuth2 client secret
+     * @param baseUrl      the API base URL (e.g. {@code https://api.aspose.cloud})
+     * @param httpClient   the HTTP client to use, or {@code null} to build a default one from the
+     *                     {@link Configuration#getTimeout() timeout}
+     */
+    public CellsCloudClient(String clientId, String clientSecret, String baseUrl, OkHttpClient httpClient) {
         this.configuration = new Configuration();
         this.configuration.setClientId(clientId);
         this.configuration.setClientSecret(clientSecret);
         if (baseUrl != null && !baseUrl.isEmpty()) {
             this.configuration.setBaseUrl(baseUrl);
         }
-        this.httpClient = new OkHttpClient.Builder()
-                .connectTimeout(configuration.getTimeout().toMillis(), TimeUnit.MILLISECONDS)
-                .readTimeout(configuration.getTimeout().toMillis(), TimeUnit.MILLISECONDS)
-                .writeTimeout(configuration.getTimeout().toMillis(), TimeUnit.MILLISECONDS)
-                .build();
+        this.httpClient = httpClient != null
+                ? httpClient
+                : new OkHttpClient.Builder()
+                        .connectTimeout(configuration.getTimeout().toMillis(), TimeUnit.MILLISECONDS)
+                        .readTimeout(configuration.getTimeout().toMillis(), TimeUnit.MILLISECONDS)
+                        .writeTimeout(configuration.getTimeout().toMillis(), TimeUnit.MILLISECONDS)
+                        .build();
     }
 
     /** @return the underlying configuration. */
@@ -76,9 +90,24 @@ public class CellsCloudClient {
         return configuration;
     }
 
-    /** Fluent setter for the request timeout. */
+    /**
+     * Fluent setter for the request timeout.
+     *
+     * <p>Rebuilds the underlying {@link OkHttpClient} with the new timeout. The builder is derived from
+     * the existing client via {@code newBuilder()} so the connection pool and dispatcher are preserved —
+     * no socket or thread-pool leaks.</p>
+     */
     public CellsCloudClient setTimeout(Duration timeout) {
+        if (timeout == null) {
+            throw new IllegalArgumentException("timeout must not be null");
+        }
         configuration.setTimeout(timeout);
+        long millis = timeout.toMillis();
+        this.httpClient = this.httpClient.newBuilder()
+                .connectTimeout(millis, TimeUnit.MILLISECONDS)
+                .readTimeout(millis, TimeUnit.MILLISECONDS)
+                .writeTimeout(millis, TimeUnit.MILLISECONDS)
+                .build();
         return this;
     }
 
@@ -107,6 +136,9 @@ public class CellsCloudClient {
      * @throws ApiException on the first failure
      */
     public RichResponse[] call(RequestOption... requests) throws ApiException {
+        if (requests.length == 0) {
+            throw new IllegalArgumentException("at least one request is required");
+        }
         RichResponse[] responses = new RichResponse[requests.length];
         for (int i = 0; i < requests.length; i++) {
             responses[i] = execute(requests[i], configuration.getRetries());
@@ -126,7 +158,9 @@ public class CellsCloudClient {
                 builder.get();
                 break;
             case "DELETE":
-                builder.delete();
+                // Some DELETE operations carry a body (e.g. PostBatchLock batch requests); buildBody
+                // returns an empty body when there is nothing to send.
+                builder.delete(buildBody(requestOption));
                 break;
             case "POST":
                 builder.post(buildBody(requestOption));
@@ -143,6 +177,11 @@ public class CellsCloudClient {
             Map<String, List<String>> headers = toHeaderMap(response);
             int code = response.code();
 
+            if ((code >= 500 || code == 429) && retriesLeft > 0) {
+                // Transient server error or rate limit — retry within the configured retry budget,
+                // honoring the server's Retry-After hint when one is present.
+                return retry(requestOption, retriesLeft - 1, response.header("Retry-After"));
+            }
             if (code >= 400) {
                 throw new ApiException(code, "HTTP " + code + ": " + new String(body, java.nio.charset.StandardCharsets.UTF_8));
             }
@@ -150,12 +189,40 @@ public class CellsCloudClient {
         } catch (ApiException e) {
             throw e;
         } catch (IOException e) {
-            // Retry transient transport failures.
+            // Retry transient transport failures (network/timeouts), not deterministic errors.
             if (retriesLeft > 0) {
-                return execute(requestOption, retriesLeft - 1);
+                return retry(requestOption, retriesLeft - 1, null);
             }
             throw new ApiException("Request failed: " + e.getMessage(), e);
         }
+    }
+
+    /**
+     * Backs off exponentially (100 ms, 200 ms, 400 ms, ... capped at 4 s) before retrying. When the
+     * server supplied a {@code Retry-After} header the delay never backs off less than that value
+     * (capped at 60 s so a broken value cannot block the thread indefinitely). The sleep is
+     * interrupt-aware: cancelling the calling thread (e.g. {@code Future.cancel(true)}) aborts the
+     * retry instead of blocking forever.
+     */
+    private RichResponse retry(RequestOption requestOption, int retriesLeft, String retryAfterHeader)
+            throws ApiException {
+        int attempt = configuration.getRetries() - retriesLeft - 1;
+        long delayMs = Math.min(100L << attempt, 4000L);
+        if (retryAfterHeader != null) {
+            try {
+                long serverDelay = Math.min(Long.parseLong(retryAfterHeader.trim()) * 1000L, 60_000L);
+                delayMs = Math.max(delayMs, serverDelay);
+            } catch (NumberFormatException ignored) {
+                // Not a seconds value — fall back to the exponential schedule.
+            }
+        }
+        try {
+            Thread.sleep(delayMs);
+        } catch (InterruptedException e) {
+            Thread.currentThread().interrupt();
+            throw new ApiException("Operation cancelled during retry backoff", e);
+        }
+        return execute(requestOption, retriesLeft);
     }
 
     private RequestBody buildBody(RequestOption requestOption) {
@@ -185,7 +252,10 @@ public class CellsCloudClient {
             }
             Object jsonBody = requestOption.getJsonBody();
             if (jsonBody != null) {
-                mb.addFormDataPart("data", toJson(jsonBody));
+                // The JSON body is a real JSON document — mark the part as application/json rather
+                // than the default text/plain OkHttp applies to addFormDataPart(name, value).
+                mb.addFormDataPart(requestOption.getJsonBodyPartName(), null,
+                        RequestBody.create(toJson(jsonBody), JSON));
             }
             return mb.build();
         }
@@ -198,13 +268,28 @@ public class CellsCloudClient {
     }
 
     private String buildUrl(RequestOption requestOption) {
-        // The request path already carries the per-operation API version segment (e.g. /v3.0/cells/...).
         String base = configuration.getBaseUrl();
+        if (base == null || base.isEmpty()) {
+            throw new ApiException("Configuration baseUrl is not set");
+        }
         if (base.endsWith("/")) {
             base = base.substring(0, base.length() - 1);
         }
-        String apiUrl = base + requestOption.getPath();
-        HttpUrl.Builder builder = HttpUrl.parse(apiUrl).newBuilder();
+        // The API version is a property of the operation (getApiVersion); the path returned by
+        // getPath() is version-less, so the version segment is assembled here exactly once per
+        // request. There is a single source of truth for the version string.
+        String version = requestOption.getApiVersion();
+        if (version == null || version.isEmpty()) {
+            throw new ApiException("Request " + requestOption.getClass().getSimpleName()
+                    + " did not provide an API version");
+        }
+        String path = requestOption.getPath();
+        String apiUrl = base + "/" + version + (path.startsWith("/") ? path : "/" + path);
+        HttpUrl parsed = HttpUrl.parse(apiUrl);
+        if (parsed == null) {
+            throw new ApiException("Invalid request URL: " + apiUrl);
+        }
+        HttpUrl.Builder builder = parsed.newBuilder();
         Map<String, String> query = requestOption.getQueryParameters();
         if (query != null) {
             for (Map.Entry<String, String> entry : query.entrySet()) {
@@ -218,7 +303,12 @@ public class CellsCloudClient {
 
     private void applyHeaders(Request.Builder builder, RequestOption requestOption) {
         builder.header("Authorization", "Bearer " + accessToken);
-        builder.header("Accept", "application/json");
+        if (!requestOption.isBinaryResponse()) {
+            // Binary endpoints (file downloads/conversions) stream the raw file; forcing
+            // application/json can make the server wrap or reject the response. A user-supplied
+            // Accept header still wins because it is applied below, after this default.
+            builder.header("Accept", "application/json");
+        }
         for (Map.Entry<String, String> header : configuration.getHeaderParameters().entrySet()) {
             builder.header(header.getKey(), header.getValue());
         }
@@ -279,10 +369,19 @@ public class CellsCloudClient {
             Map<String, Object> token = MAPPER.readValue(body, new TypeReference<Map<String, Object>>() {
             });
             accessToken = (String) token.get("access_token");
+            if (accessToken == null || accessToken.isEmpty()) {
+                throw new ApiException("OAuth2 token response did not include a non-empty access_token");
+            }
             Object expiresIn = token.get("expires_in");
             long expiresSeconds = expiresIn instanceof Number ? ((Number) expiresIn).longValue() : 3600L;
-            // Refresh a bit early to avoid racing an in-flight request against an expiring token.
-            tokenExpiryMillis = System.currentTimeMillis() + (expiresSeconds - 60L) * 1000L;
+            // Refresh a bit early to avoid racing an in-flight request against an expiring token. For
+            // short-lived tokens (some test/edge servers return small expires_in) the margin could go
+            // negative, which would force a re-authentication on every request — clamp it away.
+            long ttlSeconds = expiresSeconds - 60L;
+            if (ttlSeconds < 1L) {
+                ttlSeconds = Math.max(expiresSeconds, 1L);
+            }
+            tokenExpiryMillis = System.currentTimeMillis() + ttlSeconds * 1000L;
         } catch (ApiException e) {
             throw e;
         } catch (IOException e) {

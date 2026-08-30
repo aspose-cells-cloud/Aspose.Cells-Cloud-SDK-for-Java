@@ -78,46 +78,6 @@ public class PaginatedSaveOptions extends SaveOptions {
     @JsonProperty("UpdateSmartArt")
     private Boolean updateSmartArt;
 
-    /** Gets or sets SaveFormat. */
-    @JsonProperty("SaveFormat")
-    private String saveFormat;
-
-    /** Gets or sets CachedFileFolder. */
-    @JsonProperty("CachedFileFolder")
-    private String cachedFileFolder;
-
-    /** Gets or sets ClearData. */
-    @JsonProperty("ClearData")
-    private Boolean clearData;
-
-    /** Gets or sets CreateDirectory. */
-    @JsonProperty("CreateDirectory")
-    private Boolean createDirectory;
-
-    /** Gets or sets EnableHTTPCompression. */
-    @JsonProperty("EnableHTTPCompression")
-    private Boolean enableHTTPCompression;
-
-    /** Gets or sets RefreshChartCache. */
-    @JsonProperty("RefreshChartCache")
-    private Boolean refreshChartCache;
-
-    /** Gets or sets SortNames. */
-    @JsonProperty("SortNames")
-    private Boolean sortNames;
-
-    /** Gets or sets ValidateMergedAreas. */
-    @JsonProperty("ValidateMergedAreas")
-    private Boolean validateMergedAreas;
-
-    /** Gets or sets CheckExcelRestriction. */
-    @JsonProperty("CheckExcelRestriction")
-    private Boolean checkExcelRestriction;
-
-    /** Gets or sets EncryptDocumentProperties. */
-    @JsonProperty("EncryptDocumentProperties")
-    private Boolean encryptDocumentProperties;
-
     public String getDefaultFont() { return defaultFont; }
     public PaginatedSaveOptions setDefaultFont(String defaultFont) { this.defaultFont = defaultFont; return this; }
 
@@ -172,34 +132,26 @@ public class PaginatedSaveOptions extends SaveOptions {
     public Boolean getUpdateSmartArt() { return updateSmartArt; }
     public PaginatedSaveOptions setUpdateSmartArt(Boolean updateSmartArt) { this.updateSmartArt = updateSmartArt; return this; }
 
-    public String getSaveFormat() { return saveFormat; }
-    public PaginatedSaveOptions setSaveFormat(String saveFormat) { this.saveFormat = saveFormat; return this; }
 
-    public String getCachedFileFolder() { return cachedFileFolder; }
-    public PaginatedSaveOptions setCachedFileFolder(String cachedFileFolder) { this.cachedFileFolder = cachedFileFolder; return this; }
-
-    public Boolean getClearData() { return clearData; }
-    public PaginatedSaveOptions setClearData(Boolean clearData) { this.clearData = clearData; return this; }
-
-    public Boolean getCreateDirectory() { return createDirectory; }
-    public PaginatedSaveOptions setCreateDirectory(Boolean createDirectory) { this.createDirectory = createDirectory; return this; }
-
-    public Boolean getEnableHTTPCompression() { return enableHTTPCompression; }
-    public PaginatedSaveOptions setEnableHTTPCompression(Boolean enableHTTPCompression) { this.enableHTTPCompression = enableHTTPCompression; return this; }
-
-    public Boolean getRefreshChartCache() { return refreshChartCache; }
-    public PaginatedSaveOptions setRefreshChartCache(Boolean refreshChartCache) { this.refreshChartCache = refreshChartCache; return this; }
-
-    public Boolean getSortNames() { return sortNames; }
-    public PaginatedSaveOptions setSortNames(Boolean sortNames) { this.sortNames = sortNames; return this; }
-
-    public Boolean getValidateMergedAreas() { return validateMergedAreas; }
-    public PaginatedSaveOptions setValidateMergedAreas(Boolean validateMergedAreas) { this.validateMergedAreas = validateMergedAreas; return this; }
-
-    public Boolean getCheckExcelRestriction() { return checkExcelRestriction; }
-    public PaginatedSaveOptions setCheckExcelRestriction(Boolean checkExcelRestriction) { this.checkExcelRestriction = checkExcelRestriction; return this; }
-
-    public Boolean getEncryptDocumentProperties() { return encryptDocumentProperties; }
-    public PaginatedSaveOptions setEncryptDocumentProperties(Boolean encryptDocumentProperties) { this.encryptDocumentProperties = encryptDocumentProperties; return this; }
+    /** Covariant override: keeps fluent chains returning PaginatedSaveOptions. */
+    @Override public PaginatedSaveOptions setSaveFormat(String saveFormat) { return (PaginatedSaveOptions) super.setSaveFormat(saveFormat); }
+    /** Covariant override: keeps fluent chains returning PaginatedSaveOptions. */
+    @Override public PaginatedSaveOptions setCachedFileFolder(String cachedFileFolder) { return (PaginatedSaveOptions) super.setCachedFileFolder(cachedFileFolder); }
+    /** Covariant override: keeps fluent chains returning PaginatedSaveOptions. */
+    @Override public PaginatedSaveOptions setClearData(Boolean clearData) { return (PaginatedSaveOptions) super.setClearData(clearData); }
+    /** Covariant override: keeps fluent chains returning PaginatedSaveOptions. */
+    @Override public PaginatedSaveOptions setCreateDirectory(Boolean createDirectory) { return (PaginatedSaveOptions) super.setCreateDirectory(createDirectory); }
+    /** Covariant override: keeps fluent chains returning PaginatedSaveOptions. */
+    @Override public PaginatedSaveOptions setEnableHTTPCompression(Boolean enableHTTPCompression) { return (PaginatedSaveOptions) super.setEnableHTTPCompression(enableHTTPCompression); }
+    /** Covariant override: keeps fluent chains returning PaginatedSaveOptions. */
+    @Override public PaginatedSaveOptions setRefreshChartCache(Boolean refreshChartCache) { return (PaginatedSaveOptions) super.setRefreshChartCache(refreshChartCache); }
+    /** Covariant override: keeps fluent chains returning PaginatedSaveOptions. */
+    @Override public PaginatedSaveOptions setSortNames(Boolean sortNames) { return (PaginatedSaveOptions) super.setSortNames(sortNames); }
+    /** Covariant override: keeps fluent chains returning PaginatedSaveOptions. */
+    @Override public PaginatedSaveOptions setValidateMergedAreas(Boolean validateMergedAreas) { return (PaginatedSaveOptions) super.setValidateMergedAreas(validateMergedAreas); }
+    /** Covariant override: keeps fluent chains returning PaginatedSaveOptions. */
+    @Override public PaginatedSaveOptions setCheckExcelRestriction(Boolean checkExcelRestriction) { return (PaginatedSaveOptions) super.setCheckExcelRestriction(checkExcelRestriction); }
+    /** Covariant override: keeps fluent chains returning PaginatedSaveOptions. */
+    @Override public PaginatedSaveOptions setEncryptDocumentProperties(Boolean encryptDocumentProperties) { return (PaginatedSaveOptions) super.setEncryptDocumentProperties(encryptDocumentProperties); }
 
 }

@@ -36,7 +36,7 @@ public class SearchContentInRemoteSpreadsheetRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v4.0/cells/" + urlEncode(name) + "/search/content";
+        return "/cells/" + urlEncode(name) + "/search/content";
     }
 
     @Override

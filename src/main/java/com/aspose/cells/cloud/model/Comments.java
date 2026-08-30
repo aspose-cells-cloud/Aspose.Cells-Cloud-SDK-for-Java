@@ -11,14 +11,11 @@ public class Comments extends LinkElement {
     @JsonProperty("CommentList")
     private List<LinkElement> commentList;
 
-    /** Gets or sets link. */
-    @JsonProperty("link")
-    private Link link;
-
     public List<LinkElement> getCommentList() { return commentList; }
     public Comments setCommentList(List<LinkElement> commentList) { this.commentList = commentList; return this; }
 
-    public Link getLink() { return link; }
-    public Comments setLink(Link link) { this.link = link; return this; }
+
+    /** Covariant override: keeps fluent chains returning Comments. */
+    @Override public Comments setLink(Link link) { return (Comments) super.setLink(link); }
 
 }

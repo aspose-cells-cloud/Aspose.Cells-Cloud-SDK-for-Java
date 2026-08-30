@@ -37,7 +37,7 @@ public class SearchBrokenLinksInRemoteRangeRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v4.0/cells/" + urlEncode(name) + "/worksheets/" + urlEncode(worksheet) + "/ranges/" + urlEncode(cellArea) + "/search/broken-links";
+        return "/cells/" + urlEncode(name) + "/worksheets/" + urlEncode(worksheet) + "/ranges/" + urlEncode(cellArea) + "/search/broken-links";
     }
 
     @Override

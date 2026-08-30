@@ -6,7 +6,6 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import static com.aspose.cells.cloud.UrlUtils.urlEncode;
 
 /** MathCalculate request. */
 public class MathCalculateRequest implements RequestOption {
@@ -51,7 +50,7 @@ public class MathCalculateRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v4.0/cells/calculate/math";
+        return "/cells/calculate/math";
     }
 
     @Override
@@ -84,4 +83,6 @@ public class MathCalculateRequest implements RequestOption {
         form.put("Spreadsheet", spreadsheet);
         return form;
     }
+
+    @Override public boolean isBinaryResponse() { return true; }
 }

@@ -33,7 +33,7 @@ public class PostWorksheetListObjectRemoveDuplicatesRequest implements RequestOp
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/" + urlEncode(name) + "/worksheets/" + urlEncode(sheetName) + "/listobjects/" + urlEncode(String.valueOf(listObjectIndex)) + "/RemoveDuplicates";
+        return "/cells/" + urlEncode(name) + "/worksheets/" + urlEncode(sheetName) + "/listobjects/" + urlEncode(String.valueOf(listObjectIndex)) + "/RemoveDuplicates";
     }
 
     @Override

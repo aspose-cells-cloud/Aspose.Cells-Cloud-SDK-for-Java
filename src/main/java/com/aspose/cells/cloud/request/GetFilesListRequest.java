@@ -20,7 +20,7 @@ public class GetFilesListRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v4.0/cells/storage/folder/" + urlEncode(path);
+        return "/cells/storage/folder/" + urlEncode(path);
     }
 
     @Override

@@ -30,7 +30,7 @@ public class DeleteWorksheetRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/" + urlEncode(name) + "/worksheets/" + urlEncode(sheetName);
+        return "/cells/" + urlEncode(name) + "/worksheets/" + urlEncode(sheetName);
     }
 
     @Override

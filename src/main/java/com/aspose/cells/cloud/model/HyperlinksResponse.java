@@ -10,21 +10,13 @@ public class HyperlinksResponse extends CellsCloudResponse {
     @JsonProperty("Hyperlinks")
     private Hyperlinks hyperlinks;
 
-    /** Gets or sets Code. */
-    @JsonProperty("Code")
-    private Integer code;
-
-    /** Gets or sets Status. */
-    @JsonProperty("Status")
-    private String status;
-
     public Hyperlinks getHyperlinks() { return hyperlinks; }
     public HyperlinksResponse setHyperlinks(Hyperlinks hyperlinks) { this.hyperlinks = hyperlinks; return this; }
 
-    public Integer getCode() { return code; }
-    public HyperlinksResponse setCode(Integer code) { this.code = code; return this; }
 
-    public String getStatus() { return status; }
-    public HyperlinksResponse setStatus(String status) { this.status = status; return this; }
+    /** Covariant override: keeps fluent chains returning HyperlinksResponse. */
+    @Override public HyperlinksResponse setCode(Integer code) { return (HyperlinksResponse) super.setCode(code); }
+    /** Covariant override: keeps fluent chains returning HyperlinksResponse. */
+    @Override public HyperlinksResponse setStatus(String status) { return (HyperlinksResponse) super.setStatus(status); }
 
 }

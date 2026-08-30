@@ -11,14 +11,11 @@ public class Forms extends LinkElement {
     @JsonProperty("FormList")
     private List<LinkElement> formList;
 
-    /** Gets or sets link. */
-    @JsonProperty("link")
-    private Link link;
-
     public List<LinkElement> getFormList() { return formList; }
     public Forms setFormList(List<LinkElement> formList) { this.formList = formList; return this; }
 
-    public Link getLink() { return link; }
-    public Forms setLink(Link link) { this.link = link; return this; }
+
+    /** Covariant override: keeps fluent chains returning Forms. */
+    @Override public Forms setLink(Link link) { return (Forms) super.setLink(link); }
 
 }

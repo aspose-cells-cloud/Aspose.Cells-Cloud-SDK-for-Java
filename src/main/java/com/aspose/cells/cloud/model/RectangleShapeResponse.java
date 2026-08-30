@@ -10,21 +10,13 @@ public class RectangleShapeResponse extends CellsCloudResponse {
     @JsonProperty("Shape")
     private RectangleShape shape;
 
-    /** Gets or sets Code. */
-    @JsonProperty("Code")
-    private Integer code;
-
-    /** Gets or sets Status. */
-    @JsonProperty("Status")
-    private String status;
-
     public RectangleShape getShape() { return shape; }
     public RectangleShapeResponse setShape(RectangleShape shape) { this.shape = shape; return this; }
 
-    public Integer getCode() { return code; }
-    public RectangleShapeResponse setCode(Integer code) { this.code = code; return this; }
 
-    public String getStatus() { return status; }
-    public RectangleShapeResponse setStatus(String status) { this.status = status; return this; }
+    /** Covariant override: keeps fluent chains returning RectangleShapeResponse. */
+    @Override public RectangleShapeResponse setCode(Integer code) { return (RectangleShapeResponse) super.setCode(code); }
+    /** Covariant override: keeps fluent chains returning RectangleShapeResponse. */
+    @Override public RectangleShapeResponse setStatus(String status) { return (RectangleShapeResponse) super.setStatus(status); }
 
 }

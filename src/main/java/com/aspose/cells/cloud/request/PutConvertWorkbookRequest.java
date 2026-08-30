@@ -6,7 +6,6 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import static com.aspose.cells.cloud.UrlUtils.urlEncode;
 
 /** Convert the workbook from the requested content into files in different formats. */
 public class PutConvertWorkbookRequest implements RequestOption {
@@ -68,7 +67,7 @@ public class PutConvertWorkbookRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/convert";
+        return "/cells/convert";
     }
 
     @Override
@@ -110,4 +109,6 @@ public class PutConvertWorkbookRequest implements RequestOption {
         form.put("File", file);
         return form;
     }
+
+    @Override public boolean isBinaryResponse() { return true; }
 }

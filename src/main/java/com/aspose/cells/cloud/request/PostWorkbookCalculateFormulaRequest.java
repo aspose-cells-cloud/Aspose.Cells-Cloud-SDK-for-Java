@@ -32,7 +32,7 @@ public class PostWorkbookCalculateFormulaRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/" + urlEncode(name) + "/calculateformula";
+        return "/cells/" + urlEncode(name) + "/calculateformula";
     }
 
     @Override

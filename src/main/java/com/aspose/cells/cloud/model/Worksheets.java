@@ -11,14 +11,11 @@ public class Worksheets extends LinkElement {
     @JsonProperty("WorksheetList")
     private List<LinkElement> worksheetList;
 
-    /** Gets or sets link. */
-    @JsonProperty("link")
-    private Link link;
-
     public List<LinkElement> getWorksheetList() { return worksheetList; }
     public Worksheets setWorksheetList(List<LinkElement> worksheetList) { this.worksheetList = worksheetList; return this; }
 
-    public Link getLink() { return link; }
-    public Worksheets setLink(Link link) { this.link = link; return this; }
+
+    /** Covariant override: keeps fluent chains returning Worksheets. */
+    @Override public Worksheets setLink(Link link) { return (Worksheets) super.setLink(link); }
 
 }

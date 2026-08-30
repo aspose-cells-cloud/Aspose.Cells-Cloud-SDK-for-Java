@@ -5,7 +5,6 @@ import com.aspose.cells.cloud.model.TaskData;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import static com.aspose.cells.cloud.UrlUtils.urlEncode;
 
 /** Run tasks. */
 public class PostRunTaskRequest implements RequestOption {
@@ -22,7 +21,7 @@ public class PostRunTaskRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/task/runtask";
+        return "/cells/task/runtask";
     }
 
     @Override
@@ -46,4 +45,6 @@ public class PostRunTaskRequest implements RequestOption {
     public Map<String, Object> getMultipartForm() {
         return null;
     }
+
+    @Override public boolean isBinaryResponse() { return true; }
 }

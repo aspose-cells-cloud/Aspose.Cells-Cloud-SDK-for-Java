@@ -6,7 +6,6 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import static com.aspose.cells.cloud.UrlUtils.urlEncode;
 
 /** The Web API endpoint allows users to rename a specified worksheet within a workbook. This function provides a straightforward way to update worksheet names, enhancing workbook organization and readability. */
 public class RenameWorksheetInSpreadsheetRequest implements RequestOption {
@@ -51,7 +50,7 @@ public class RenameWorksheetInSpreadsheetRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v4.0/cells/spreadsheet/rename/worksheet";
+        return "/cells/spreadsheet/rename/worksheet";
     }
 
     @Override
@@ -84,4 +83,6 @@ public class RenameWorksheetInSpreadsheetRequest implements RequestOption {
         form.put("Spreadsheet", spreadsheet);
         return form;
     }
+
+    @Override public boolean isBinaryResponse() { return true; }
 }

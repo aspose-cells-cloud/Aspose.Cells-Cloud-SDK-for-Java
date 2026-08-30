@@ -10,21 +10,13 @@ public class BorderResponse extends CellsCloudResponse {
     @JsonProperty("Border")
     private Border border;
 
-    /** Gets or sets Code. */
-    @JsonProperty("Code")
-    private Integer code;
-
-    /** Gets or sets Status. */
-    @JsonProperty("Status")
-    private String status;
-
     public Border getBorder() { return border; }
     public BorderResponse setBorder(Border border) { this.border = border; return this; }
 
-    public Integer getCode() { return code; }
-    public BorderResponse setCode(Integer code) { this.code = code; return this; }
 
-    public String getStatus() { return status; }
-    public BorderResponse setStatus(String status) { this.status = status; return this; }
+    /** Covariant override: keeps fluent chains returning BorderResponse. */
+    @Override public BorderResponse setCode(Integer code) { return (BorderResponse) super.setCode(code); }
+    /** Covariant override: keeps fluent chains returning BorderResponse. */
+    @Override public BorderResponse setStatus(String status) { return (BorderResponse) super.setStatus(status); }
 
 }

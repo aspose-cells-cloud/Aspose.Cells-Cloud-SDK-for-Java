@@ -30,7 +30,7 @@ public class DeleteUnProtectWorkbookRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/" + urlEncode(name) + "/protection";
+        return "/cells/" + urlEncode(name) + "/protection";
     }
 
     @Override

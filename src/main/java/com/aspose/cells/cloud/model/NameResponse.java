@@ -10,21 +10,13 @@ public class NameResponse extends CellsCloudResponse {
     @JsonProperty("Name")
     private Name name;
 
-    /** Gets or sets Code. */
-    @JsonProperty("Code")
-    private Integer code;
-
-    /** Gets or sets Status. */
-    @JsonProperty("Status")
-    private String status;
-
     public Name getName() { return name; }
     public NameResponse setName(Name name) { this.name = name; return this; }
 
-    public Integer getCode() { return code; }
-    public NameResponse setCode(Integer code) { this.code = code; return this; }
 
-    public String getStatus() { return status; }
-    public NameResponse setStatus(String status) { this.status = status; return this; }
+    /** Covariant override: keeps fluent chains returning NameResponse. */
+    @Override public NameResponse setCode(Integer code) { return (NameResponse) super.setCode(code); }
+    /** Covariant override: keeps fluent chains returning NameResponse. */
+    @Override public NameResponse setStatus(String status) { return (NameResponse) super.setStatus(status); }
 
 }

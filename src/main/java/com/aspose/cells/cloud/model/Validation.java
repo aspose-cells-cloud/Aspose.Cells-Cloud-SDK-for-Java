@@ -71,10 +71,6 @@ public class Validation extends LinkElement {
     @JsonProperty("Value2")
     private String value2;
 
-    /** Gets or sets link. */
-    @JsonProperty("link")
-    private Link link;
-
     public String getAlertStyle() { return alertStyle; }
     public Validation setAlertStyle(String alertStyle) { this.alertStyle = alertStyle; return this; }
 
@@ -123,7 +119,8 @@ public class Validation extends LinkElement {
     public String getValue2() { return value2; }
     public Validation setValue2(String value2) { this.value2 = value2; return this; }
 
-    public Link getLink() { return link; }
-    public Validation setLink(Link link) { this.link = link; return this; }
+
+    /** Covariant override: keeps fluent chains returning Validation. */
+    @Override public Validation setLink(Link link) { return (Validation) super.setLink(link); }
 
 }

@@ -10,21 +10,13 @@ public class ErrorBarResponse extends CellsCloudResponse {
     @JsonProperty("ErrorBar")
     private ErrorBar errorBar;
 
-    /** Gets or sets Code. */
-    @JsonProperty("Code")
-    private Integer code;
-
-    /** Gets or sets Status. */
-    @JsonProperty("Status")
-    private String status;
-
     public ErrorBar getErrorBar() { return errorBar; }
     public ErrorBarResponse setErrorBar(ErrorBar errorBar) { this.errorBar = errorBar; return this; }
 
-    public Integer getCode() { return code; }
-    public ErrorBarResponse setCode(Integer code) { this.code = code; return this; }
 
-    public String getStatus() { return status; }
-    public ErrorBarResponse setStatus(String status) { this.status = status; return this; }
+    /** Covariant override: keeps fluent chains returning ErrorBarResponse. */
+    @Override public ErrorBarResponse setCode(Integer code) { return (ErrorBarResponse) super.setCode(code); }
+    /** Covariant override: keeps fluent chains returning ErrorBarResponse. */
+    @Override public ErrorBarResponse setStatus(String status) { return (ErrorBarResponse) super.setStatus(status); }
 
 }

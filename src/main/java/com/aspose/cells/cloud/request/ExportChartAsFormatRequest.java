@@ -46,7 +46,7 @@ public class ExportChartAsFormatRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v4.0/cells/" + urlEncode(name) + "/worksheets/" + urlEncode(worksheet) + "/charts/" + urlEncode(String.valueOf(chartIndex));
+        return "/cells/" + urlEncode(name) + "/worksheets/" + urlEncode(worksheet) + "/charts/" + urlEncode(String.valueOf(chartIndex));
     }
 
     @Override
@@ -77,4 +77,6 @@ public class ExportChartAsFormatRequest implements RequestOption {
     public Map<String, Object> getMultipartForm() {
         return null;
     }
+
+    @Override public boolean isBinaryResponse() { return true; }
 }

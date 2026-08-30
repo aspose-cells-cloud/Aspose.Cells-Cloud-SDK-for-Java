@@ -38,7 +38,7 @@ public class PutInsertNewWorksheetRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/" + urlEncode(name) + "/worksheets/insert";
+        return "/cells/" + urlEncode(name) + "/worksheets/insert";
     }
 
     @Override

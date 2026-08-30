@@ -62,10 +62,6 @@ public class FormatCondition extends LinkElement {
     @JsonProperty("Top10")
     private Top10 top10;
 
-    /** Gets or sets link. */
-    @JsonProperty("link")
-    private Link link;
-
     public Integer getPriority() { return priority; }
     public FormatCondition setPriority(Integer priority) { this.priority = priority; return this; }
 
@@ -108,7 +104,8 @@ public class FormatCondition extends LinkElement {
     public Top10 getTop10() { return top10; }
     public FormatCondition setTop10(Top10 top10) { this.top10 = top10; return this; }
 
-    public Link getLink() { return link; }
-    public FormatCondition setLink(Link link) { this.link = link; return this; }
+
+    /** Covariant override: keeps fluent chains returning FormatCondition. */
+    @Override public FormatCondition setLink(Link link) { return (FormatCondition) super.setLink(link); }
 
 }

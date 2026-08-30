@@ -6,7 +6,6 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import static com.aspose.cells.cloud.UrlUtils.urlEncode;
 
 /** Translates the entire spreadsheet to the specified target language. */
 public class TranslateSpreadsheetRequest implements RequestOption {
@@ -44,7 +43,7 @@ public class TranslateSpreadsheetRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v4.0/cells/ai/translate/spreadsheet";
+        return "/cells/ai/translate/spreadsheet";
     }
 
     @Override
@@ -74,4 +73,6 @@ public class TranslateSpreadsheetRequest implements RequestOption {
         form.put("Spreadsheet", spreadsheet);
         return form;
     }
+
+    @Override public boolean isBinaryResponse() { return true; }
 }

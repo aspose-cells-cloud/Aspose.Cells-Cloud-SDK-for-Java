@@ -10,21 +10,13 @@ public class AutoFilterResponse extends CellsCloudResponse {
     @JsonProperty("AutoFilter")
     private AutoFilter autoFilter;
 
-    /** Gets or sets Code. */
-    @JsonProperty("Code")
-    private Integer code;
-
-    /** Gets or sets Status. */
-    @JsonProperty("Status")
-    private String status;
-
     public AutoFilter getAutoFilter() { return autoFilter; }
     public AutoFilterResponse setAutoFilter(AutoFilter autoFilter) { this.autoFilter = autoFilter; return this; }
 
-    public Integer getCode() { return code; }
-    public AutoFilterResponse setCode(Integer code) { this.code = code; return this; }
 
-    public String getStatus() { return status; }
-    public AutoFilterResponse setStatus(String status) { this.status = status; return this; }
+    /** Covariant override: keeps fluent chains returning AutoFilterResponse. */
+    @Override public AutoFilterResponse setCode(Integer code) { return (AutoFilterResponse) super.setCode(code); }
+    /** Covariant override: keeps fluent chains returning AutoFilterResponse. */
+    @Override public AutoFilterResponse setStatus(String status) { return (AutoFilterResponse) super.setStatus(status); }
 
 }

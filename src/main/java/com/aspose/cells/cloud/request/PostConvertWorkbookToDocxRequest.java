@@ -6,7 +6,6 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import static com.aspose.cells.cloud.UrlUtils.urlEncode;
 
 /** Convert Excel file to Docx files. */
 public class PostConvertWorkbookToDocxRequest implements RequestOption {
@@ -45,7 +44,7 @@ public class PostConvertWorkbookToDocxRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/convert/docx";
+        return "/cells/convert/docx";
     }
 
     @Override

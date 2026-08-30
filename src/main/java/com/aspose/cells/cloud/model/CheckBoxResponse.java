@@ -10,21 +10,13 @@ public class CheckBoxResponse extends CellsCloudResponse {
     @JsonProperty("Shape")
     private CheckBox shape;
 
-    /** Gets or sets Code. */
-    @JsonProperty("Code")
-    private Integer code;
-
-    /** Gets or sets Status. */
-    @JsonProperty("Status")
-    private String status;
-
     public CheckBox getShape() { return shape; }
     public CheckBoxResponse setShape(CheckBox shape) { this.shape = shape; return this; }
 
-    public Integer getCode() { return code; }
-    public CheckBoxResponse setCode(Integer code) { this.code = code; return this; }
 
-    public String getStatus() { return status; }
-    public CheckBoxResponse setStatus(String status) { this.status = status; return this; }
+    /** Covariant override: keeps fluent chains returning CheckBoxResponse. */
+    @Override public CheckBoxResponse setCode(Integer code) { return (CheckBoxResponse) super.setCode(code); }
+    /** Covariant override: keeps fluent chains returning CheckBoxResponse. */
+    @Override public CheckBoxResponse setStatus(String status) { return (CheckBoxResponse) super.setStatus(status); }
 
 }

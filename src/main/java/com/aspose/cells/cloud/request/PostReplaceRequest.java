@@ -6,7 +6,6 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import static com.aspose.cells.cloud.UrlUtils.urlEncode;
 
 /** Replace specified text with new text in Excel files. */
 public class PostReplaceRequest implements RequestOption {
@@ -49,7 +48,7 @@ public class PostReplaceRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/replace";
+        return "/cells/replace";
     }
 
     @Override

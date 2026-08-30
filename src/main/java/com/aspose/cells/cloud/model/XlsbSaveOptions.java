@@ -14,101 +14,38 @@ public class XlsbSaveOptions extends SaveOptions {
     @JsonProperty("CompressionType")
     private String compressionType;
 
-    /** Gets or sets SaveFormat. */
-    @JsonProperty("SaveFormat")
-    private String saveFormat;
-
-    /** Gets or sets CachedFileFolder. */
-    @JsonProperty("CachedFileFolder")
-    private String cachedFileFolder;
-
-    /** Gets or sets ClearData. */
-    @JsonProperty("ClearData")
-    private Boolean clearData;
-
-    /** Gets or sets CreateDirectory. */
-    @JsonProperty("CreateDirectory")
-    private Boolean createDirectory;
-
-    /** Gets or sets EnableHTTPCompression. */
-    @JsonProperty("EnableHTTPCompression")
-    private Boolean enableHTTPCompression;
-
-    /** Gets or sets RefreshChartCache. */
-    @JsonProperty("RefreshChartCache")
-    private Boolean refreshChartCache;
-
-    /** Gets or sets SortNames. */
-    @JsonProperty("SortNames")
-    private Boolean sortNames;
-
-    /** Gets or sets ValidateMergedAreas. */
-    @JsonProperty("ValidateMergedAreas")
-    private Boolean validateMergedAreas;
-
-    /** Gets or sets MergeAreas. */
-    @JsonProperty("MergeAreas")
-    private Boolean mergeAreas;
-
-    /** Gets or sets SortExternalNames. */
-    @JsonProperty("SortExternalNames")
-    private Boolean sortExternalNames;
-
-    /** Gets or sets CheckExcelRestriction. */
-    @JsonProperty("CheckExcelRestriction")
-    private Boolean checkExcelRestriction;
-
-    /** Gets or sets UpdateSmartArt. */
-    @JsonProperty("UpdateSmartArt")
-    private Boolean updateSmartArt;
-
-    /** Gets or sets EncryptDocumentProperties. */
-    @JsonProperty("EncryptDocumentProperties")
-    private Boolean encryptDocumentProperties;
-
     public Boolean getExportAllColumnIndexes() { return exportAllColumnIndexes; }
     public XlsbSaveOptions setExportAllColumnIndexes(Boolean exportAllColumnIndexes) { this.exportAllColumnIndexes = exportAllColumnIndexes; return this; }
 
     public String getCompressionType() { return compressionType; }
     public XlsbSaveOptions setCompressionType(String compressionType) { this.compressionType = compressionType; return this; }
 
-    public String getSaveFormat() { return saveFormat; }
-    public XlsbSaveOptions setSaveFormat(String saveFormat) { this.saveFormat = saveFormat; return this; }
 
-    public String getCachedFileFolder() { return cachedFileFolder; }
-    public XlsbSaveOptions setCachedFileFolder(String cachedFileFolder) { this.cachedFileFolder = cachedFileFolder; return this; }
-
-    public Boolean getClearData() { return clearData; }
-    public XlsbSaveOptions setClearData(Boolean clearData) { this.clearData = clearData; return this; }
-
-    public Boolean getCreateDirectory() { return createDirectory; }
-    public XlsbSaveOptions setCreateDirectory(Boolean createDirectory) { this.createDirectory = createDirectory; return this; }
-
-    public Boolean getEnableHTTPCompression() { return enableHTTPCompression; }
-    public XlsbSaveOptions setEnableHTTPCompression(Boolean enableHTTPCompression) { this.enableHTTPCompression = enableHTTPCompression; return this; }
-
-    public Boolean getRefreshChartCache() { return refreshChartCache; }
-    public XlsbSaveOptions setRefreshChartCache(Boolean refreshChartCache) { this.refreshChartCache = refreshChartCache; return this; }
-
-    public Boolean getSortNames() { return sortNames; }
-    public XlsbSaveOptions setSortNames(Boolean sortNames) { this.sortNames = sortNames; return this; }
-
-    public Boolean getValidateMergedAreas() { return validateMergedAreas; }
-    public XlsbSaveOptions setValidateMergedAreas(Boolean validateMergedAreas) { this.validateMergedAreas = validateMergedAreas; return this; }
-
-    public Boolean getMergeAreas() { return mergeAreas; }
-    public XlsbSaveOptions setMergeAreas(Boolean mergeAreas) { this.mergeAreas = mergeAreas; return this; }
-
-    public Boolean getSortExternalNames() { return sortExternalNames; }
-    public XlsbSaveOptions setSortExternalNames(Boolean sortExternalNames) { this.sortExternalNames = sortExternalNames; return this; }
-
-    public Boolean getCheckExcelRestriction() { return checkExcelRestriction; }
-    public XlsbSaveOptions setCheckExcelRestriction(Boolean checkExcelRestriction) { this.checkExcelRestriction = checkExcelRestriction; return this; }
-
-    public Boolean getUpdateSmartArt() { return updateSmartArt; }
-    public XlsbSaveOptions setUpdateSmartArt(Boolean updateSmartArt) { this.updateSmartArt = updateSmartArt; return this; }
-
-    public Boolean getEncryptDocumentProperties() { return encryptDocumentProperties; }
-    public XlsbSaveOptions setEncryptDocumentProperties(Boolean encryptDocumentProperties) { this.encryptDocumentProperties = encryptDocumentProperties; return this; }
+    /** Covariant override: keeps fluent chains returning XlsbSaveOptions. */
+    @Override public XlsbSaveOptions setSaveFormat(String saveFormat) { return (XlsbSaveOptions) super.setSaveFormat(saveFormat); }
+    /** Covariant override: keeps fluent chains returning XlsbSaveOptions. */
+    @Override public XlsbSaveOptions setCachedFileFolder(String cachedFileFolder) { return (XlsbSaveOptions) super.setCachedFileFolder(cachedFileFolder); }
+    /** Covariant override: keeps fluent chains returning XlsbSaveOptions. */
+    @Override public XlsbSaveOptions setClearData(Boolean clearData) { return (XlsbSaveOptions) super.setClearData(clearData); }
+    /** Covariant override: keeps fluent chains returning XlsbSaveOptions. */
+    @Override public XlsbSaveOptions setCreateDirectory(Boolean createDirectory) { return (XlsbSaveOptions) super.setCreateDirectory(createDirectory); }
+    /** Covariant override: keeps fluent chains returning XlsbSaveOptions. */
+    @Override public XlsbSaveOptions setEnableHTTPCompression(Boolean enableHTTPCompression) { return (XlsbSaveOptions) super.setEnableHTTPCompression(enableHTTPCompression); }
+    /** Covariant override: keeps fluent chains returning XlsbSaveOptions. */
+    @Override public XlsbSaveOptions setRefreshChartCache(Boolean refreshChartCache) { return (XlsbSaveOptions) super.setRefreshChartCache(refreshChartCache); }
+    /** Covariant override: keeps fluent chains returning XlsbSaveOptions. */
+    @Override public XlsbSaveOptions setSortNames(Boolean sortNames) { return (XlsbSaveOptions) super.setSortNames(sortNames); }
+    /** Covariant override: keeps fluent chains returning XlsbSaveOptions. */
+    @Override public XlsbSaveOptions setValidateMergedAreas(Boolean validateMergedAreas) { return (XlsbSaveOptions) super.setValidateMergedAreas(validateMergedAreas); }
+    /** Covariant override: keeps fluent chains returning XlsbSaveOptions. */
+    @Override public XlsbSaveOptions setMergeAreas(Boolean mergeAreas) { return (XlsbSaveOptions) super.setMergeAreas(mergeAreas); }
+    /** Covariant override: keeps fluent chains returning XlsbSaveOptions. */
+    @Override public XlsbSaveOptions setSortExternalNames(Boolean sortExternalNames) { return (XlsbSaveOptions) super.setSortExternalNames(sortExternalNames); }
+    /** Covariant override: keeps fluent chains returning XlsbSaveOptions. */
+    @Override public XlsbSaveOptions setCheckExcelRestriction(Boolean checkExcelRestriction) { return (XlsbSaveOptions) super.setCheckExcelRestriction(checkExcelRestriction); }
+    /** Covariant override: keeps fluent chains returning XlsbSaveOptions. */
+    @Override public XlsbSaveOptions setUpdateSmartArt(Boolean updateSmartArt) { return (XlsbSaveOptions) super.setUpdateSmartArt(updateSmartArt); }
+    /** Covariant override: keeps fluent chains returning XlsbSaveOptions. */
+    @Override public XlsbSaveOptions setEncryptDocumentProperties(Boolean encryptDocumentProperties) { return (XlsbSaveOptions) super.setEncryptDocumentProperties(encryptDocumentProperties); }
 
 }

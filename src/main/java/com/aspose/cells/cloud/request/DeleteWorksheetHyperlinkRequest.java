@@ -33,7 +33,7 @@ public class DeleteWorksheetHyperlinkRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/" + urlEncode(name) + "/worksheets/" + urlEncode(sheetName) + "/hyperlinks/" + urlEncode(String.valueOf(hyperlinkIndex));
+        return "/cells/" + urlEncode(name) + "/worksheets/" + urlEncode(sheetName) + "/hyperlinks/" + urlEncode(String.valueOf(hyperlinkIndex));
     }
 
     @Override

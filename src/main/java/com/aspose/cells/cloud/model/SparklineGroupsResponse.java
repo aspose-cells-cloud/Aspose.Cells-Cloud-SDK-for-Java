@@ -10,21 +10,13 @@ public class SparklineGroupsResponse extends CellsCloudResponse {
     @JsonProperty("SparklineGroups")
     private SparklineGroups sparklineGroups;
 
-    /** Gets or sets Code. */
-    @JsonProperty("Code")
-    private Integer code;
-
-    /** Gets or sets Status. */
-    @JsonProperty("Status")
-    private String status;
-
     public SparklineGroups getSparklineGroups() { return sparklineGroups; }
     public SparklineGroupsResponse setSparklineGroups(SparklineGroups sparklineGroups) { this.sparklineGroups = sparklineGroups; return this; }
 
-    public Integer getCode() { return code; }
-    public SparklineGroupsResponse setCode(Integer code) { this.code = code; return this; }
 
-    public String getStatus() { return status; }
-    public SparklineGroupsResponse setStatus(String status) { this.status = status; return this; }
+    /** Covariant override: keeps fluent chains returning SparklineGroupsResponse. */
+    @Override public SparklineGroupsResponse setCode(Integer code) { return (SparklineGroupsResponse) super.setCode(code); }
+    /** Covariant override: keeps fluent chains returning SparklineGroupsResponse. */
+    @Override public SparklineGroupsResponse setStatus(String status) { return (SparklineGroupsResponse) super.setStatus(status); }
 
 }

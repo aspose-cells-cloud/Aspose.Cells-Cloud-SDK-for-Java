@@ -44,7 +44,7 @@ public class GetWorksheetWithFormatRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/" + urlEncode(name) + "/worksheets/" + urlEncode(sheetName);
+        return "/cells/" + urlEncode(name) + "/worksheets/" + urlEncode(sheetName);
     }
 
     @Override
@@ -76,4 +76,6 @@ public class GetWorksheetWithFormatRequest implements RequestOption {
     public Map<String, Object> getMultipartForm() {
         return null;
     }
+
+    @Override public boolean isBinaryResponse() { return true; }
 }

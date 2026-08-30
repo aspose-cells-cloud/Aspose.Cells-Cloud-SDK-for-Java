@@ -27,7 +27,7 @@ public class GetAllStylesRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/" + urlEncode(name) + "/allstyles";
+        return "/cells/" + urlEncode(name) + "/allstyles";
     }
 
     @Override

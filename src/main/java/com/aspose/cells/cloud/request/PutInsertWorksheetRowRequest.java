@@ -33,7 +33,7 @@ public class PutInsertWorksheetRowRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/" + urlEncode(name) + "/worksheets/" + urlEncode(sheetName) + "/cells/rows/" + urlEncode(String.valueOf(rowIndex));
+        return "/cells/" + urlEncode(name) + "/worksheets/" + urlEncode(sheetName) + "/cells/rows/" + urlEncode(String.valueOf(rowIndex));
     }
 
     @Override

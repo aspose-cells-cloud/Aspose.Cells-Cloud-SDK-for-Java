@@ -26,10 +26,6 @@ public class Hyperlink extends LinkElement {
     @JsonProperty("LinkType")
     private String linkType;
 
-    /** Gets or sets link. */
-    @JsonProperty("link")
-    private Link link;
-
     public String getAddress() { return address; }
     public Hyperlink setAddress(String address) { this.address = address; return this; }
 
@@ -45,7 +41,8 @@ public class Hyperlink extends LinkElement {
     public String getLinkType() { return linkType; }
     public Hyperlink setLinkType(String linkType) { this.linkType = linkType; return this; }
 
-    public Link getLink() { return link; }
-    public Hyperlink setLink(Link link) { this.link = link; return this; }
+
+    /** Covariant override: keeps fluent chains returning Hyperlink. */
+    @Override public Hyperlink setLink(Link link) { return (Hyperlink) super.setLink(link); }
 
 }

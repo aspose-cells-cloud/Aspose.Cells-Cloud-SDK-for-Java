@@ -15,17 +15,14 @@ public class Validations extends LinkElement {
     @JsonProperty("ValidationList")
     private List<LinkElement> validationList;
 
-    /** Gets or sets link. */
-    @JsonProperty("link")
-    private Link link;
-
     public Integer getCount() { return count; }
     public Validations setCount(Integer count) { this.count = count; return this; }
 
     public List<LinkElement> getValidationList() { return validationList; }
     public Validations setValidationList(List<LinkElement> validationList) { this.validationList = validationList; return this; }
 
-    public Link getLink() { return link; }
-    public Validations setLink(Link link) { this.link = link; return this; }
+
+    /** Covariant override: keeps fluent chains returning Validations. */
+    @Override public Validations setLink(Link link) { return (Validations) super.setLink(link); }
 
 }

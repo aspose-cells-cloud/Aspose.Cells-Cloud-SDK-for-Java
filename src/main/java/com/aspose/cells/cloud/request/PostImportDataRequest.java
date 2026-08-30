@@ -34,7 +34,7 @@ public class PostImportDataRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/" + urlEncode(name) + "/importdata";
+        return "/cells/" + urlEncode(name) + "/importdata";
     }
 
     @Override

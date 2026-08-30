@@ -30,26 +30,6 @@ public class ImportPictureOption extends ImportOption {
     @JsonProperty("Data")
     private String data;
 
-    /** Gets or sets DestinationWorksheet. */
-    @JsonProperty("DestinationWorksheet")
-    private String destinationWorksheet;
-
-    /** Gets or sets IsInsert. */
-    @JsonProperty("IsInsert")
-    private Boolean isInsert;
-
-    /** Gets or sets ImportDataType. */
-    @JsonProperty("ImportDataType")
-    private String importDataType;
-
-    /** Gets or sets DataSource. */
-    @JsonProperty("DataSource")
-    private DataSource dataSource;
-
-    /** Gets or sets Source. */
-    @JsonProperty("Source")
-    private FileSource source;
-
     public Integer getUpperLeftRow() { return upperLeftRow; }
     public ImportPictureOption setUpperLeftRow(Integer upperLeftRow) { this.upperLeftRow = upperLeftRow; return this; }
 
@@ -68,19 +48,16 @@ public class ImportPictureOption extends ImportOption {
     public String getData() { return data; }
     public ImportPictureOption setData(String data) { this.data = data; return this; }
 
-    public String getDestinationWorksheet() { return destinationWorksheet; }
-    public ImportPictureOption setDestinationWorksheet(String destinationWorksheet) { this.destinationWorksheet = destinationWorksheet; return this; }
 
-    public Boolean getIsInsert() { return isInsert; }
-    public ImportPictureOption setIsInsert(Boolean isInsert) { this.isInsert = isInsert; return this; }
-
-    public String getImportDataType() { return importDataType; }
-    public ImportPictureOption setImportDataType(String importDataType) { this.importDataType = importDataType; return this; }
-
-    public DataSource getDataSource() { return dataSource; }
-    public ImportPictureOption setDataSource(DataSource dataSource) { this.dataSource = dataSource; return this; }
-
-    public FileSource getSource() { return source; }
-    public ImportPictureOption setSource(FileSource source) { this.source = source; return this; }
+    /** Covariant override: keeps fluent chains returning ImportPictureOption. */
+    @Override public ImportPictureOption setDestinationWorksheet(String destinationWorksheet) { return (ImportPictureOption) super.setDestinationWorksheet(destinationWorksheet); }
+    /** Covariant override: keeps fluent chains returning ImportPictureOption. */
+    @Override public ImportPictureOption setIsInsert(Boolean isInsert) { return (ImportPictureOption) super.setIsInsert(isInsert); }
+    /** Covariant override: keeps fluent chains returning ImportPictureOption. */
+    @Override public ImportPictureOption setImportDataType(String importDataType) { return (ImportPictureOption) super.setImportDataType(importDataType); }
+    /** Covariant override: keeps fluent chains returning ImportPictureOption. */
+    @Override public ImportPictureOption setDataSource(DataSource dataSource) { return (ImportPictureOption) super.setDataSource(dataSource); }
+    /** Covariant override: keeps fluent chains returning ImportPictureOption. */
+    @Override public ImportPictureOption setSource(FileSource source) { return (ImportPictureOption) super.setSource(source); }
 
 }

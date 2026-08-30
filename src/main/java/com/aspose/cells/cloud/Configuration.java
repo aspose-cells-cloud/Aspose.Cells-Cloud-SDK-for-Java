@@ -63,6 +63,9 @@ public class Configuration {
     }
 
     public void setTimeout(Duration timeout) {
+        if (timeout == null) {
+            throw new IllegalArgumentException("timeout must not be null");
+        }
         this.timeout = timeout;
     }
 

@@ -6,7 +6,6 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import static com.aspose.cells.cloud.UrlUtils.urlEncode;
 
 /** ReportAIAnalysis request. */
 public class ReportAIAnalysisRequest implements RequestOption {
@@ -41,7 +40,7 @@ public class ReportAIAnalysisRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v4.0/cells/ai/report/analysis";
+        return "/cells/ai/report/analysis";
     }
 
     @Override

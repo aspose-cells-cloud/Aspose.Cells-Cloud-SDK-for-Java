@@ -37,7 +37,7 @@ public class PostWorksheetSparklineGroupRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/" + urlEncode(name) + "/worksheets/" + urlEncode(sheetName) + "/sparklineGroups/" + urlEncode(String.valueOf(sparklineGroupIndex));
+        return "/cells/" + urlEncode(name) + "/worksheets/" + urlEncode(sheetName) + "/sparklineGroups/" + urlEncode(String.valueOf(sparklineGroupIndex));
     }
 
     @Override

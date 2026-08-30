@@ -31,7 +31,7 @@ public class PutWorkbookWaterMarkerRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/" + urlEncode(name) + "/watermarker";
+        return "/cells/" + urlEncode(name) + "/watermarker";
     }
 
     @Override

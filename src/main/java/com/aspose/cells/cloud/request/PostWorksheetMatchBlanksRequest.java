@@ -33,7 +33,7 @@ public class PostWorksheetMatchBlanksRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/" + urlEncode(name) + "/worksheets/" + urlEncode(sheetName) + "/autoFilter/matchBlanks";
+        return "/cells/" + urlEncode(name) + "/worksheets/" + urlEncode(sheetName) + "/autoFilter/matchBlanks";
     }
 
     @Override

@@ -31,58 +31,6 @@ public class XmlSaveOptions extends SaveOptions {
     @JsonProperty("DataAsAttribute")
     private Boolean dataAsAttribute;
 
-    /** Gets or sets SaveFormat. */
-    @JsonProperty("SaveFormat")
-    private String saveFormat;
-
-    /** Gets or sets CachedFileFolder. */
-    @JsonProperty("CachedFileFolder")
-    private String cachedFileFolder;
-
-    /** Gets or sets ClearData. */
-    @JsonProperty("ClearData")
-    private Boolean clearData;
-
-    /** Gets or sets CreateDirectory. */
-    @JsonProperty("CreateDirectory")
-    private Boolean createDirectory;
-
-    /** Gets or sets EnableHTTPCompression. */
-    @JsonProperty("EnableHTTPCompression")
-    private Boolean enableHTTPCompression;
-
-    /** Gets or sets RefreshChartCache. */
-    @JsonProperty("RefreshChartCache")
-    private Boolean refreshChartCache;
-
-    /** Gets or sets SortNames. */
-    @JsonProperty("SortNames")
-    private Boolean sortNames;
-
-    /** Gets or sets ValidateMergedAreas. */
-    @JsonProperty("ValidateMergedAreas")
-    private Boolean validateMergedAreas;
-
-    /** Gets or sets MergeAreas. */
-    @JsonProperty("MergeAreas")
-    private Boolean mergeAreas;
-
-    /** Gets or sets SortExternalNames. */
-    @JsonProperty("SortExternalNames")
-    private Boolean sortExternalNames;
-
-    /** Gets or sets CheckExcelRestriction. */
-    @JsonProperty("CheckExcelRestriction")
-    private Boolean checkExcelRestriction;
-
-    /** Gets or sets UpdateSmartArt. */
-    @JsonProperty("UpdateSmartArt")
-    private Boolean updateSmartArt;
-
-    /** Gets or sets EncryptDocumentProperties. */
-    @JsonProperty("EncryptDocumentProperties")
-    private Boolean encryptDocumentProperties;
-
     public List<Integer> getSheetIndexes() { return sheetIndexes; }
     public XmlSaveOptions setSheetIndexes(List<Integer> sheetIndexes) { this.sheetIndexes = sheetIndexes; return this; }
 
@@ -101,43 +49,32 @@ public class XmlSaveOptions extends SaveOptions {
     public Boolean getDataAsAttribute() { return dataAsAttribute; }
     public XmlSaveOptions setDataAsAttribute(Boolean dataAsAttribute) { this.dataAsAttribute = dataAsAttribute; return this; }
 
-    public String getSaveFormat() { return saveFormat; }
-    public XmlSaveOptions setSaveFormat(String saveFormat) { this.saveFormat = saveFormat; return this; }
 
-    public String getCachedFileFolder() { return cachedFileFolder; }
-    public XmlSaveOptions setCachedFileFolder(String cachedFileFolder) { this.cachedFileFolder = cachedFileFolder; return this; }
-
-    public Boolean getClearData() { return clearData; }
-    public XmlSaveOptions setClearData(Boolean clearData) { this.clearData = clearData; return this; }
-
-    public Boolean getCreateDirectory() { return createDirectory; }
-    public XmlSaveOptions setCreateDirectory(Boolean createDirectory) { this.createDirectory = createDirectory; return this; }
-
-    public Boolean getEnableHTTPCompression() { return enableHTTPCompression; }
-    public XmlSaveOptions setEnableHTTPCompression(Boolean enableHTTPCompression) { this.enableHTTPCompression = enableHTTPCompression; return this; }
-
-    public Boolean getRefreshChartCache() { return refreshChartCache; }
-    public XmlSaveOptions setRefreshChartCache(Boolean refreshChartCache) { this.refreshChartCache = refreshChartCache; return this; }
-
-    public Boolean getSortNames() { return sortNames; }
-    public XmlSaveOptions setSortNames(Boolean sortNames) { this.sortNames = sortNames; return this; }
-
-    public Boolean getValidateMergedAreas() { return validateMergedAreas; }
-    public XmlSaveOptions setValidateMergedAreas(Boolean validateMergedAreas) { this.validateMergedAreas = validateMergedAreas; return this; }
-
-    public Boolean getMergeAreas() { return mergeAreas; }
-    public XmlSaveOptions setMergeAreas(Boolean mergeAreas) { this.mergeAreas = mergeAreas; return this; }
-
-    public Boolean getSortExternalNames() { return sortExternalNames; }
-    public XmlSaveOptions setSortExternalNames(Boolean sortExternalNames) { this.sortExternalNames = sortExternalNames; return this; }
-
-    public Boolean getCheckExcelRestriction() { return checkExcelRestriction; }
-    public XmlSaveOptions setCheckExcelRestriction(Boolean checkExcelRestriction) { this.checkExcelRestriction = checkExcelRestriction; return this; }
-
-    public Boolean getUpdateSmartArt() { return updateSmartArt; }
-    public XmlSaveOptions setUpdateSmartArt(Boolean updateSmartArt) { this.updateSmartArt = updateSmartArt; return this; }
-
-    public Boolean getEncryptDocumentProperties() { return encryptDocumentProperties; }
-    public XmlSaveOptions setEncryptDocumentProperties(Boolean encryptDocumentProperties) { this.encryptDocumentProperties = encryptDocumentProperties; return this; }
+    /** Covariant override: keeps fluent chains returning XmlSaveOptions. */
+    @Override public XmlSaveOptions setSaveFormat(String saveFormat) { return (XmlSaveOptions) super.setSaveFormat(saveFormat); }
+    /** Covariant override: keeps fluent chains returning XmlSaveOptions. */
+    @Override public XmlSaveOptions setCachedFileFolder(String cachedFileFolder) { return (XmlSaveOptions) super.setCachedFileFolder(cachedFileFolder); }
+    /** Covariant override: keeps fluent chains returning XmlSaveOptions. */
+    @Override public XmlSaveOptions setClearData(Boolean clearData) { return (XmlSaveOptions) super.setClearData(clearData); }
+    /** Covariant override: keeps fluent chains returning XmlSaveOptions. */
+    @Override public XmlSaveOptions setCreateDirectory(Boolean createDirectory) { return (XmlSaveOptions) super.setCreateDirectory(createDirectory); }
+    /** Covariant override: keeps fluent chains returning XmlSaveOptions. */
+    @Override public XmlSaveOptions setEnableHTTPCompression(Boolean enableHTTPCompression) { return (XmlSaveOptions) super.setEnableHTTPCompression(enableHTTPCompression); }
+    /** Covariant override: keeps fluent chains returning XmlSaveOptions. */
+    @Override public XmlSaveOptions setRefreshChartCache(Boolean refreshChartCache) { return (XmlSaveOptions) super.setRefreshChartCache(refreshChartCache); }
+    /** Covariant override: keeps fluent chains returning XmlSaveOptions. */
+    @Override public XmlSaveOptions setSortNames(Boolean sortNames) { return (XmlSaveOptions) super.setSortNames(sortNames); }
+    /** Covariant override: keeps fluent chains returning XmlSaveOptions. */
+    @Override public XmlSaveOptions setValidateMergedAreas(Boolean validateMergedAreas) { return (XmlSaveOptions) super.setValidateMergedAreas(validateMergedAreas); }
+    /** Covariant override: keeps fluent chains returning XmlSaveOptions. */
+    @Override public XmlSaveOptions setMergeAreas(Boolean mergeAreas) { return (XmlSaveOptions) super.setMergeAreas(mergeAreas); }
+    /** Covariant override: keeps fluent chains returning XmlSaveOptions. */
+    @Override public XmlSaveOptions setSortExternalNames(Boolean sortExternalNames) { return (XmlSaveOptions) super.setSortExternalNames(sortExternalNames); }
+    /** Covariant override: keeps fluent chains returning XmlSaveOptions. */
+    @Override public XmlSaveOptions setCheckExcelRestriction(Boolean checkExcelRestriction) { return (XmlSaveOptions) super.setCheckExcelRestriction(checkExcelRestriction); }
+    /** Covariant override: keeps fluent chains returning XmlSaveOptions. */
+    @Override public XmlSaveOptions setUpdateSmartArt(Boolean updateSmartArt) { return (XmlSaveOptions) super.setUpdateSmartArt(updateSmartArt); }
+    /** Covariant override: keeps fluent chains returning XmlSaveOptions. */
+    @Override public XmlSaveOptions setEncryptDocumentProperties(Boolean encryptDocumentProperties) { return (XmlSaveOptions) super.setEncryptDocumentProperties(encryptDocumentProperties); }
 
 }

@@ -6,263 +6,85 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 /** ChartShape — Chart shape object */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class ChartShape extends Shape {
-    /** Gets or sets Name. */
-    @JsonProperty("Name")
-    private String name;
-
-    /** Gets or sets MsoDrawingType. */
-    @JsonProperty("MsoDrawingType")
-    private String msoDrawingType;
-
-    /** Gets or sets AutoShapeType. */
-    @JsonProperty("AutoShapeType")
-    private String autoShapeType;
-
-    /** Gets or sets Placement. */
-    @JsonProperty("Placement")
-    private String placement;
-
-    /** Gets or sets UpperLeftRow. */
-    @JsonProperty("UpperLeftRow")
-    private Integer upperLeftRow;
-
-    /** Gets or sets Top. */
-    @JsonProperty("Top")
-    private Integer top;
-
-    /** Gets or sets UpperLeftColumn. */
-    @JsonProperty("UpperLeftColumn")
-    private Integer upperLeftColumn;
-
-    /** Gets or sets Left. */
-    @JsonProperty("Left")
-    private Integer left;
-
-    /** Gets or sets LowerRightRow. */
-    @JsonProperty("LowerRightRow")
-    private Integer lowerRightRow;
-
-    /** Gets or sets Bottom. */
-    @JsonProperty("Bottom")
-    private Integer bottom;
-
-    /** Gets or sets LowerRightColumn. */
-    @JsonProperty("LowerRightColumn")
-    private Integer lowerRightColumn;
-
-    /** Gets or sets Right. */
-    @JsonProperty("Right")
-    private Integer right;
-
-    /** Gets or sets Width. */
-    @JsonProperty("Width")
-    private Integer width;
-
-    /** Gets or sets Height. */
-    @JsonProperty("Height")
-    private Integer height;
-
-    /** Gets or sets X. */
-    @JsonProperty("X")
-    private Integer x;
-
-    /** Gets or sets Y. */
-    @JsonProperty("Y")
-    private Integer y;
-
-    /** Gets or sets RotationAngle. */
-    @JsonProperty("RotationAngle")
-    private Double rotationAngle;
-
-    /** Gets or sets HtmlText. */
-    @JsonProperty("HtmlText")
-    private String htmlText;
-
-    /** Gets or sets Text. */
-    @JsonProperty("Text")
-    private String text;
-
-    /** Gets or sets AlternativeText. */
-    @JsonProperty("AlternativeText")
-    private String alternativeText;
-
-    /** Gets or sets TextHorizontalAlignment. */
-    @JsonProperty("TextHorizontalAlignment")
-    private String textHorizontalAlignment;
-
-    /** Gets or sets TextHorizontalOverflow. */
-    @JsonProperty("TextHorizontalOverflow")
-    private String textHorizontalOverflow;
-
-    /** Gets or sets TextOrientationType. */
-    @JsonProperty("TextOrientationType")
-    private String textOrientationType;
-
-    /** Gets or sets TextVerticalAlignment. */
-    @JsonProperty("TextVerticalAlignment")
-    private String textVerticalAlignment;
-
-    /** Gets or sets TextVerticalOverflow. */
-    @JsonProperty("TextVerticalOverflow")
-    private String textVerticalOverflow;
-
-    /** Gets or sets IsGroup. */
-    @JsonProperty("IsGroup")
-    private Boolean isGroup;
-
-    /** Gets or sets IsHidden. */
-    @JsonProperty("IsHidden")
-    private Boolean isHidden;
-
-    /** Gets or sets IsLockAspectRatio. */
-    @JsonProperty("IsLockAspectRatio")
-    private Boolean isLockAspectRatio;
-
-    /** Gets or sets IsLocked. */
-    @JsonProperty("IsLocked")
-    private Boolean isLocked;
-
-    /** Gets or sets IsPrintable. */
-    @JsonProperty("IsPrintable")
-    private Boolean isPrintable;
-
-    /** Gets or sets IsTextWrapped. */
-    @JsonProperty("IsTextWrapped")
-    private Boolean isTextWrapped;
-
-    /** Gets or sets IsWordArt. */
-    @JsonProperty("IsWordArt")
-    private Boolean isWordArt;
-
-    /** Gets or sets LinkedCell. */
-    @JsonProperty("LinkedCell")
-    private String linkedCell;
-
-    /** Gets or sets ZOrderPosition. */
-    @JsonProperty("ZOrderPosition")
-    private Integer zOrderPosition;
-
-    /** Gets or sets Font. */
-    @JsonProperty("Font")
-    private Font font;
-
-    /** Gets or sets Hyperlink. */
-    @JsonProperty("Hyperlink")
-    private String hyperlink;
-
     /** Gets or sets link. */
     @JsonProperty("link")
     private Link link;
 
-    public String getName() { return name; }
-    public ChartShape setName(String name) { this.name = name; return this; }
-
-    public String getMsoDrawingType() { return msoDrawingType; }
-    public ChartShape setMsoDrawingType(String msoDrawingType) { this.msoDrawingType = msoDrawingType; return this; }
-
-    public String getAutoShapeType() { return autoShapeType; }
-    public ChartShape setAutoShapeType(String autoShapeType) { this.autoShapeType = autoShapeType; return this; }
-
-    public String getPlacement() { return placement; }
-    public ChartShape setPlacement(String placement) { this.placement = placement; return this; }
-
-    public Integer getUpperLeftRow() { return upperLeftRow; }
-    public ChartShape setUpperLeftRow(Integer upperLeftRow) { this.upperLeftRow = upperLeftRow; return this; }
-
-    public Integer getTop() { return top; }
-    public ChartShape setTop(Integer top) { this.top = top; return this; }
-
-    public Integer getUpperLeftColumn() { return upperLeftColumn; }
-    public ChartShape setUpperLeftColumn(Integer upperLeftColumn) { this.upperLeftColumn = upperLeftColumn; return this; }
-
-    public Integer getLeft() { return left; }
-    public ChartShape setLeft(Integer left) { this.left = left; return this; }
-
-    public Integer getLowerRightRow() { return lowerRightRow; }
-    public ChartShape setLowerRightRow(Integer lowerRightRow) { this.lowerRightRow = lowerRightRow; return this; }
-
-    public Integer getBottom() { return bottom; }
-    public ChartShape setBottom(Integer bottom) { this.bottom = bottom; return this; }
-
-    public Integer getLowerRightColumn() { return lowerRightColumn; }
-    public ChartShape setLowerRightColumn(Integer lowerRightColumn) { this.lowerRightColumn = lowerRightColumn; return this; }
-
-    public Integer getRight() { return right; }
-    public ChartShape setRight(Integer right) { this.right = right; return this; }
-
-    public Integer getWidth() { return width; }
-    public ChartShape setWidth(Integer width) { this.width = width; return this; }
-
-    public Integer getHeight() { return height; }
-    public ChartShape setHeight(Integer height) { this.height = height; return this; }
-
-    public Integer getX() { return x; }
-    public ChartShape setX(Integer x) { this.x = x; return this; }
-
-    public Integer getY() { return y; }
-    public ChartShape setY(Integer y) { this.y = y; return this; }
-
-    public Double getRotationAngle() { return rotationAngle; }
-    public ChartShape setRotationAngle(Double rotationAngle) { this.rotationAngle = rotationAngle; return this; }
-
-    public String getHtmlText() { return htmlText; }
-    public ChartShape setHtmlText(String htmlText) { this.htmlText = htmlText; return this; }
-
-    public String getText() { return text; }
-    public ChartShape setText(String text) { this.text = text; return this; }
-
-    public String getAlternativeText() { return alternativeText; }
-    public ChartShape setAlternativeText(String alternativeText) { this.alternativeText = alternativeText; return this; }
-
-    public String getTextHorizontalAlignment() { return textHorizontalAlignment; }
-    public ChartShape setTextHorizontalAlignment(String textHorizontalAlignment) { this.textHorizontalAlignment = textHorizontalAlignment; return this; }
-
-    public String getTextHorizontalOverflow() { return textHorizontalOverflow; }
-    public ChartShape setTextHorizontalOverflow(String textHorizontalOverflow) { this.textHorizontalOverflow = textHorizontalOverflow; return this; }
-
-    public String getTextOrientationType() { return textOrientationType; }
-    public ChartShape setTextOrientationType(String textOrientationType) { this.textOrientationType = textOrientationType; return this; }
-
-    public String getTextVerticalAlignment() { return textVerticalAlignment; }
-    public ChartShape setTextVerticalAlignment(String textVerticalAlignment) { this.textVerticalAlignment = textVerticalAlignment; return this; }
-
-    public String getTextVerticalOverflow() { return textVerticalOverflow; }
-    public ChartShape setTextVerticalOverflow(String textVerticalOverflow) { this.textVerticalOverflow = textVerticalOverflow; return this; }
-
-    public Boolean getIsGroup() { return isGroup; }
-    public ChartShape setIsGroup(Boolean isGroup) { this.isGroup = isGroup; return this; }
-
-    public Boolean getIsHidden() { return isHidden; }
-    public ChartShape setIsHidden(Boolean isHidden) { this.isHidden = isHidden; return this; }
-
-    public Boolean getIsLockAspectRatio() { return isLockAspectRatio; }
-    public ChartShape setIsLockAspectRatio(Boolean isLockAspectRatio) { this.isLockAspectRatio = isLockAspectRatio; return this; }
-
-    public Boolean getIsLocked() { return isLocked; }
-    public ChartShape setIsLocked(Boolean isLocked) { this.isLocked = isLocked; return this; }
-
-    public Boolean getIsPrintable() { return isPrintable; }
-    public ChartShape setIsPrintable(Boolean isPrintable) { this.isPrintable = isPrintable; return this; }
-
-    public Boolean getIsTextWrapped() { return isTextWrapped; }
-    public ChartShape setIsTextWrapped(Boolean isTextWrapped) { this.isTextWrapped = isTextWrapped; return this; }
-
-    public Boolean getIsWordArt() { return isWordArt; }
-    public ChartShape setIsWordArt(Boolean isWordArt) { this.isWordArt = isWordArt; return this; }
-
-    public String getLinkedCell() { return linkedCell; }
-    public ChartShape setLinkedCell(String linkedCell) { this.linkedCell = linkedCell; return this; }
-
-    public Integer getZOrderPosition() { return zOrderPosition; }
-    public ChartShape setZOrderPosition(Integer zOrderPosition) { this.zOrderPosition = zOrderPosition; return this; }
-
-    public Font getFont() { return font; }
-    public ChartShape setFont(Font font) { this.font = font; return this; }
-
-    public String getHyperlink() { return hyperlink; }
-    public ChartShape setHyperlink(String hyperlink) { this.hyperlink = hyperlink; return this; }
-
     public Link getLink() { return link; }
     public ChartShape setLink(Link link) { this.link = link; return this; }
+
+
+    /** Covariant override: keeps fluent chains returning ChartShape. */
+    @Override public ChartShape setName(String name) { return (ChartShape) super.setName(name); }
+    /** Covariant override: keeps fluent chains returning ChartShape. */
+    @Override public ChartShape setMsoDrawingType(String msoDrawingType) { return (ChartShape) super.setMsoDrawingType(msoDrawingType); }
+    /** Covariant override: keeps fluent chains returning ChartShape. */
+    @Override public ChartShape setAutoShapeType(String autoShapeType) { return (ChartShape) super.setAutoShapeType(autoShapeType); }
+    /** Covariant override: keeps fluent chains returning ChartShape. */
+    @Override public ChartShape setPlacement(String placement) { return (ChartShape) super.setPlacement(placement); }
+    /** Covariant override: keeps fluent chains returning ChartShape. */
+    @Override public ChartShape setUpperLeftRow(Integer upperLeftRow) { return (ChartShape) super.setUpperLeftRow(upperLeftRow); }
+    /** Covariant override: keeps fluent chains returning ChartShape. */
+    @Override public ChartShape setTop(Integer top) { return (ChartShape) super.setTop(top); }
+    /** Covariant override: keeps fluent chains returning ChartShape. */
+    @Override public ChartShape setUpperLeftColumn(Integer upperLeftColumn) { return (ChartShape) super.setUpperLeftColumn(upperLeftColumn); }
+    /** Covariant override: keeps fluent chains returning ChartShape. */
+    @Override public ChartShape setLeft(Integer left) { return (ChartShape) super.setLeft(left); }
+    /** Covariant override: keeps fluent chains returning ChartShape. */
+    @Override public ChartShape setLowerRightRow(Integer lowerRightRow) { return (ChartShape) super.setLowerRightRow(lowerRightRow); }
+    /** Covariant override: keeps fluent chains returning ChartShape. */
+    @Override public ChartShape setBottom(Integer bottom) { return (ChartShape) super.setBottom(bottom); }
+    /** Covariant override: keeps fluent chains returning ChartShape. */
+    @Override public ChartShape setLowerRightColumn(Integer lowerRightColumn) { return (ChartShape) super.setLowerRightColumn(lowerRightColumn); }
+    /** Covariant override: keeps fluent chains returning ChartShape. */
+    @Override public ChartShape setRight(Integer right) { return (ChartShape) super.setRight(right); }
+    /** Covariant override: keeps fluent chains returning ChartShape. */
+    @Override public ChartShape setWidth(Integer width) { return (ChartShape) super.setWidth(width); }
+    /** Covariant override: keeps fluent chains returning ChartShape. */
+    @Override public ChartShape setHeight(Integer height) { return (ChartShape) super.setHeight(height); }
+    /** Covariant override: keeps fluent chains returning ChartShape. */
+    @Override public ChartShape setX(Integer x) { return (ChartShape) super.setX(x); }
+    /** Covariant override: keeps fluent chains returning ChartShape. */
+    @Override public ChartShape setY(Integer y) { return (ChartShape) super.setY(y); }
+    /** Covariant override: keeps fluent chains returning ChartShape. */
+    @Override public ChartShape setRotationAngle(Double rotationAngle) { return (ChartShape) super.setRotationAngle(rotationAngle); }
+    /** Covariant override: keeps fluent chains returning ChartShape. */
+    @Override public ChartShape setHtmlText(String htmlText) { return (ChartShape) super.setHtmlText(htmlText); }
+    /** Covariant override: keeps fluent chains returning ChartShape. */
+    @Override public ChartShape setText(String text) { return (ChartShape) super.setText(text); }
+    /** Covariant override: keeps fluent chains returning ChartShape. */
+    @Override public ChartShape setAlternativeText(String alternativeText) { return (ChartShape) super.setAlternativeText(alternativeText); }
+    /** Covariant override: keeps fluent chains returning ChartShape. */
+    @Override public ChartShape setTextHorizontalAlignment(String textHorizontalAlignment) { return (ChartShape) super.setTextHorizontalAlignment(textHorizontalAlignment); }
+    /** Covariant override: keeps fluent chains returning ChartShape. */
+    @Override public ChartShape setTextHorizontalOverflow(String textHorizontalOverflow) { return (ChartShape) super.setTextHorizontalOverflow(textHorizontalOverflow); }
+    /** Covariant override: keeps fluent chains returning ChartShape. */
+    @Override public ChartShape setTextOrientationType(String textOrientationType) { return (ChartShape) super.setTextOrientationType(textOrientationType); }
+    /** Covariant override: keeps fluent chains returning ChartShape. */
+    @Override public ChartShape setTextVerticalAlignment(String textVerticalAlignment) { return (ChartShape) super.setTextVerticalAlignment(textVerticalAlignment); }
+    /** Covariant override: keeps fluent chains returning ChartShape. */
+    @Override public ChartShape setTextVerticalOverflow(String textVerticalOverflow) { return (ChartShape) super.setTextVerticalOverflow(textVerticalOverflow); }
+    /** Covariant override: keeps fluent chains returning ChartShape. */
+    @Override public ChartShape setIsGroup(Boolean isGroup) { return (ChartShape) super.setIsGroup(isGroup); }
+    /** Covariant override: keeps fluent chains returning ChartShape. */
+    @Override public ChartShape setIsHidden(Boolean isHidden) { return (ChartShape) super.setIsHidden(isHidden); }
+    /** Covariant override: keeps fluent chains returning ChartShape. */
+    @Override public ChartShape setIsLockAspectRatio(Boolean isLockAspectRatio) { return (ChartShape) super.setIsLockAspectRatio(isLockAspectRatio); }
+    /** Covariant override: keeps fluent chains returning ChartShape. */
+    @Override public ChartShape setIsLocked(Boolean isLocked) { return (ChartShape) super.setIsLocked(isLocked); }
+    /** Covariant override: keeps fluent chains returning ChartShape. */
+    @Override public ChartShape setIsPrintable(Boolean isPrintable) { return (ChartShape) super.setIsPrintable(isPrintable); }
+    /** Covariant override: keeps fluent chains returning ChartShape. */
+    @Override public ChartShape setIsTextWrapped(Boolean isTextWrapped) { return (ChartShape) super.setIsTextWrapped(isTextWrapped); }
+    /** Covariant override: keeps fluent chains returning ChartShape. */
+    @Override public ChartShape setIsWordArt(Boolean isWordArt) { return (ChartShape) super.setIsWordArt(isWordArt); }
+    /** Covariant override: keeps fluent chains returning ChartShape. */
+    @Override public ChartShape setLinkedCell(String linkedCell) { return (ChartShape) super.setLinkedCell(linkedCell); }
+    /** Covariant override: keeps fluent chains returning ChartShape. */
+    @Override public ChartShape setZOrderPosition(Integer zOrderPosition) { return (ChartShape) super.setZOrderPosition(zOrderPosition); }
+    /** Covariant override: keeps fluent chains returning ChartShape. */
+    @Override public ChartShape setFont(Font font) { return (ChartShape) super.setFont(font); }
+    /** Covariant override: keeps fluent chains returning ChartShape. */
+    @Override public ChartShape setHyperlink(String hyperlink) { return (ChartShape) super.setHyperlink(hyperlink); }
 
 }

@@ -5,7 +5,6 @@ import com.aspose.cells.cloud.model.DeleteIncompleteRowsRequest;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import static com.aspose.cells.cloud.UrlUtils.urlEncode;
 
 /** Deleting incomplete rows of spreadsheet files is mainly used to eliminate incomplete rows in tables and ranges. */
 public class PostDeleteIncompleteRowsRequest implements RequestOption {
@@ -22,7 +21,7 @@ public class PostDeleteIncompleteRowsRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/deleteincompleterows";
+        return "/cells/deleteincompleterows";
     }
 
     @Override

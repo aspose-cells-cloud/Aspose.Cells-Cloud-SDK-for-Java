@@ -10,21 +10,13 @@ public class StyleResponse extends CellsCloudResponse {
     @JsonProperty("Style")
     private Style style;
 
-    /** Gets or sets Code. */
-    @JsonProperty("Code")
-    private Integer code;
-
-    /** Gets or sets Status. */
-    @JsonProperty("Status")
-    private String status;
-
     public Style getStyle() { return style; }
     public StyleResponse setStyle(Style style) { this.style = style; return this; }
 
-    public Integer getCode() { return code; }
-    public StyleResponse setCode(Integer code) { this.code = code; return this; }
 
-    public String getStatus() { return status; }
-    public StyleResponse setStatus(String status) { this.status = status; return this; }
+    /** Covariant override: keeps fluent chains returning StyleResponse. */
+    @Override public StyleResponse setCode(Integer code) { return (StyleResponse) super.setCode(code); }
+    /** Covariant override: keeps fluent chains returning StyleResponse. */
+    @Override public StyleResponse setStatus(String status) { return (StyleResponse) super.setStatus(status); }
 
 }

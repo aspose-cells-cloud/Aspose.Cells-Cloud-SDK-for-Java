@@ -5,7 +5,6 @@ import com.aspose.cells.cloud.model.BatchProtectRequest;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import static com.aspose.cells.cloud.UrlUtils.urlEncode;
 
 /** Batch protecting files that meet specific matching conditions. */
 public class PostBatchProtectRequest implements RequestOption {
@@ -22,7 +21,7 @@ public class PostBatchProtectRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/batch/protect";
+        return "/cells/batch/protect";
     }
 
     @Override
@@ -46,4 +45,6 @@ public class PostBatchProtectRequest implements RequestOption {
     public Map<String, Object> getMultipartForm() {
         return null;
     }
+
+    @Override public boolean isBinaryResponse() { return true; }
 }

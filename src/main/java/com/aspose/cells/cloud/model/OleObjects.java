@@ -11,14 +11,11 @@ public class OleObjects extends LinkElement {
     @JsonProperty("OleObjectList")
     private List<LinkElement> oleObjectList;
 
-    /** Gets or sets link. */
-    @JsonProperty("link")
-    private Link link;
-
     public List<LinkElement> getOleObjectList() { return oleObjectList; }
     public OleObjects setOleObjectList(List<LinkElement> oleObjectList) { this.oleObjectList = oleObjectList; return this; }
 
-    public Link getLink() { return link; }
-    public OleObjects setLink(Link link) { this.link = link; return this; }
+
+    /** Covariant override: keeps fluent chains returning OleObjects. */
+    @Override public OleObjects setLink(Link link) { return (OleObjects) super.setLink(link); }
 
 }

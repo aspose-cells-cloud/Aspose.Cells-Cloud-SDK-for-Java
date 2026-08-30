@@ -6,78 +6,6 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 /** XpsSaveOptions model. */
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class XpsSaveOptions extends PaginatedSaveOptions {
-    /** Gets or sets DefaultFont. */
-    @JsonProperty("DefaultFont")
-    private String defaultFont;
-
-    /** Gets or sets CheckWorkbookDefaultFont. */
-    @JsonProperty("CheckWorkbookDefaultFont")
-    private Boolean checkWorkbookDefaultFont;
-
-    /** Gets or sets CheckFontCompatibility. */
-    @JsonProperty("CheckFontCompatibility")
-    private Boolean checkFontCompatibility;
-
-    /** Gets or sets IsFontSubstitutionCharGranularity. */
-    @JsonProperty("IsFontSubstitutionCharGranularity")
-    private Boolean isFontSubstitutionCharGranularity;
-
-    /** Gets or sets OnePagePerSheet. */
-    @JsonProperty("OnePagePerSheet")
-    private Boolean onePagePerSheet;
-
-    /** Gets or sets AllColumnsInOnePagePerSheet. */
-    @JsonProperty("AllColumnsInOnePagePerSheet")
-    private Boolean allColumnsInOnePagePerSheet;
-
-    /** Gets or sets IgnoreError. */
-    @JsonProperty("IgnoreError")
-    private Boolean ignoreError;
-
-    /** Gets or sets OutputBlankPageWhenNothingToPrint. */
-    @JsonProperty("OutputBlankPageWhenNothingToPrint")
-    private Boolean outputBlankPageWhenNothingToPrint;
-
-    /** Gets or sets PageIndex. */
-    @JsonProperty("PageIndex")
-    private Integer pageIndex;
-
-    /** Gets or sets PageCount. */
-    @JsonProperty("PageCount")
-    private Integer pageCount;
-
-    /** Gets or sets PrintingPageType. */
-    @JsonProperty("PrintingPageType")
-    private String printingPageType;
-
-    /** Gets or sets GridlineType. */
-    @JsonProperty("GridlineType")
-    private String gridlineType;
-
-    /** Gets or sets TextCrossType. */
-    @JsonProperty("TextCrossType")
-    private String textCrossType;
-
-    /** Gets or sets DefaultEditLanguage. */
-    @JsonProperty("DefaultEditLanguage")
-    private String defaultEditLanguage;
-
-    /** Gets or sets EmfRenderSetting. */
-    @JsonProperty("EmfRenderSetting")
-    private String emfRenderSetting;
-
-    /** Gets or sets MergeAreas. */
-    @JsonProperty("MergeAreas")
-    private Boolean mergeAreas;
-
-    /** Gets or sets SortExternalNames. */
-    @JsonProperty("SortExternalNames")
-    private Boolean sortExternalNames;
-
-    /** Gets or sets UpdateSmartArt. */
-    @JsonProperty("UpdateSmartArt")
-    private Boolean updateSmartArt;
-
     /** Gets or sets SaveFormat. */
     @JsonProperty("SaveFormat")
     private String saveFormat;
@@ -118,60 +46,6 @@ public class XpsSaveOptions extends PaginatedSaveOptions {
     @JsonProperty("EncryptDocumentProperties")
     private Boolean encryptDocumentProperties;
 
-    public String getDefaultFont() { return defaultFont; }
-    public XpsSaveOptions setDefaultFont(String defaultFont) { this.defaultFont = defaultFont; return this; }
-
-    public Boolean getCheckWorkbookDefaultFont() { return checkWorkbookDefaultFont; }
-    public XpsSaveOptions setCheckWorkbookDefaultFont(Boolean checkWorkbookDefaultFont) { this.checkWorkbookDefaultFont = checkWorkbookDefaultFont; return this; }
-
-    public Boolean getCheckFontCompatibility() { return checkFontCompatibility; }
-    public XpsSaveOptions setCheckFontCompatibility(Boolean checkFontCompatibility) { this.checkFontCompatibility = checkFontCompatibility; return this; }
-
-    public Boolean getIsFontSubstitutionCharGranularity() { return isFontSubstitutionCharGranularity; }
-    public XpsSaveOptions setIsFontSubstitutionCharGranularity(Boolean isFontSubstitutionCharGranularity) { this.isFontSubstitutionCharGranularity = isFontSubstitutionCharGranularity; return this; }
-
-    public Boolean getOnePagePerSheet() { return onePagePerSheet; }
-    public XpsSaveOptions setOnePagePerSheet(Boolean onePagePerSheet) { this.onePagePerSheet = onePagePerSheet; return this; }
-
-    public Boolean getAllColumnsInOnePagePerSheet() { return allColumnsInOnePagePerSheet; }
-    public XpsSaveOptions setAllColumnsInOnePagePerSheet(Boolean allColumnsInOnePagePerSheet) { this.allColumnsInOnePagePerSheet = allColumnsInOnePagePerSheet; return this; }
-
-    public Boolean getIgnoreError() { return ignoreError; }
-    public XpsSaveOptions setIgnoreError(Boolean ignoreError) { this.ignoreError = ignoreError; return this; }
-
-    public Boolean getOutputBlankPageWhenNothingToPrint() { return outputBlankPageWhenNothingToPrint; }
-    public XpsSaveOptions setOutputBlankPageWhenNothingToPrint(Boolean outputBlankPageWhenNothingToPrint) { this.outputBlankPageWhenNothingToPrint = outputBlankPageWhenNothingToPrint; return this; }
-
-    public Integer getPageIndex() { return pageIndex; }
-    public XpsSaveOptions setPageIndex(Integer pageIndex) { this.pageIndex = pageIndex; return this; }
-
-    public Integer getPageCount() { return pageCount; }
-    public XpsSaveOptions setPageCount(Integer pageCount) { this.pageCount = pageCount; return this; }
-
-    public String getPrintingPageType() { return printingPageType; }
-    public XpsSaveOptions setPrintingPageType(String printingPageType) { this.printingPageType = printingPageType; return this; }
-
-    public String getGridlineType() { return gridlineType; }
-    public XpsSaveOptions setGridlineType(String gridlineType) { this.gridlineType = gridlineType; return this; }
-
-    public String getTextCrossType() { return textCrossType; }
-    public XpsSaveOptions setTextCrossType(String textCrossType) { this.textCrossType = textCrossType; return this; }
-
-    public String getDefaultEditLanguage() { return defaultEditLanguage; }
-    public XpsSaveOptions setDefaultEditLanguage(String defaultEditLanguage) { this.defaultEditLanguage = defaultEditLanguage; return this; }
-
-    public String getEmfRenderSetting() { return emfRenderSetting; }
-    public XpsSaveOptions setEmfRenderSetting(String emfRenderSetting) { this.emfRenderSetting = emfRenderSetting; return this; }
-
-    public Boolean getMergeAreas() { return mergeAreas; }
-    public XpsSaveOptions setMergeAreas(Boolean mergeAreas) { this.mergeAreas = mergeAreas; return this; }
-
-    public Boolean getSortExternalNames() { return sortExternalNames; }
-    public XpsSaveOptions setSortExternalNames(Boolean sortExternalNames) { this.sortExternalNames = sortExternalNames; return this; }
-
-    public Boolean getUpdateSmartArt() { return updateSmartArt; }
-    public XpsSaveOptions setUpdateSmartArt(Boolean updateSmartArt) { this.updateSmartArt = updateSmartArt; return this; }
-
     public String getSaveFormat() { return saveFormat; }
     public XpsSaveOptions setSaveFormat(String saveFormat) { this.saveFormat = saveFormat; return this; }
 
@@ -201,5 +75,43 @@ public class XpsSaveOptions extends PaginatedSaveOptions {
 
     public Boolean getEncryptDocumentProperties() { return encryptDocumentProperties; }
     public XpsSaveOptions setEncryptDocumentProperties(Boolean encryptDocumentProperties) { this.encryptDocumentProperties = encryptDocumentProperties; return this; }
+
+
+    /** Covariant override: keeps fluent chains returning XpsSaveOptions. */
+    @Override public XpsSaveOptions setDefaultFont(String defaultFont) { return (XpsSaveOptions) super.setDefaultFont(defaultFont); }
+    /** Covariant override: keeps fluent chains returning XpsSaveOptions. */
+    @Override public XpsSaveOptions setCheckWorkbookDefaultFont(Boolean checkWorkbookDefaultFont) { return (XpsSaveOptions) super.setCheckWorkbookDefaultFont(checkWorkbookDefaultFont); }
+    /** Covariant override: keeps fluent chains returning XpsSaveOptions. */
+    @Override public XpsSaveOptions setCheckFontCompatibility(Boolean checkFontCompatibility) { return (XpsSaveOptions) super.setCheckFontCompatibility(checkFontCompatibility); }
+    /** Covariant override: keeps fluent chains returning XpsSaveOptions. */
+    @Override public XpsSaveOptions setIsFontSubstitutionCharGranularity(Boolean isFontSubstitutionCharGranularity) { return (XpsSaveOptions) super.setIsFontSubstitutionCharGranularity(isFontSubstitutionCharGranularity); }
+    /** Covariant override: keeps fluent chains returning XpsSaveOptions. */
+    @Override public XpsSaveOptions setOnePagePerSheet(Boolean onePagePerSheet) { return (XpsSaveOptions) super.setOnePagePerSheet(onePagePerSheet); }
+    /** Covariant override: keeps fluent chains returning XpsSaveOptions. */
+    @Override public XpsSaveOptions setAllColumnsInOnePagePerSheet(Boolean allColumnsInOnePagePerSheet) { return (XpsSaveOptions) super.setAllColumnsInOnePagePerSheet(allColumnsInOnePagePerSheet); }
+    /** Covariant override: keeps fluent chains returning XpsSaveOptions. */
+    @Override public XpsSaveOptions setIgnoreError(Boolean ignoreError) { return (XpsSaveOptions) super.setIgnoreError(ignoreError); }
+    /** Covariant override: keeps fluent chains returning XpsSaveOptions. */
+    @Override public XpsSaveOptions setOutputBlankPageWhenNothingToPrint(Boolean outputBlankPageWhenNothingToPrint) { return (XpsSaveOptions) super.setOutputBlankPageWhenNothingToPrint(outputBlankPageWhenNothingToPrint); }
+    /** Covariant override: keeps fluent chains returning XpsSaveOptions. */
+    @Override public XpsSaveOptions setPageIndex(Integer pageIndex) { return (XpsSaveOptions) super.setPageIndex(pageIndex); }
+    /** Covariant override: keeps fluent chains returning XpsSaveOptions. */
+    @Override public XpsSaveOptions setPageCount(Integer pageCount) { return (XpsSaveOptions) super.setPageCount(pageCount); }
+    /** Covariant override: keeps fluent chains returning XpsSaveOptions. */
+    @Override public XpsSaveOptions setPrintingPageType(String printingPageType) { return (XpsSaveOptions) super.setPrintingPageType(printingPageType); }
+    /** Covariant override: keeps fluent chains returning XpsSaveOptions. */
+    @Override public XpsSaveOptions setGridlineType(String gridlineType) { return (XpsSaveOptions) super.setGridlineType(gridlineType); }
+    /** Covariant override: keeps fluent chains returning XpsSaveOptions. */
+    @Override public XpsSaveOptions setTextCrossType(String textCrossType) { return (XpsSaveOptions) super.setTextCrossType(textCrossType); }
+    /** Covariant override: keeps fluent chains returning XpsSaveOptions. */
+    @Override public XpsSaveOptions setDefaultEditLanguage(String defaultEditLanguage) { return (XpsSaveOptions) super.setDefaultEditLanguage(defaultEditLanguage); }
+    /** Covariant override: keeps fluent chains returning XpsSaveOptions. */
+    @Override public XpsSaveOptions setEmfRenderSetting(String emfRenderSetting) { return (XpsSaveOptions) super.setEmfRenderSetting(emfRenderSetting); }
+    /** Covariant override: keeps fluent chains returning XpsSaveOptions. */
+    @Override public XpsSaveOptions setMergeAreas(Boolean mergeAreas) { return (XpsSaveOptions) super.setMergeAreas(mergeAreas); }
+    /** Covariant override: keeps fluent chains returning XpsSaveOptions. */
+    @Override public XpsSaveOptions setSortExternalNames(Boolean sortExternalNames) { return (XpsSaveOptions) super.setSortExternalNames(sortExternalNames); }
+    /** Covariant override: keeps fluent chains returning XpsSaveOptions. */
+    @Override public XpsSaveOptions setUpdateSmartArt(Boolean updateSmartArt) { return (XpsSaveOptions) super.setUpdateSmartArt(updateSmartArt); }
 
 }

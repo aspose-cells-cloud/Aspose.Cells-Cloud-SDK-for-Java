@@ -19,26 +19,6 @@ public class Import2DimensionDoubleArrayOption extends ImportOption {
     @JsonProperty("Data")
     private List<Double> data;
 
-    /** Gets or sets DestinationWorksheet. */
-    @JsonProperty("DestinationWorksheet")
-    private String destinationWorksheet;
-
-    /** Gets or sets IsInsert. */
-    @JsonProperty("IsInsert")
-    private Boolean isInsert;
-
-    /** Gets or sets ImportDataType. */
-    @JsonProperty("ImportDataType")
-    private String importDataType;
-
-    /** Gets or sets DataSource. */
-    @JsonProperty("DataSource")
-    private DataSource dataSource;
-
-    /** Gets or sets Source. */
-    @JsonProperty("Source")
-    private FileSource source;
-
     public Integer getFirstRow() { return firstRow; }
     public Import2DimensionDoubleArrayOption setFirstRow(Integer firstRow) { this.firstRow = firstRow; return this; }
 
@@ -48,19 +28,16 @@ public class Import2DimensionDoubleArrayOption extends ImportOption {
     public List<Double> getData() { return data; }
     public Import2DimensionDoubleArrayOption setData(List<Double> data) { this.data = data; return this; }
 
-    public String getDestinationWorksheet() { return destinationWorksheet; }
-    public Import2DimensionDoubleArrayOption setDestinationWorksheet(String destinationWorksheet) { this.destinationWorksheet = destinationWorksheet; return this; }
 
-    public Boolean getIsInsert() { return isInsert; }
-    public Import2DimensionDoubleArrayOption setIsInsert(Boolean isInsert) { this.isInsert = isInsert; return this; }
-
-    public String getImportDataType() { return importDataType; }
-    public Import2DimensionDoubleArrayOption setImportDataType(String importDataType) { this.importDataType = importDataType; return this; }
-
-    public DataSource getDataSource() { return dataSource; }
-    public Import2DimensionDoubleArrayOption setDataSource(DataSource dataSource) { this.dataSource = dataSource; return this; }
-
-    public FileSource getSource() { return source; }
-    public Import2DimensionDoubleArrayOption setSource(FileSource source) { this.source = source; return this; }
+    /** Covariant override: keeps fluent chains returning Import2DimensionDoubleArrayOption. */
+    @Override public Import2DimensionDoubleArrayOption setDestinationWorksheet(String destinationWorksheet) { return (Import2DimensionDoubleArrayOption) super.setDestinationWorksheet(destinationWorksheet); }
+    /** Covariant override: keeps fluent chains returning Import2DimensionDoubleArrayOption. */
+    @Override public Import2DimensionDoubleArrayOption setIsInsert(Boolean isInsert) { return (Import2DimensionDoubleArrayOption) super.setIsInsert(isInsert); }
+    /** Covariant override: keeps fluent chains returning Import2DimensionDoubleArrayOption. */
+    @Override public Import2DimensionDoubleArrayOption setImportDataType(String importDataType) { return (Import2DimensionDoubleArrayOption) super.setImportDataType(importDataType); }
+    /** Covariant override: keeps fluent chains returning Import2DimensionDoubleArrayOption. */
+    @Override public Import2DimensionDoubleArrayOption setDataSource(DataSource dataSource) { return (Import2DimensionDoubleArrayOption) super.setDataSource(dataSource); }
+    /** Covariant override: keeps fluent chains returning Import2DimensionDoubleArrayOption. */
+    @Override public Import2DimensionDoubleArrayOption setSource(FileSource source) { return (Import2DimensionDoubleArrayOption) super.setSource(source); }
 
 }

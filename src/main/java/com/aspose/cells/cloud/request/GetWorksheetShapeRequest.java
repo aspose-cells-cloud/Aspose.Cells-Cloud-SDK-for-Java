@@ -33,7 +33,7 @@ public class GetWorksheetShapeRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/" + urlEncode(name) + "/worksheets/" + urlEncode(sheetName) + "/shapes/" + urlEncode(String.valueOf(shapeindex));
+        return "/cells/" + urlEncode(name) + "/worksheets/" + urlEncode(sheetName) + "/shapes/" + urlEncode(String.valueOf(shapeindex));
     }
 
     @Override

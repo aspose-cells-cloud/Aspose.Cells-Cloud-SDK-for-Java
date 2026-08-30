@@ -11,14 +11,11 @@ public class PivotTables extends LinkElement {
     @JsonProperty("PivotTableList")
     private List<LinkElement> pivotTableList;
 
-    /** Gets or sets link. */
-    @JsonProperty("link")
-    private Link link;
-
     public List<LinkElement> getPivotTableList() { return pivotTableList; }
     public PivotTables setPivotTableList(List<LinkElement> pivotTableList) { this.pivotTableList = pivotTableList; return this; }
 
-    public Link getLink() { return link; }
-    public PivotTables setLink(Link link) { this.link = link; return this; }
+
+    /** Covariant override: keeps fluent chains returning PivotTables. */
+    @Override public PivotTables setLink(Link link) { return (PivotTables) super.setLink(link); }
 
 }

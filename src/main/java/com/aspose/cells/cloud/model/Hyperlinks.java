@@ -15,17 +15,14 @@ public class Hyperlinks extends LinkElement {
     @JsonProperty("HyperlinkList")
     private List<LinkElement> hyperlinkList;
 
-    /** Gets or sets link. */
-    @JsonProperty("link")
-    private Link link;
-
     public Integer getCount() { return count; }
     public Hyperlinks setCount(Integer count) { this.count = count; return this; }
 
     public List<LinkElement> getHyperlinkList() { return hyperlinkList; }
     public Hyperlinks setHyperlinkList(List<LinkElement> hyperlinkList) { this.hyperlinkList = hyperlinkList; return this; }
 
-    public Link getLink() { return link; }
-    public Hyperlinks setLink(Link link) { this.link = link; return this; }
+
+    /** Covariant override: keeps fluent chains returning Hyperlinks. */
+    @Override public Hyperlinks setLink(Link link) { return (Hyperlinks) super.setLink(link); }
 
 }

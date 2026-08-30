@@ -10,21 +10,13 @@ public class SpinnerResponse extends CellsCloudResponse {
     @JsonProperty("Shape")
     private Spinner shape;
 
-    /** Gets or sets Code. */
-    @JsonProperty("Code")
-    private Integer code;
-
-    /** Gets or sets Status. */
-    @JsonProperty("Status")
-    private String status;
-
     public Spinner getShape() { return shape; }
     public SpinnerResponse setShape(Spinner shape) { this.shape = shape; return this; }
 
-    public Integer getCode() { return code; }
-    public SpinnerResponse setCode(Integer code) { this.code = code; return this; }
 
-    public String getStatus() { return status; }
-    public SpinnerResponse setStatus(String status) { this.status = status; return this; }
+    /** Covariant override: keeps fluent chains returning SpinnerResponse. */
+    @Override public SpinnerResponse setCode(Integer code) { return (SpinnerResponse) super.setCode(code); }
+    /** Covariant override: keeps fluent chains returning SpinnerResponse. */
+    @Override public SpinnerResponse setStatus(String status) { return (SpinnerResponse) super.setStatus(status); }
 
 }

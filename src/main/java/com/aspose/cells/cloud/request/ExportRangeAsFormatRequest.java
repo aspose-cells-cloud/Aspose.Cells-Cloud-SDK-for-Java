@@ -50,7 +50,7 @@ public class ExportRangeAsFormatRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v4.0/cells/" + urlEncode(name) + "/worksheets/" + urlEncode(worksheet) + "/ranges/" + urlEncode(range);
+        return "/cells/" + urlEncode(name) + "/worksheets/" + urlEncode(worksheet) + "/ranges/" + urlEncode(range);
     }
 
     @Override
@@ -83,4 +83,6 @@ public class ExportRangeAsFormatRequest implements RequestOption {
     public Map<String, Object> getMultipartForm() {
         return null;
     }
+
+    @Override public boolean isBinaryResponse() { return true; }
 }

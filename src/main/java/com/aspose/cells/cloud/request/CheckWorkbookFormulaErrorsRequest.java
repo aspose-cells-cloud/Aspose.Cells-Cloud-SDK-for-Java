@@ -5,7 +5,6 @@ import com.aspose.cells.cloud.model.CheckFormulaErrorOptions;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import static com.aspose.cells.cloud.UrlUtils.urlEncode;
 
 /** CheckWorkbookFormulaErrors request. */
 public class CheckWorkbookFormulaErrorsRequest implements RequestOption {
@@ -22,7 +21,7 @@ public class CheckWorkbookFormulaErrorsRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/checkformulaerrors";
+        return "/cells/checkformulaerrors";
     }
 
     @Override

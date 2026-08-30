@@ -5,7 +5,6 @@ import com.aspose.cells.cloud.model.DataFillRequest;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import static com.aspose.cells.cloud.UrlUtils.urlEncode;
 
 /** Data filling for spreadsheet files is primarily used to fill empty data in tables and ranges. */
 public class PostDataFillRequest implements RequestOption {
@@ -22,7 +21,7 @@ public class PostDataFillRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/datafill";
+        return "/cells/datafill";
     }
 
     @Override

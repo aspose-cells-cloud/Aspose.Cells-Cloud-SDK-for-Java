@@ -10,21 +10,13 @@ public class OleObjectResponse extends CellsCloudResponse {
     @JsonProperty("OleObject")
     private OleObject oleObject;
 
-    /** Gets or sets Code. */
-    @JsonProperty("Code")
-    private Integer code;
-
-    /** Gets or sets Status. */
-    @JsonProperty("Status")
-    private String status;
-
     public OleObject getOleObject() { return oleObject; }
     public OleObjectResponse setOleObject(OleObject oleObject) { this.oleObject = oleObject; return this; }
 
-    public Integer getCode() { return code; }
-    public OleObjectResponse setCode(Integer code) { this.code = code; return this; }
 
-    public String getStatus() { return status; }
-    public OleObjectResponse setStatus(String status) { this.status = status; return this; }
+    /** Covariant override: keeps fluent chains returning OleObjectResponse. */
+    @Override public OleObjectResponse setCode(Integer code) { return (OleObjectResponse) super.setCode(code); }
+    /** Covariant override: keeps fluent chains returning OleObjectResponse. */
+    @Override public OleObjectResponse setStatus(String status) { return (OleObjectResponse) super.setStatus(status); }
 
 }

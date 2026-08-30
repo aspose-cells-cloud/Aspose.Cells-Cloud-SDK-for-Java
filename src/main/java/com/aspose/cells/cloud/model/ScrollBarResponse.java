@@ -10,21 +10,13 @@ public class ScrollBarResponse extends CellsCloudResponse {
     @JsonProperty("Shape")
     private ScrollBar shape;
 
-    /** Gets or sets Code. */
-    @JsonProperty("Code")
-    private Integer code;
-
-    /** Gets or sets Status. */
-    @JsonProperty("Status")
-    private String status;
-
     public ScrollBar getShape() { return shape; }
     public ScrollBarResponse setShape(ScrollBar shape) { this.shape = shape; return this; }
 
-    public Integer getCode() { return code; }
-    public ScrollBarResponse setCode(Integer code) { this.code = code; return this; }
 
-    public String getStatus() { return status; }
-    public ScrollBarResponse setStatus(String status) { this.status = status; return this; }
+    /** Covariant override: keeps fluent chains returning ScrollBarResponse. */
+    @Override public ScrollBarResponse setCode(Integer code) { return (ScrollBarResponse) super.setCode(code); }
+    /** Covariant override: keeps fluent chains returning ScrollBarResponse. */
+    @Override public ScrollBarResponse setStatus(String status) { return (ScrollBarResponse) super.setStatus(status); }
 
 }

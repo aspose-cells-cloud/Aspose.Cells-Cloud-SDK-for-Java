@@ -37,7 +37,7 @@ public class PostWorkbookExportXMLRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/" + urlEncode(name) + "/exportxml";
+        return "/cells/" + urlEncode(name) + "/exportxml";
     }
 
     @Override
@@ -67,4 +67,6 @@ public class PostWorkbookExportXMLRequest implements RequestOption {
     public Map<String, Object> getMultipartForm() {
         return null;
     }
+
+    @Override public boolean isBinaryResponse() { return true; }
 }

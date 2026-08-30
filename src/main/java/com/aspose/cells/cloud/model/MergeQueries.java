@@ -26,10 +26,6 @@ public class MergeQueries extends AppliedOperate {
     @JsonProperty("JoinType")
     private String joinType;
 
-    /** Gets or sets AppliedOperateType. */
-    @JsonProperty("AppliedOperateType")
-    private String appliedOperateType;
-
     public String getDataQueryNameA() { return dataQueryNameA; }
     public MergeQueries setDataQueryNameA(String dataQueryNameA) { this.dataQueryNameA = dataQueryNameA; return this; }
 
@@ -45,7 +41,8 @@ public class MergeQueries extends AppliedOperate {
     public String getJoinType() { return joinType; }
     public MergeQueries setJoinType(String joinType) { this.joinType = joinType; return this; }
 
-    public String getAppliedOperateType() { return appliedOperateType; }
-    public MergeQueries setAppliedOperateType(String appliedOperateType) { this.appliedOperateType = appliedOperateType; return this; }
+
+    /** Covariant override: keeps fluent chains returning MergeQueries. */
+    @Override public MergeQueries setAppliedOperateType(String appliedOperateType) { return (MergeQueries) super.setAppliedOperateType(appliedOperateType); }
 
 }

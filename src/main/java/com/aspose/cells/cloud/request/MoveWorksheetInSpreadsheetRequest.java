@@ -6,7 +6,6 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import static com.aspose.cells.cloud.UrlUtils.urlEncode;
 
 /** The Web API endpoint allows users to move a specified worksheet within a workbook. This function provides a straightforward way to move a worksheet, enhancing workbook organization. */
 public class MoveWorksheetInSpreadsheetRequest implements RequestOption {
@@ -51,7 +50,7 @@ public class MoveWorksheetInSpreadsheetRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v4.0/cells/spreadsheet/move/worksheet";
+        return "/cells/spreadsheet/move/worksheet";
     }
 
     @Override
@@ -84,4 +83,6 @@ public class MoveWorksheetInSpreadsheetRequest implements RequestOption {
         form.put("Spreadsheet", spreadsheet);
         return form;
     }
+
+    @Override public boolean isBinaryResponse() { return true; }
 }

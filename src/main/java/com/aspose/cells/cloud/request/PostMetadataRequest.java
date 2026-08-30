@@ -8,7 +8,6 @@ import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
-import static com.aspose.cells.cloud.UrlUtils.urlEncode;
 
 /** Update document properties in Excel file, and save them is various formats. */
 public class PostMetadataRequest implements RequestOption {
@@ -50,7 +49,7 @@ public class PostMetadataRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v3.0/cells/metadata/update";
+        return "/cells/metadata/update";
     }
 
     @Override
@@ -81,4 +80,6 @@ public class PostMetadataRequest implements RequestOption {
         form.put("File", file);
         return form;
     }
+
+    @Override public String getJsonBodyPartName() { return "cellsDocuments"; }
 }

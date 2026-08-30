@@ -10,21 +10,13 @@ public class AutoShapeResponse extends CellsCloudResponse {
     @JsonProperty("AutoShape")
     private AutoShape autoShape;
 
-    /** Gets or sets Code. */
-    @JsonProperty("Code")
-    private Integer code;
-
-    /** Gets or sets Status. */
-    @JsonProperty("Status")
-    private String status;
-
     public AutoShape getAutoShape() { return autoShape; }
     public AutoShapeResponse setAutoShape(AutoShape autoShape) { this.autoShape = autoShape; return this; }
 
-    public Integer getCode() { return code; }
-    public AutoShapeResponse setCode(Integer code) { this.code = code; return this; }
 
-    public String getStatus() { return status; }
-    public AutoShapeResponse setStatus(String status) { this.status = status; return this; }
+    /** Covariant override: keeps fluent chains returning AutoShapeResponse. */
+    @Override public AutoShapeResponse setCode(Integer code) { return (AutoShapeResponse) super.setCode(code); }
+    /** Covariant override: keeps fluent chains returning AutoShapeResponse. */
+    @Override public AutoShapeResponse setStatus(String status) { return (AutoShapeResponse) super.setStatus(status); }
 
 }

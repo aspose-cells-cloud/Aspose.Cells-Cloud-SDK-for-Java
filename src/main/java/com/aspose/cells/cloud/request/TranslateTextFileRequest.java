@@ -6,7 +6,6 @@ import java.io.File;
 import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.Map;
-import static com.aspose.cells.cloud.UrlUtils.urlEncode;
 
 /** Translates text file content to the specified target language. */
 public class TranslateTextFileRequest implements RequestOption {
@@ -44,7 +43,7 @@ public class TranslateTextFileRequest implements RequestOption {
 
     @Override
     public String getPath() {
-        return "/v4.0/cells/ai/translate/text-file";
+        return "/cells/ai/translate/text-file";
     }
 
     @Override
