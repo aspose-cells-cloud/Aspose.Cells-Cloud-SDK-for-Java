@@ -54,7 +54,7 @@ public class CellsApi {
         String accesstoken = apiClient.getAccessToken("client_credentials", clientId, clientSecret, "v3.0");
         apiClient.addDefaultHeader("Authorization", "Bearer " + accesstoken);
         apiClient.addDefaultHeader("x-aspose-client", "java sdk");
-        apiClient.addDefaultHeader("x-aspose-client-version", "26.8");
+        apiClient.addDefaultHeader("x-aspose-client-version", "26.9");
         this.apiClient = apiClient;
     }
 
@@ -70,7 +70,7 @@ public class CellsApi {
             apiClient.addDefaultHeader("Authorization", "Bearer " + accesstoken);
         }
         apiClient.addDefaultHeader("x-aspose-client", "java sdk");
-        apiClient.addDefaultHeader("x-aspose-client-version", "26.8");
+        apiClient.addDefaultHeader("x-aspose-client-version", "26.9");
         this.apiClient = apiClient;
     }
 

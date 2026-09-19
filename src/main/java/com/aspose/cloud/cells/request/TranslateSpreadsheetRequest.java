@@ -42,6 +42,9 @@ public class TranslateSpreadsheetRequest  implements IRequestModel {
         this.extendQueryParameterMap = extendQueryParameterMap;
     }
     private String targetLanguage;
+    private String customEndpoint;
+    private String customApiKey;
+    private String customModel;
     private String region;
     private String password;
     
@@ -51,9 +54,12 @@ public class TranslateSpreadsheetRequest  implements IRequestModel {
         public TranslateSpreadsheetRequest()
         {        
         }
-        public TranslateSpreadsheetRequest( String  spreadsheet    ,  String targetLanguage ,  String region ,  String password ) {
+        public TranslateSpreadsheetRequest( String  spreadsheet    ,  String targetLanguage ,  String customEndpoint ,  String customApiKey ,  String customModel ,  String region ,  String password ) {
               this.spreadsheet  = spreadsheet;  
             this.targetLanguage = targetLanguage; 
+            this.customEndpoint = customEndpoint; 
+            this.customApiKey = customApiKey; 
+            this.customModel = customModel; 
             this.region = region; 
             this.password = password; 
         }   
@@ -64,6 +70,33 @@ public class TranslateSpreadsheetRequest  implements IRequestModel {
 
         public void setTargetLanguage(String targetLanguage) {
             this.targetLanguage = targetLanguage;
+        }
+
+
+        public String getCustomEndpoint() {
+            return this.customEndpoint;
+        }
+
+        public void setCustomEndpoint(String customEndpoint) {
+            this.customEndpoint = customEndpoint;
+        }
+
+
+        public String getCustomApiKey() {
+            return this.customApiKey;
+        }
+
+        public void setCustomApiKey(String customApiKey) {
+            this.customApiKey = customApiKey;
+        }
+
+
+        public String getCustomModel() {
+            return this.customModel;
+        }
+
+        public void setCustomModel(String customModel) {
+            this.customModel = customModel;
         }
 
 
@@ -111,6 +144,15 @@ public class TranslateSpreadsheetRequest  implements IRequestModel {
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
             if (getTargetLanguage() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "targetLanguage", getTargetLanguage()));
+            } 
+            if (getCustomEndpoint() != null){
+                localVarQueryParams.addAll(apiClient.parameterToPairs("", "customEndpoint", getCustomEndpoint()));
+            } 
+            if (getCustomApiKey() != null){
+                localVarQueryParams.addAll(apiClient.parameterToPairs("", "customApiKey", getCustomApiKey()));
+            } 
+            if (getCustomModel() != null){
+                localVarQueryParams.addAll(apiClient.parameterToPairs("", "customModel", getCustomModel()));
             } 
             if (getRegion() != null){
                 localVarQueryParams.addAll(apiClient.parameterToPairs("", "region", getRegion()));

@@ -44,10 +44,16 @@ public class SmartMarkerTemplateRequest  implements IRequestModel {
     private String region;
     private String password;
     
+     
+     
+     private String datafile;
+     private String templatefile;            
         public SmartMarkerTemplateRequest()
         {        
         }
-        public SmartMarkerTemplateRequest( String region ,  String password ) {
+        public SmartMarkerTemplateRequest( String  datafile    ,  String  templatefile    ,  String region ,  String password ) {
+              this.datafile  = datafile;  
+              this.templatefile  = templatefile;  
             this.region = region; 
             this.password = password; 
         }   
@@ -70,9 +76,34 @@ public class SmartMarkerTemplateRequest  implements IRequestModel {
         }
 
     
+     
+            public String getDatafile() {
+                    return this.datafile;
+            }
+            public void setDatafile(String datafile) {
+                this.datafile = datafile;
+            }
+         
+            public String getTemplatefile() {
+                    return this.templatefile;
+            }
+            public void setTemplatefile(String templatefile) {
+                this.templatefile = templatefile;
+            }
+         
+        
     @Override
     public Call buildHttpRequest(ApiClient apiClient, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener, Boolean addAuthHeaders) throws ApiException {
+          
          
+                if ( getDatafile() == null ) {
+                    throw new ApiException("Missing the required parameter 'Datafile' when calling SmartMarkerTemplate");
+                } 
+         
+         
+                if ( getTemplatefile() == null ) {
+                    throw new ApiException("Missing the required parameter 'Templatefile' when calling SmartMarkerTemplate");
+                }       
         String localVarPath = "v4.0/cells/report/smart/template";
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
@@ -88,6 +119,18 @@ public class SmartMarkerTemplateRequest  implements IRequestModel {
                     localVarQueryParams.addAll(apiClient.parameterToPairs("", key, this.extendQueryParameterMap.get(key)));           
             }
         }
+                   
+            File datafileToUpload = new File(getDatafile());
+            if (datafileToUpload.exists()) {
+                    localVarFormParams.put(datafileToUpload.getName(), datafileToUpload);
+            }     
+             
+
+            File templatefileToUpload = new File(getTemplatefile());
+            if (templatefileToUpload.exists()) {
+                    localVarFormParams.put(templatefileToUpload.getName(), templatefileToUpload);
+            }     
+                  
         Object localVarPostBody = null;
                 final String[] localVarAccepts = {
                     "application/json"
@@ -95,7 +138,7 @@ public class SmartMarkerTemplateRequest  implements IRequestModel {
                 final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
                 if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
 
-                final String[] localVarContentTypes = { "application/json" };        
+                final String[] localVarContentTypes = { "multipart/form-data"  };        
                 final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
                 localVarHeaderParams.put("Content-Type", localVarContentType);
 
