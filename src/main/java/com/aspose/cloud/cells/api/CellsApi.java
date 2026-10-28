@@ -54,7 +54,7 @@ public class CellsApi {
         String accesstoken = apiClient.getAccessToken("client_credentials", clientId, clientSecret, "v3.0");
         apiClient.addDefaultHeader("Authorization", "Bearer " + accesstoken);
         apiClient.addDefaultHeader("x-aspose-client", "java sdk");
-        apiClient.addDefaultHeader("x-aspose-client-version", "26.9");
+        apiClient.addDefaultHeader("x-aspose-client-version", "26.10.5");
         this.apiClient = apiClient;
     }
 
@@ -70,7 +70,7 @@ public class CellsApi {
             apiClient.addDefaultHeader("Authorization", "Bearer " + accesstoken);
         }
         apiClient.addDefaultHeader("x-aspose-client", "java sdk");
-        apiClient.addDefaultHeader("x-aspose-client-version", "26.9");
+        apiClient.addDefaultHeader("x-aspose-client-version", "26.10.5");
         this.apiClient = apiClient;
     }
 
@@ -449,6 +449,59 @@ public class CellsApi {
              }
 
              com.squareup.okhttp.Call call =  aggregateCellsByColorValidateBeforeCall(request, progressListener, progressRequestListener);
+             Type localVarReturnType = new TypeToken< AggregateResultByColorResponse >(){}.getType();
+             apiClient.executeAsync(call, localVarReturnType, callback);
+             return call;
+         }
+
+
+         @SuppressWarnings("rawtypes")
+         private com.squareup.okhttp.Call aggregateCellsByColor_DeprecatedValidateBeforeCall(AggregateCellsByColor_DeprecatedRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
+             return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
+         }
+         public  AggregateResultByColorResponse  aggregateCellsByColor_Deprecated(AggregateCellsByColor_DeprecatedRequest request) throws ApiException,  IOException {
+             try {
+                 ApiResponse< AggregateResultByColorResponse > resp = aggregateCellsByColor_DeprecatedWithHttpInfo(request);
+                  return resp.getData(); 
+             }
+             catch (ApiException ex) {
+                 if (ex.getCode() == apiClient.getNotAuthCode()) {
+                     apiClient.requestToken();
+                     ApiResponse< AggregateResultByColorResponse > resp = aggregateCellsByColor_DeprecatedWithHttpInfo(request);
+                      return resp.getData();       
+                 }
+                 throw ex;
+             }
+         }
+
+         private ApiResponse< AggregateResultByColorResponse > aggregateCellsByColor_DeprecatedWithHttpInfo(AggregateCellsByColor_DeprecatedRequest request) throws ApiException,  IOException {
+             com.squareup.okhttp.Call call =  aggregateCellsByColor_DeprecatedValidateBeforeCall(request, null, null);
+             Type localVarReturnType = new TypeToken< AggregateResultByColorResponse >(){}.getType();
+             return apiClient.execute(call, localVarReturnType);
+         }
+
+         public com.squareup.okhttp.Call  aggregateCellsByColor_DeprecatedAsync( AggregateCellsByColor_DeprecatedRequest request, final ApiCallback< AggregateResultByColorResponse > callback) throws ApiException,  IOException {
+
+             ProgressResponseBody.ProgressListener progressListener = null;
+             ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+             if (callback != null) {
+                 progressListener = new ProgressResponseBody.ProgressListener() {
+                     @Override
+                     public void update(long bytesRead, long contentLength, boolean done) {
+                         callback.onDownloadProgress(bytesRead, contentLength, done);
+                     }
+                 };
+
+                 progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                     @Override
+                     public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                         callback.onUploadProgress(bytesWritten, contentLength, done);
+                     }
+                 };
+             }
+
+             com.squareup.okhttp.Call call =  aggregateCellsByColor_DeprecatedValidateBeforeCall(request, progressListener, progressRequestListener);
              Type localVarReturnType = new TypeToken< AggregateResultByColorResponse >(){}.getType();
              apiClient.executeAsync(call, localVarReturnType, callback);
              return call;
@@ -3951,6 +4004,59 @@ public class CellsApi {
 
 
          @SuppressWarnings("rawtypes")
+         private com.squareup.okhttp.Call searchAllTextItemsInRemoteSpreadsheet_LegacyPutValidateBeforeCall(SearchAllTextItemsInRemoteSpreadsheet_LegacyPutRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
+             return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
+         }
+         public  SearchResponse  searchAllTextItemsInRemoteSpreadsheet_LegacyPut(SearchAllTextItemsInRemoteSpreadsheet_LegacyPutRequest request) throws ApiException,  IOException {
+             try {
+                 ApiResponse< SearchResponse > resp = searchAllTextItemsInRemoteSpreadsheet_LegacyPutWithHttpInfo(request);
+                  return resp.getData(); 
+             }
+             catch (ApiException ex) {
+                 if (ex.getCode() == apiClient.getNotAuthCode()) {
+                     apiClient.requestToken();
+                     ApiResponse< SearchResponse > resp = searchAllTextItemsInRemoteSpreadsheet_LegacyPutWithHttpInfo(request);
+                      return resp.getData();       
+                 }
+                 throw ex;
+             }
+         }
+
+         private ApiResponse< SearchResponse > searchAllTextItemsInRemoteSpreadsheet_LegacyPutWithHttpInfo(SearchAllTextItemsInRemoteSpreadsheet_LegacyPutRequest request) throws ApiException,  IOException {
+             com.squareup.okhttp.Call call =  searchAllTextItemsInRemoteSpreadsheet_LegacyPutValidateBeforeCall(request, null, null);
+             Type localVarReturnType = new TypeToken< SearchResponse >(){}.getType();
+             return apiClient.execute(call, localVarReturnType);
+         }
+
+         public com.squareup.okhttp.Call  searchAllTextItemsInRemoteSpreadsheet_LegacyPutAsync( SearchAllTextItemsInRemoteSpreadsheet_LegacyPutRequest request, final ApiCallback< SearchResponse > callback) throws ApiException,  IOException {
+
+             ProgressResponseBody.ProgressListener progressListener = null;
+             ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+             if (callback != null) {
+                 progressListener = new ProgressResponseBody.ProgressListener() {
+                     @Override
+                     public void update(long bytesRead, long contentLength, boolean done) {
+                         callback.onDownloadProgress(bytesRead, contentLength, done);
+                     }
+                 };
+
+                 progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                     @Override
+                     public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                         callback.onUploadProgress(bytesWritten, contentLength, done);
+                     }
+                 };
+             }
+
+             com.squareup.okhttp.Call call =  searchAllTextItemsInRemoteSpreadsheet_LegacyPutValidateBeforeCall(request, progressListener, progressRequestListener);
+             Type localVarReturnType = new TypeToken< SearchResponse >(){}.getType();
+             apiClient.executeAsync(call, localVarReturnType, callback);
+             return call;
+         }
+
+
+         @SuppressWarnings("rawtypes")
          private com.squareup.okhttp.Call searchSpreadsheetAllTextItemsValidateBeforeCall(SearchSpreadsheetAllTextItemsRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
@@ -4110,6 +4216,59 @@ public class CellsApi {
 
 
          @SuppressWarnings("rawtypes")
+         private com.squareup.okhttp.Call searchContentInRemoteSpreadsheet_LegacyPutValidateBeforeCall(SearchContentInRemoteSpreadsheet_LegacyPutRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
+             return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
+         }
+         public  SearchResponse  searchContentInRemoteSpreadsheet_LegacyPut(SearchContentInRemoteSpreadsheet_LegacyPutRequest request) throws ApiException,  IOException {
+             try {
+                 ApiResponse< SearchResponse > resp = searchContentInRemoteSpreadsheet_LegacyPutWithHttpInfo(request);
+                  return resp.getData(); 
+             }
+             catch (ApiException ex) {
+                 if (ex.getCode() == apiClient.getNotAuthCode()) {
+                     apiClient.requestToken();
+                     ApiResponse< SearchResponse > resp = searchContentInRemoteSpreadsheet_LegacyPutWithHttpInfo(request);
+                      return resp.getData();       
+                 }
+                 throw ex;
+             }
+         }
+
+         private ApiResponse< SearchResponse > searchContentInRemoteSpreadsheet_LegacyPutWithHttpInfo(SearchContentInRemoteSpreadsheet_LegacyPutRequest request) throws ApiException,  IOException {
+             com.squareup.okhttp.Call call =  searchContentInRemoteSpreadsheet_LegacyPutValidateBeforeCall(request, null, null);
+             Type localVarReturnType = new TypeToken< SearchResponse >(){}.getType();
+             return apiClient.execute(call, localVarReturnType);
+         }
+
+         public com.squareup.okhttp.Call  searchContentInRemoteSpreadsheet_LegacyPutAsync( SearchContentInRemoteSpreadsheet_LegacyPutRequest request, final ApiCallback< SearchResponse > callback) throws ApiException,  IOException {
+
+             ProgressResponseBody.ProgressListener progressListener = null;
+             ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+             if (callback != null) {
+                 progressListener = new ProgressResponseBody.ProgressListener() {
+                     @Override
+                     public void update(long bytesRead, long contentLength, boolean done) {
+                         callback.onDownloadProgress(bytesRead, contentLength, done);
+                     }
+                 };
+
+                 progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                     @Override
+                     public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                         callback.onUploadProgress(bytesWritten, contentLength, done);
+                     }
+                 };
+             }
+
+             com.squareup.okhttp.Call call =  searchContentInRemoteSpreadsheet_LegacyPutValidateBeforeCall(request, progressListener, progressRequestListener);
+             Type localVarReturnType = new TypeToken< SearchResponse >(){}.getType();
+             apiClient.executeAsync(call, localVarReturnType, callback);
+             return call;
+         }
+
+
+         @SuppressWarnings("rawtypes")
          private com.squareup.okhttp.Call searchContentInRemoteWorksheetValidateBeforeCall(SearchContentInRemoteWorksheetRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
@@ -4163,6 +4322,59 @@ public class CellsApi {
 
 
          @SuppressWarnings("rawtypes")
+         private com.squareup.okhttp.Call searchContentInRemoteWorksheet_LegacyPutValidateBeforeCall(SearchContentInRemoteWorksheet_LegacyPutRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
+             return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
+         }
+         public  SearchResponse  searchContentInRemoteWorksheet_LegacyPut(SearchContentInRemoteWorksheet_LegacyPutRequest request) throws ApiException,  IOException {
+             try {
+                 ApiResponse< SearchResponse > resp = searchContentInRemoteWorksheet_LegacyPutWithHttpInfo(request);
+                  return resp.getData(); 
+             }
+             catch (ApiException ex) {
+                 if (ex.getCode() == apiClient.getNotAuthCode()) {
+                     apiClient.requestToken();
+                     ApiResponse< SearchResponse > resp = searchContentInRemoteWorksheet_LegacyPutWithHttpInfo(request);
+                      return resp.getData();       
+                 }
+                 throw ex;
+             }
+         }
+
+         private ApiResponse< SearchResponse > searchContentInRemoteWorksheet_LegacyPutWithHttpInfo(SearchContentInRemoteWorksheet_LegacyPutRequest request) throws ApiException,  IOException {
+             com.squareup.okhttp.Call call =  searchContentInRemoteWorksheet_LegacyPutValidateBeforeCall(request, null, null);
+             Type localVarReturnType = new TypeToken< SearchResponse >(){}.getType();
+             return apiClient.execute(call, localVarReturnType);
+         }
+
+         public com.squareup.okhttp.Call  searchContentInRemoteWorksheet_LegacyPutAsync( SearchContentInRemoteWorksheet_LegacyPutRequest request, final ApiCallback< SearchResponse > callback) throws ApiException,  IOException {
+
+             ProgressResponseBody.ProgressListener progressListener = null;
+             ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+             if (callback != null) {
+                 progressListener = new ProgressResponseBody.ProgressListener() {
+                     @Override
+                     public void update(long bytesRead, long contentLength, boolean done) {
+                         callback.onDownloadProgress(bytesRead, contentLength, done);
+                     }
+                 };
+
+                 progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                     @Override
+                     public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                         callback.onUploadProgress(bytesWritten, contentLength, done);
+                     }
+                 };
+             }
+
+             com.squareup.okhttp.Call call =  searchContentInRemoteWorksheet_LegacyPutValidateBeforeCall(request, progressListener, progressRequestListener);
+             Type localVarReturnType = new TypeToken< SearchResponse >(){}.getType();
+             apiClient.executeAsync(call, localVarReturnType, callback);
+             return call;
+         }
+
+
+         @SuppressWarnings("rawtypes")
          private com.squareup.okhttp.Call searchContentInRemoteRangeValidateBeforeCall(SearchContentInRemoteRangeRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
@@ -4209,6 +4421,59 @@ public class CellsApi {
              }
 
              com.squareup.okhttp.Call call =  searchContentInRemoteRangeValidateBeforeCall(request, progressListener, progressRequestListener);
+             Type localVarReturnType = new TypeToken< SearchResponse >(){}.getType();
+             apiClient.executeAsync(call, localVarReturnType, callback);
+             return call;
+         }
+
+
+         @SuppressWarnings("rawtypes")
+         private com.squareup.okhttp.Call searchContentInRemoteRange_LegacyPutValidateBeforeCall(SearchContentInRemoteRange_LegacyPutRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
+             return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
+         }
+         public  SearchResponse  searchContentInRemoteRange_LegacyPut(SearchContentInRemoteRange_LegacyPutRequest request) throws ApiException,  IOException {
+             try {
+                 ApiResponse< SearchResponse > resp = searchContentInRemoteRange_LegacyPutWithHttpInfo(request);
+                  return resp.getData(); 
+             }
+             catch (ApiException ex) {
+                 if (ex.getCode() == apiClient.getNotAuthCode()) {
+                     apiClient.requestToken();
+                     ApiResponse< SearchResponse > resp = searchContentInRemoteRange_LegacyPutWithHttpInfo(request);
+                      return resp.getData();       
+                 }
+                 throw ex;
+             }
+         }
+
+         private ApiResponse< SearchResponse > searchContentInRemoteRange_LegacyPutWithHttpInfo(SearchContentInRemoteRange_LegacyPutRequest request) throws ApiException,  IOException {
+             com.squareup.okhttp.Call call =  searchContentInRemoteRange_LegacyPutValidateBeforeCall(request, null, null);
+             Type localVarReturnType = new TypeToken< SearchResponse >(){}.getType();
+             return apiClient.execute(call, localVarReturnType);
+         }
+
+         public com.squareup.okhttp.Call  searchContentInRemoteRange_LegacyPutAsync( SearchContentInRemoteRange_LegacyPutRequest request, final ApiCallback< SearchResponse > callback) throws ApiException,  IOException {
+
+             ProgressResponseBody.ProgressListener progressListener = null;
+             ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+             if (callback != null) {
+                 progressListener = new ProgressResponseBody.ProgressListener() {
+                     @Override
+                     public void update(long bytesRead, long contentLength, boolean done) {
+                         callback.onDownloadProgress(bytesRead, contentLength, done);
+                     }
+                 };
+
+                 progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                     @Override
+                     public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                         callback.onUploadProgress(bytesWritten, contentLength, done);
+                     }
+                 };
+             }
+
+             com.squareup.okhttp.Call call =  searchContentInRemoteRange_LegacyPutValidateBeforeCall(request, progressListener, progressRequestListener);
              Type localVarReturnType = new TypeToken< SearchResponse >(){}.getType();
              apiClient.executeAsync(call, localVarReturnType, callback);
              return call;
@@ -4537,6 +4802,59 @@ public class CellsApi {
 
 
          @SuppressWarnings("rawtypes")
+         private com.squareup.okhttp.Call searchBrokenLinksInRemoteSpreadsheet_LegacyPutValidateBeforeCall(SearchBrokenLinksInRemoteSpreadsheet_LegacyPutRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
+             return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
+         }
+         public  BrokenLinksResponse  searchBrokenLinksInRemoteSpreadsheet_LegacyPut(SearchBrokenLinksInRemoteSpreadsheet_LegacyPutRequest request) throws ApiException,  IOException {
+             try {
+                 ApiResponse< BrokenLinksResponse > resp = searchBrokenLinksInRemoteSpreadsheet_LegacyPutWithHttpInfo(request);
+                  return resp.getData(); 
+             }
+             catch (ApiException ex) {
+                 if (ex.getCode() == apiClient.getNotAuthCode()) {
+                     apiClient.requestToken();
+                     ApiResponse< BrokenLinksResponse > resp = searchBrokenLinksInRemoteSpreadsheet_LegacyPutWithHttpInfo(request);
+                      return resp.getData();       
+                 }
+                 throw ex;
+             }
+         }
+
+         private ApiResponse< BrokenLinksResponse > searchBrokenLinksInRemoteSpreadsheet_LegacyPutWithHttpInfo(SearchBrokenLinksInRemoteSpreadsheet_LegacyPutRequest request) throws ApiException,  IOException {
+             com.squareup.okhttp.Call call =  searchBrokenLinksInRemoteSpreadsheet_LegacyPutValidateBeforeCall(request, null, null);
+             Type localVarReturnType = new TypeToken< BrokenLinksResponse >(){}.getType();
+             return apiClient.execute(call, localVarReturnType);
+         }
+
+         public com.squareup.okhttp.Call  searchBrokenLinksInRemoteSpreadsheet_LegacyPutAsync( SearchBrokenLinksInRemoteSpreadsheet_LegacyPutRequest request, final ApiCallback< BrokenLinksResponse > callback) throws ApiException,  IOException {
+
+             ProgressResponseBody.ProgressListener progressListener = null;
+             ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+             if (callback != null) {
+                 progressListener = new ProgressResponseBody.ProgressListener() {
+                     @Override
+                     public void update(long bytesRead, long contentLength, boolean done) {
+                         callback.onDownloadProgress(bytesRead, contentLength, done);
+                     }
+                 };
+
+                 progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                     @Override
+                     public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                         callback.onUploadProgress(bytesWritten, contentLength, done);
+                     }
+                 };
+             }
+
+             com.squareup.okhttp.Call call =  searchBrokenLinksInRemoteSpreadsheet_LegacyPutValidateBeforeCall(request, progressListener, progressRequestListener);
+             Type localVarReturnType = new TypeToken< BrokenLinksResponse >(){}.getType();
+             apiClient.executeAsync(call, localVarReturnType, callback);
+             return call;
+         }
+
+
+         @SuppressWarnings("rawtypes")
          private com.squareup.okhttp.Call searchBrokenLinksInRemoteWorksheetValidateBeforeCall(SearchBrokenLinksInRemoteWorksheetRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
@@ -4590,6 +4908,59 @@ public class CellsApi {
 
 
          @SuppressWarnings("rawtypes")
+         private com.squareup.okhttp.Call searchBrokenLinksInRemoteWorksheet_LegacyPutValidateBeforeCall(SearchBrokenLinksInRemoteWorksheet_LegacyPutRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
+             return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
+         }
+         public  BrokenLinksResponse  searchBrokenLinksInRemoteWorksheet_LegacyPut(SearchBrokenLinksInRemoteWorksheet_LegacyPutRequest request) throws ApiException,  IOException {
+             try {
+                 ApiResponse< BrokenLinksResponse > resp = searchBrokenLinksInRemoteWorksheet_LegacyPutWithHttpInfo(request);
+                  return resp.getData(); 
+             }
+             catch (ApiException ex) {
+                 if (ex.getCode() == apiClient.getNotAuthCode()) {
+                     apiClient.requestToken();
+                     ApiResponse< BrokenLinksResponse > resp = searchBrokenLinksInRemoteWorksheet_LegacyPutWithHttpInfo(request);
+                      return resp.getData();       
+                 }
+                 throw ex;
+             }
+         }
+
+         private ApiResponse< BrokenLinksResponse > searchBrokenLinksInRemoteWorksheet_LegacyPutWithHttpInfo(SearchBrokenLinksInRemoteWorksheet_LegacyPutRequest request) throws ApiException,  IOException {
+             com.squareup.okhttp.Call call =  searchBrokenLinksInRemoteWorksheet_LegacyPutValidateBeforeCall(request, null, null);
+             Type localVarReturnType = new TypeToken< BrokenLinksResponse >(){}.getType();
+             return apiClient.execute(call, localVarReturnType);
+         }
+
+         public com.squareup.okhttp.Call  searchBrokenLinksInRemoteWorksheet_LegacyPutAsync( SearchBrokenLinksInRemoteWorksheet_LegacyPutRequest request, final ApiCallback< BrokenLinksResponse > callback) throws ApiException,  IOException {
+
+             ProgressResponseBody.ProgressListener progressListener = null;
+             ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+             if (callback != null) {
+                 progressListener = new ProgressResponseBody.ProgressListener() {
+                     @Override
+                     public void update(long bytesRead, long contentLength, boolean done) {
+                         callback.onDownloadProgress(bytesRead, contentLength, done);
+                     }
+                 };
+
+                 progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                     @Override
+                     public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                         callback.onUploadProgress(bytesWritten, contentLength, done);
+                     }
+                 };
+             }
+
+             com.squareup.okhttp.Call call =  searchBrokenLinksInRemoteWorksheet_LegacyPutValidateBeforeCall(request, progressListener, progressRequestListener);
+             Type localVarReturnType = new TypeToken< BrokenLinksResponse >(){}.getType();
+             apiClient.executeAsync(call, localVarReturnType, callback);
+             return call;
+         }
+
+
+         @SuppressWarnings("rawtypes")
          private com.squareup.okhttp.Call searchBrokenLinksInRemoteRangeValidateBeforeCall(SearchBrokenLinksInRemoteRangeRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
              return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
          }
@@ -4636,6 +5007,59 @@ public class CellsApi {
              }
 
              com.squareup.okhttp.Call call =  searchBrokenLinksInRemoteRangeValidateBeforeCall(request, progressListener, progressRequestListener);
+             Type localVarReturnType = new TypeToken< BrokenLinksResponse >(){}.getType();
+             apiClient.executeAsync(call, localVarReturnType, callback);
+             return call;
+         }
+
+
+         @SuppressWarnings("rawtypes")
+         private com.squareup.okhttp.Call searchBrokenLinksInRemoteRange_LegacyPutValidateBeforeCall(SearchBrokenLinksInRemoteRange_LegacyPutRequest request, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException, IOException {
+             return request.buildHttpRequest(apiClient, progressListener, progressRequestListener, true);
+         }
+         public  BrokenLinksResponse  searchBrokenLinksInRemoteRange_LegacyPut(SearchBrokenLinksInRemoteRange_LegacyPutRequest request) throws ApiException,  IOException {
+             try {
+                 ApiResponse< BrokenLinksResponse > resp = searchBrokenLinksInRemoteRange_LegacyPutWithHttpInfo(request);
+                  return resp.getData(); 
+             }
+             catch (ApiException ex) {
+                 if (ex.getCode() == apiClient.getNotAuthCode()) {
+                     apiClient.requestToken();
+                     ApiResponse< BrokenLinksResponse > resp = searchBrokenLinksInRemoteRange_LegacyPutWithHttpInfo(request);
+                      return resp.getData();       
+                 }
+                 throw ex;
+             }
+         }
+
+         private ApiResponse< BrokenLinksResponse > searchBrokenLinksInRemoteRange_LegacyPutWithHttpInfo(SearchBrokenLinksInRemoteRange_LegacyPutRequest request) throws ApiException,  IOException {
+             com.squareup.okhttp.Call call =  searchBrokenLinksInRemoteRange_LegacyPutValidateBeforeCall(request, null, null);
+             Type localVarReturnType = new TypeToken< BrokenLinksResponse >(){}.getType();
+             return apiClient.execute(call, localVarReturnType);
+         }
+
+         public com.squareup.okhttp.Call  searchBrokenLinksInRemoteRange_LegacyPutAsync( SearchBrokenLinksInRemoteRange_LegacyPutRequest request, final ApiCallback< BrokenLinksResponse > callback) throws ApiException,  IOException {
+
+             ProgressResponseBody.ProgressListener progressListener = null;
+             ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+             if (callback != null) {
+                 progressListener = new ProgressResponseBody.ProgressListener() {
+                     @Override
+                     public void update(long bytesRead, long contentLength, boolean done) {
+                         callback.onDownloadProgress(bytesRead, contentLength, done);
+                     }
+                 };
+
+                 progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                     @Override
+                     public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                         callback.onUploadProgress(bytesWritten, contentLength, done);
+                     }
+                 };
+             }
+
+             com.squareup.okhttp.Call call =  searchBrokenLinksInRemoteRange_LegacyPutValidateBeforeCall(request, progressListener, progressRequestListener);
              Type localVarReturnType = new TypeToken< BrokenLinksResponse >(){}.getType();
              apiClient.executeAsync(call, localVarReturnType, callback);
              return call;

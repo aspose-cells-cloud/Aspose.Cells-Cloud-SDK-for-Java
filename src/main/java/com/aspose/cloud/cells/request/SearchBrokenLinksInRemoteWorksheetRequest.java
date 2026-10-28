@@ -169,7 +169,7 @@ public class SearchBrokenLinksInRemoteWorksheetRequest  implements IRequestModel
                 }
 
                 String[] localVarAuthNames = new String[] {  };
-                return apiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+                return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
 }

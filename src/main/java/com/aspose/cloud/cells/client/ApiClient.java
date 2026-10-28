@@ -188,7 +188,7 @@ public class ApiClient {
 		this.lenientDatetimeFormat = true;
 
 		// Set default User-Agent.
-		setUserAgent("CellsCloud-SDK/26.9/java");
+		setUserAgent("CellsCloud-SDK/26.10.5/java");
 
 		// Setup authentications (key: authentication name, value:
 		// authentication).

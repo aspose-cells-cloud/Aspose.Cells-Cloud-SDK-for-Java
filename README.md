@@ -1,4 +1,5 @@
-![](https://img.shields.io/badge/aspose.cells%20Cloud%20SDK%20for%20Java-v26.9-green?style=for-the-badge&logo=java)[![Product Page](https://img.shields.io/badge/Product-0288d1?style=for-the-badge&logo=Google-Chrome&logoColor=white)](https://products.aspose.cloud/cells/java/) [![Documentation](https://img.shields.io/badge/Documentation-388e3c?style=for-the-badge&logo=Hugo&logoColor=white)](https://docs.aspose.cloud/cells/) [![API Ref](https://img.shields.io/badge/Reference-f39c12?style=for-the-badge&logo=html5&logoColor=white)](https://reference.aspose.cloud/cells/) [![Examples](https://img.shields.io/badge/Examples-1565c0?style=for-the-badge&logo=Github&logoColor=white)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-java/tree/main/examples) [![Blog](https://img.shields.io/badge/Blog-d32f2f?style=for-the-badge&logo=WordPress&logoColor=white)](https://blog.aspose.cloud/categories/aspose.cells-cloud-product-family/) [![Support](https://img.shields.io/badge/Support-7b1fa2?style=for-the-badge&logo=Discourse&logoColor=white)](https://forum.aspose.cloud/c/cells/7) [![License](https://img.shields.io/github/license/aspose-cells-cloud/aspose-cells-cloud-java?style=for-the-badge&logo=rocket&logoColor=white)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-java/blob/master/LICENSE)
+```markdown
+![](https://img.shields.io/badge/aspose.cells%20Cloud%20SDK%20for%20Java-v26.10-green?style=for-the-badge&logo=java)[![Product Page](https://img.shields.io/badge/Product-0288d1?style=for-the-badge&logo=Google-Chrome&logoColor=white)](https://products.aspose.cloud/cells/java/) [![Documentation](https://img.shields.io/badge/Documentation-388e3c?style=for-the-badge&logo=Hugo&logoColor=white)](https://docs.aspose.cloud/cells/) [![API Ref](https://img.shields.io/badge/Reference-f39c12?style=for-the-badge&logo=html5&logoColor=white)](https://reference.aspose.cloud/cells/) [![Examples](https://img.shields.io/badge/Examples-1565c0?style=for-the-badge&logo=Github&logoColor=white)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-java/tree/main/examples) [![Blog](https://img.shields.io/badge/Blog-d32f2f?style=for-the-badge&logo=WordPress&logoColor=white)](https://blog.aspose.cloud/categories/aspose.cells-cloud-product-family/) [![Support](https://img.shields.io/badge/Support-7b1fa2?style=for-the-badge&logo=Discourse&logoColor=white)](https://forum.aspose.cloud/c/cells/7) [![License](https://img.shields.io/github/license/aspose-cells-cloud/aspose-cells-cloud-java?style=for-the-badge&logo=rocket&logoColor=white)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-java/blob/master/LICENSE)
 
 Aspose.Cells Cloud SDK for Java empowers developers to programmatically manage Excel files with precision. This comprehensive Java library supports advanced Excel operations like cell data formatting, dynamic formulas, pivot tables, conditional styling, charts, hyperlinks, comments, and data validation. It also enables seamless Excel file conversion (XLSX, CSV, PDF, ODS), document splitting/merging, and file repair. Designed for cloud integration, this API-first solution accelerates spreadsheet automation while ensuring data integrity across platforms like AWS, Azure, and Google Cloud.
 # Java SDK package for Aspose.Cells Cloud
@@ -25,7 +26,7 @@ To get started with Aspose.Cells Cloud for Java, follow these steps:
     <dependency>
         <groupId>com.aspose</groupId>
         <artifactId>aspose-cells-cloud</artifactId>
-        <version>26.9</version>
+        <version>26.10</version>
     </dependency>
 </dependencies>
 ```
@@ -83,8 +84,7 @@ File response =  cellsApi.putConvertWorkbook(request);
 |[PCL](https://docs.fileformat.com/page-description-language/pcl/)|Printer Command Language Format| |&radic;|
 |[AZW3](https://docs.fileformat.com/ebook/azw3/)|AZ3/KF8 File Format| |&radic;|
 |[EPUB](https://docs.fileformat.com/ebook/epub/)|EPUB File Format| |&radic;|
-|[DBF](https://docs.fileformat.com/ebook/epub/)|DBF File Format| |&radic;|
-|[EPUB](https://docs.fileformat.com/database/dbf/)|database file| |&radic;|
+|[DBF](https://docs.fileformat.com/database/dbf/)|DBF File Format| |&radic;|
 |[XHTML](https://docs.fileformat.com/web/xhtml/)|XHTML File Format| |&radic;|
 
 ## Architecture
@@ -132,14 +132,18 @@ graph TB
 - Import/Export: Facilitates importing data from various sources into spreadsheets and exporting spreadsheet data to other formats.
 - Security Management: Offers a range of security features like data encryption, access control, and permission management to safeguard the security and integrity of spreadsheet data.
 
-## Feature & Enhancements in Version v26.9
+## Features and Enhancements in Version v26.10
 
 Full list of issues covering all changes in this release:
 
-| **Summary** | **Category** |
-| :--- | :--- |
-| Enhancement CheckCloudServiceHealth: Add Aspose.Cells Cloud information description. | Improvement |
-| Fix code-gen/swagger specification for Aspose.Cells Cloud. | Bug |
+| **Summary**                                                                                                   | **Category** |
+| :------------------------------------------------------------------------------------------------------------ | :----------- |
+| Refactor SearchController.cs: replace 7 remote read endpoints with [HttpGet] and remove deprecated forwarder | Improvement  |
+| Fix typo in CalculateController.cs: correct route 'aggergate' to 'aggregate' | Bug  |
+| Fix operationName copy-paste errors in ManagementController.cs | Bug  |
+| Mark StatisticalController.cs as obsolete | Improvement  |
+| Security & Stability Fixes for Aspose.Cells Cloud API | Improvement  |
+| Add Exception Chain Support to CellsApiException and HttpWebException | New Feature  |
 
 ## Available SDKs
 
@@ -162,3 +166,4 @@ The Aspose.Cells Cloud SDK is available in multiple popular programming language
 [![Ruby](https://img.shields.io/badge/Ruby-CC342D.svg?style=for-the-badge&logo=ruby&logoColor=white)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-ruby) [![Ruby](https://img.shields.io/badge/Gem-aspose__cells__cloud-red?logo=ruby&style=for-the-badge)](https://rubygems.org/gems/aspose_cells_cloud)
 
 ## [Release history version](HistoryVersions.md)
+```

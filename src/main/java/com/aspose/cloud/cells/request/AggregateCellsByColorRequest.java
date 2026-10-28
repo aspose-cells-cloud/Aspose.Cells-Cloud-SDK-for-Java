@@ -134,7 +134,7 @@ public class AggregateCellsByColorRequest  implements IRequestModel {
                 if ( getSpreadsheet() == null ) {
                     throw new ApiException("Missing the required parameter 'Spreadsheet' when calling AggregateCellsByColor");
                 }       
-        String localVarPath = "v4.0/cells/calculate/aggergate/color";
+        String localVarPath = "v4.0/cells/calculate/aggregate/color";
         Map<String, String> localVarHeaderParams = new HashMap<String, String>();
         Map<String, Object> localVarFormParams = new HashMap<String, Object>();
         List<Pair> localVarQueryParams = new ArrayList<Pair>();

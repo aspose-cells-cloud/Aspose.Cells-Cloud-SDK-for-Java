@@ -181,7 +181,7 @@ public class SearchBrokenLinksInRemoteSpreadsheetRequest  implements IRequestMod
                 }
 
                 String[] localVarAuthNames = new String[] {  };
-                return apiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+                return apiClient.buildCall(localVarPath, "GET", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
 
     }
 }
