@@ -1,55 +1,40 @@
-package com.aspose.cloud.cells.api;
+package com.aspose.cells.cloud.examples;
 
-import com.aspose.cloud.cells.client.*;
-import com.aspose.cloud.cells.model.*;
-import com.aspose.cloud.cells.request.*;
-
-import org.junit.Test;
-import java.util.ArrayList;
-import java.util.List;
+import com.aspose.cells.cloud.*;
+import com.aspose.cells.cloud.model.*;
+import com.aspose.cells.cloud.request.*;
 import java.io.File;
-import java.util.HashMap;
+import java.util.*;
 
-public class ExamplePostProtect {
-    private  CellsApi api;
-    public ExamplePostProtect(){
-        try {
-            api = new CellsApi(
+/** Migrated from the legacy Java examples. */
+public final class Example30_PostProtect {
+
+    public static void main(String[] args) {
+        CellsCloudClient client = new CellsCloudClient(
                 System.getenv("CellsCloudClientId"),
                 System.getenv("CellsCloudClientSecret"),
-                "v3.0",
-                System.getenv("CellsCloudApiBaseUrl")
-            );
-        } catch (ApiException e) {
-            e.printStackTrace();
-        }
+                System.getenv("CellsCloudApiBaseUrl"));
+        new Example30_PostProtect().run(client);
     }
 
-    public void Run(){
+    public void run(CellsCloudClient client) {
+
         try{
             String assemblyTestXlsx = "assemblytest.xlsx";
 
-   
-            PostProtectRequest request = new PostProtectRequest();
             ProtectWorkbookRequest protectWorkbookRequest = new ProtectWorkbookRequest();
             protectWorkbookRequest.setAwaysOpenReadOnly(true);
 
-
             protectWorkbookRequest.setEncryptWithPassword("123456");
 
-            request.setProtectWorkbookRequest(protectWorkbookRequest);
-
+            PostProtectRequest request = new PostProtectRequest(FormFile.ofPath(assemblyTestXlsx), protectWorkbookRequest);
             request.setPassword("123456");
-             
-
-            HashMap<String,File> fileMap = new HashMap<String,File>(); 
-            fileMap.put(assemblyTestXlsx ,CellsApiUtil.GetFileHolder(assemblyTestXlsx) ); 
-            request.setFile(fileMap);
-            this.api.postProtect(request);
+            client.call(request);
 
         } catch (ApiException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }		
+    
     }
 }

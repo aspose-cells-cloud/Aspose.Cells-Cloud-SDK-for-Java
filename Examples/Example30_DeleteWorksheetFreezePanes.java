@@ -1,67 +1,42 @@
-package com.aspose.cloud.cells.api;
+package com.aspose.cells.cloud.examples;
 
-import com.aspose.cloud.cells.client.*;
-import com.aspose.cloud.cells.model.*;
-import com.aspose.cloud.cells.request.*;
-
-import org.junit.Test;
-import java.util.ArrayList;
-import java.util.List;
+import com.aspose.cells.cloud.*;
+import com.aspose.cells.cloud.model.*;
+import com.aspose.cells.cloud.request.*;
 import java.io.File;
-import java.util.HashMap;
+import java.util.*;
 
-public class ExampleDeleteWorksheetFreezePanes {
-    private  CellsApi api;
-    public ExampleDeleteWorksheetFreezePanes(){
-        try {
-            api = new CellsApi(
+/** Migrated from the legacy Java examples. */
+public final class Example30_DeleteWorksheetFreezePanes {
+
+    public static void main(String[] args) {
+        CellsCloudClient client = new CellsCloudClient(
                 System.getenv("CellsCloudClientId"),
                 System.getenv("CellsCloudClientSecret"),
-                "v3.0",
-                System.getenv("CellsCloudApiBaseUrl")
-            );
-        } catch (ApiException e) {
-            e.printStackTrace();
-        }
+                System.getenv("CellsCloudApiBaseUrl"));
+        new Example30_DeleteWorksheetFreezePanes().run(client);
     }
 
-    public void Run(){
+    public void run(CellsCloudClient client) {
+
         try{
             String remoteFolder = "TestData/In";
 
             String localName = "Book1.xlsx";
             String remoteName = "Book1.xlsx";
 
-            UploadFileRequest  uploadFileRequest = new UploadFileRequest();
-            uploadFileRequest.setPath( remoteFolder + "/" + remoteName );
-            uploadFileRequest.setStorageName( "");
-            HashMap<String,File> files = new HashMap<String,File>();
-            files.put( localName , new File(localName ));
-            uploadFileRequest.setUploadFiles(files);
-            cellsApi.uploadFile(uploadFileRequest);
-   
-            DeleteWorksheetFreezePanesRequest request = new DeleteWorksheetFreezePanesRequest();
-            request.setName(remoteName);
+            client.call(new UploadFileRequest(
+                    remoteFolder + "/" + remoteName, FormFile.ofPath(localName)));
 
-            request.setSheetName("Sheet1");
-
-            request.setRow(1);
-
-            request.setColumn(1);
-
-            request.setFreezedRows(4);
-
-            request.setFreezedColumns(5);
-
+            DeleteWorksheetFreezePanesRequest request = new DeleteWorksheetFreezePanesRequest(1, 5, 4, remoteName, 1, "Sheet1");
             request.setFolder(remoteFolder);
-
             request.setStorageName("");
-
-            this.api.deleteWorksheetFreezePanes(request);
+            client.call(request);
 
         } catch (ApiException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }		
+    
     }
 }

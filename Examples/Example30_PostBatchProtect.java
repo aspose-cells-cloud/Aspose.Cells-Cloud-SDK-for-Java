@@ -1,31 +1,24 @@
-package com.aspose.cloud.cells.api;
+package com.aspose.cells.cloud.examples;
 
-import com.aspose.cloud.cells.client.*;
-import com.aspose.cloud.cells.model.*;
-import com.aspose.cloud.cells.request.*;
-
-import org.junit.Test;
-import java.util.ArrayList;
-import java.util.List;
+import com.aspose.cells.cloud.*;
+import com.aspose.cells.cloud.model.*;
+import com.aspose.cells.cloud.request.*;
 import java.io.File;
-import java.util.HashMap;
+import java.util.*;
 
-public class ExamplePostBatchProtect {
-    private  CellsApi api;
-    public ExamplePostBatchProtect(){
-        try {
-            api = new CellsApi(
+/** Migrated from the legacy Java examples. */
+public final class Example30_PostBatchProtect {
+
+    public static void main(String[] args) {
+        CellsCloudClient client = new CellsCloudClient(
                 System.getenv("CellsCloudClientId"),
                 System.getenv("CellsCloudClientSecret"),
-                "v3.0",
-                System.getenv("CellsCloudApiBaseUrl")
-            );
-        } catch (ApiException e) {
-            e.printStackTrace();
-        }
+                System.getenv("CellsCloudApiBaseUrl"));
+        new Example30_PostBatchProtect().run(client);
     }
 
-    public void Run(){
+    public void run(CellsCloudClient client) {
+
         try{
             String remoteFolder = "TestData/In";
 
@@ -34,47 +27,32 @@ public class ExamplePostBatchProtect {
             String localMyDoc = "myDocument.xlsx";
             String remoteMyDoc = "myDocument.xlsx";
 
-            UploadFileRequest  uploadFileRequest = new UploadFileRequest();
-            uploadFileRequest.setPath( remoteFolder + "/" + remoteBook1 );
-            uploadFileRequest.setStorageName( "");
-            HashMap<String,File> files = new HashMap<String,File>();
-            files.put( localBook1 , new File(localBook1 ));
-            uploadFileRequest.setUploadFiles(files);
-            cellsApi.uploadFile(uploadFileRequest);
-            UploadFileRequest  uploadFileRequest = new UploadFileRequest();
-            uploadFileRequest.setPath( remoteFolder + "/" + remoteMyDoc );
-            uploadFileRequest.setStorageName( "");
-            HashMap<String,File> files = new HashMap<String,File>();
-            files.put( localMyDoc , new File(localMyDoc ));
-            uploadFileRequest.setUploadFiles(files);
-            cellsApi.uploadFile(uploadFileRequest);
-   
-            PostBatchProtectRequest request = new PostBatchProtectRequest();
+            client.call(new UploadFileRequest(
+                    remoteFolder + "/" + remoteBook1, FormFile.ofPath(localBook1)));
+            client.call(new UploadFileRequest(
+                    remoteFolder + "/" + remoteMyDoc, FormFile.ofPath(localMyDoc)));
+
             BatchProtectRequest batchProtectRequest = new BatchProtectRequest();
             batchProtectRequest.setSourceFolder(remoteFolder);
 
-
             batchProtectRequest.setProtectionType("All");
-
 
             batchProtectRequest.setPassword("123456");
 
-
             batchProtectRequest.setOutFolder("OutResult");
-
 
             MatchConditionRequest matchCondition = new MatchConditionRequest();
             matchCondition.setRegexPattern("(^Book)(.+)(xlsx$)");
 
             batchProtectRequest.setMatchCondition(matchCondition);
 
-            request.setBatchProtectRequest(batchProtectRequest);
-
-            this.api.postBatchProtect(request);
+            PostBatchProtectRequest request = new PostBatchProtectRequest(batchProtectRequest);
+            client.call(request);
 
         } catch (ApiException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }		
+    
     }
 }

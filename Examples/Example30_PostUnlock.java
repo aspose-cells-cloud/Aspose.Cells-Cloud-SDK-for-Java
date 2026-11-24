@@ -1,47 +1,36 @@
-package com.aspose.cloud.cells.api;
+package com.aspose.cells.cloud.examples;
 
-import com.aspose.cloud.cells.client.*;
-import com.aspose.cloud.cells.model.*;
-import com.aspose.cloud.cells.request.*;
-
-import org.junit.Test;
-import java.util.ArrayList;
-import java.util.List;
+import com.aspose.cells.cloud.*;
+import com.aspose.cells.cloud.model.*;
+import com.aspose.cells.cloud.request.*;
 import java.io.File;
-import java.util.HashMap;
+import java.util.*;
 
-public class ExamplePostUnlock {
-    private  CellsApi api;
-    public ExamplePostUnlock(){
-        try {
-            api = new CellsApi(
+/** Migrated from the legacy Java examples. */
+public final class Example30_PostUnlock {
+
+    public static void main(String[] args) {
+        CellsCloudClient client = new CellsCloudClient(
                 System.getenv("CellsCloudClientId"),
                 System.getenv("CellsCloudClientSecret"),
-                "v3.0",
-                System.getenv("CellsCloudApiBaseUrl")
-            );
-        } catch (ApiException e) {
-            e.printStackTrace();
-        }
+                System.getenv("CellsCloudApiBaseUrl"));
+        new Example30_PostUnlock().run(client);
     }
 
-    public void Run(){
+    public void run(CellsCloudClient client) {
+
         try{
             String needUnlockXlsx = "needUnlock.xlsx";
 
-   
-            PostUnlockRequest request = new PostUnlockRequest();
-            request.setPassword("123456");
              
 
-            HashMap<String,File> fileMap = new HashMap<String,File>(); 
-            fileMap.put(needUnlockXlsx ,CellsApiUtil.GetFileHolder(needUnlockXlsx) ); 
-            request.setFile(fileMap);
-            this.api.postUnlock(request);
+            PostUnlockRequest request = new PostUnlockRequest(FormFile.ofPath(needUnlockXlsx), "123456");
+            client.call(request);
 
         } catch (ApiException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }		
+    
     }
 }

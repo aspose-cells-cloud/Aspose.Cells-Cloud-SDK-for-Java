@@ -1,31 +1,24 @@
-package com.aspose.cloud.cells.api;
+package com.aspose.cells.cloud.examples;
 
-import com.aspose.cloud.cells.client.*;
-import com.aspose.cloud.cells.model.*;
-import com.aspose.cloud.cells.request.*;
-
-import org.junit.Test;
-import java.util.ArrayList;
-import java.util.List;
+import com.aspose.cells.cloud.*;
+import com.aspose.cells.cloud.model.*;
+import com.aspose.cells.cloud.request.*;
 import java.io.File;
-import java.util.HashMap;
+import java.util.*;
 
-public class ExampleExportChartAsFormat {
-    private  CellsApi api;
-    public ExampleExportChartAsFormat(){
-        try {
-            api = new CellsApi(
+/** Migrated from the legacy Java examples. */
+public final class Example40_ExportChartAsFormat {
+
+    public static void main(String[] args) {
+        CellsCloudClient client = new CellsCloudClient(
                 System.getenv("CellsCloudClientId"),
                 System.getenv("CellsCloudClientSecret"),
-                "v3.0",
-                System.getenv("CellsCloudApiBaseUrl")
-            );
-        } catch (ApiException e) {
-            e.printStackTrace();
-        }
+                System.getenv("CellsCloudApiBaseUrl"));
+        new Example40_ExportChartAsFormat().run(client);
     }
 
-    public void Run(){
+    public void run(CellsCloudClient client) {
+
         try{
             String localName = "EmployeeSalesSummary.xlsx";
             String remoteName = "EmployeeSalesSummary.xlsx";
@@ -33,30 +26,17 @@ public class ExampleExportChartAsFormat {
 
             String format = "svg";
 
-            UploadFileRequest  uploadFileRequest = new UploadFileRequest();
-            uploadFileRequest.setPath( remoteFolder + "/" + remoteName );
-            uploadFileRequest.setStorageName( "");
-            HashMap<String,File> files = new HashMap<String,File>();
-            files.put( localName , new File(localName ));
-            uploadFileRequest.setUploadFiles(files);
-            cellsApi.uploadFile(uploadFileRequest);
-   
-            ExportChartAsFormatRequest request = new ExportChartAsFormatRequest();
-            request.setName(localName);
+            client.call(new UploadFileRequest(
+                    remoteFolder + "/" + remoteName, FormFile.ofPath(localName)));
 
-            request.setWorksheet("Sales");
-
-            request.setChartIndex(0);
-
-            request.setFormat(format);
-
+            ExportChartAsFormatRequest request = new ExportChartAsFormatRequest(0, format, localName, "Sales");
             request.setFolder(remoteFolder);
-
-            this.api.exportChartAsFormat(request);
+            client.call(request);
 
         } catch (ApiException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }		
+    
     }
 }

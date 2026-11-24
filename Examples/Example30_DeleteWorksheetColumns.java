@@ -1,65 +1,42 @@
-package com.aspose.cloud.cells.api;
+package com.aspose.cells.cloud.examples;
 
-import com.aspose.cloud.cells.client.*;
-import com.aspose.cloud.cells.model.*;
-import com.aspose.cloud.cells.request.*;
-
-import org.junit.Test;
-import java.util.ArrayList;
-import java.util.List;
+import com.aspose.cells.cloud.*;
+import com.aspose.cells.cloud.model.*;
+import com.aspose.cells.cloud.request.*;
 import java.io.File;
-import java.util.HashMap;
+import java.util.*;
 
-public class ExampleDeleteWorksheetColumns {
-    private  CellsApi api;
-    public ExampleDeleteWorksheetColumns(){
-        try {
-            api = new CellsApi(
+/** Migrated from the legacy Java examples. */
+public final class Example30_DeleteWorksheetColumns {
+
+    public static void main(String[] args) {
+        CellsCloudClient client = new CellsCloudClient(
                 System.getenv("CellsCloudClientId"),
                 System.getenv("CellsCloudClientSecret"),
-                "v3.0",
-                System.getenv("CellsCloudApiBaseUrl")
-            );
-        } catch (ApiException e) {
-            e.printStackTrace();
-        }
+                System.getenv("CellsCloudApiBaseUrl"));
+        new Example30_DeleteWorksheetColumns().run(client);
     }
 
-    public void Run(){
+    public void run(CellsCloudClient client) {
+
         try{
             String remoteFolder = "TestData/In";
 
             String localName = "Book1.xlsx";
             String remoteName = "Book1.xlsx";
 
-            UploadFileRequest  uploadFileRequest = new UploadFileRequest();
-            uploadFileRequest.setPath( remoteFolder + "/" + remoteName );
-            uploadFileRequest.setStorageName( "");
-            HashMap<String,File> files = new HashMap<String,File>();
-            files.put( localName , new File(localName ));
-            uploadFileRequest.setUploadFiles(files);
-            cellsApi.uploadFile(uploadFileRequest);
-   
-            DeleteWorksheetColumnsRequest request = new DeleteWorksheetColumnsRequest();
-            request.setName(remoteName);
+            client.call(new UploadFileRequest(
+                    remoteFolder + "/" + remoteName, FormFile.ofPath(localName)));
 
-            request.setSheetName("Sheet1");
-
-            request.setColumnIndex(1);
-
-            request.setColumns(10);
-
-            request.setUpdateReference(true);
-
+            DeleteWorksheetColumnsRequest request = new DeleteWorksheetColumnsRequest(1, 10, remoteName, "Sheet1", true);
             request.setFolder(remoteFolder);
-
             request.setStorageName("");
-
-            this.api.deleteWorksheetColumns(request);
+            client.call(request);
 
         } catch (ApiException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }		
+    
     }
 }

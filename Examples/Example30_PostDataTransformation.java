@@ -1,81 +1,60 @@
-package com.aspose.cloud.cells.api;
+package com.aspose.cells.cloud.examples;
 
-import com.aspose.cloud.cells.client.*;
-import com.aspose.cloud.cells.model.*;
-import com.aspose.cloud.cells.request.*;
-
-import org.junit.Test;
-import java.util.ArrayList;
-import java.util.List;
+import com.aspose.cells.cloud.*;
+import com.aspose.cells.cloud.model.*;
+import com.aspose.cells.cloud.request.*;
 import java.io.File;
-import java.util.HashMap;
+import java.util.*;
 
-public class ExamplePostDataTransformation {
-    private  CellsApi api;
-    public ExamplePostDataTransformation(){
-        try {
-            api = new CellsApi(
+/** Migrated from the legacy Java examples. */
+public final class Example30_PostDataTransformation {
+
+    public static void main(String[] args) {
+        CellsCloudClient client = new CellsCloudClient(
                 System.getenv("CellsCloudClientId"),
                 System.getenv("CellsCloudClientSecret"),
-                "v3.0",
-                System.getenv("CellsCloudApiBaseUrl")
-            );
-        } catch (ApiException e) {
-            e.printStackTrace();
-        }
+                System.getenv("CellsCloudApiBaseUrl"));
+        new Example30_PostDataTransformation().run(client);
     }
 
-    public void Run(){
+    public void run(CellsCloudClient client) {
+
         try{
             String remoteFolder = "TestData/In";
 
             String localName = "BookTableL2W.xlsx";
             String remoteName = "BookTableL2W.xlsx";
 
-            UploadFileRequest  uploadFileRequest = new UploadFileRequest();
-            uploadFileRequest.setPath( remoteFolder + "/" + remoteName );
-            uploadFileRequest.setStorageName( "");
-            HashMap<String,File> files = new HashMap<String,File>();
-            files.put( localName , new File(localName ));
-            uploadFileRequest.setUploadFiles(files);
-            cellsApi.uploadFile(uploadFileRequest);
-   
-            PostDataTransformationRequest request = new PostDataTransformationRequest();
+            client.call(new UploadFileRequest(
+                    remoteFolder + "/" + remoteName, FormFile.ofPath(localName)));
+
             DataTransformationRequest dataTransformationRequest = new DataTransformationRequest();
             LoadData loadData = new LoadData();
             LoadTo loadTo = new LoadTo();
             loadTo.setBeginColumnIndex(2);
 
-
             loadTo.setBeginRowIndex(3);
-
 
             loadTo.setWorksheet("L2W");
 
             loadData.setLoadTo(loadTo);
 
-
             DataQuery dataQuery = new DataQuery();
             dataQuery.setName("DataQuery");
 
-
             DataItem dataItem = new DataItem();
             dataItem.setDataItemType("Table");
-
 
             dataItem.setValue("Table1");
 
             dataQuery.setDataItem(dataItem);
 
-
             DataSource dataSource = new DataSource();
             dataSource.setDataSourceType("CloudFileSystem");
-
 
             dataSource.setDataPath("TestData/In/BookTableL2W.xlsx");
 
             dataQuery.setDataSource(dataSource);
-
 
             dataQuery.setDataSourceDataType("ListObject");
 
@@ -83,17 +62,16 @@ public class ExamplePostDataTransformation {
 
             dataTransformationRequest.setLoadData(loadData);
 
-             
             ArrayList<AppliedStep> dataTransformationRequestAppliedSteps = new ArrayList<AppliedStep>();
             dataTransformationRequest.setAppliedSteps(dataTransformationRequestAppliedSteps);
 
-            request.setDataTransformationRequest(dataTransformationRequest);
-
-            this.api.postDataTransformation(request);
+            PostDataTransformationRequest request = new PostDataTransformationRequest(dataTransformationRequest);
+            client.call(request);
 
         } catch (ApiException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }		
+    
     }
 }

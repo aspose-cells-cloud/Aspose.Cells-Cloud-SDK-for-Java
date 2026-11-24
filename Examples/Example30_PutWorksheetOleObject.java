@@ -1,31 +1,24 @@
-package com.aspose.cloud.cells.api;
+package com.aspose.cells.cloud.examples;
 
-import com.aspose.cloud.cells.client.*;
-import com.aspose.cloud.cells.model.*;
-import com.aspose.cloud.cells.request.*;
-
-import org.junit.Test;
-import java.util.ArrayList;
-import java.util.List;
+import com.aspose.cells.cloud.*;
+import com.aspose.cells.cloud.model.*;
+import com.aspose.cells.cloud.request.*;
 import java.io.File;
-import java.util.HashMap;
+import java.util.*;
 
-public class ExamplePutWorksheetOleObject {
-    private  CellsApi api;
-    public ExamplePutWorksheetOleObject(){
-        try {
-            api = new CellsApi(
+/** Migrated from the legacy Java examples. */
+public final class Example30_PutWorksheetOleObject {
+
+    public static void main(String[] args) {
+        CellsCloudClient client = new CellsCloudClient(
                 System.getenv("CellsCloudClientId"),
                 System.getenv("CellsCloudClientSecret"),
-                "v3.0",
-                System.getenv("CellsCloudApiBaseUrl")
-            );
-        } catch (ApiException e) {
-            e.printStackTrace();
-        }
+                System.getenv("CellsCloudApiBaseUrl"));
+        new Example30_PutWorksheetOleObject().run(client);
     }
 
-    public void Run(){
+    public void run(CellsCloudClient client) {
+
         try{
             String remoteFolder = "TestData/In";
 
@@ -34,54 +27,28 @@ public class ExamplePutWorksheetOleObject {
             String wordJPG = "word.jpg";
             String remoteName = "Book1.xlsx";
 
-            UploadFileRequest  uploadFileRequest = new UploadFileRequest();
-            uploadFileRequest.setPath( remoteFolder + "/" + remoteName );
-            uploadFileRequest.setStorageName( "");
-            HashMap<String,File> files = new HashMap<String,File>();
-            files.put( localName , new File(localName ));
-            uploadFileRequest.setUploadFiles(files);
-            cellsApi.uploadFile(uploadFileRequest);
-            UploadFileRequest  uploadFileRequest = new UploadFileRequest();
-            uploadFileRequest.setPath( "OLEDoc.docx" );
-            uploadFileRequest.setStorageName( "");
-            HashMap<String,File> files = new HashMap<String,File>();
-            files.put( oLEDoc , new File(oLEDoc ));
-            uploadFileRequest.setUploadFiles(files);
-            cellsApi.uploadFile(uploadFileRequest);
-            UploadFileRequest  uploadFileRequest = new UploadFileRequest();
-            uploadFileRequest.setPath( "word.jpg" );
-            uploadFileRequest.setStorageName( "");
-            HashMap<String,File> files = new HashMap<String,File>();
-            files.put( wordJPG , new File(wordJPG ));
-            uploadFileRequest.setUploadFiles(files);
-            cellsApi.uploadFile(uploadFileRequest);
-   
-            PutWorksheetOleObjectRequest request = new PutWorksheetOleObjectRequest();
-            request.setName(remoteName);
+            client.call(new UploadFileRequest(
+                    remoteFolder + "/" + remoteName, FormFile.ofPath(localName)));
+            client.call(new UploadFileRequest(
+                    "OLEDoc.docx", FormFile.ofPath(oLEDoc)));
+            client.call(new UploadFileRequest(
+                    "word.jpg", FormFile.ofPath(wordJPG)));
 
-            request.setSheetName("Sheet6");
-
+            PutWorksheetOleObjectRequest request = new PutWorksheetOleObjectRequest(remoteName, "Sheet6");
             request.setUpperLeftRow(1);
-
             request.setUpperLeftColumn(1);
-
             request.setHeight(100);
-
             request.setWidth(80);
-
             request.setOleFile("OLEDoc.docx");
-
             request.setImageFile("word.jpg");
-
             request.setFolder(remoteFolder);
-
             request.setStorageName("");
-
-            this.api.putWorksheetOleObject(request);
+            client.call(request);
 
         } catch (ApiException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }		
+    
     }
 }

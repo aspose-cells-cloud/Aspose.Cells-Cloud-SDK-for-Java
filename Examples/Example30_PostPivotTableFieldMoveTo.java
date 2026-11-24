@@ -1,67 +1,42 @@
-package com.aspose.cloud.cells.api;
+package com.aspose.cells.cloud.examples;
 
-import com.aspose.cloud.cells.client.*;
-import com.aspose.cloud.cells.model.*;
-import com.aspose.cloud.cells.request.*;
-
-import org.junit.Test;
-import java.util.ArrayList;
-import java.util.List;
+import com.aspose.cells.cloud.*;
+import com.aspose.cells.cloud.model.*;
+import com.aspose.cells.cloud.request.*;
 import java.io.File;
-import java.util.HashMap;
+import java.util.*;
 
-public class ExamplePostPivotTableFieldMoveTo {
-    private  CellsApi api;
-    public ExamplePostPivotTableFieldMoveTo(){
-        try {
-            api = new CellsApi(
+/** Migrated from the legacy Java examples. */
+public final class Example30_PostPivotTableFieldMoveTo {
+
+    public static void main(String[] args) {
+        CellsCloudClient client = new CellsCloudClient(
                 System.getenv("CellsCloudClientId"),
                 System.getenv("CellsCloudClientSecret"),
-                "v3.0",
-                System.getenv("CellsCloudApiBaseUrl")
-            );
-        } catch (ApiException e) {
-            e.printStackTrace();
-        }
+                System.getenv("CellsCloudApiBaseUrl"));
+        new Example30_PostPivotTableFieldMoveTo().run(client);
     }
 
-    public void Run(){
+    public void run(CellsCloudClient client) {
+
         try{
             String remoteFolder = "TestData/In";
 
             String localName = "TestCase.xlsx";
             String remoteName = "TestCase.xlsx";
 
-            UploadFileRequest  uploadFileRequest = new UploadFileRequest();
-            uploadFileRequest.setPath( remoteFolder + "/" + remoteName );
-            uploadFileRequest.setStorageName( "");
-            HashMap<String,File> files = new HashMap<String,File>();
-            files.put( localName , new File(localName ));
-            uploadFileRequest.setUploadFiles(files);
-            cellsApi.uploadFile(uploadFileRequest);
-   
-            PostPivotTableFieldMoveToRequest request = new PostPivotTableFieldMoveToRequest();
-            request.setName(remoteName);
+            client.call(new UploadFileRequest(
+                    remoteFolder + "/" + remoteName, FormFile.ofPath(localName)));
 
-            request.setSheetName("Sheet4");
-
-            request.setPivotTableIndex(0);
-
-            request.setFieldIndex(0);
-
-            request.setFrom("Row");
-
-            request.setTo("Column");
-
+            PostPivotTableFieldMoveToRequest request = new PostPivotTableFieldMoveToRequest(0, "Row", remoteName, 0, "Sheet4", "Column");
             request.setFolder(remoteFolder);
-
             request.setStorageName("");
-
-            this.api.postPivotTableFieldMoveTo(request);
+            client.call(request);
 
         } catch (ApiException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }		
+    
     }
 }

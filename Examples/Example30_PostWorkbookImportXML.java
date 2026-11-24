@@ -1,31 +1,24 @@
-package com.aspose.cloud.cells.api;
+package com.aspose.cells.cloud.examples;
 
-import com.aspose.cloud.cells.client.*;
-import com.aspose.cloud.cells.model.*;
-import com.aspose.cloud.cells.request.*;
-
-import org.junit.Test;
-import java.util.ArrayList;
-import java.util.List;
+import com.aspose.cells.cloud.*;
+import com.aspose.cells.cloud.model.*;
+import com.aspose.cells.cloud.request.*;
 import java.io.File;
-import java.util.HashMap;
+import java.util.*;
 
-public class ExamplePostWorkbookImportXML {
-    private  CellsApi api;
-    public ExamplePostWorkbookImportXML(){
-        try {
-            api = new CellsApi(
+/** Migrated from the legacy Java examples. */
+public final class Example30_PostWorkbookImportXML {
+
+    public static void main(String[] args) {
+        CellsCloudClient client = new CellsCloudClient(
                 System.getenv("CellsCloudClientId"),
                 System.getenv("CellsCloudClientSecret"),
-                "v3.0",
-                System.getenv("CellsCloudApiBaseUrl")
-            );
-        } catch (ApiException e) {
-            e.printStackTrace();
-        }
+                System.getenv("CellsCloudApiBaseUrl"));
+        new Example30_PostWorkbookImportXML().run(client);
     }
 
-    public void Run(){
+    public void run(CellsCloudClient client) {
+
         try{
             String remoteFolder = "TestData/In";
 
@@ -33,56 +26,37 @@ public class ExamplePostWorkbookImportXML {
             String dataXML = "data.xml";
             String remoteName = "Template.xlsx";
 
-            UploadFileRequest  uploadFileRequest = new UploadFileRequest();
-            uploadFileRequest.setPath( remoteFolder + "/" + remoteName );
-            uploadFileRequest.setStorageName( "");
-            HashMap<String,File> files = new HashMap<String,File>();
-            files.put( localName , new File(localName ));
-            uploadFileRequest.setUploadFiles(files);
-            cellsApi.uploadFile(uploadFileRequest);
-            UploadFileRequest  uploadFileRequest = new UploadFileRequest();
-            uploadFileRequest.setPath( remoteFolder + "/data.xml" );
-            uploadFileRequest.setStorageName( "");
-            HashMap<String,File> files = new HashMap<String,File>();
-            files.put( dataXML , new File(dataXML ));
-            uploadFileRequest.setUploadFiles(files);
-            cellsApi.uploadFile(uploadFileRequest);
-   
-            PostWorkbookImportXMLRequest request = new PostWorkbookImportXMLRequest();
-            request.setName(remoteName);
+            client.call(new UploadFileRequest(
+                    remoteFolder + "/" + remoteName, FormFile.ofPath(localName)));
+            client.call(new UploadFileRequest(
+                    remoteFolder + "/data.xml", FormFile.ofPath(dataXML)));
 
             ImportXMLRequest importXMLRequest = new ImportXMLRequest();
             DataSource xMLFileSource = new DataSource();
             xMLFileSource.setDataSourceType("CloudFileSystem");
 
-
             xMLFileSource.setDataPath(remoteFolder + "/data.xml");
 
             importXMLRequest.setXMLFileSource(xMLFileSource);
 
-
             ImportPosition importPosition = new ImportPosition();
             importPosition.setSheetName("Sheet1");
 
-
             importPosition.setRowIndex(3);
-
 
             importPosition.setColumnIndex(4);
 
             importXMLRequest.setImportPosition(importPosition);
 
-            request.setImportXMLRequest(importXMLRequest);
-
+            PostWorkbookImportXMLRequest request = new PostWorkbookImportXMLRequest(importXMLRequest, remoteName);
             request.setFolder(remoteFolder);
-
             request.setStorageName("");
-
-            this.api.postWorkbookImportXML(request);
+            client.call(request);
 
         } catch (ApiException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }		
+    
     }
 }

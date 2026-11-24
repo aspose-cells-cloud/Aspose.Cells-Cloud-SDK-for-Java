@@ -1,61 +1,40 @@
-package com.aspose.cloud.cells.api;
+package com.aspose.cells.cloud.examples;
 
-import com.aspose.cloud.cells.client.*;
-import com.aspose.cloud.cells.model.*;
-import com.aspose.cloud.cells.request.*;
-
-import org.junit.Test;
-import java.util.ArrayList;
-import java.util.List;
+import com.aspose.cells.cloud.*;
+import com.aspose.cells.cloud.model.*;
+import com.aspose.cells.cloud.request.*;
 import java.io.File;
-import java.util.HashMap;
+import java.util.*;
 
-public class ExampleSearchContentInRemoteRange {
-    private  CellsApi api;
-    public ExampleSearchContentInRemoteRange(){
-        try {
-            api = new CellsApi(
+/** Migrated from the legacy Java examples. */
+public final class Example40_SearchTextInRemoteRange {
+
+    public static void main(String[] args) {
+        CellsCloudClient client = new CellsCloudClient(
                 System.getenv("CellsCloudClientId"),
                 System.getenv("CellsCloudClientSecret"),
-                "v3.0",
-                System.getenv("CellsCloudApiBaseUrl")
-            );
-        } catch (ApiException e) {
-            e.printStackTrace();
-        }
+                System.getenv("CellsCloudApiBaseUrl"));
+        new Example40_SearchTextInRemoteRange().run(client);
     }
 
-    public void Run(){
+    public void run(CellsCloudClient client) {
+
         try{
             String remoteFolder = "TestData/In";
             String bookTextXlsx = "BookText.xlsx";
 
-            UploadFileRequest  uploadFileRequest = new UploadFileRequest();
-            uploadFileRequest.setPath( remoteFolder + "/" + bookTextXlsx );
-            uploadFileRequest.setStorageName( "");
-            HashMap<String,File> files = new HashMap<String,File>();
-            files.put( bookTextXlsx , new File(bookTextXlsx ));
-            uploadFileRequest.setUploadFiles(files);
-            cellsApi.uploadFile(uploadFileRequest);
-   
-            SearchContentInRemoteRangeRequest request = new SearchContentInRemoteRangeRequest();
-            request.setName(bookTextXlsx);
+            client.call(new UploadFileRequest(
+                    remoteFolder + "/" + bookTextXlsx, FormFile.ofPath(bookTextXlsx)));
 
-            request.setSearchText("Bike");
-
+            SearchContentInRemoteRangeRequest request = new SearchContentInRemoteRangeRequest("A1:A10", bookTextXlsx, "Bike", "Sales");
             request.setIgnoringCase(false);
-
-            request.setWorksheet("Sales");
-
-            request.setCellArea("A1:A10");
-
             request.setFolder(remoteFolder);
-
-            this.api.searchContentInRemoteRange(request);
+            client.call(request);
 
         } catch (ApiException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }		
+    
     }
 }

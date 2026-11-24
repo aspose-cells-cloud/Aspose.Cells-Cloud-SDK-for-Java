@@ -1,51 +1,32 @@
-package com.aspose.cloud.cells.api;
+package com.aspose.cells.cloud.examples;
 
-import com.aspose.cloud.cells.client.*;
-import com.aspose.cloud.cells.model.*;
-import com.aspose.cloud.cells.request.*;
-
-import org.junit.Test;
-import java.util.ArrayList;
-import java.util.List;
+import com.aspose.cells.cloud.*;
+import com.aspose.cells.cloud.model.*;
+import com.aspose.cells.cloud.request.*;
 import java.io.File;
-import java.util.HashMap;
+import java.util.*;
 
-public class ExamplePostUpdateWorksheetCellStyle {
-    private  CellsApi api;
-    public ExamplePostUpdateWorksheetCellStyle(){
-        try {
-            api = new CellsApi(
+/** Migrated from the legacy Java examples. */
+public final class Example30_PostUpdateWorksheetCellStyle {
+
+    public static void main(String[] args) {
+        CellsCloudClient client = new CellsCloudClient(
                 System.getenv("CellsCloudClientId"),
                 System.getenv("CellsCloudClientSecret"),
-                "v3.0",
-                System.getenv("CellsCloudApiBaseUrl")
-            );
-        } catch (ApiException e) {
-            e.printStackTrace();
-        }
+                System.getenv("CellsCloudApiBaseUrl"));
+        new Example30_PostUpdateWorksheetCellStyle().run(client);
     }
 
-    public void Run(){
+    public void run(CellsCloudClient client) {
+
         try{
             String remoteFolder = "TestData/In";
 
             String localName = "Book1.xlsx";
             String remoteName = "Book1.xlsx";
 
-            UploadFileRequest  uploadFileRequest = new UploadFileRequest();
-            uploadFileRequest.setPath( remoteFolder + "/" + remoteName );
-            uploadFileRequest.setStorageName( "");
-            HashMap<String,File> files = new HashMap<String,File>();
-            files.put( localName , new File(localName ));
-            uploadFileRequest.setUploadFiles(files);
-            cellsApi.uploadFile(uploadFileRequest);
-   
-            PostUpdateWorksheetCellStyleRequest request = new PostUpdateWorksheetCellStyleRequest();
-            request.setName(remoteName);
-
-            request.setSheetName("Sheet1");
-
-            request.setCellName("A1");
+            client.call(new UploadFileRequest(
+                    remoteFolder + "/" + remoteName, FormFile.ofPath(localName)));
 
             Style style = new Style();
             Font font = new Font();
@@ -53,17 +34,15 @@ public class ExamplePostUpdateWorksheetCellStyle {
 
             style.setFont(font);
 
-            request.setStyle(style);
-
+            PostUpdateWorksheetCellStyleRequest request = new PostUpdateWorksheetCellStyleRequest("A1", remoteName, "Sheet1", style);
             request.setFolder(remoteFolder);
-
             request.setStorageName("");
-
-            this.api.postUpdateWorksheetCellStyle(request);
+            client.call(request);
 
         } catch (ApiException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
         }		
+    
     }
 }
