@@ -1,16 +1,18 @@
-```markdown
-![](https://img.shields.io/badge/aspose.cells%20Cloud%20SDK%20for%20Java-v26.10-green?style=for-the-badge&logo=java)[![Product Page](https://img.shields.io/badge/Product-0288d1?style=for-the-badge&logo=Google-Chrome&logoColor=white)](https://products.aspose.cloud/cells/java/) [![Documentation](https://img.shields.io/badge/Documentation-388e3c?style=for-the-badge&logo=Hugo&logoColor=white)](https://docs.aspose.cloud/cells/) [![API Ref](https://img.shields.io/badge/Reference-f39c12?style=for-the-badge&logo=html5&logoColor=white)](https://reference.aspose.cloud/cells/) [![Examples](https://img.shields.io/badge/Examples-1565c0?style=for-the-badge&logo=Github&logoColor=white)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-java/tree/main/examples) [![Blog](https://img.shields.io/badge/Blog-d32f2f?style=for-the-badge&logo=WordPress&logoColor=white)](https://blog.aspose.cloud/categories/aspose.cells-cloud-product-family/) [![Support](https://img.shields.io/badge/Support-7b1fa2?style=for-the-badge&logo=Discourse&logoColor=white)](https://forum.aspose.cloud/c/cells/7) [![License](https://img.shields.io/github/license/aspose-cells-cloud/aspose-cells-cloud-java?style=for-the-badge&logo=rocket&logoColor=white)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-java/blob/master/LICENSE)
+![](https://img.shields.io/badge/aspose.cells%20Cloud%20SDK%20for%20Java-v26.11-green?style=for-the-badge&logo=java)[![Product Page](https://img.shields.io/badge/Product-0288d1?style=for-the-badge&logo=Google-Chrome&logoColor=white)](https://products.aspose.cloud/cells/java/) [![Documentation](https://img.shields.io/badge/Documentation-388e3c?style=for-the-badge&logo=Hugo&logoColor=white)](https://docs.aspose.cloud/cells/) [![API Ref](https://img.shields.io/badge/Reference-f39c12?style=for-the-badge&logo=html5&logoColor=white)](https://reference.aspose.cloud/cells/) [![Examples](https://img.shields.io/badge/Examples-1565c0?style=for-the-badge&logo=Github&logoColor=white)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-java/tree/main/examples) [![Blog](https://img.shields.io/badge/Blog-d32f2f?style=for-the-badge&logo=WordPress&logoColor=white)](https://blog.aspose.cloud/categories/aspose.cells-cloud-product-family/) [![Support](https://img.shields.io/badge/Support-7b1fa2?style=for-the-badge&logo=Discourse&logoColor=white)](https://forum.aspose.cloud/c/cells/7) [![License](https://img.shields.io/github/license/aspose-cells-cloud/aspose-cells-cloud-java?style=for-the-badge&logo=rocket&logoColor=white)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-java/blob/master/LICENSE)
 
 Aspose.Cells Cloud SDK for Java empowers developers to programmatically manage Excel files with precision. This comprehensive Java library supports advanced Excel operations like cell data formatting, dynamic formulas, pivot tables, conditional styling, charts, hyperlinks, comments, and data validation. It also enables seamless Excel file conversion (XLSX, CSV, PDF, ODS), document splitting/merging, and file repair. Designed for cloud integration, this API-first solution accelerates spreadsheet automation while ensuring data integrity across platforms like AWS, Azure, and Google Cloud.
+
 # Java SDK package for Aspose.Cells Cloud
 
 Enhance your Java applications with [Aspose.Cells Cloud](https://products.aspose.cloud/cells/java) – a powerful, cloud-based SDK that enables seamless integration with [Excel, ODS, CSV, Json and other spreadsheet document formats](https://docs.aspose.cloud/cells/supported-file-formats/). Leveraging its robust REST API, developers can effortlessly create, read, edit, convert, and manipulate spreadsheet content programmatically—without requiring any local office software.
+
+**Starting with version v26.11.0, the Aspose.Cells Cloud SDK adopts a new model.**
 
 ## Quick Start Guide
 
 To get started with Aspose.Cells Cloud for Java, follow these steps:
 
-1. Create an account at  [Aspose for Cloud](https://dashboard.aspose.cloud/#/apps) and obtain your application information.
+1. Create an account at [Aspose for Cloud](https://dashboard.aspose.cloud/#/apps) and obtain your application information.
 2. Add the following dependency to your project's POM:
 
 ```
@@ -26,96 +28,96 @@ To get started with Aspose.Cells Cloud for Java, follow these steps:
     <dependency>
         <groupId>com.aspose</groupId>
         <artifactId>aspose-cells-cloud</artifactId>
-        <version>26.10</version>
+        <version>26.11</version>
     </dependency>
 </dependencies>
 ```
 
 ```Java
-CellsApi cellsApi = new CellsApi(CellsApiUtil.GetClientId(),CellsApiUtil.GetClientSecret());
-String localPath = "Book1.xlsx";
-String format = "csv";
-PutConvertWorkbookRequest request = new PutConvertWorkbookRequest();
-request.setFormat(format);
-request.setLocalPath(localPath);
-File response =  cellsApi.putConvertWorkbook(request);
+package com.aspose.cells.cloud.examples;
+
+import com.aspose.cells.cloud.*;
+import com.aspose.cells.cloud.model.*;
+import com.aspose.cells.cloud.request.*;
+import java.io.File;
+import java.util.*;
+
+/** Migrated from the legacy Java examples. */
+public final class Example40_ConvertWorkbook {
+
+    public static void main(String[] args) {
+        CellsCloudClient client = new CellsCloudClient(
+                System.getenv("CellsCloudClientId"),
+                System.getenv("CellsCloudClientSecret"),
+                System.getenv("CellsCloudApiBaseUrl"));
+        new Example40_ConvertWorkbook().run(client);
+    }
+
+    public void run(CellsCloudClient client) {
+
+        try{
+            String localName = "Book1.xlsx";
+
+            String format = "png";
+
+            ConvertSpreadsheetRequest request = new ConvertSpreadsheetRequest(format, FormFile.ofPath(localName));
+            client.call(request);
+
+        } catch (ApiException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+
+    }
+}
+
 ```
 
 ## Support file format
 
-|**Format**|**Description**|**Load**|**Save**|
-| :- | :- | :- | :- |
-|[XLS](https://docs.fileformat.com/spreadsheet/xls/)|Excel 95/5.0 - 2003 Workbook.|&radic;|&radic;|
-|[XLSX](https://docs.fileformat.com/spreadsheet/xlsx/)|Office Open XML SpreadsheetML Workbook or template file, with or without macros.|&radic;|&radic;|
-|[XLSB](https://docs.fileformat.com/spreadsheet/xlsb/)|Excel Binary Workbook.|&radic;|&radic;|
-|[XLSM](https://docs.fileformat.com/spreadsheet/xlsm/)|Excel Macro-Enabled Workbook.|&radic;|&radic;|
-|[XLT](https://docs.fileformat.com/spreadsheet/xlt/)|Excel 97 - Excel 2003 Template.|&radic;|&radic;|
-|[XLTX](https://docs.fileformat.com/spreadsheet/xltx/)|Excel Template.|&radic;|&radic;|
-|[XLTM](https://docs.fileformat.com/spreadsheet/xltm/)|Excel Macro-Enabled Template.|&radic;|&radic;|
-|[XLAM](https://docs.fileformat.com/spreadsheet/xlam/)|An Excel Macro-Enabled Add-In file that's used to add new functions to Excel.| |&radic;|
-|[CSV](https://docs.fileformat.com/spreadsheet/csv/)|CSV (Comma Separated Value) file.|&radic;|&radic;|
-|[TSV](https://docs.fileformat.com/spreadsheet/tsv/)|TSV (Tab-separated values) file.|&radic;|&radic;|
-|[TXT](https://docs.fileformat.com/word-processing/txt/)|Delimited plain text file.|&radic;|&radic;|
-|[HTML](https://docs.fileformat.com/web/html/)|HTML format.|&radic;|&radic;|
-|[MHTML](https://docs.fileformat.com/web/mhtml/)|MHTML file.|&radic;|&radic;|
-|[ODS](https://docs.fileformat.com/spreadsheet/ods/)|ODS (OpenDocument Spreadsheet).|&radic;|&radic;|
-|[Numbers](https://docs.fileformat.com/spreadsheet/numbers/)|The document is created by Apple's "Numbers" application which forms part of Apple's iWork office suite, a set of applications which run on the Mac OS X and iOS operating systems.|&radic;||
-|[JSON](https://docs.fileformat.com/web/json/)|JavaScript Object Notation|&radic;|&radic;|
-|[DIF](https://docs.fileformat.com/spreadsheet/dif/)|Data Interchange Format.| |&radic;|
-|[PDF](https://docs.fileformat.com/pdf/)|Adobe Portable Document Format.| |&radic;|
-|[XPS](https://docs.fileformat.com/page-description-language/xps/)|XML Paper Specification Format.| |&radic;|
-|[SVG](https://docs.fileformat.com/page-description-language/svg/)|Scalable Vector Graphics Format.| |&radic;|
-|[TIFF](https://docs.fileformat.com/image/tiff/)|Tagged Image File Format| |&radic;|
-|[PNG](https://docs.fileformat.com/image/png/)|Portable Network Graphics Format.| |&radic;|
-|[BMP](https://docs.fileformat.com/image/bmp/)|Bitmap Image Format.| |&radic;|
-|[EMF](https://docs.fileformat.com/image/emf/)|Enhanced metafile Format| |&radic;|
-|[JPEG](https://docs.fileformat.com/image/jpeg/)|JPEG is a type of image format that is saved using the method of lossy compression.| |&radic;|
-|[GIF](https://docs.fileformat.com/image/gif/)|Graphical Interchange Format| |&radic;|
-|[MARKDOWN](https://docs.fileformat.com/word-processing/md/)|Represents a markdown document.| |&radic;|
-|[SXC](https://docs.fileformat.com/spreadsheet/sxc/)|An XML based format used by OpenOffice and StarOffice|&radic;|&radic;|
-|[FODS](https://docs.fileformat.com/spreadsheet/fods/)|This is an Open Document format stored as flat XML.|&radic;|&radic;|
-|[DOCX](https://docs.fileformat.com/word-processing/docx/)|A well-known format for Microsoft Word documents that is a combination of XML and binary files.||&radic;|
-|[PPTX](https://docs.fileformat.com/presentation/pptx/)|The PPTX format is based on the Microsoft PowerPoint open XML presentation file format.||&radic;|
-|[OTS](https://docs.fileformat.com/spreadsheet/ots/)|OTS (OpenDocument Spreadsheet).|&radic;|&radic;|
-|[XML](https://docs.fileformat.com/web/xml/)|XML file.|&radic;|&radic;|
-|[HTM](https://docs.fileformat.com/web/htm/)|HTM file.|&radic;|&radic;|
-|[TIF](https://docs.fileformat.com/image/tiff/)|Tagged Image File Format| |&radic;|
-|[WMF](https://docs.fileformat.com/image/wmf/)|WMF Image Format| |&radic;|
-|[PCL](https://docs.fileformat.com/page-description-language/pcl/)|Printer Command Language Format| |&radic;|
-|[AZW3](https://docs.fileformat.com/ebook/azw3/)|AZ3/KF8 File Format| |&radic;|
-|[EPUB](https://docs.fileformat.com/ebook/epub/)|EPUB File Format| |&radic;|
-|[DBF](https://docs.fileformat.com/database/dbf/)|DBF File Format| |&radic;|
-|[XHTML](https://docs.fileformat.com/web/xhtml/)|XHTML File Format| |&radic;|
-
-## Architecture
-
-```mermaid
-graph TB
-
-    subgraph "Client Layer"
-        C1[Web Application]
-        C2[Mobile Application]
-        C3[Desktop Application]
-    end
-
-    subgraph "API Gateway Layer"
-        G1[Gateway Service]
-        G2[Authentication Services]
-        G3[Load Balancing]
-    end
-
-    subgraph "Cloud Microservices layer"
-        S1[User Application]
-        S2[Product Services]
-    end
-
-    C1 & C2 & C3 --> G1
-    G1 --> S1 & S2
-
-    style C1 fill:#e1f5fe
-    style G1 fill:#f3e5f5
-    style S1 fill:#e8f5e8
-```
+| **Format**                                                        | **Description**                                                                                                                                                                     | **Load** | **Save** |
+| :---------------------------------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :------- | :------- |
+| [XLS](https://docs.fileformat.com/spreadsheet/xls/)               | Excel 95/5.0 - 2003 Workbook.                                                                                                                                                       | &radic;  | &radic;  |
+| [XLSX](https://docs.fileformat.com/spreadsheet/xlsx/)             | Office Open XML SpreadsheetML Workbook or template file, with or without macros.                                                                                                    | &radic;  | &radic;  |
+| [XLSB](https://docs.fileformat.com/spreadsheet/xlsb/)             | Excel Binary Workbook.                                                                                                                                                              | &radic;  | &radic;  |
+| [XLSM](https://docs.fileformat.com/spreadsheet/xlsm/)             | Excel Macro-Enabled Workbook.                                                                                                                                                       | &radic;  | &radic;  |
+| [XLT](https://docs.fileformat.com/spreadsheet/xlt/)               | Excel 97 - Excel 2003 Template.                                                                                                                                                     | &radic;  | &radic;  |
+| [XLTX](https://docs.fileformat.com/spreadsheet/xltx/)             | Excel Template.                                                                                                                                                                     | &radic;  | &radic;  |
+| [XLTM](https://docs.fileformat.com/spreadsheet/xltm/)             | Excel Macro-Enabled Template.                                                                                                                                                       | &radic;  | &radic;  |
+| [XLAM](https://docs.fileformat.com/spreadsheet/xlam/)             | An Excel Macro-Enabled Add-In file that's used to add new functions to Excel.                                                                                                       |          | &radic;  |
+| [CSV](https://docs.fileformat.com/spreadsheet/csv/)               | CSV (Comma Separated Value) file.                                                                                                                                                   | &radic;  | &radic;  |
+| [TSV](https://docs.fileformat.com/spreadsheet/tsv/)               | TSV (Tab-separated values) file.                                                                                                                                                    | &radic;  | &radic;  |
+| [TXT](https://docs.fileformat.com/word-processing/txt/)           | Delimited plain text file.                                                                                                                                                          | &radic;  | &radic;  |
+| [HTML](https://docs.fileformat.com/web/html/)                     | HTML format.                                                                                                                                                                        | &radic;  | &radic;  |
+| [MHTML](https://docs.fileformat.com/web/mhtml/)                   | MHTML file.                                                                                                                                                                         | &radic;  | &radic;  |
+| [ODS](https://docs.fileformat.com/spreadsheet/ods/)               | ODS (OpenDocument Spreadsheet).                                                                                                                                                     | &radic;  | &radic;  |
+| [Numbers](https://docs.fileformat.com/spreadsheet/numbers/)       | The document is created by Apple's "Numbers" application which forms part of Apple's iWork office suite, a set of applications which run on the Mac OS X and iOS operating systems. | &radic;  |          |
+| [JSON](https://docs.fileformat.com/web/json/)                     | JavaScript Object Notation                                                                                                                                                          | &radic;  | &radic;  |
+| [DIF](https://docs.fileformat.com/spreadsheet/dif/)               | Data Interchange Format.                                                                                                                                                            |          | &radic;  |
+| [PDF](https://docs.fileformat.com/pdf/)                           | Adobe Portable Document Format.                                                                                                                                                     |          | &radic;  |
+| [XPS](https://docs.fileformat.com/page-description-language/xps/) | XML Paper Specification Format.                                                                                                                                                     |          | &radic;  |
+| [SVG](https://docs.fileformat.com/page-description-language/svg/) | Scalable Vector Graphics Format.                                                                                                                                                    |          | &radic;  |
+| [TIFF](https://docs.fileformat.com/image/tiff/)                   | Tagged Image File Format                                                                                                                                                            |          | &radic;  |
+| [PNG](https://docs.fileformat.com/image/png/)                     | Portable Network Graphics Format.                                                                                                                                                   |          | &radic;  |
+| [BMP](https://docs.fileformat.com/image/bmp/)                     | Bitmap Image Format.                                                                                                                                                                |          | &radic;  |
+| [EMF](https://docs.fileformat.com/image/emf/)                     | Enhanced metafile Format                                                                                                                                                            |          | &radic;  |
+| [JPEG](https://docs.fileformat.com/image/jpeg/)                   | JPEG is a type of image format that is saved using the method of lossy compression.                                                                                                 |          | &radic;  |
+| [GIF](https://docs.fileformat.com/image/gif/)                     | Graphical Interchange Format                                                                                                                                                        |          | &radic;  |
+| [MARKDOWN](https://docs.fileformat.com/word-processing/md/)       | Represents a markdown document.                                                                                                                                                     |          | &radic;  |
+| [SXC](https://docs.fileformat.com/spreadsheet/sxc/)               | An XML based format used by OpenOffice and StarOffice                                                                                                                               | &radic;  | &radic;  |
+| [FODS](https://docs.fileformat.com/spreadsheet/fods/)             | This is an Open Document format stored as flat XML.                                                                                                                                 | &radic;  | &radic;  |
+| [DOCX](https://docs.fileformat.com/word-processing/docx/)         | A well-known format for Microsoft Word documents that is a combination of XML and binary files.                                                                                     |          | &radic;  |
+| [PPTX](https://docs.fileformat.com/presentation/pptx/)            | The PPTX format is based on the Microsoft PowerPoint open XML presentation file format.                                                                                             |          | &radic;  |
+| [OTS](https://docs.fileformat.com/spreadsheet/ots/)               | OTS (OpenDocument Spreadsheet).                                                                                                                                                     | &radic;  | &radic;  |
+| [XML](https://docs.fileformat.com/web/xml/)                       | XML file.                                                                                                                                                                           | &radic;  | &radic;  |
+| [HTM](https://docs.fileformat.com/web/htm/)                       | HTM file.                                                                                                                                                                           | &radic;  | &radic;  |
+| [TIF](https://docs.fileformat.com/image/tiff/)                    | Tagged Image File Format                                                                                                                                                            |          | &radic;  |
+| [WMF](https://docs.fileformat.com/image/wmf/)                     | WMF Image Format                                                                                                                                                                    |          | &radic;  |
+| [PCL](https://docs.fileformat.com/page-description-language/pcl/) | Printer Command Language Format                                                                                                                                                     |          | &radic;  |
+| [AZW3](https://docs.fileformat.com/ebook/azw3/)                   | AZ3/KF8 File Format                                                                                                                                                                 |          | &radic;  |
+| [EPUB](https://docs.fileformat.com/ebook/epub/)                   | EPUB File Format                                                                                                                                                                    |          | &radic;  |
+| [DBF](https://docs.fileformat.com/database/dbf/)                  | DBF File Format                                                                                                                                                                     |          | &radic;  |
+| [XHTML](https://docs.fileformat.com/web/xhtml/)                   | XHTML File Format                                                                                                                                                                   |          | &radic;  |
 
 ## [Developer Reference](docs/DeveloperGuide.md#overview)
 
@@ -132,18 +134,18 @@ graph TB
 - Import/Export: Facilitates importing data from various sources into spreadsheets and exporting spreadsheet data to other formats.
 - Security Management: Offers a range of security features like data encryption, access control, and permission management to safeguard the security and integrity of spreadsheet data.
 
-## Features and Enhancements in Version v26.10
+## Features and Enhancements in Version v26.11
 
 Full list of issues covering all changes in this release:
 
-| **Summary**                                                                                                   | **Category** |
-| :------------------------------------------------------------------------------------------------------------ | :----------- |
+| **Summary**                                                                                                  | **Category** |
+| :----------------------------------------------------------------------------------------------------------- | :----------- |
 | Refactor SearchController.cs: replace 7 remote read endpoints with [HttpGet] and remove deprecated forwarder | Improvement  |
-| Fix typo in CalculateController.cs: correct route 'aggergate' to 'aggregate' | Bug  |
-| Fix operationName copy-paste errors in ManagementController.cs | Bug  |
-| Mark StatisticalController.cs as obsolete | Improvement  |
-| Security & Stability Fixes for Aspose.Cells Cloud API | Improvement  |
-| Add Exception Chain Support to CellsApiException and HttpWebException | New Feature  |
+| Fix typo in CalculateController.cs: correct route 'aggergate' to 'aggregate'                                 | Bug          |
+| Fix operationName copy-paste errors in ManagementController.cs                                               | Bug          |
+| Mark StatisticalController.cs as obsolete                                                                    | Improvement  |
+| Security & Stability Fixes for Aspose.Cells Cloud API                                                        | Improvement  |
+| Add Exception Chain Support to CellsApiException and HttpWebException                                        | New Feature  |
 
 ## Available SDKs
 
@@ -166,4 +168,3 @@ The Aspose.Cells Cloud SDK is available in multiple popular programming language
 [![Ruby](https://img.shields.io/badge/Ruby-CC342D.svg?style=for-the-badge&logo=ruby&logoColor=white)](https://github.com/aspose-cells-cloud/aspose-cells-cloud-ruby) [![Ruby](https://img.shields.io/badge/Gem-aspose__cells__cloud-red?logo=ruby&style=for-the-badge)](https://rubygems.org/gems/aspose_cells_cloud)
 
 ## [Release history version](HistoryVersions.md)
-```

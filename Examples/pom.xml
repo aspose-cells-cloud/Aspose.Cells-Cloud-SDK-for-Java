@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.aspose.cloud.cells</groupId>
+  <artifactId>aspose-cells-cloud-examples</artifactId>
+  <version>26.11.0</version>
+  <packaging>jar</packaging>
+
+  <name>Aspose.Cells Cloud SDK for Java examples</name>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <!-- Must match the SDK's maven.compiler.release. -->
+    <maven.compiler.release>17</maven.compiler.release>
+  </properties>
+
+  <dependencies>
+    <dependency>
+      <groupId>com.aspose</groupId>
+      <artifactId>aspose-cells-cloud</artifactId>
+      <version>26.11.0</version>
+    </dependency>
+  </dependencies>
+
+  <build>
+    <!-- The examples are flat .java files, not a src/main/java tree. -->
+    <sourceDirectory>${project.basedir}</sourceDirectory>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.13.0</version>
+      </plugin>
+      <!-- Optional: run one example with
+           mvn -q -f examples/pom.xml exec:java -Dexample.mainClass=com.aspose.cells.cloud.examples.Example30_ConvertWorkbook
+           The working directory is testdata/ so the examples find Book1.xlsx etc. -->
+      <plugin>
+        <groupId>org.codehaus.mojo</groupId>
+        <artifactId>exec-maven-plugin</artifactId>
+        <version>3.1.0</version>
+        <configuration>
+          <mainClass>${example.mainClass}</mainClass>
+          <workingDirectory>${project.basedir}/../testdata</workingDirectory>
+        </configuration>
+      </plugin>
+    </plugins>
+  </build>
+</project>

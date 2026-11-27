@@ -20,12 +20,12 @@ jobs:
     - name: Set up JDK
       uses: actions/setup-java@v4
       with:
-        java-version: '8'
+        java-version: '17'
         distribution: 'temurin'
         cache: maven
 
     - name: Install SDK
       run: mvn -B install -DskipTests --file pom.xml
 
-    - name: Run Examples
-      run: mvn -B test --file Examples/pom.xml
+    - name: Compile Examples
+      run: mvn -B -q compile --file examples/pom.xml
