@@ -29,3 +29,31 @@ jobs:
 
     - name: Compile Examples
       run: mvn -B -q compile --file examples/pom.xml
+
+    - name: Run Examples
+      shell: pwsh
+      run: |
+        # Local-only examples: they do not upload to or mutate cloud storage.
+        $examples = @(
+          "Example30_ConvertWorkbook",
+          "Example40_ConvertWorkbook",
+          "Example40_ReplaceTextInLocalFile"
+        )
+
+        $failed = @()
+        foreach ($name in $examples) {
+          Write-Host "`n--- $name ---" -ForegroundColor Cyan
+          mvn -B -q exec:java --file examples/pom.xml "-Dexample.mainClass=com.aspose.cells.cloud.examples.$name"
+
+          if ($LASTEXITCODE -ne 0) {
+            Write-Host "FAILED: $name" -ForegroundColor Red
+            $failed += $name
+          }
+        }
+
+        if ($failed.Count -gt 0) {
+          Write-Error ("Examples failed: " + ($failed -join ", "))
+          exit 1
+        }
+
+        Write-Host "`nAll selected examples completed." -ForegroundColor Green
