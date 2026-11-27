@@ -15,6 +15,10 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <!-- Must match the SDK's maven.compiler.release. -->
     <maven.compiler.release>17</maven.compiler.release>
+    <!-- Product repo fixtures live next to the SDK; the sdk output tree keeps
+         them under src/test/resources/testdata. Override with
+         -Dexample.workingDirectory=... when running against sdks/java_sdk. -->
+    <example.workingDirectory>${project.basedir}/../testdata</example.workingDirectory>
   </properties>
 
   <dependencies>
@@ -43,7 +47,7 @@
         <version>3.1.0</version>
         <configuration>
           <mainClass>${example.mainClass}</mainClass>
-          <workingDirectory>${project.basedir}/../testdata</workingDirectory>
+          <workingDirectory>${example.workingDirectory}</workingDirectory>
         </configuration>
       </plugin>
     </plugins>

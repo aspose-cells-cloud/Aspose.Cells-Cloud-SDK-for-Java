@@ -138,14 +138,15 @@ public final class Example40_ConvertWorkbook {
 
 Full list of issues covering all changes in this release:
 
-| **Summary**                                                                                                  | **Category** |
-| :----------------------------------------------------------------------------------------------------------- | :----------- |
-| Refactor SearchController.cs: replace 7 remote read endpoints with [HttpGet] and remove deprecated forwarder | Improvement  |
-| Fix typo in CalculateController.cs: correct route 'aggergate' to 'aggregate'                                 | Bug          |
-| Fix operationName copy-paste errors in ManagementController.cs                                               | Bug          |
-| Mark StatisticalController.cs as obsolete                                                                    | Improvement  |
-| Security & Stability Fixes for Aspose.Cells Cloud API                                                        | Improvement  |
-| Add Exception Chain Support to CellsApiException and HttpWebException                                        | New Feature  |
+| **ID**           | **Summary**                                                                  | **Category** |
+| :--------------- | :--------------------------------------------------------------------------- | :----------- |
+| CELLSCLOUD-14291 | Single-property delete returns 200 and removes nothing                       | Bug          |
+| CELLSCLOUD-14292 | htmlstring has no request body in the spec                                   | Bug          |
+| CELLSCLOUD-14293 | Secondary-axis routes answer 200 but the value read back is not the one sent | Bug          |
+| CELLSCLOUD-14294 | A string auto-filter is saved as the literal text Aspose.Cells.FilterValue   | Bug          |
+| CELLSCLOUD-14307 | Support converting worksheet page                                            | New Feature  |
+| CELLSCLOUD-14326 | Improve SmartMarkerTemplate API in Aspose.Cells Cloud                        | Improvement  |
+| CELLSCLOUD-14327 | Add new feature: support generate report                                     | New Feature  |
 
 ## Available SDKs
 
