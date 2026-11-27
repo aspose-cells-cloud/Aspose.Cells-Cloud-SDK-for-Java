@@ -39,15 +39,21 @@
         <version>3.13.0</version>
       </plugin>
       <!-- Optional: run one example with
-           mvn -q -f examples/pom.xml exec:java -Dexample.mainClass=com.aspose.cells.cloud.examples.Example30_ConvertWorkbook
-           The working directory is testdata/ so the examples find Book1.xlsx etc. -->
+           mvn -q -f examples/pom.xml exec:exec -Dexample.mainClass=com.aspose.cells.cloud.examples.QuickStartExample
+           exec:exec forks a JVM so workingDirectory is honored; the examples
+           then find the fixtures in testdata/ by their bare file names. -->
       <plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>exec-maven-plugin</artifactId>
         <version>3.1.0</version>
         <configuration>
-          <mainClass>${example.mainClass}</mainClass>
+          <executable>${java.home}/bin/java</executable>
           <workingDirectory>${example.workingDirectory}</workingDirectory>
+          <arguments>
+            <argument>-classpath</argument>
+            <classpath/>
+            <argument>${example.mainClass}</argument>
+          </arguments>
         </configuration>
       </plugin>
     </plugins>

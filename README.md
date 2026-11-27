@@ -36,38 +36,27 @@ To get started with Aspose.Cells Cloud for Java, follow these steps:
 ```Java
 package com.aspose.cells.cloud.examples;
 
-import com.aspose.cells.cloud.*;
-import com.aspose.cells.cloud.model.*;
-import com.aspose.cells.cloud.request.*;
-import java.io.File;
-import java.util.*;
+import com.aspose.cells.cloud.CellsCloudClient;
+import com.aspose.cells.cloud.converter.Converter;
+import com.aspose.cells.cloud.converter.Formats;
+import com.aspose.cells.cloud.datasource.FilePathSink;
+import com.aspose.cells.cloud.datasource.FilePathSource;
 
-/** Migrated from the legacy Java examples. */
-public final class Example40_ConvertWorkbook {
+public final class QuickStartExample {
 
     public static void main(String[] args) {
         CellsCloudClient client = new CellsCloudClient(
                 System.getenv("CellsCloudClientId"),
                 System.getenv("CellsCloudClientSecret"),
                 System.getenv("CellsCloudApiBaseUrl"));
-        new Example40_ConvertWorkbook().run(client);
-    }
 
-    public void run(CellsCloudClient client) {
+        // Convert a local spreadsheet to PDF.
+        Converter.convert(client,
+                new FilePathSource("EmployeeSalesSummary.xlsx"),
+                new FilePathSink("EmployeeSalesSummary.pdf"),
+                Formats.FORMAT_PDF);
 
-        try{
-            String localName = "Book1.xlsx";
-
-            String format = "png";
-
-            ConvertSpreadsheetRequest request = new ConvertSpreadsheetRequest(format, FormFile.ofPath(localName));
-            client.call(request);
-
-        } catch (ApiException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-
+        System.out.println("Converted EmployeeSalesSummary.xlsx to PDF.");
     }
 }
 

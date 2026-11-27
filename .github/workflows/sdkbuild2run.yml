@@ -35,15 +35,17 @@ jobs:
       run: |
         # Local-only examples: they do not upload to or mutate cloud storage.
         $examples = @(
-          "Example30_ConvertWorkbook",
-          "Example40_ConvertWorkbook",
-          "Example40_ReplaceTextInLocalFile"
+          "QuickStartExample",
+          "ExcelSplitExample",
+          "ManagementExample",
+          "ProtectionExample",
+          "TextProcessingExample"
         )
 
         $failed = @()
         foreach ($name in $examples) {
           Write-Host "`n--- $name ---" -ForegroundColor Cyan
-          mvn -B -q exec:java --file examples/pom.xml "-Dexample.mainClass=com.aspose.cells.cloud.examples.$name"
+          mvn -B -q exec:exec --file examples/pom.xml "-Dexample.mainClass=com.aspose.cells.cloud.examples.$name"
 
           if ($LASTEXITCODE -ne 0) {
             Write-Host "FAILED: $name" -ForegroundColor Red
