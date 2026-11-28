@@ -34,7 +34,7 @@ jobs:
         shell: pwsh
         run: |
           mvn -B install -DskipTests --file pom.xml
-          Set-Location examples\
+          Set-Location Examples\
           Write-Host "Excute Examples"
           mvn -B -q compile --file ./pom.xml
           mvn -B -q exec:exec --file ./pom.xml "-Dexample.mainClass=com.aspose.cells.cloud.examples.BatchProcessingExample"
