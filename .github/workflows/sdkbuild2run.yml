@@ -34,42 +34,18 @@ jobs:
         shell: pwsh
         run: |
           mvn -B install -DskipTests --file pom.xml
-          cd Examples
+          Set-Location examples\
+          Write-Host "Excute Examples"
           mvn -B -q compile --file ./pom.xml
-          mvn -B -q exec:exec --file ./pom.xml "-Dexample.mainClass=com.aspose.cells.cloud.examples.BatchProcessingExample"        
-          mvn -B -q exec:exec --file ./pom.xml "-Dexample.mainClass=com.aspose.cells.cloud.examples.CloudStorageManagementExample"        
-          mvn -B -q exec:exec --file ./pom.xml "-Dexample.mainClass=com.aspose.cells.cloud.examples.ConvertExcelExample"        
-          mvn -B -q exec:exec --file ./pom.xml "-Dexample.mainClass=com.aspose.cells.cloud.examples.CreateReportFilesExample"        
-          mvn -B -q exec:exec --file ./pom.xml "-Dexample.mainClass=com.aspose.cells.cloud.examples.ExcelSplitExample"        
-          mvn -B -q exec:exec --file ./pom.xml "-Dexample.mainClass=com.aspose.cells.cloud.examples.ManagementExample"        
-          mvn -B -q exec:exec --file ./pom.xml "-Dexample.mainClass=com.aspose.cells.cloud.examples.MergeExcelFilesExample"        
-          mvn -B -q exec:exec --file ./pom.xml "-Dexample.mainClass=com.aspose.cells.cloud.examples.ProtectionExample"        
-          mvn -B -q exec:exec --file ./pom.xml "-Dexample.mainClass=com.aspose.cells.cloud.examples.QuickStartExample"        
-          mvn -B -q exec:exec --file ./pom.xml "-Dexample.mainClass=com.aspose.cells.cloud.examples.SplitExcelFilesExample"        
-          mvn -B -q exec:exec --file ./pom.xml "-Dexample.mainClass=com.aspose.cells.cloud.examples.TextProcessingExample"        
-          # Run every example in the examples directory. The cloud-backed
-          # examples create and mutate files under the JavaSDK folder.
-          # $all = Get-ChildItem -Path examples -Filter *.java | ForEach-Object { $_.BaseName }
-          # These two prepare JavaSDK and JavaSDK/Output, which the other cloud
-          # examples use, so run them first.
-          # $preferred = @("CloudStorageManagementExample", "SplitExcelFilesExample")
-          # $examples = @($preferred | Where-Object { $all -contains $_ }) +
-          #             @($all | Where-Object { $preferred -notcontains $_ } | Sort-Object)
-
-          # $failed = @()
-          # foreach ($name in $examples) {
-          #   Write-Host "`n--- $name ---" -ForegroundColor Cyan
-          #   mvn -B -q exec:exec --file examples/pom.xml "-Dexample.mainClass=com.aspose.cells.cloud.examples.$name"
-
-          #   if ($LASTEXITCODE -ne 0) {
-          #     Write-Host "FAILED: $name" -ForegroundColor Red
-          #     $failed += $name
-          #   }
-          # }
-
-          # if ($failed.Count -gt 0) {
-          #   Write-Error ("Examples failed: " + ($failed -join ", "))
-          #   exit 1
-          # }
-
-          # Write-Host "`nAll examples completed." -ForegroundColor Green
+          mvn -B -q exec:exec --file ./pom.xml "-Dexample.mainClass=com.aspose.cells.cloud.examples.BatchProcessingExample"
+          mvn -B -q exec:exec --file ./pom.xml "-Dexample.mainClass=com.aspose.cells.cloud.examples.CloudStorageManagementExample"
+          mvn -B -q exec:exec --file ./pom.xml "-Dexample.mainClass=com.aspose.cells.cloud.examples.ConvertExcelExample"
+          mvn -B -q exec:exec --file ./pom.xml "-Dexample.mainClass=com.aspose.cells.cloud.examples.CreateReportFilesExample"
+          mvn -B -q exec:exec --file ./pom.xml "-Dexample.mainClass=com.aspose.cells.cloud.examples.ExcelSplitExample"
+          mvn -B -q exec:exec --file ./pom.xml "-Dexample.mainClass=com.aspose.cells.cloud.examples.ManagementExample"
+          mvn -B -q exec:exec --file ./pom.xml "-Dexample.mainClass=com.aspose.cells.cloud.examples.MergeExcelFilesExample"
+          mvn -B -q exec:exec --file ./pom.xml "-Dexample.mainClass=com.aspose.cells.cloud.examples.ProtectionExample"
+          mvn -B -q exec:exec --file ./pom.xml "-Dexample.mainClass=com.aspose.cells.cloud.examples.QuickStartExample"
+          mvn -B -q exec:exec --file ./pom.xml "-Dexample.mainClass=com.aspose.cells.cloud.examples.SplitExcelFilesExample"
+          mvn -B -q exec:exec --file ./pom.xml "-Dexample.mainClass=com.aspose.cells.cloud.examples.TextProcessingExample"
+          Write-Host "`nAll examples completed." -ForegroundColor Green
