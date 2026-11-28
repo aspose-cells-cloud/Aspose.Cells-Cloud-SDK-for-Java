@@ -28,22 +28,22 @@ jobs:
         run: mvn -B install -DskipTests --file pom.xml
 
       - name: Compile Examples
-        run: mvn -B -q compile --file examples/pom.xml
+        run: mvn -B -q compile --file Examples/pom.xml
 
       - name: Run Examples
         shell: pwsh
         run: |
-          mvn -B -q exec:exec --file examples/pom.xml "-Dexample.mainClass=com.aspose.cells.cloud.examples.BatchProcessingExample"        
-          mvn -B -q exec:exec --file examples/pom.xml "-Dexample.mainClass=com.aspose.cells.cloud.examples.CloudStorageManagementExample"        
-          mvn -B -q exec:exec --file examples/pom.xml "-Dexample.mainClass=com.aspose.cells.cloud.examples.ConvertExcelExample"        
-          mvn -B -q exec:exec --file examples/pom.xml "-Dexample.mainClass=com.aspose.cells.cloud.examples.CreateReportFilesExample"        
-          mvn -B -q exec:exec --file examples/pom.xml "-Dexample.mainClass=com.aspose.cells.cloud.examples.ExcelSplitExample"        
-          mvn -B -q exec:exec --file examples/pom.xml "-Dexample.mainClass=com.aspose.cells.cloud.examples.ManagementExample"        
-          mvn -B -q exec:exec --file examples/pom.xml "-Dexample.mainClass=com.aspose.cells.cloud.examples.MergeExcelFilesExample"        
-          mvn -B -q exec:exec --file examples/pom.xml "-Dexample.mainClass=com.aspose.cells.cloud.examples.ProtectionExample"        
-          mvn -B -q exec:exec --file examples/pom.xml "-Dexample.mainClass=com.aspose.cells.cloud.examples.QuickStartExample"        
-          mvn -B -q exec:exec --file examples/pom.xml "-Dexample.mainClass=com.aspose.cells.cloud.examples.SplitExcelFilesExample"        
-          mvn -B -q exec:exec --file examples/pom.xml "-Dexample.mainClass=com.aspose.cells.cloud.examples.TextProcessingExample"        
+          mvn -B -q exec:exec --file Examples/pom.xml "Dexample.mainClass=com.aspose.cells.cloud.examples.BatchProcessingExample"        
+          mvn -B -q exec:exec --file Examples/pom.xml "Dexample.mainClass=com.aspose.cells.cloud.examples.CloudStorageManagementExample"        
+          mvn -B -q exec:exec --file Examples/pom.xml "Dexample.mainClass=com.aspose.cells.cloud.examples.ConvertExcelExample"        
+          mvn -B -q exec:exec --file Examples/pom.xml "Dexample.mainClass=com.aspose.cells.cloud.examples.CreateReportFilesExample"        
+          mvn -B -q exec:exec --file Examples/pom.xml "Dexample.mainClass=com.aspose.cells.cloud.examples.ExcelSplitExample"        
+          mvn -B -q exec:exec --file Examples/pom.xml "Dexample.mainClass=com.aspose.cells.cloud.examples.ManagementExample"        
+          mvn -B -q exec:exec --file Examples/pom.xml "Dexample.mainClass=com.aspose.cells.cloud.examples.MergeExcelFilesExample"        
+          mvn -B -q exec:exec --file Examples/pom.xml "Dexample.mainClass=com.aspose.cells.cloud.examples.ProtectionExample"        
+          mvn -B -q exec:exec --file Examples/pom.xml "Dexample.mainClass=com.aspose.cells.cloud.examples.QuickStartExample"        
+          mvn -B -q exec:exec --file Examples/pom.xml "Dexample.mainClass=com.aspose.cells.cloud.examples.SplitExcelFilesExample"        
+          mvn -B -q exec:exec --file Examples/pom.xml "Dexample.mainClass=com.aspose.cells.cloud.examples.TextProcessingExample"        
           # Run every example in the examples directory. The cloud-backed
           # examples create and mutate files under the JavaSDK folder.
           $all = Get-ChildItem -Path examples -Filter *.java | ForEach-Object { $_.BaseName }
