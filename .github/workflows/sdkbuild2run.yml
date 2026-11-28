@@ -33,8 +33,8 @@ jobs:
       - name: Run Examples
         shell: pwsh
         run: |
-        run: mvn -B install -DskipTests --file pom.xml
-        run: mvn -B -q compile --file Examples/pom.xml
+          mvn -B install -DskipTests --file pom.xml
+          mvn -B -q compile --file Examples/pom.xml
           mvn -B -q exec:exec --file Examples/pom.xml "-Dexample.mainClass=com.aspose.cells.cloud.examples.BatchProcessingExample"        
           mvn -B -q exec:exec --file Examples/pom.xml "-Dexample.mainClass=com.aspose.cells.cloud.examples.CloudStorageManagementExample"        
           mvn -B -q exec:exec --file Examples/pom.xml "-Dexample.mainClass=com.aspose.cells.cloud.examples.ConvertExcelExample"        
