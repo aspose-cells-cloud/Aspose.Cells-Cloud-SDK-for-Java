@@ -6,7 +6,7 @@
 
   <groupId>com.aspose</groupId>
   <artifactId>aspose-cells-cloud</artifactId>
-  <version>26.11.0</version>
+  <version>26.11</version>
   <packaging>jar</packaging>
 
   <name>Aspose.Cells Cloud SDK for Java</name>
