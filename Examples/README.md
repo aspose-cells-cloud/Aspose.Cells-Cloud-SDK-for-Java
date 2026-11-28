@@ -44,9 +44,18 @@ artifact, so install the SDK first.
 
 ## Run an example
 
+Bash:
+
 ```bash
 mvn -B -q exec:exec --file examples/pom.xml \
-  -Dexample.mainClass=com.aspose.cells.cloud.examples.QuickStartExample
+  "-Dexample.mainClass=com.aspose.cells.cloud.examples.QuickStartExample"
+```
+
+PowerShell (keep the `-D...` argument quoted — otherwise PowerShell splits it at
+the dot and Maven reports `Unknown lifecycle phase ".mainClass=..."`):
+
+```powershell
+mvn -B -q exec:exec --file examples/pom.xml "-Dexample.mainClass=com.aspose.cells.cloud.examples.QuickStartExample"
 ```
 
 Examples read local fixtures by their bare file name (for example

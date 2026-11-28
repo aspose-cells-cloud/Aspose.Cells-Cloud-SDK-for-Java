@@ -39,7 +39,7 @@
         <version>3.13.0</version>
       </plugin>
       <!-- Optional: run one example with
-           mvn -q -f examples/pom.xml exec:exec -Dexample.mainClass=com.aspose.cells.cloud.examples.QuickStartExample
+           mvn -q -f examples/pom.xml exec:exec "-Dexample.mainClass=com.aspose.cells.cloud.examples.QuickStartExample"
            exec:exec forks a JVM so workingDirectory is honored; the examples
            then find the fixtures in testdata/ by their bare file names. -->
       <plugin>

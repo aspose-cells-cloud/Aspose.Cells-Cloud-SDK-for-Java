@@ -33,14 +33,14 @@ jobs:
     - name: Run Examples
       shell: pwsh
       run: |
-        # Local-only examples: they do not upload to or mutate cloud storage.
-        $examples = @(
-          "QuickStartExample",
-          "ExcelSplitExample",
-          "ManagementExample",
-          "ProtectionExample",
-          "TextProcessingExample"
-        )
+        # Run every example in the examples directory. The cloud-backed
+        # examples create and mutate files under the JavaSDK folder.
+        $all = Get-ChildItem -Path examples -Filter *.java | ForEach-Object { $_.BaseName }
+        # These two prepare JavaSDK and JavaSDK/Output, which the other cloud
+        # examples use, so run them first.
+        $preferred = @("CloudStorageManagementExample", "SplitExcelFilesExample")
+        $examples = @($preferred | Where-Object { $all -contains $_ }) +
+                    @($all | Where-Object { $preferred -notcontains $_ } | Sort-Object)
 
         $failed = @()
         foreach ($name in $examples) {
@@ -58,4 +58,4 @@ jobs:
           exit 1
         }
 
-        Write-Host "`nAll selected examples completed." -ForegroundColor Green
+        Write-Host "`nAll examples completed." -ForegroundColor Green
